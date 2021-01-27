@@ -12,7 +12,7 @@ module TOP(
 	input clk_sys,
 	// input rst_sys,
 
-	//	SPI outputs
+//	SPI outputs
 	output sclk,
 	output mosi,
 	output A0,
@@ -139,7 +139,19 @@ module TOP(
 			.status(RPHI3_CTR)
 		);
 // =============================
-
+	
+// 添加逻辑分析仪
+     ILA ila(
+            .clk(clk_sys),
+            .probe0(sclk),
+            .probe1(mosi),
+            .probe2(A0),
+            .probe3(A1),
+            .probe4(RST_SIG_CTR),
+            .probe5(RPHI1_CTR),
+            .probe6(RPHI2_CTR),
+            .probe7(RPHI3_CTR)
+        );
 
 //	通过PL按键来触发一个复位reset
     reg state_pl_key        = 1'b0;
