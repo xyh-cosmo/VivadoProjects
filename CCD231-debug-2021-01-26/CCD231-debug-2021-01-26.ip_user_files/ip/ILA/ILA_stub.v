@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Wed Jan 27 10:33:16 2021
-// Host        : css running 64-bit Ubuntu 20.04.1 LTS
+// Date        : Wed Jan 27 11:42:51 2021
+// Host        : apple running 64-bit Ubuntu 20.04.1 LTS
 // Command     : write_verilog -force -mode synth_stub
-//               /home/xyh/alinx_nfs/Vivado-Projects/CCD231-debug-2021-01-26/CCD231-debug-2021-01-26.srcs/sources_1/ip/ILA/ILA_stub.v
+//               /home/xyh/NFS_Alinx/VivadoProjects/CCD231-debug-2021-01-26/CCD231-debug-2021-01-26.srcs/sources_1/ip/ILA/ILA_stub.v
 // Design      : ILA
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z035ffg676-2
@@ -15,8 +15,8 @@
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
 (* X_CORE_INFO = "ila,Vivado 2017.4" *)
 module ILA(clk, probe0, probe1, probe2, probe3, probe4, probe5, 
-  probe6, probe7)
-/* synthesis syn_black_box black_box_pad_pin="clk,probe0[0:0],probe1[0:0],probe2[0:0],probe3[0:0],probe4[0:0],probe5[0:0],probe6[0:0],probe7[0:0]" */;
+  probe6, probe7, probe8)
+/* synthesis syn_black_box black_box_pad_pin="clk,probe0[0:0],probe1[0:0],probe2[0:0],probe3[0:0],probe4[0:0],probe5[0:0],probe6[0:0],probe7[0:0],probe8[0:0]" */;
   input clk;
   input [0:0]probe0;
   input [0:0]probe1;
@@ -26,4 +26,5 @@ module ILA(clk, probe0, probe1, probe2, probe3, probe4, probe5,
   input [0:0]probe5;
   input [0:0]probe6;
   input [0:0]probe7;
+  input [0:0]probe8;
 endmodule

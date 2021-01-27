@@ -56,15 +56,15 @@ module TOP(
 	reg[3:0] state;
 	parameter S_IDLE	= 4'd0;
 	parameter S_SPI	= 4'd1;
-	parameter S_SQ		= 4'd2;
+	parameter S_CTR	= 4'd2;
 
 	reg en_spi = 1'b0;
-	reg en_sq  = 1'b0;
+	reg en_ctr = 1'b0;
 	reg spi_done = 1'b0;
-	reg sq_done  = 1'b0;
+	reg ctr_done  = 1'b0;
 
 	wire spi_status;
-	wire sq_status;
+	wire ctr_status;
 
 	SPI_CONTROL spi_control(
 		.clk(clk_50M),
@@ -79,80 +79,65 @@ module TOP(
 		);
 
 //  分频时钟
+//    parameter cycles_max = 20;
+    parameter cycles_max = 0;  // set to zero so that the divided clocks runs forever!
 	CLOCK_DIV
 		#(
 			.DIV_FACTOR(50),
 			.CNT_START(0),
-			// .CYCLES_MAX(20)
-			.CYCLES_MAX(0)
+			.CYCLES_MAX(cycles_max)
 		)
 		clk_div_0
 		(
 			.clk_sys(clk_50M),
-			.en(en_sq),
-			.clk_div(sq_wave),
-			.status(RST_SIG_CTR)
+			.en(en_ctr),
+			.clk_div(RST_SIG_CTR),
+			.status(ctr_status)
 		);
 		
 	CLOCK_DIV
         #(
             .DIV_FACTOR(50),
             .CNT_START(0),
-            // .CYCLES_MAX(20)
-            .CYCLES_MAX(0)
+            .CYCLES_MAX(cycles_max)
         )
         clk_div_1
         (
             .clk_sys(clk_50M),
-            .en(en_sq),
-            .clk_div(sq_wave),
-            .status(RPHI1_CTR)
+            .en(en_ctr),
+            .clk_div(RPHI1_CTR),
+            .status()
         );
 
     CLOCK_DIV
 		#(
 			.DIV_FACTOR(50),
 			.CNT_START(0),
-			// .CYCLES_MAX(20)
-			.CYCLES_MAX(0)
+			.CYCLES_MAX(cycles_max)
 		)
 		clk_div_2
 		(
 			.clk_sys(clk_50M),
-			.en(en_sq),
-			.clk_div(sq_wave),
-			.status(RPHI2_CTR)
+			.en(en_ctr),
+			.clk_div(RPHI2_CTR),
+			.status()
 		);
 
     CLOCK_DIV
 		#(
 			.DIV_FACTOR(50),
 			.CNT_START(0),
-			// .CYCLES_MAX(20)
-			.CYCLES_MAX(0)
+			.CYCLES_MAX(cycles_max)
 		)
 		clk_div_3
 		(
 			.clk_sys(clk_50M),
-			.en(en_sq),
-			.clk_div(sq_wave),
-			.status(RPHI3_CTR)
+			.en(en_ctr),
+			.clk_div(RPHI3_CTR),
+			.status()
 		);
 // =============================
 	
-// 添加逻辑分析仪
-     ILA ila(
-            .clk(clk_sys),
-            .probe0(sclk),
-            .probe1(mosi),
-            .probe2(A0),
-            .probe3(A1),
-            .probe4(RST_SIG_CTR),
-            .probe5(RPHI1_CTR),
-            .probe6(RPHI2_CTR),
-            .probe7(RPHI3_CTR)
-        );
-
 //	通过PL按键来触发一个复位reset
     reg state_pl_key        = 1'b0;
     reg state_pl_key_bak    = 1'b0;      
@@ -187,9 +172,9 @@ module TOP(
 		if( rst_w ) begin
 			state	<= S_IDLE;
 			en_spi	<= 1'b0;
-			en_sq	<= 1'b0;
-			spi_done<= 1'b0;
-			sq_done <= 1'b0;
+			en_ctr  <= 1'b0;
+			spi_done <= 1'b0;
+			ctr_done <= 1'b0;
 		end
 		else begin
 			case( state )
@@ -197,6 +182,7 @@ module TOP(
 				begin
 					if( spi_status == 1'b0 && spi_done == 1'b0 ) begin
 						en_spi	<= 1'b1;
+						en_ctr  <= 1'b0;
 						state	<= S_SPI;
 					end
 				end
@@ -207,19 +193,19 @@ module TOP(
 						en_spi	<= 1'b0;
 						spi_done <= 1'b1;
 
-						if( sq_status == 1'b0 && sq_done == 1'b0 ) begin
-							en_sq   <= 1'b1;
-							state	<= S_SQ;
+						if( ctr_status == 1'b0 && ctr_done == 1'b0 ) begin
+							en_ctr  <= 1'b1;
+							state	<= S_CTR;
 						end
 					end
 				end
 
-				S_SQ:
+				S_CTR:
 				begin
-					if( sq_status == 1'b1 ) begin
-						en_sq	<= 1'b0;
-						sq_done <= 1'b1;
-						state	<= S_IDLE;
+					if( ctr_status == 1'b1 ) begin
+						en_ctr	 <= 1'b0;
+						ctr_done <= 1'b1;
+						state	 <= S_IDLE;
 					end
 				end
 
@@ -229,4 +215,18 @@ module TOP(
 		end
 	end
 
+
+// 添加逻辑分析仪
+     ILA ila(
+            .clk(clk_sys),
+            .probe0(sclk),
+            .probe1(mosi),
+            .probe2(A0),
+            .probe3(A1),
+            .probe4(RST_SIG_CTR),
+            .probe5(RPHI1_CTR),
+            .probe6(RPHI2_CTR),
+            .probe7(RPHI3_CTR),
+            .probe8(rst_w)
+        );
 endmodule
