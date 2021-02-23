@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Feb 14 12:54:01 2021
+# Process ID: 4109
+# Current directory: /home/xyh/NFS_Alinx/VivadoProjects/CCD231
+# Command line: vivado CCD231.xpr
+# Log file: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/vivado.log
+# Journal file: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project CCD231.xpr
+update_compile_order -fileset sources_1
+launch_sdk -workspace /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk -hwspec /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+file mkdir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk
+file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.sysdef /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+
+launch_sdk -workspace /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk -hwspec /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.sysdef /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+
+save_project_as CCD231-20210215 /home/xyh/NFS_Alinx/VivadoProjects/CCD231-20210215 -force
+open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231-20210215/CCD231-20210215.srcs/sources_1/bd/CCD231/CCD231.bd}

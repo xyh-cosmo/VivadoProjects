@@ -1,0 +1,6 @@
+vhdl xil_defaultlib  \
+"../../../bd/CCD231/ip/CCD231_axi_gpio_0_1/sim/CCD231_axi_gpio_0_1.vhd" \
+"../../../bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/sim/CCD231_rst_ps7_0_148M_1.vhd" \
+"../../../bd/CCD231/ip/CCD231_axi_gpio_0_0/sim/CCD231_axi_gpio_0_0.vhd" \
+
+nosort

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon Dec 28 14:26:59 2020
+# Process ID: 91423
+# Current directory: /home/xyh/NFS_Alinx/adc_test_4ch/adc_test_4ch.sim/sim_1/behav/xsim
+# Command line: wbtcv -mode batch -source /home/xyh/NFS_Alinx/adc_test_4ch/adc_test_4ch.sim/sim_1/behav/xsim/xsim.dir/top_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/xyh/NFS_Alinx/adc_test_4ch/adc_test_4ch.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: /home/xyh/NFS_Alinx/adc_test_4ch/adc_test_4ch.sim/sim_1/behav/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/xyh/NFS_Alinx/adc_test_4ch/adc_test_4ch.sim/sim_1/behav/xsim/xsim.dir/top_behav/webtalk/xsim_webtalk.tcl -notrace

@@ -1,15 +1,19 @@
+//	Created@2021-01-26
+//	Author: Youhua Xu
+//
+
+
 `timescale 1ns / 1ps
 
 // SPI Master (不含MISO)
 // NOTE:数据时钟频率是SCLK的一半，计数器一定要数清楚！
 // TODO：进行规范化，改为每次发送固定长度的bit数（8位）
+// Note added @2021-01-26: 作为“基模块”，还是设计成可以发送任意长度bits比较好，
+// 这样一来在更高一层的模块中可以更加灵活地进行实例化。
 
-module SPI_BASE // 模块名称需要修改！！！
+module SPI_BASE
 	#(
 		parameter DATAWIDTH = 32,			// SPI数据宽度
-		parameter CNT_WIDTH	= 8,			// 计数器宽度
-        parameter CPOL      = 0,			// 时钟极性
-        parameter CPHA      = 1,			// 时钟相位
         parameter CLKDIV    = 16			// 时钟分频倍率
 	)
 	(
@@ -17,17 +21,15 @@ module SPI_BASE // 模块名称需要修改！！！
 		input                       clk,
 		input                       rst,	// active high
 		input wire[DATAWIDTH-1:0]   din,	// data to be send to slave-SPI devices
-		input wire[7:0]				n_bits,	// bit number to the data to be sent
 		input 						en,
+
+		input						CPOL,
+		input						CPHA,
 
     //  outputs:
 		output                      sclk,
 		output                      dout,	// MOSI
-		output                      cs, 	// chip-selection
-		output                      A0,
-		output                      A1,
-
-		output reg					finished	// 1 means finished transmission
+		output						finished	// 1 means finished transmission
 	);
 
 //	内部寄存器，可以改变状态
@@ -39,13 +41,12 @@ module SPI_BASE // 模块名称需要修改！！！
 	reg			cs_r,A0_r,A1_r;
 	reg[7:0]	delay_cnt;
 	reg			sclk_rdy;
+	reg			finished_r;
 
 //	将输出引脚信号连接到对应的内部寄存器
 	assign dout     = dout_r;
 	assign sclk     = sclk_r;
-	assign cs       = cs_r;
-	assign A0       = A0_r;
-	assign A1       = A1_r;
+	assign finished = finished_r;
 
 	localparam	DAT_CNT_MAX = 2*CLKDIV-1;
 
@@ -61,10 +62,7 @@ module SPI_BASE // 模块名称需要修改！！！
             	dat_cnt <= CLKDIV;
 
         	d_cnt        <= DATAWIDTH;
-			cs_r         <= 1'b0;
-			A0_r         <= 1'b1;
-			A1_r         <= 1'b1;
-			finished     <= 1'b0;
+			finished_r   <= 1'b0;
 		end
 		else begin
 			if(en == 1) begin
@@ -73,11 +71,9 @@ module SPI_BASE // 模块名称需要修改！！！
 					dat_cnt <= 0;
 					dout_r  <= din[d_cnt-1];
 					d_cnt   <= d_cnt-1;
+
 					if( d_cnt == 0 ) begin
-						cs_r		<= 1'b1;
-						A0_r        <= 1'b0;
-						A1_r        <= 1'b0;
-						finished	<= 1'b1;
+						finished_r	<= 1'b1;
 					end
 				end
 				else begin
@@ -136,7 +132,7 @@ module SPI_BASE // 模块名称需要修改！！！
 		end
 		else begin
 			if( en==1 ) begin
-				if (sclk_rdy && cs_r ==0) begin
+				if (sclk_rdy) begin
 					if( clk_cnt == CLKDIV-1 ) begin
 						sclk_r <= ~sclk_r;
 						clk_cnt <= 8'b0;

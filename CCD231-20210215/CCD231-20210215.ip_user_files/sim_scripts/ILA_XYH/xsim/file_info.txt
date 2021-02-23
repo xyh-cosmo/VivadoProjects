@@ -1,0 +1,2 @@
+ILA_XYH.v,verilog,xil_defaultlib,../../../ip/ILA_XYH/sim/ILA_XYH.v,incdir="../../../ip/ILA_XYH/hdl/verilog"
+glbl.v,Verilog,xil_defaultlib,glbl.v

@@ -9,78 +9,178 @@
 //	   
 
 module TOP(
-	input clk_sys,
-	// input rst_sys,
+//  与PS交互部分
+    DDR_addr,
+    DDR_ba,
+    DDR_cas_n,
+    DDR_ck_n,
+    DDR_ck_p,
+    DDR_cke,
+    DDR_cs_n,
+    DDR_dm,
+    DDR_dq,
+    DDR_dqs_n,
+    DDR_dqs_p,
+    DDR_odt,
+    DDR_ras_n,
+    DDR_reset_n,
+    DDR_we_n,
+
+    FIXED_IO_ddr_vrn,
+    FIXED_IO_ddr_vrp,
+    FIXED_IO_mio,
+    FIXED_IO_ps_clk,
+    FIXED_IO_ps_porb,
+    FIXED_IO_ps_srstb,
+    
+//  =================
+//	clk_sys,
+	clk_50M,
+	// rst_sys,
 
 //	SPI outputs
-	output sclk,
-	output mosi,
-	output A0,
-	output A1,
-//	output cs,
+	sclk,
+	mosi,
+	A0,
+	A1,
 
-	//  square waves, which can also be viewed as a clock signal
-//	output sq_wave,
-
-    output RST_SIG_CTR,
-    output RPHI1_CTR,
-    output RPHI2_CTR,
-    output RPHI3_CTR,
-	
-	input PL_KEY
+    RST_SIG_CTR,
+    RPHI1_CTR,
+    RPHI2_CTR,
+    RPHI3_CTR,
+    
+    AD9106_TRIG    
 	);
 
-//  生成50MHz的时钟（也包括其他频率的时钟） 
-    (*mark_debug="true"*) wire clk_150M;
-    (*mark_debug="true"*) wire clk_50M;
-    (*mark_debug="true"*) wire clk_25M;
-    (*mark_debug="true"*) wire clk_10M;
-    (*mark_debug="true"*) wire clk_5M;
-    wire clk_locked;
+// ==========================================================================
+//    input clk_sys;
+    input clk_50M;
+//	SPI outputs
+	output sclk;
+	output mosi;
+	output A0;
+	output A1;
 
-    my_clk_generator  my_clock (
-        // Clock out ports  
-        .clk_150M(clk_150M),
-        .clk_50M(clk_50M),
-        .clk_25M(clk_25M),
-        .clk_10M(clk_10M),
-        .clk_5M(clk_5M),
-        // Status and control signals               
-        .locked(clk_locked),
-        // Clock in ports
-        .clk_in1(clk_sys)
+    output RST_SIG_CTR;
+    output RPHI1_CTR;
+    output RPHI2_CTR;
+    output RPHI3_CTR;
+    
+    output AD9106_TRIG;
+
+// ==========================================================================
+// ==========================================================================
+//  与PS交互部分
+  inout [14:0]DDR_addr;
+  inout [2:0]DDR_ba;
+  inout DDR_cas_n;
+  inout DDR_ck_n;
+  inout DDR_ck_p;
+  inout DDR_cke;
+  inout DDR_cs_n;
+  inout [3:0]DDR_dm;
+  inout [31:0]DDR_dq;
+  inout [3:0]DDR_dqs_n;
+  inout [3:0]DDR_dqs_p;
+  inout DDR_odt;
+  inout DDR_ras_n;
+  inout DDR_reset_n;
+  inout DDR_we_n;
+  inout FIXED_IO_ddr_vrn;
+  inout FIXED_IO_ddr_vrp;
+  inout [53:0]FIXED_IO_mio;
+  inout FIXED_IO_ps_clk;
+  inout FIXED_IO_ps_porb;
+  inout FIXED_IO_ps_srstb;
+  
+ 
+  wire [14:0]DDR_addr;
+  wire [2:0]DDR_ba;
+  wire DDR_cas_n;
+  wire DDR_ck_n;
+  wire DDR_ck_p;
+  wire DDR_cke;
+  wire DDR_cs_n;
+  wire [3:0]DDR_dm;
+  wire [31:0]DDR_dq;
+  wire [3:0]DDR_dqs_n;
+  wire [3:0]DDR_dqs_p;
+  wire DDR_odt;
+  wire DDR_ras_n;
+  wire DDR_reset_n;
+  wire DDR_we_n;
+  wire FIXED_IO_ddr_vrn;
+  wire FIXED_IO_ddr_vrp;
+  wire [53:0]FIXED_IO_mio;
+  wire FIXED_IO_ps_clk;
+  wire FIXED_IO_ps_porb;
+  wire FIXED_IO_ps_srstb;
+  wire [31:0] gpio2_tri_o;
+  wire [4:0] gpio_tri_o;
+
+  wire fclk_clk0;
+  
+// PS与PL交互的信号
+  wire gpio_A0, gpio_A1, gpio_CPOL, gpio_CPHA, gpio_RST;
+  wire [31:0] gpio2_spi_data;
+  wire pl_status;
+  
+  CCD231_wrapper CCD231
+       (.DDR_addr(DDR_addr),
+        .DDR_ba(DDR_ba),
+        .DDR_cas_n(DDR_cas_n),
+        .DDR_ck_n(DDR_ck_n),
+        .DDR_ck_p(DDR_ck_p),
+        .DDR_cke(DDR_cke),
+        .DDR_cs_n(DDR_cs_n),
+        .DDR_dm(DDR_dm),
+        .DDR_dq(DDR_dq),
+        .DDR_dqs_n(DDR_dqs_n),
+        .DDR_dqs_p(DDR_dqs_p),
+        .DDR_odt(DDR_odt),
+        .DDR_ras_n(DDR_ras_n),
+        .DDR_reset_n(DDR_reset_n),
+        .DDR_we_n(DDR_we_n),
+        .FCLK_CLK0(fclk_clk0),
+        .FIXED_IO_ddr_vrn(FIXED_IO_ddr_vrn),
+        .FIXED_IO_ddr_vrp(FIXED_IO_ddr_vrp),
+        .FIXED_IO_mio(FIXED_IO_mio),
+        .FIXED_IO_ps_clk(FIXED_IO_ps_clk),
+        .FIXED_IO_ps_porb(FIXED_IO_ps_porb),
+        .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
+        .gpio_in_tri_i(pl_status),
+        .gpio2_tri_o(gpio2_spi_data),
+        .gpio_tri_o({AD9106_TRIG, gpio_A0, gpio_A1, gpio_CPOL, gpio_CPHA, gpio_RST})
         );
 
+// ==========================================================================
 
-	//	states of the STATE MACHINE
-	reg[3:0] state;
-	parameter S_IDLE	= 4'd0;
-	parameter S_SPI	= 4'd1;
-	parameter S_CTR	= 4'd2;
+//  生成50MHz的时钟（也包括其他频率的时钟） 
+//    wire clk_150M;
+//    wire clk_50M;
+//    wire clk_25M;
+//    wire clk_10M;
+//    wire clk_5M;
+//    wire clk_locked;
 
-	reg en_spi = 1'b0;
-	reg en_ctr = 1'b0;
-	reg spi_done = 1'b0;
-	reg ctr_done  = 1'b0;
+//    my_clk_generator  my_clock (
+//        // Clock out ports  
+//        .clk_150M(clk_150M),
+//        .clk_50M(clk_50M),
+//        .clk_25M(clk_25M),
+//        .clk_10M(clk_10M),
+//        .clk_5M(clk_5M),
+//        // Status and control signals               
+//        .locked(clk_locked),
+//        // Clock in ports
+//        .clk_in1(clk_sys)
+//        );
 
-	wire spi_status;
-	wire ctr_status;
-
-	SPI_CONTROL spi_control(
-		.clk(clk_50M),
-		.rst(rst_w),
-		.en(en_spi),
-		.sclk(sclk),
-		.mosi(mosi),
-		.cs(cs),
-		.A0(A0),
-		.A1(A1),
-		.status(spi_status)
-		);
 
 //  分频时钟
 //    parameter cycles_max = 20;
     parameter cycles_max = 0;  // set to zero so that the divided clocks runs forever!
+//  这里的分频时钟信号用于测试
 	CLOCK_DIV
 		#(
 			.DIV_FACTOR(50),
@@ -138,95 +238,35 @@ module TOP(
 		);
 // =============================
 	
-//	通过PL按键来触发一个复位reset
-    reg state_pl_key        = 1'b0;
-    reg state_pl_key_bak    = 1'b0;      
-    always@( negedge PL_KEY ) begin
-        state_pl_key <= ~state_pl_key;
-    end
-    
-    (*mark_debug="true"*)reg rst_w;
-    reg [31:0] rst_cn = 32'd0;
-    localparam rst_start = 32'd1000000;
+	SPI4ADC spi4adc(
+		.clk(clk_50M),
+//		.clk(clk_sys),
+		.rst(gpio_RST),
+		.spi_data(gpio2_spi_data),
+		.spi_cpol(gpio_CPOL),
+		.spi_cpha(gpio_CPHA),
+		.ps_A0(gpio_A0),
+		.ps_A1(gpio_A1),
+		.A0(A0),
+		.A1(A1),
+		.sclk(sclk),
+		.mosi(mosi),
+		.status(pl_status)
+		);
 
-
-    always@(posedge clk_sys) begin
-        if( state_pl_key != state_pl_key_bak ) begin
-            if( rst_cn < rst_start ) begin
-                rst_w <= 1'b0;
-                rst_cn <= rst_cn + 32'd1;
-            end
-            else if( rst_cn < rst_start+10 ) begin
-                rst_w <= 1'b1;
-                rst_cn <= rst_cn + 32'd1;
-            end
-            else if( rst_cn >= rst_start + 10 ) begin
-                rst_w <= 1'b0;
-                rst_cn <= 32'd0;
-                state_pl_key_bak <= ~state_pl_key_bak;
-            end
-        end
-    end
-
-	always@( posedge clk_sys or posedge rst_w ) begin
-		if( rst_w ) begin
-			state	<= S_IDLE;
-			en_spi	<= 1'b0;
-			en_ctr  <= 1'b0;
-			spi_done <= 1'b0;
-			ctr_done <= 1'b0;
-		end
-		else begin
-			case( state )
-				S_IDLE:
-				begin
-					if( spi_status == 1'b0 && spi_done == 1'b0 ) begin
-						en_spi	<= 1'b1;
-						en_ctr  <= 1'b0;
-						state	<= S_SPI;
-					end
-				end
-
-				S_SPI:
-				begin
-					if( spi_status == 1'b1 ) begin
-						en_spi	<= 1'b0;
-						spi_done <= 1'b1;
-
-						if( ctr_status == 1'b0 && ctr_done == 1'b0 ) begin
-							en_ctr  <= 1'b1;
-							state	<= S_CTR;
-						end
-					end
-				end
-
-				S_CTR:
-				begin
-					if( ctr_status == 1'b1 ) begin
-						en_ctr	 <= 1'b0;
-						ctr_done <= 1'b1;
-						state	 <= S_IDLE;
-					end
-				end
-
-				default:
-					state	<= S_IDLE;
-			endcase
-		end
-	end
-
-
-// 添加逻辑分析仪
-     ILA ila(
-            .clk(clk_sys),
-            .probe0(sclk),
-            .probe1(mosi),
-            .probe2(A0),
-            .probe3(A1),
-            .probe4(RST_SIG_CTR),
-            .probe5(RPHI1_CTR),
-            .probe6(RPHI2_CTR),
-            .probe7(RPHI3_CTR),
-            .probe8(rst_w)
+    ILA_XYH (
+        .clk(clk_50M),
+        .probe0(gpio_RST),
+        .probe1(gpio2_spi_data),
+        .probe2(gpio_CPOL),
+        .probe3(gpio_CPHA),
+        .probe4(gpio_A0),
+        .probe5(gpio_A1),
+        .probe6(A0),
+        .probe7(A1),
+        .probe8(sclk),
+        .probe9(mosi),
+        .probe10(pl_status)
         );
+
 endmodule

@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/xyh/NFS_Alinx/VivadoProjects/CCD231-debug-2021-01-26/CCD231-debug-2021-01-26.ip_user_files/bd/CCD231/ip/CCD231_axi_gpio_0_1/sim/CCD231_axi_gpio_0_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity CCD231_axi_gpio_0_1
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/xyh/NFS_Alinx/VivadoProjects/CCD231-debug-2021-01-26/CCD231-debug-2021-01-26.ip_user_files/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/sim/CCD231_rst_ps7_0_148M_1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity CCD231_rst_ps7_0_148M_1
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/xyh/NFS_Alinx/VivadoProjects/CCD231-debug-2021-01-26/CCD231-debug-2021-01-26.ip_user_files/bd/CCD231/ip/CCD231_axi_gpio_0_0/sim/CCD231_axi_gpio_0_0.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity CCD231_axi_gpio_0_0

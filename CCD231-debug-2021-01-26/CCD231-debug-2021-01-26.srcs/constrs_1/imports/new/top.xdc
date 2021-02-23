@@ -1,6 +1,6 @@
 # system clock J14 直接链接到50M的晶振
-set_property PACKAGE_PIN J14 [get_ports clk_sys]
-set_property IOSTANDARD LVCMOS18 [get_ports clk_sys]
+set_property PACKAGE_PIN J14 [get_ports clk_50M]
+set_property IOSTANDARD LVCMOS18 [get_ports clk_50M]
 
 # PL_KEY4
 set_property PACKAGE_PIN J8 [get_ports PL_KEY]
@@ -31,6 +31,10 @@ set_property PACKAGE_PIN AB25 [get_ports RPHI2_CTR]
 set_property PACKAGE_PIN AA25 [get_ports RPHI3_CTR]
 #########################################################
 
+# AD9106 trigger
+set_property PACKAGE_PIN AC21 [get_ports AD9106_TRIG]
+
+
 set_property IOSTANDARD LVCMOS18 [get_ports mosi]
 set_property IOSTANDARD LVCMOS18 [get_ports sclk]
 #set_property IOSTANDARD LVCMOS18 [get_ports cs]
@@ -40,6 +44,6 @@ set_property IOSTANDARD LVCMOS18 [get_ports RST_SIG_CTR]
 set_property IOSTANDARD LVCMOS18 [get_ports RPHI1_CTR]
 set_property IOSTANDARD LVCMOS18 [get_ports RPHI2_CTR]
 set_property IOSTANDARD LVCMOS18 [get_ports RPHI3_CTR]
+set_property IOSTANDARD LVCMOS18 [get_ports AD9106_TRIG]
 
 #create_clock -period 5.000 -name sys_clk -waveform {0.000 10.000} [get_ports sys_clk]
-

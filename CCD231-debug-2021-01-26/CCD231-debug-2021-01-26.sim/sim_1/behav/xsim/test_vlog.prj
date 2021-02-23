@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../CCD231-debug-2021-01-26.srcs/sources_1/bd/CCD231/ipshared/ec67/hdl" --include "../../../../CCD231-debug-2021-01-26.srcs/sources_1/bd/CCD231/ipshared/02c8/hdl/verilog" --include "../../../../CCD231-debug-2021-01-26.srcs/sources_1/bd/CCD231/ipshared/1313/hdl" --include "../../../../CCD231-debug-2021-01-26.srcs/sources_1/ip/my_clk_generator" --include "/home/xyh/Xilinx/Vivado/2017.4/data/xilinx_vip/include" \
+"../../../../CCD231-debug-2021-01-26.srcs/sources_1/imports/AD_Config_v2/spi4adc.v" \
+"../../../../CCD231-debug-2021-01-26.srcs/sources_1/imports/SPI_AD5628/spi_base.v" \
+"../../../../CCD231-debug-2021-01-26.srcs/sim_1/imports/AD_Config_v2/tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

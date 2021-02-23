@@ -10,29 +10,21 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="8192001fs"></ZoomEndTime>
-      <Cursor1Time time="0fs"></Cursor1Time>
+      <ZoomEndTime time="16384001fs"></ZoomEndTime>
+      <Cursor1Time time="2078000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="267"></NameColumnWidth>
+      <NameColumnWidth column_width="239"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="9" />
+   <WVObjectSize size="11" />
    <wave_markers>
    </wave_markers>
-   <wvobject type="logic" fp_name="sclk_OBUF">
+   <wvobject type="array" fp_name="gpio2_spi_data">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">sclk_OBUF</obj_property>
-      <obj_property name="ObjectShortName">sclk_OBUF</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
-   <wvobject type="logic" fp_name="mosi_OBUF">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">mosi_OBUF</obj_property>
-      <obj_property name="ObjectShortName">mosi_OBUF</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">gpio2_spi_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">gpio2_spi_data[31:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -40,7 +32,6 @@
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">A0_OBUF</obj_property>
       <obj_property name="ObjectShortName">A0_OBUF</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -48,46 +39,62 @@
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">A1_OBUF</obj_property>
       <obj_property name="ObjectShortName">A1_OBUF</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="RST_SIG_CTR_OBUF">
+   <wvobject type="logic" fp_name="gpio_A0">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">RST_SIG_CTR_OBUF</obj_property>
-      <obj_property name="ObjectShortName">RST_SIG_CTR_OBUF</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">gpio_A0</obj_property>
+      <obj_property name="ObjectShortName">gpio_A0</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="RPHI1_CTR_OBUF">
+   <wvobject type="logic" fp_name="gpio_A1">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">RPHI1_CTR_OBUF</obj_property>
-      <obj_property name="ObjectShortName">RPHI1_CTR_OBUF</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">gpio_A1</obj_property>
+      <obj_property name="ObjectShortName">gpio_A1</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="RPHI2_CTR_OBUF">
+   <wvobject type="logic" fp_name="gpio_CPHA">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">RPHI2_CTR_OBUF</obj_property>
-      <obj_property name="ObjectShortName">RPHI2_CTR_OBUF</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">gpio_CPHA</obj_property>
+      <obj_property name="ObjectShortName">gpio_CPHA</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="RPHI3_CTR_OBUF">
+   <wvobject type="logic" fp_name="gpio_CPOL">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">RPHI3_CTR_OBUF</obj_property>
-      <obj_property name="ObjectShortName">RPHI3_CTR_OBUF</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="ElementShortName">gpio_CPOL</obj_property>
+      <obj_property name="ObjectShortName">gpio_CPOL</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="PL_KEY_IBUF_BUFG">
+   <wvobject type="logic" fp_name="gpio_RST">
       <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">PL_KEY_IBUF_BUFG</obj_property>
-      <obj_property name="ObjectShortName">PL_KEY_IBUF_BUFG</obj_property>
+      <obj_property name="ElementShortName">gpio_RST</obj_property>
+      <obj_property name="ObjectShortName">gpio_RST</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="sclk_OBUF">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">sclk_OBUF</obj_property>
+      <obj_property name="ObjectShortName">sclk_OBUF</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="mosi_OBUF">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">mosi_OBUF</obj_property>
+      <obj_property name="ObjectShortName">mosi_OBUF</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="pl_status">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">pl_status</obj_property>
+      <obj_property name="ObjectShortName">pl_status</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>

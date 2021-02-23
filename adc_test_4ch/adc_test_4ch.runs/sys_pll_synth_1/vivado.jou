@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Tue Jul 17 09:09:19 2018
+# Process ID: 8412
+# Current directory: F:/ax7350/fmc/adc_test_4ch/adc_test.runs/sys_pll_synth_1
+# Command line: vivado.exe -log sys_pll.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source sys_pll.tcl
+# Log file: F:/ax7350/fmc/adc_test_4ch/adc_test.runs/sys_pll_synth_1/sys_pll.vds
+# Journal file: F:/ax7350/fmc/adc_test_4ch/adc_test.runs/sys_pll_synth_1\vivado.jou
+#-----------------------------------------------------------
+source sys_pll.tcl -notrace
