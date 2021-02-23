@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Fri Feb 19 13:06:53 2021
+| Date         : Tue Feb 23 21:01:07 2021
 | Host         : apple running 64-bit Ubuntu 20.04.2 LTS
 | Command      : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
 | Design       : TOP
@@ -30,11 +30,11 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  133 |     0 |    171900 |  0.08 |
-|   LUT as Logic          |  133 |     0 |    171900 |  0.08 |
+| Slice LUTs*             |  502 |     0 |    171900 |  0.29 |
+|   LUT as Logic          |  502 |     0 |    171900 |  0.29 |
 |   LUT as Memory         |    0 |     0 |     70400 |  0.00 |
-| Slice Registers         |  117 |     0 |    343800 |  0.03 |
-|   Register as Flip Flop |  111 |     0 |    343800 |  0.03 |
+| Slice Registers         |  620 |     0 |    343800 |  0.18 |
+|   Register as Flip Flop |  614 |     0 |    343800 |  0.18 |
 |   Register as Latch     |    6 |     0 |    343800 | <0.01 |
 | F7 Muxes                |    1 |     0 |    109300 | <0.01 |
 | F8 Muxes                |    0 |     0 |     54650 |  0.00 |
@@ -54,10 +54,10 @@ Table of Contents
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 9     |          Yes |           - |          Set |
-| 53    |          Yes |           - |        Reset |
+| 10    |          Yes |           - |          Set |
+| 552   |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 55    |          Yes |       Reset |            - |
+| 58    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   16 |     0 |       250 |  6.40 |
+| Bonded IOB                  |   32 |     0 |       250 | 12.80 |
 | Bonded IPADs                |    0 |     0 |        26 |  0.00 |
 | Bonded OPADs                |    0 |     0 |        16 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
@@ -99,7 +99,7 @@ Table of Contents
 | OUT_FIFO                    |    0 |     0 |        32 |  0.00 |
 | IN_FIFO                     |    0 |     0 |        32 |  0.00 |
 | IDELAYCTRL                  |    0 |     0 |         8 |  0.00 |
-| IBUFDS                      |    0 |     0 |       240 |  0.00 |
+| IBUFDS                      |    8 |     0 |       240 |  3.33 |
 | GTXE2_COMMON                |    0 |     0 |         2 |  0.00 |
 | GTXE2_CHANNEL               |    0 |     0 |         8 |  0.00 |
 | PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |        32 |  0.00 |
@@ -152,17 +152,19 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |   56 |                 LUT |
-| FDRE     |   55 |        Flop & Latch |
-| FDCE     |   47 |        Flop & Latch |
-| LUT5     |   30 |                 LUT |
-| LUT2     |   27 |                 LUT |
-| LUT4     |   26 |                 LUT |
-| LUT3     |   21 |                 LUT |
+| FDCE     |  546 |        Flop & Latch |
+| LUT3     |  172 |                 LUT |
+| LUT5     |  127 |                 LUT |
+| LUT6     |  105 |                 LUT |
+| LUT2     |  101 |                 LUT |
+| FDRE     |   58 |        Flop & Latch |
+| LUT1     |   54 |                 LUT |
+| LUT4     |   52 |                 LUT |
+| CARRY4   |   48 |          CarryLogic |
 | OBUF     |   11 |                  IO |
-| FDPE     |    9 |        Flop & Latch |
+| FDPE     |   10 |        Flop & Latch |
+| IBUFDS   |    8 |                  IO |
 | LDCE     |    6 |        Flop & Latch |
-| LUT1     |    5 |                 LUT |
 | OBUFT    |    4 |                  IO |
 | MUXF7    |    1 |               MuxFx |
 | IBUF     |    1 |                  IO |
@@ -176,12 +178,14 @@ Table of Contents
 +-------------------------------+------+
 |            Ref Name           | Used |
 +-------------------------------+------+
-| ILA_XYH                       |    1 |
+| my_clk_generator              |    1 |
+| ILA_LTC2271                   |    1 |
 | CCD231_xbar_0                 |    1 |
 | CCD231_rst_ps7_0_148M_1       |    1 |
 | CCD231_processing_system7_0_1 |    1 |
 | CCD231_axi_gpio_0_1           |    1 |
 | CCD231_axi_gpio_0_0           |    1 |
+| CCD231_auto_pc_1              |    1 |
 | CCD231_auto_pc_0              |    1 |
 +-------------------------------+------+
 

@@ -55,13 +55,14 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// _clk_20M____20.000______0.000______50.0______161.500_____92.596
-// _clk_50M____50.000______0.000______50.0______134.101_____92.596
+// _clk_10M____10.000______0.000______50.0______296.755____161.614
+// _clk_20M____20.000______0.000______50.0______258.893____161.614
+// clk_150M___150.000______0.000______50.0______159.601____161.614
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
 //----------------------------------------------------------------------------
-// __primary________148.148163____________0.010
+// __primary______________50____________0.010
 
 // The following must be inserted into your Verilog file for this
 // core to be instantiated. Change the instance name and port connections
@@ -72,10 +73,11 @@
   my_clk_generator instance_name
    (
     // Clock out ports
+    .clk_10M(clk_10M),     // output clk_10M
     .clk_20M(clk_20M),     // output clk_20M
-    .clk_50M(clk_50M),     // output clk_50M
+    .clk_150M(clk_150M),     // output clk_150M
     // Status and control signals
     .locked(locked),       // output locked
    // Clock in ports
-    .clk_in1(clk_in1));      // input clk_in1
+    .clk_in(clk_in));      // input clk_in
 // INST_TAG_END ------ End INSTANTIATION Template ---------

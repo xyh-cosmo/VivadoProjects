@@ -118,6 +118,7 @@ vlog -work axi_protocol_converter_v2_1_15  -v2k5 "+incdir+../../../../CCD231.src
 "../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 
 vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/ec67/hdl" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/02c8/hdl/verilog" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/1313/hdl" "+incdir+/home/xyh/Xilinx/Vivado/2017.4/data/xilinx_vip/include" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/ec67/hdl" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/02c8/hdl/verilog" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/1313/hdl" "+incdir+/home/xyh/Xilinx/Vivado/2017.4/data/xilinx_vip/include" \
+"../../../../CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/sim/CCD231_auto_pc_1.v" \
 "../../../../CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_0/sim/CCD231_auto_pc_0.v" \
 
 vlog -work xil_defaultlib \

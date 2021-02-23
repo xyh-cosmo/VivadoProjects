@@ -5,241 +5,165 @@
       <probeOptions Id="DebugProbeParams">
         <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
         <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="CORE_UUID" value="401d45abc04c5bcea77c4832bbcecd02"/>
+        <Option Id="CORE_UUID" value="1f100b0a9300572c96389a5c93f7ec90"/>
         <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
-        <Option Id="HW_ILA" value="nolabel_line334"/>
+        <Option Id="HW_ILA" value="ltc2271"/>
         <Option Id="PROBE_PORT" value="0"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
         <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
       </probeOptions>
       <nets>
-        <net name="gpio_RST"/>
+        <net name="EF_FR"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="CORE_UUID" value="1f100b0a9300572c96389a5c93f7ec90"/>
+        <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
+        <Option Id="HW_ILA" value="ltc2271"/>
+        <Option Id="PROBE_PORT" value="1"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
+      </probeOptions>
+      <nets>
+        <net name="EF_DCO"/>
+      </nets>
+    </probe>
+    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+      <probeOptions Id="DebugProbeParams">
+        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
+        <Option Id="CORE_LOCATION" value="1:0"/>
+        <Option Id="CORE_UUID" value="1f100b0a9300572c96389a5c93f7ec90"/>
+        <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
+        <Option Id="HW_ILA" value="ltc2271"/>
+        <Option Id="PROBE_PORT" value="2"/>
+        <Option Id="PROBE_PORT_BITS" value="0"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
+      </probeOptions>
+      <nets>
+        <net name="PL_KEY"/>
       </nets>
     </probe>
     <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
         <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="CORE_UUID" value="401d45abc04c5bcea77c4832bbcecd02"/>
+        <Option Id="CORE_UUID" value="1f100b0a9300572c96389a5c93f7ec90"/>
         <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
-        <Option Id="HW_ILA" value="nolabel_line334"/>
-        <Option Id="PROBE_PORT" value="1"/>
-        <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="32"/>
-      </probeOptions>
-      <nets>
-        <net name="gpio2_spi_data[31]"/>
-        <net name="gpio2_spi_data[30]"/>
-        <net name="gpio2_spi_data[29]"/>
-        <net name="gpio2_spi_data[28]"/>
-        <net name="gpio2_spi_data[27]"/>
-        <net name="gpio2_spi_data[26]"/>
-        <net name="gpio2_spi_data[25]"/>
-        <net name="gpio2_spi_data[24]"/>
-        <net name="gpio2_spi_data[23]"/>
-        <net name="gpio2_spi_data[22]"/>
-        <net name="gpio2_spi_data[21]"/>
-        <net name="gpio2_spi_data[20]"/>
-        <net name="gpio2_spi_data[19]"/>
-        <net name="gpio2_spi_data[18]"/>
-        <net name="gpio2_spi_data[17]"/>
-        <net name="gpio2_spi_data[16]"/>
-        <net name="gpio2_spi_data[15]"/>
-        <net name="gpio2_spi_data[14]"/>
-        <net name="gpio2_spi_data[13]"/>
-        <net name="gpio2_spi_data[12]"/>
-        <net name="gpio2_spi_data[11]"/>
-        <net name="gpio2_spi_data[10]"/>
-        <net name="gpio2_spi_data[9]"/>
-        <net name="gpio2_spi_data[8]"/>
-        <net name="gpio2_spi_data[7]"/>
-        <net name="gpio2_spi_data[6]"/>
-        <net name="gpio2_spi_data[5]"/>
-        <net name="gpio2_spi_data[4]"/>
-        <net name="gpio2_spi_data[3]"/>
-        <net name="gpio2_spi_data[2]"/>
-        <net name="gpio2_spi_data[1]"/>
-        <net name="gpio2_spi_data[0]"/>
-      </nets>
-    </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
-      <probeOptions Id="DebugProbeParams">
-        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
-        <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="CORE_UUID" value="401d45abc04c5bcea77c4832bbcecd02"/>
-        <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
-        <Option Id="HW_ILA" value="nolabel_line334"/>
-        <Option Id="PROBE_PORT" value="2"/>
-        <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
-      </probeOptions>
-      <nets>
-        <net name="gpio_CPOL"/>
-      </nets>
-    </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
-      <probeOptions Id="DebugProbeParams">
-        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
-        <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="CORE_UUID" value="401d45abc04c5bcea77c4832bbcecd02"/>
-        <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
-        <Option Id="HW_ILA" value="nolabel_line334"/>
+        <Option Id="HW_ILA" value="ltc2271"/>
         <Option Id="PROBE_PORT" value="3"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="16"/>
       </probeOptions>
       <nets>
-        <net name="gpio_CPHA"/>
+        <net name="data_E[15]"/>
+        <net name="data_E[14]"/>
+        <net name="data_E[13]"/>
+        <net name="data_E[12]"/>
+        <net name="data_E[11]"/>
+        <net name="data_E[10]"/>
+        <net name="data_E[9]"/>
+        <net name="data_E[8]"/>
+        <net name="data_E[7]"/>
+        <net name="data_E[6]"/>
+        <net name="data_E[5]"/>
+        <net name="data_E[4]"/>
+        <net name="data_E[3]"/>
+        <net name="data_E[2]"/>
+        <net name="data_E[1]"/>
+        <net name="data_E[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
         <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="CORE_UUID" value="401d45abc04c5bcea77c4832bbcecd02"/>
+        <Option Id="CORE_UUID" value="1f100b0a9300572c96389a5c93f7ec90"/>
         <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
-        <Option Id="HW_ILA" value="nolabel_line334"/>
+        <Option Id="HW_ILA" value="ltc2271"/>
         <Option Id="PROBE_PORT" value="4"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="16"/>
       </probeOptions>
       <nets>
-        <net name="gpio_A0"/>
+        <net name="data_F[15]"/>
+        <net name="data_F[14]"/>
+        <net name="data_F[13]"/>
+        <net name="data_F[12]"/>
+        <net name="data_F[11]"/>
+        <net name="data_F[10]"/>
+        <net name="data_F[9]"/>
+        <net name="data_F[8]"/>
+        <net name="data_F[7]"/>
+        <net name="data_F[6]"/>
+        <net name="data_F[5]"/>
+        <net name="data_F[4]"/>
+        <net name="data_F[3]"/>
+        <net name="data_F[2]"/>
+        <net name="data_F[1]"/>
+        <net name="data_F[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
         <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="CORE_UUID" value="401d45abc04c5bcea77c4832bbcecd02"/>
+        <Option Id="CORE_UUID" value="1f100b0a9300572c96389a5c93f7ec90"/>
         <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
-        <Option Id="HW_ILA" value="nolabel_line334"/>
+        <Option Id="HW_ILA" value="ltc2271"/>
         <Option Id="PROBE_PORT" value="5"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="16"/>
       </probeOptions>
       <nets>
-        <net name="gpio_A1"/>
+        <net name="data_G[15]"/>
+        <net name="data_G[14]"/>
+        <net name="data_G[13]"/>
+        <net name="data_G[12]"/>
+        <net name="data_G[11]"/>
+        <net name="data_G[10]"/>
+        <net name="data_G[9]"/>
+        <net name="data_G[8]"/>
+        <net name="data_G[7]"/>
+        <net name="data_G[6]"/>
+        <net name="data_G[5]"/>
+        <net name="data_G[4]"/>
+        <net name="data_G[3]"/>
+        <net name="data_G[2]"/>
+        <net name="data_G[1]"/>
+        <net name="data_G[0]"/>
       </nets>
     </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
+    <probe type="ila" busType="bus" source="netlist" spec="ILA_V2_RT">
       <probeOptions Id="DebugProbeParams">
         <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
         <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="CORE_UUID" value="401d45abc04c5bcea77c4832bbcecd02"/>
+        <Option Id="CORE_UUID" value="1f100b0a9300572c96389a5c93f7ec90"/>
         <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
-        <Option Id="HW_ILA" value="nolabel_line334"/>
+        <Option Id="HW_ILA" value="ltc2271"/>
         <Option Id="PROBE_PORT" value="6"/>
         <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
+        <Option Id="PROBE_PORT_BIT_COUNT" value="16"/>
       </probeOptions>
       <nets>
-        <net name="A0_OBUF"/>
-      </nets>
-    </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
-      <probeOptions Id="DebugProbeParams">
-        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
-        <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="CORE_UUID" value="401d45abc04c5bcea77c4832bbcecd02"/>
-        <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
-        <Option Id="HW_ILA" value="nolabel_line334"/>
-        <Option Id="PROBE_PORT" value="7"/>
-        <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
-      </probeOptions>
-      <nets>
-        <net name="A1_OBUF"/>
-      </nets>
-    </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
-      <probeOptions Id="DebugProbeParams">
-        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
-        <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="CORE_UUID" value="401d45abc04c5bcea77c4832bbcecd02"/>
-        <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
-        <Option Id="HW_ILA" value="nolabel_line334"/>
-        <Option Id="PROBE_PORT" value="8"/>
-        <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
-      </probeOptions>
-      <nets>
-        <net name="sclk_OBUF"/>
-      </nets>
-    </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
-      <probeOptions Id="DebugProbeParams">
-        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
-        <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="CORE_UUID" value="401d45abc04c5bcea77c4832bbcecd02"/>
-        <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
-        <Option Id="HW_ILA" value="nolabel_line334"/>
-        <Option Id="PROBE_PORT" value="9"/>
-        <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
-      </probeOptions>
-      <nets>
-        <net name="mosi_OBUF"/>
-      </nets>
-    </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
-      <probeOptions Id="DebugProbeParams">
-        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
-        <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="CORE_UUID" value="401d45abc04c5bcea77c4832bbcecd02"/>
-        <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
-        <Option Id="HW_ILA" value="nolabel_line334"/>
-        <Option Id="PROBE_PORT" value="10"/>
-        <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
-      </probeOptions>
-      <nets>
-        <net name="pl_status"/>
-      </nets>
-    </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
-      <probeOptions Id="DebugProbeParams">
-        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
-        <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="CORE_UUID" value="401d45abc04c5bcea77c4832bbcecd02"/>
-        <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
-        <Option Id="HW_ILA" value="nolabel_line334"/>
-        <Option Id="PROBE_PORT" value="11"/>
-        <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
-      </probeOptions>
-      <nets>
-        <net name="TRIG_OBUF"/>
-      </nets>
-    </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
-      <probeOptions Id="DebugProbeParams">
-        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
-        <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="CORE_UUID" value="401d45abc04c5bcea77c4832bbcecd02"/>
-        <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
-        <Option Id="HW_ILA" value="nolabel_line334"/>
-        <Option Id="PROBE_PORT" value="12"/>
-        <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
-      </probeOptions>
-      <nets>
-        <net name="ENC_OBUF"/>
-      </nets>
-    </probe>
-    <probe type="ila" busType="net" source="netlist" spec="ILA_V2_RT">
-      <probeOptions Id="DebugProbeParams">
-        <Option Id="BSCAN_SWITCH_INDEX" value="0"/>
-        <Option Id="CORE_LOCATION" value="1:0"/>
-        <Option Id="CORE_UUID" value="401d45abc04c5bcea77c4832bbcecd02"/>
-        <Option Id="HUB_CLK_INPUT_FREQ_HZ" value=""/>
-        <Option Id="HW_ILA" value="nolabel_line334"/>
-        <Option Id="PROBE_PORT" value="13"/>
-        <Option Id="PROBE_PORT_BITS" value="0"/>
-        <Option Id="PROBE_PORT_BIT_COUNT" value="1"/>
-      </probeOptions>
-      <nets>
-        <net name="CLKP_OBUF"/>
+        <net name="data_H[15]"/>
+        <net name="data_H[14]"/>
+        <net name="data_H[13]"/>
+        <net name="data_H[12]"/>
+        <net name="data_H[11]"/>
+        <net name="data_H[10]"/>
+        <net name="data_H[9]"/>
+        <net name="data_H[8]"/>
+        <net name="data_H[7]"/>
+        <net name="data_H[6]"/>
+        <net name="data_H[5]"/>
+        <net name="data_H[4]"/>
+        <net name="data_H[3]"/>
+        <net name="data_H[2]"/>
+        <net name="data_H[1]"/>
+        <net name="data_H[0]"/>
       </nets>
     </probe>
   </probeset>

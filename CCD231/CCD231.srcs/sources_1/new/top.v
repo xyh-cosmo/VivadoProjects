@@ -34,9 +34,7 @@ module TOP(
         FIXED_IO_ps_srstb,
         
     //  =================
-    //	clk_sys,
-        clk_50M,
-        // rst_sys,
+        clk_50M,        // 直接接到PL端的50M晶振上
     
     //  The following siginals are connected to external board via FMC connector
     //	SPI outputs
@@ -82,12 +80,6 @@ module TOP(
         GH_DCO_N
 	);
 
-// ==========================================================================
-//    input clk_sys;
-    input clk_50M;
-    wire clk_sys;
-    wire clk_50M, clk_150M;
-
 //	SPI outputs
 	output sclk;
 	output mosi;
@@ -102,7 +94,7 @@ module TOP(
     output TRIG;
     output CLKP;
     output SDO;
-    output wire ENC;
+    output ENC;
     output PD;
     output IV_5K_CTR;
     output ADG772_CTR;
@@ -233,6 +225,51 @@ module TOP(
     wire         M_AXI_RREADY;
 
 
+// ==========================================================================
+//    input clk_sys;
+    input clk_50M;
+
+//  生成50MHz的时钟（也包括其他频率的时钟） 
+    wire clk_locked;
+    wire clk_1M, clk_5M;
+    wire clk_10M, clk_20M, clk_150M;
+
+    my_clk_generator  my_clock (
+       // Clock out ports 
+       .clk_10M(clk_10M),
+       .clk_20M(clk_20M),
+       .clk_150M(clk_150M),
+       // Status and control signals               
+       .locked(clk_locked),
+       // Clock in ports
+       .clk_in(clk_50M)
+       );
+
+    reg[7:0] cnt_1M=8'b0, cnt_5M=8'b0;
+    reg clk_1M_r = 1'b0, clk_5M_r = 1'b0;
+    
+    always@( posedge clk_10M ) begin
+        if( cnt_1M >= 5 ) begin
+            cnt_1M <= 8'b0;
+            clk_1M_r <= ~clk_1M_r;
+        end
+        else
+            cnt_1M <= cnt_1M + 8'b1;
+    end
+
+    always@( posedge clk_20M ) begin
+        if( cnt_5M >= 2 ) begin
+            cnt_5M <= 8'b0;
+            clk_5M_r <= ~clk_5M_r;
+        end
+        else
+            cnt_5M <= cnt_5M + 8'b1;
+    end
+
+    assign ENC = clk_1M_r;
+//    assign ENC = clk_5M_r;
+//    assign ENC = clk_10M;
+
     //  ==============
     //  PS与PL交互的信号
     //  ==============
@@ -258,15 +295,98 @@ module TOP(
     wire[63 : 0] rd_burst_data;
     wire[63 : 0] wr_burst_data;
 
-    wire adc_ltc2271_0;
-    wire adc_ltc2271_1;
-    wire adc_ltc2271_2;
-    wire adc_ltc2271_3;
-    assign adc_ltc2271_0 = adc1_data_a[0];
-    assign adc_ltc2271_1 = adc1_data_b[0];
-    assign adc_ltc2271_2 = adc2_data_a[0];
-    assign adc_ltc2271_3 = adc2_data_b[0];
-    
+    wire EF_FR, GH_FR;
+    wire EF_DCO, GH_DCO;
+    wire EOUT, FOUT, GOUT, HOUT;
+
+    wire[15:0] data_E, data_F, data_G, data_H;
+    assign data_E[15:0] = wr_burst_data[63:48];
+    assign data_F[15:0] = wr_burst_data[47:32];
+    assign data_G[15:0] = wr_burst_data[31:16];
+    assign data_H[15:0] = wr_burst_data[15:0];
+
+//  将LTC2271输出的差分信号转换成单端信号
+    IBUFDS #(
+        .DIFF_TERM("TRUE"),     // Differential Termination
+        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+    ) IBUFDS_EF_FR (
+        .O(EF_FR),           // Buffer output
+        .I(EF_FR_P),         // Diff_p buffer input (connect directly to top-level port)
+        .IB(EF_FR_N)         // Diff_n buffer input (connect directly to top-level port)
+    );
+
+    IBUFDS #(
+        .DIFF_TERM("TRUE"),     // Differential Termination
+        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+    ) IBUFDS_GH_FR (
+        .O(GH_FR),           // Buffer output
+        .I(GH_FR_P),         // Diff_p buffer input (connect directly to top-level port)
+        .IB(GH_FR_N)         // Diff_n buffer input (connect directly to top-level port)
+    );
+
+    IBUFDS #(
+        .DIFF_TERM("TRUE"),     // Differential Termination
+        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+    ) IBUFDS_EF_DCO (
+        .O(EF_DCO),           // Buffer output
+        .I(EF_DCO_P),         // Diff_p buffer input (connect directly to top-level port)
+        .IB(EF_DCO_N)         // Diff_n buffer input (connect directly to top-level port)
+    );
+
+    IBUFDS #(
+        .DIFF_TERM("TRUE"),     // Differential Termination
+        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+    ) IBUFDS_GH_DCO (
+        .O(GH_DCO),           // Buffer output
+        .I(GH_DCO_P),         // Diff_p buffer input (connect directly to top-level port)
+        .IB(GH_DCO_N)         // Diff_n buffer input (connect directly to top-level port)
+    );
+
+    IBUFDS #(
+        .DIFF_TERM("TRUE"),     // Differential Termination
+        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+    ) IBUFDS_EOUT (
+        .O(EOUT),           // Buffer output
+        .I(EOUT_P),         // Diff_p buffer input (connect directly to top-level port)
+        .IB(EOUT_N)         // Diff_n buffer input (connect directly to top-level port)
+    );
+
+    IBUFDS #(
+        .DIFF_TERM("TRUE"),     // Differential Termination
+        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+    ) IBUFDS_FOUT (
+        .O(FOUT),           // Buffer output
+        .I(FOUT_P),         // Diff_p buffer input (connect directly to top-level port)
+        .IB(FOUT_N)         // Diff_n buffer input (connect directly to top-level port)
+    );
+
+    IBUFDS #(
+        .DIFF_TERM("TRUE"),     // Differential Termination
+        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+    ) IBUFDS_GOUT (
+        .O(GOUT),           // Buffer output
+        .I(GOUT_P),         // Diff_p buffer input (connect directly to top-level port)
+        .IB(GOUT_N)         // Diff_n buffer input (connect directly to top-level port)
+    );
+
+    IBUFDS #(
+        .DIFF_TERM("TRUE"),     // Differential Termination
+        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+    ) IBUFDS_HOUT (
+        .O(HOUT),           // Buffer output
+        .I(HOUT_P),         // Diff_p buffer input (connect directly to top-level port)
+        .IB(HOUT_N)         // Diff_n buffer input (connect directly to top-level port)
+    );
+
+    wire PL_KEY;
     mem_test
     #(
         .MEM_DATA_BITS(64),
@@ -275,8 +395,8 @@ module TOP(
     )
     mem_test_m0
     (
-        .rst(~rst_n),                                 
-        .mem_clk(M_AXI_ACLK),                       
+        .rst(~rst_n),                             
+
         .rd_burst_req(rd_burst_req),               
         .wr_burst_req(wr_burst_req),               
         .rd_burst_len(rd_burst_len),               
@@ -291,26 +411,22 @@ module TOP(
         .wr_burst_finish(wr_burst_finish),
     
         .pl_key(PL_KEY),
-        .adc_clk(adc2_clk),
-        // .adc_ltc2271(adc_ltc2271),
-    //	.adc_ltc2271_0(adc_ltc2271_0),
-    //	.adc_ltc2271_1(adc_ltc2271_1),
-    //	.adc_ltc2271_2(adc_ltc2271_2),
-    //	.adc_ltc2271_3(adc_ltc2271_3),
-    
-        .adc_ltc2271_0(adc1_data_a),
-        .adc_ltc2271_1(adc1_data_b),
-        .adc_ltc2271_2(adc2_data_a),
-        .adc_ltc2271_3(adc2_data_b),
-    //	.dout(dout),
-        
+
+        .EF_FR(EF_FR),
+        .GH_FR(GH_FR),
+        .EF_DCO(EF_DCO),
+        .GH_DCO(GH_DCO),
+        .EOUT(EOUT),
+        .FOUT(FOUT),
+        .GOUT(GOUT),
+        .HOUT(HOUT),
+
         .error(error)
     ); 
 
     aq_axi_master u_aq_axi_master
     (
         .ARESETN(rst_n),
-    //	.ACLK(M_AXI_ACLK),
         .ACLK(clk_150M),
         
         .M_AXI_AWID(M_AXI_AWID),
@@ -401,7 +517,7 @@ module TOP(
         .DDR_ras_n(DDR_ras_n),
         .DDR_reset_n(DDR_reset_n),
         .DDR_we_n(DDR_we_n),
-        .FCLK_CLK0(clk_sys),
+//        .FCLK_CLK0(clk_150M),
         .FIXED_IO_ddr_vrn(FIXED_IO_ddr_vrn),
         .FIXED_IO_ddr_vrp(FIXED_IO_ddr_vrp),
         .FIXED_IO_mio(FIXED_IO_mio),
@@ -412,7 +528,15 @@ module TOP(
         //  GPIO：在PS上修改寄存器，实现对PL端模块的控制
         .gpio_in_tri_i(pl_status),
         .gpio2_tri_o(gpio2_spi_data),
-        .gpio_tri_o({CLKP, ENC_fake, TRIG_fake, gpio_A0, gpio_A1, gpio_CPOL, gpio_CPHA, gpio_RST}),
+        .gpio_tri_o( {CLKP, 
+                    //   ENC_fake, 
+                      PL_KEY,   // 用该寄存器触发ADC采样
+                      TRIG_fake, 
+                      gpio_A0, 
+                      gpio_A1, 
+                      gpio_CPOL, 
+                      gpio_CPHA, 
+                      gpio_RST}),
         
         //  AXI接口
         .S00_AXI_araddr       (M_AXI_ARADDR          ),
@@ -457,29 +581,25 @@ module TOP(
         .S00_AXI_wvalid       (M_AXI_WVALID          ),
         
         .axim_rst_n(rst_n),
-        .FCLK_CLK0(M_AXI_ACLK),	//这里的时钟可能也需要修改
-    //    .FCLK_CLK0(   ),    //这里的时钟可能也需要修改
-        // .axi_hp_clk(M_AXI_ACLK)    //这里的时钟可能也需要修改
         .axi_hp_clk(clk_150M)
-        
         );
 
 // ==========================================================================
-    reg ENC_r = 1'b0;
+    // reg ENC_r = 1'b0;
     reg TRIG_r = 1'b0;
-    reg[7:0] ENC_cnt = 8'b0;
+    // reg[7:0] ENC_cnt = 8'b0;
     reg[7:0] TRIG_cnt = 8'b0;
-    assign ENC = ENC_r;
+    // assign ENC = ENC_r;
     assign TRIG = TRIG_r;
-//    always@(posedge clk_sys) begin
-    always@(posedge clk_50M) begin
-        if( ENC_cnt == 12 ) begin
-            ENC_r = ~ENC_r;
-            ENC_cnt <= 8'b0;
-        end
-        else
-            ENC_cnt <= ENC_cnt + 8'b1;
-    end
+
+    // always@(posedge clk_50M) begin
+    //     if( ENC_cnt == 12 ) begin
+    //         ENC_r = ~ENC_r;
+    //         ENC_cnt <= 8'b0;
+    //     end
+    //     else
+    //         ENC_cnt <= ENC_cnt + 8'b1;
+    // end
 
     always@(posedge clk_50M) begin
         if( TRIG_cnt == 4 ) begin
@@ -491,79 +611,65 @@ module TOP(
     end
 
 
-//  生成50MHz的时钟（也包括其他频率的时钟） 
-//    wire clk_locked;
-
-//    my_clk_generator  my_clock (
-//        // Clock out ports  
-//        .clk_20M(),
-//        .clk_50M(clk_50M),
-//        // Status and control signals               
-//        .locked(clk_locked),
-//        // Clock in ports
-//        .clk_in1(clk_sys)
-//        );
-
-
 //  分频时钟
-////    parameter cycles_max = 20;
-//    parameter cycles_max = 0;  // set to zero so that the divided clocks runs forever!
-////  这里的分频时钟信号用于测试
-//	CLOCK_DIV
-//		#(
-//			.DIV_FACTOR(50),
-//			.CNT_START(0),
-//			.CYCLES_MAX(cycles_max)
-//		)
-//		clk_div_0
-//		(
-//			.clk_sys(clk_50M),
-//			.en(en_ctr),
-//			.clk_div(RST_SIG_CTR),
-//			.status(ctr_status)
-//		);
+//    parameter cycles_max = 20;
+   parameter cycles_max = 0;  // set to zero so that the divided clocks runs forever!
+//  这里的分频时钟信号用于测试
+	CLOCK_DIV
+		#(
+			.DIV_FACTOR(50),
+			.CNT_START(0),
+			.CYCLES_MAX(cycles_max)
+		)
+		clk_div_0
+		(
+			.clk_sys(clk_50M),
+			.en(en_ctr),
+			.clk_div(RST_SIG_CTR),
+			.status(ctr_status)
+		);
 		
-//	CLOCK_DIV
-//        #(
-//            .DIV_FACTOR(50),
-//            .CNT_START(0),
-//            .CYCLES_MAX(cycles_max)
-//        )
-//        clk_div_1
-//        (
-//            .clk_sys(clk_50M),
-//            .en(en_ctr),
-//            .clk_div(RPHI1_CTR),
-//            .status()
-//        );
+	CLOCK_DIV
+       #(
+           .DIV_FACTOR(50),
+           .CNT_START(0),
+           .CYCLES_MAX(cycles_max)
+       )
+       clk_div_1
+       (
+           .clk_sys(clk_50M),
+           .en(en_ctr),
+           .clk_div(RPHI1_CTR),
+           .status()
+       );
 
-//    CLOCK_DIV
-//		#(
-//			.DIV_FACTOR(50),
-//			.CNT_START(0),
-//			.CYCLES_MAX(cycles_max)
-//		)
-//		clk_div_2
-//		(
-//			.clk_sys(clk_50M),
-//			.en(en_ctr),
-//			.clk_div(RPHI2_CTR),
-//			.status()
-//		);
+   CLOCK_DIV
+		#(
+			.DIV_FACTOR(50),
+			.CNT_START(0),
+			.CYCLES_MAX(cycles_max)
+		)
+		clk_div_2
+		(
+			.clk_sys(clk_50M),
+			.en(en_ctr),
+			.clk_div(RPHI2_CTR),
+			.status()
+		);
 
-//    CLOCK_DIV
-//		#(
-//			.DIV_FACTOR(50),
-//			.CNT_START(0),
-//			.CYCLES_MAX(cycles_max)
-//		)
-//		clk_div_3
-//		(
-//			.clk_sys(clk_50M),
-//			.en(en_ctr),
-//			.clk_div(RPHI3_CTR),
-//			.status()
-//		);
+   CLOCK_DIV
+		#(
+			.DIV_FACTOR(50),
+			.CNT_START(0),
+			.CYCLES_MAX(cycles_max)
+		)
+		clk_div_3
+		(
+			.clk_sys(clk_50M),
+			.en(en_ctr),
+			.clk_div(RPHI3_CTR),
+			.status()
+		);
 // =============================
 	
 	SPI4ADC spi4adc(
@@ -582,22 +688,33 @@ module TOP(
 		.status(pl_status)
 		);
 
-    ILA_XYH (
+    // ILA_XYH (
+    //     .clk(clk_50M),
+    //     .probe0(gpio_RST),
+    //     .probe1(gpio2_spi_data),
+    //     .probe2(gpio_CPOL),
+    //     .probe3(gpio_CPHA),
+    //     .probe4(gpio_A0),
+    //     .probe5(gpio_A1),
+    //     .probe6(A0),
+    //     .probe7(A1),
+    //     .probe8(sclk),
+    //     .probe9(mosi),
+    //     .probe10(pl_status),
+    //     .probe11(TRIG),
+    //     .probe12(ENC),
+    //     .probe13(CLKP)
+    //     );
+
+    ILA_LTC2271 ltc2271(
         .clk(clk_50M),
-        .probe0(gpio_RST),
-        .probe1(gpio2_spi_data),
-        .probe2(gpio_CPOL),
-        .probe3(gpio_CPHA),
-        .probe4(gpio_A0),
-        .probe5(gpio_A1),
-        .probe6(A0),
-        .probe7(A1),
-        .probe8(sclk),
-        .probe9(mosi),
-        .probe10(pl_status),
-        .probe11(TRIG),
-        .probe12(ENC),
-        .probe13(CLKP)
-        );
+        .probe0(EF_FR),
+        .probe1(EF_DCO),
+        .probe2(PL_KEY),
+        .probe3(data_E),
+        .probe4(data_F),
+        .probe5(data_G),
+        .probe6(data_H)
+    );
 
 endmodule

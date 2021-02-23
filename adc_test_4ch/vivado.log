@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Wed Feb  3 20:29:15 2021
-# Process ID: 630671
+# Start of session at: Tue Feb 23 19:57:51 2021
+# Process ID: 307081
 # Current directory: /home/xyh/NFS_Alinx/VivadoProjects/adc_test_4ch
 # Command line: vivado adc_test_4ch.xpr
 # Log file: /home/xyh/NFS_Alinx/VivadoProjects/adc_test_4ch/vivado.log
@@ -17,12 +17,7 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/xyh/Xilinx/Vivado/2017.4/data/ip'.
-open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:05 . Memory (MB): peak = 6105.289 ; gain = 118.465 ; free physical = 7405 ; free virtual = 17702
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:05 . Memory (MB): peak = 6151.715 ; gain = 168.730 ; free physical = 3722 ; free virtual = 23169
 update_compile_order -fileset sources_1
-open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/adc_test_4ch/adc_test_4ch.srcs/sources_1/bd/system/system.bd}
-Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
-Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - proc_sys_reset_0
-Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
-Successfully read diagram <system> from BD file </home/xyh/NFS_Alinx/VivadoProjects/adc_test_4ch/adc_test_4ch.srcs/sources_1/bd/system/system.bd>
 exit
-INFO: [Common 17-206] Exiting Vivado at Wed Feb  3 21:02:46 2021...
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 23 20:06:12 2021...

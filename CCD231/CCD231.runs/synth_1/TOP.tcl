@@ -16,6 +16,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_msg_config -id {Common 17-41} -limit 10000000
 create_project -in_memory -part xc7z035ffg676-2
 
 set_param project.singleFileAddWarning.threshold 0
@@ -31,7 +32,9 @@ set_property ip_output_repo /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cac
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hdl/CCD231_wrapper.v
+  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/aq_axi_master.v
   /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/SPI_AD5628/clock_div.v
+  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v
   /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/AD_Config_v2/spi4adc.v
   /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/SPI_AD5628/spi_base.v
   /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v
@@ -48,14 +51,20 @@ set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/Vi
 set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0.xdc]
 set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_xbar_0/CCD231_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/CCD231_auto_pc_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_0/CCD231_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231_ooc.xdc]
 
-read_ip -quiet /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_XYH/ILA_XYH.xci
-set_property used_in_synthesis false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_XYH/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_XYH/ila_v6_2/constraints/ila_impl.xdc]
-set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_XYH/ila_v6_2/constraints/ila.xdc]
-set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_XYH/ILA_XYH_ooc.xdc]
+read_ip -quiet /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci
+set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_board.xdc]
+set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc]
+set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_ooc.xdc]
+
+read_ip -quiet /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci
+set_property used_in_synthesis false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila_impl.xdc]
+set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila.xdc]
+set_property used_in_implementation false [get_files -all /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Tue Feb 23 13:26:15 2021
-# Process ID: 287495
+# Start of session at: Tue Feb 23 17:23:26 2021
+# Process ID: 294268
 # Current directory: /home/xyh/NFS_Alinx/VivadoProjects/CCD231
 # Command line: vivado CCD231.xpr
 # Log file: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/vivado.log
@@ -16,7 +16,8 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/xyh/Xilinx/Vivado/2017.4/data/ip'.
-open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 6167.672 ; gain = 176.266 ; free physical = 2640 ; free virtual = 26065
+open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 6173.324 ; gain = 181.883 ; free physical = 2531 ; free virtual = 26154
+update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
 open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
 Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
@@ -26,169 +27,16 @@ Adding cell -- xilinx.com:ip:axi_gpio:2.0 - AXI_GPIO_IN
 Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
 Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
 Successfully read diagram <CCD231> from BD file </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd>
-set_property location {868 404} [get_bd_ports FCLK_CLK0]
-regenerate_bd_layout -routing
-WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
-startgroup
-set_property -dict [list CONFIG.PCW_USE_S_AXI_HP0 {1}] [get_bd_cells processing_system7_0]
-endgroup
-startgroup
-create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_interconnect_0
-endgroup
-set_property location {1 8 371} [get_bd_cells axi_interconnect_0]
-set_property location {1 28 377} [get_bd_cells axi_interconnect_0]
-set_property location {1 120 351} [get_bd_cells axi_interconnect_0]
-set_property location {1 122 372} [get_bd_cells axi_interconnect_0]
-set_property -dict [list CONFIG.NUM_MI {1}] [get_bd_cells axi_interconnect_0]
-startgroup
-make_bd_intf_pins_external  [get_bd_intf_pins axi_interconnect_0/S00_AXI]
-endgroup
-set_property name S00_AXI [get_bd_intf_ports S00_AXI_0]
-regenerate_bd_layout -routing
-set_property location {1 167 360} [get_bd_cells axi_interconnect_0]
-connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
-startgroup
-create_bd_port -dir I -type clk axi_hp_clk
-set_property CONFIG.FREQ_HZ 150000000 [get_bd_ports axi_hp_clk]
-endgroup
-connect_bd_net [get_bd_ports axi_hp_clk] [get_bd_pins axi_interconnect_0/ACLK]
-connect_bd_net [get_bd_ports axi_hp_clk] [get_bd_pins axi_interconnect_0/S00_ACLK]
-connect_bd_net [get_bd_ports axi_hp_clk] [get_bd_pins axi_interconnect_0/M00_ACLK]
-connect_bd_net [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins rst_ps7_0_148M/interconnect_aresetn]
-regenerate_bd_layout -routing
-connect_bd_net [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] -boundary_type upper
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] -boundary_type upper'
-undo
-INFO: [Common 17-17] undo 'regenerate_bd_layout -routing'
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins rst_ps7_0_148M/interconnect_aresetn]'
-connect_bd_net [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] -boundary_type upper
-connect_bd_net [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] -boundary_type upper
-delete_bd_objs [get_bd_nets ARESETN_1]
-validate_bd_design
-ERROR: [BD 41-758] The following clock pins are not connected to a valid clock source: 
-/processing_system7_0/S_AXI_HP0_ACLK
-
-ERROR: [Common 17-39] 'validate_bd_design' failed due to earlier errors.
-regenerate_bd_layout -routing
-delete_bd_objs [get_bd_ports FCLK_CLK0]
-delete_bd_objs [get_bd_nets processing_system7_0_FCLK_CLK0]
-connect_bd_net [get_bd_pins AXI_INTERCONNECT/ACLK] [get_bd_pins AXI_INTERCONNECT/S00_ACLK] -boundary_type upper
-connect_bd_net [get_bd_pins AXI_INTERCONNECT/S00_ACLK] [get_bd_pins AXI_INTERCONNECT/M00_ACLK] -boundary_type upper
-connect_bd_net [get_bd_pins AXI_INTERCONNECT/M00_ACLK] [get_bd_pins AXI_INTERCONNECT/M01_ACLK] -boundary_type upper
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins AXI_INTERCONNECT/M00_ACLK] [get_bd_pins AXI_INTERCONNECT/M01_ACLK] -boundary_type upper'
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins AXI_INTERCONNECT/S00_ACLK] [get_bd_pins AXI_INTERCONNECT/M00_ACLK] -boundary_type upper'
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins AXI_INTERCONNECT/ACLK] [get_bd_pins AXI_INTERCONNECT/S00_ACLK] -boundary_type upper'
-undo
-INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets processing_system7_0_FCLK_CLK0]'
-undo
-INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_ports FCLK_CLK0]'
-undo
-INFO: [Common 17-17] undo 'regenerate_bd_layout -routing'
-undo
-INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets ARESETN_1]'
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] -boundary_type upper'
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] -boundary_type upper'
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_ports axi_hp_clk] [get_bd_pins axi_interconnect_0/M00_ACLK]'
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_ports axi_hp_clk] [get_bd_pins axi_interconnect_0/S00_ACLK]'
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_ports axi_hp_clk] [get_bd_pins axi_interconnect_0/ACLK]'
-undo
-INFO: [Common 17-17] undo 'endgroup'
-INFO: [Common 17-17] undo 'set_property CONFIG.FREQ_HZ 150000000 [get_bd_ports axi_hp_clk]'
-INFO: [Common 17-17] undo 'create_bd_port -dir I -type clk axi_hp_clk'
-INFO: [Common 17-17] undo 'startgroup'
-undo
-INFO: [Common 17-17] undo 'connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]'
-undo
-INFO: [Common 17-17] undo 'set_property location {1 167 360} [get_bd_cells axi_interconnect_0]'
-undo
-INFO: [Common 17-17] undo 'regenerate_bd_layout -routing'
-undo
-INFO: [Common 17-17] undo 'set_property name S00_AXI [get_bd_intf_ports S00_AXI_0]'
-undo
-INFO: [Common 17-17] undo 'endgroup'
-INFO: [Common 17-17] undo 'make_bd_intf_pins_external  [get_bd_intf_pins axi_interconnect_0/S00_AXI]'
-INFO: [Common 17-17] undo 'startgroup'
-undo
-INFO: [Common 17-17] undo 'set_property -dict [list CONFIG.NUM_MI {1}] [get_bd_cells axi_interconnect_0]'
-undo
-INFO: [Common 17-17] undo 'set_property location {1 122 372} [get_bd_cells axi_interconnect_0]'
-regenerate_bd_layout -routing
-delete_bd_objs [get_bd_nets processing_system7_0_FCLK_CLK0]
-startgroup
-make_bd_pins_external  [get_bd_pins processing_system7_0/FCLK_CLK0]
-endgroup
-startgroup
-create_bd_port -dir I -type clk axi_clk
-set_property CONFIG.FREQ_HZ 150000000 [get_bd_ports axi_clk]
-endgroup
-connect_bd_net [get_bd_ports axi_clk] [get_bd_pins axi_interconnect_0/ACLK]
-connect_bd_net [get_bd_ports axi_clk] [get_bd_pins axi_interconnect_0/S00_ACLK]
-connect_bd_net [get_bd_ports axi_clk] [get_bd_pins axi_interconnect_0/M00_ACLK]
-connect_bd_net [get_bd_ports axi_clk] [get_bd_pins axi_interconnect_0/M01_ACLK]
-connect_bd_net [get_bd_ports axi_clk] [get_bd_pins rst_ps7_0_148M/slowest_sync_clk]
-connect_bd_net [get_bd_ports axi_clk] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK]
-connect_bd_net [get_bd_ports axi_clk] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK]
-connect_bd_net [get_bd_pins AXI_INTERCONNECT/ACLK] [get_bd_pins AXI_INTERCONNECT/S00_ACLK] -boundary_type upper
-connect_bd_net [get_bd_pins AXI_INTERCONNECT/S00_ACLK] [get_bd_pins AXI_INTERCONNECT/M00_ACLK] -boundary_type upper
-connect_bd_net [get_bd_pins AXI_INTERCONNECT/M00_ACLK] [get_bd_pins AXI_INTERCONNECT/M01_ACLK] -boundary_type upper
-regenerate_bd_layout -routing
-undo
-INFO: [Common 17-17] undo 'regenerate_bd_layout -routing'
-undo
-INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins AXI_INTERCONNECT/M00_ACLK] [get_bd_pins AXI_INTERCONNECT/M01_ACLK] -boundary_type upper'
-connect_bd_net [get_bd_ports axi_clk] [get_bd_pins AXI_INTERCONNECT/M01_ACLK]
-delete_bd_objs [get_bd_nets ACLK_1]
-connect_bd_net [get_bd_ports axi_clk] [get_bd_pins AXI_INTERCONNECT/ACLK]
-connect_bd_net [get_bd_ports axi_clk] [get_bd_pins AXI_INTERCONNECT/S00_ACLK]
-connect_bd_net [get_bd_ports axi_clk] [get_bd_pins AXI_INTERCONNECT/M00_ACLK]
-connect_bd_net [get_bd_ports axi_clk] [get_bd_pins AXI_GPIO_OUT/s_axi_aclk]
-connect_bd_net [get_bd_ports axi_clk] [get_bd_pins AXI_GPIO_IN/s_axi_aclk]
-startgroup
-set_property -dict [list CONFIG.NUM_MI {1}] [get_bd_cells axi_interconnect_0]
-endgroup
-connect_bd_net [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins rst_ps7_0_148M/interconnect_aresetn]
-set_property location {1 154 360} [get_bd_cells axi_interconnect_0]
-connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axi_interconnect_0/M00_AXI] [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
-regenerate_bd_layout -routing
-set_property location {-33 331} [get_bd_ports axi_clk]
-startgroup
-make_bd_intf_pins_external  [get_bd_intf_pins axi_interconnect_0/S00_AXI]
-endgroup
-set_property name S00_AXI [get_bd_intf_ports S00_AXI_0]
-delete_bd_objs [get_bd_nets rst_ps7_0_148M_peripheral_aresetn]
-startgroup
-make_bd_pins_external  [get_bd_pins rst_ps7_0_148M/peripheral_aresetn]
-endgroup
-set_property name axim_rst_n [get_bd_ports peripheral_aresetn_0]
-connect_bd_net [get_bd_pins AXI_GPIO_OUT/s_axi_aresetn] [get_bd_pins rst_ps7_0_148M/peripheral_aresetn]
-connect_bd_net [get_bd_pins AXI_GPIO_IN/s_axi_aresetn] [get_bd_pins rst_ps7_0_148M/peripheral_aresetn]
-connect_bd_net [get_bd_pins AXI_INTERCONNECT/S00_ARESETN] [get_bd_pins rst_ps7_0_148M/peripheral_aresetn]
-connect_bd_net [get_bd_pins AXI_INTERCONNECT/M00_ARESETN] [get_bd_pins rst_ps7_0_148M/peripheral_aresetn]
-connect_bd_net [get_bd_pins AXI_INTERCONNECT/M01_ARESETN] [get_bd_pins rst_ps7_0_148M/peripheral_aresetn]
-connect_bd_net [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins rst_ps7_0_148M/peripheral_aresetn]
-connect_bd_net [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins rst_ps7_0_148M/peripheral_aresetn]
-validate_bd_design
-CRITICAL WARNING: [BD 41-1356] Address block </processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM> is not mapped into </S00_AXI>. Please use Address Editor to either map or exclude it.
-CRITICAL WARNING: [BD 41-1356] Address block </processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM> is not mapped into </S00_AXI>. Please use Address Editor to either map or exclude it.
-assign_bd_address
-</processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM> is being mapped into </S00_AXI> at <0x00000000 [ 1G ]>
-validate_bd_design
-set_property name axi_hp_clk [get_bd_ports axi_clk]
-save_bd_design
-Wrote  : </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd> 
-Wrote  : </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ui/bd_3ffded2c.ui> 
-delete_bd_objs [get_bd_ports FCLK_CLK0]
-regenerate_bd_layout -routing
+open_project /home/xyh/NFS_Alinx/VivadoProjects/adc_test_4ch/adc_test_4ch.xpr
+INFO: [Project 1-313] Project file moved from '/home/xyh/NFS_Alinx/adc_test_4ch' since last save.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/xyh/Xilinx/Vivado/2017.4/data/ip'.
+update_compile_order -fileset sources_1
+current_project CCD231
+set_property name FCLK_CLK0 [get_bd_ports FCLK_CLK0_0]
 save_bd_design
 Wrote  : </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd> 
 Wrote  : </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ui/bd_3ffded2c.ui> 
@@ -207,23 +55,362 @@ INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_INTERCON
 Exporting to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hw_handoff/CCD231.hwh
 Generated Block Design Tcl file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hw_handoff/CCD231_bd.tcl
 Generated Hardware Definition File /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.hwdef
-generate_target: Time (s): cpu = 00:00:17 ; elapsed = 00:00:14 . Memory (MB): peak = 6582.211 ; gain = 112.977 ; free physical = 2124 ; free virtual = 25654
-catch { config_ip_cache -export [get_ips -all CCD231_processing_system7_0_1] }
-catch { config_ip_cache -export [get_ips -all CCD231_rst_ps7_0_148M_1] }
-catch { config_ip_cache -export [get_ips -all CCD231_xbar_0] }
 catch { config_ip_cache -export [get_ips -all CCD231_auto_pc_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP CCD231_auto_pc_0, cache-ID = 6685e3310941cc8b; cache size = 30.561 MB.
 export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -no_script -sync -force -quiet
 create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-launch_runs -jobs 4 {CCD231_rst_ps7_0_148M_1_synth_1 CCD231_xbar_0_synth_1 CCD231_processing_system7_0_1_synth_1 CCD231_auto_pc_0_synth_1}
-[Tue Feb 23 14:48:56 2021] Launched CCD231_rst_ps7_0_148M_1_synth_1, CCD231_xbar_0_synth_1, CCD231_processing_system7_0_1_synth_1, CCD231_auto_pc_0_synth_1...
-Run output will be captured here:
-CCD231_rst_ps7_0_148M_1_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/CCD231_rst_ps7_0_148M_1_synth_1/runme.log
-CCD231_xbar_0_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/CCD231_xbar_0_synth_1/runme.log
-CCD231_processing_system7_0_1_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/CCD231_processing_system7_0_1_synth_1/runme.log
-CCD231_auto_pc_0_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/CCD231_auto_pc_0_synth_1/runme.log
 export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
-import_files -norecurse {/home/xyh/NFS_Alinx/VivadoProjects/adc_test_4ch/adc_test_4ch.srcs/sources_1/imports/rtl/mem_test.v /home/xyh/NFS_Alinx/VivadoProjects/adc_test_4ch/adc_test_4ch.srcs/sources_1/imports/rtl/aq_axi_master.v}
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
+current_project adc_test_4ch
+current_project CCD231
+current_project adc_test_4ch
+close_project
+ERROR: [Common 17-69] Command failed: Port 'clk_50M' already exists
+CRITICAL WARNING: [IP_Flow 19-1747] Failed to deliver file '/home/xyh/Xilinx/Vivado/2017.4/data/ip/xilinx/clk_wiz_v5_4/elaborate/ports.xit': ERROR: [Common 17-69] Command failed: Port 'clk_50M' already exists
+
+ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
+ERROR: [IP_Flow 19-3541] IP Elaboration error: Failed to generate IP 'my_clk_generator'. Failed to generate 'Elaborate Ports' outputs: 
+ERROR: [Common 17-69] Command failed: Port 'clk_50M' already exists
+CRITICAL WARNING: [IP_Flow 19-1747] Failed to deliver file '/home/xyh/Xilinx/Vivado/2017.4/data/ip/xilinx/clk_wiz_v5_4/elaborate/ports.xit': ERROR: [Common 17-69] Command failed: Port 'clk_50M' already exists
+
+ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
+ERROR: [IP_Flow 19-3541] IP Elaboration error: Failed to generate IP 'my_clk_generator'. Failed to generate 'Elaborate Ports' outputs: 
+ERROR: [Common 17-69] Command failed: Port 'clk_50M' already exists
+CRITICAL WARNING: [IP_Flow 19-1747] Failed to deliver file '/home/xyh/Xilinx/Vivado/2017.4/data/ip/xilinx/clk_wiz_v5_4/elaborate/ports.xit': ERROR: [Common 17-69] Command failed: Port 'clk_50M' already exists
+
+ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
+ERROR: [IP_Flow 19-3541] IP Elaboration error: Failed to generate IP 'my_clk_generator'. Failed to generate 'Elaborate Ports' outputs: 
+set_property -dict [list CONFIG.PRIM_IN_FREQ {50} CONFIG.CLKOUT3_USED {true} CONFIG.PRIMARY_PORT {clk_in} CONFIG.CLK_OUT1_PORT {clk_10M} CONFIG.CLK_OUT2_PORT {clk_50M} CONFIG.CLK_OUT3_PORT {clk_125M} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {10} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {50} CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {125} CONFIG.CLKIN1_JITTER_PS {200.0} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {20.000} CONFIG.MMCM_CLKIN1_PERIOD {20.000} CONFIG.MMCM_CLKIN2_PERIOD {10.0} CONFIG.MMCM_CLKOUT0_DIVIDE_F {100.000} CONFIG.MMCM_CLKOUT1_DIVIDE {20} CONFIG.MMCM_CLKOUT2_DIVIDE {8} CONFIG.NUM_OUT_CLKS {3} CONFIG.CLKOUT1_JITTER {285.743} CONFIG.CLKOUT1_PHASE_ERROR {164.985} CONFIG.CLKOUT2_JITTER {192.113} CONFIG.CLKOUT2_PHASE_ERROR {164.985} CONFIG.CLKOUT3_JITTER {154.207} CONFIG.CLKOUT3_PHASE_ERROR {164.985}] [get_ips my_clk_generator]
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'my_clk_generator'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'my_clk_generator'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'my_clk_generator'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'my_clk_generator'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'my_clk_generator'...
+catch { config_ip_cache -export [get_ips -all my_clk_generator] }
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci] -no_script -sync -force -quiet
+reset_run my_clk_generator_synth_1
+launch_runs -jobs 4 my_clk_generator_synth_1
+[Tue Feb 23 18:34:45 2021] Launched my_clk_generator_synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/runme.log
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+set_property -dict [list CONFIG.CLK_OUT2_PORT {clk_20M} CONFIG.CLK_OUT3_PORT {clk_150M} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {20} CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {150} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {18.000} CONFIG.MMCM_CLKOUT0_DIVIDE_F {90.000} CONFIG.MMCM_CLKOUT1_DIVIDE {45} CONFIG.MMCM_CLKOUT2_DIVIDE {6} CONFIG.CLKOUT1_JITTER {296.755} CONFIG.CLKOUT1_PHASE_ERROR {161.614} CONFIG.CLKOUT2_JITTER {258.893} CONFIG.CLKOUT2_PHASE_ERROR {161.614} CONFIG.CLKOUT3_JITTER {159.601} CONFIG.CLKOUT3_PHASE_ERROR {161.614}] [get_ips my_clk_generator]
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'my_clk_generator'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'my_clk_generator'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'my_clk_generator'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'my_clk_generator'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'my_clk_generator'...
+catch { config_ip_cache -export [get_ips -all my_clk_generator] }
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci] -no_script -sync -force -quiet
+reset_run my_clk_generator_synth_1
+launch_runs -jobs 4 my_clk_generator_synth_1
+[Tue Feb 23 18:38:05 2021] Launched my_clk_generator_synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/runme.log
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name ILA_LTC2271
+INFO: [filemgmt 56-101] Creating core container '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271.xcix' for IP 'ILA_LTC2271'
+set_property -dict [list CONFIG.C_PROBE5_WIDTH {16} CONFIG.C_PROBE4_WIDTH {16} CONFIG.C_PROBE3_WIDTH {16} CONFIG.C_PROBE2_WIDTH {16} CONFIG.C_DATA_DEPTH {16384} CONFIG.C_NUM_OF_PROBES {6} CONFIG.Component_Name {ILA_LTC2271}] [get_ips ILA_LTC2271]
+WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'ILA_LTC2271' to 'ILA_LTC2271' is not allowed and is ignored.
+generate_target {instantiation_template} [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ILA_LTC2271'...
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ILA_LTC2271'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ILA_LTC2271'...
+catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
+launch_runs -jobs 4 ILA_LTC2271_synth_1
+[Tue Feb 23 18:47:31 2021] Launched ILA_LTC2271_synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/runme.log
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Feb 23 18:54:58 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:34 ; elapsed = 00:00:33 . Memory (MB): peak = 7372.766 ; gain = 0.195 ; free physical = 1306 ; free virtual = 24617
+open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
+make_wrapper -files [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -top
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
+INFO: [BD 41-1637] Generated targets are already up-to-date for bd-design 'CCD231' - hence not re-generating.
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+set_property -dict [list CONFIG.PROTOCOL {AXI4}] [get_bd_intf_ports S00_AXI]
+set_property -dict [list CONFIG.HAS_REGION {1}] [get_bd_intf_ports S00_AXI]
+save_bd_design
+Wrote  : </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd> 
+Wrote  : </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ui/bd_3ffded2c.ui> 
+open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
+Wrote  : </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd> 
+VHDL Output written to : /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v
+VHDL Output written to : /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/sim/CCD231.v
+VHDL Output written to : /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hdl/CCD231_wrapper.v
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_GPIO_OUT .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_148M .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_GPIO_IN .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_INTERCONNECT/xbar .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/CCD231_auto_pc_1_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_0/CCD231_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_INTERCONNECT/s00_couplers/auto_pc .
+Exporting to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hw_handoff/CCD231.hwh
+Generated Block Design Tcl file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hw_handoff/CCD231_bd.tcl
+Generated Hardware Definition File /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.hwdef
+generate_target: Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 7527.199 ; gain = 30.805 ; free physical = 2420 ; free virtual = 25436
+catch { config_ip_cache -export [get_ips -all CCD231_processing_system7_0_1] }
+catch { config_ip_cache -export [get_ips -all CCD231_auto_pc_1] }
+catch { config_ip_cache -export [get_ips -all CCD231_auto_pc_0] }
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP CCD231_auto_pc_0, cache-ID = 6685e3310941cc8b; cache size = 38.447 MB.
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
+launch_runs -jobs 4 {CCD231_processing_system7_0_1_synth_1 CCD231_auto_pc_1_synth_1}
+[Tue Feb 23 19:05:41 2021] Launched CCD231_processing_system7_0_1_synth_1, CCD231_auto_pc_1_synth_1...
+Run output will be captured here:
+CCD231_processing_system7_0_1_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/CCD231_processing_system7_0_1_synth_1/runme.log
+CCD231_auto_pc_1_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/CCD231_auto_pc_1_synth_1/runme.log
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+[Tue Feb 23 19:06:34 2021] Launched CCD231_processing_system7_0_1_synth_1, CCD231_auto_pc_1_synth_1...
+Run output will be captured here:
+CCD231_processing_system7_0_1_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/CCD231_processing_system7_0_1_synth_1/runme.log
+CCD231_auto_pc_1_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/CCD231_auto_pc_1_synth_1/runme.log
+[Tue Feb 23 19:06:34 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Feb 23 19:09:35 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+reset_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Feb 23 19:10:55 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Tue Feb 23 19:10:55 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 7551.117 ; gain = 0.195 ; free physical = 2355 ; free virtual = 25377
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z035ffg676-2
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-294268-apple/ILA_LTC2271/ILA_LTC2271.dcp' for cell 'ltc2271'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.dcp' for cell 'my_clock'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0.dcp' for cell 'CCD231/CCD231_i/AXI_GPIO_IN'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1.dcp' for cell 'CCD231/CCD231_i/AXI_GPIO_OUT'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.dcp' for cell 'CCD231/CCD231_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1.dcp' for cell 'CCD231/CCD231_i/rst_ps7_0_148M'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_xbar_0/CCD231_xbar_0.dcp' for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_0/CCD231_auto_pc_0.dcp' for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/s00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/CCD231_auto_pc_1.dcp' for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc'
+INFO: [Netlist 29-17] Analyzing 241 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7z035ffg676-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-35] Removing redundant IBUF, my_clock/inst/clkin1_ibufg, from the path connected to top-level port: clk_50M 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'my_clock/clk_in' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-294268-apple/dcp33/my_clk_generator.edf:342]
+INFO: [Chipscope 16-324] Core: ltc2271 UUID: 1f100b0a-9300-572c-9638-9a5c93f7ec90 
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc] for cell 'CCD231/CCD231_i/processing_system7_0/inst'
+WARNING: [Vivado 12-2489] -input_jitter contains time 0.202470 which will be rounded to 0.202 to ensure it is an integer multiple of 1 picosecond [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc:21]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc] for cell 'CCD231/CCD231_i/processing_system7_0/inst'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1_board.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1_board.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1_board.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1_board.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0_board.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0_board.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_board.xdc] for cell 'my_clock/inst'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_board.xdc] for cell 'my_clock/inst'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc] for cell 'my_clock/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc:57]
+get_clocks: Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 8330.551 ; gain = 576.578 ; free physical = 1744 ; free virtual = 24787
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc] for cell 'my_clock/inst'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila_impl.xdc] for cell 'ltc2271/inst'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila_impl.xdc] for cell 'ltc2271/inst'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila.xdc] for cell 'ltc2271/inst'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila.xdc] for cell 'ltc2271/inst'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc]
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/new/gpio.xdc]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/new/gpio.xdc]
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/new/leds.xdc]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/new/leds.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/CCD231_auto_pc_1.dcp'
+Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 72 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 68 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 3 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 1 instances
+
+open_run: Time (s): cpu = 00:00:31 ; elapsed = 00:00:28 . Memory (MB): peak = 8427.320 ; gain = 876.203 ; free physical = 1668 ; free virtual = 24695
+set_property IOSTANDARD LVCMOS18 [get_ports [list EOUT_P]]
+set_property IOSTANDARD LVDS_25 [get_ports [list EF_DCO_P]]
+set_property IOSTANDARD LVDS_25 [get_ports [list EF_FR_P]]
+set_property IOSTANDARD LVDS_25 [get_ports [list EOUT_P]]
+set_property IOSTANDARD LVDS_25 [get_ports [list FOUT_P]]
+set_property IOSTANDARD LVDS_25 [get_ports [list GH_DCO_P]]
+set_property IOSTANDARD LVDS_25 [get_ports [list GH_FR_P]]
+set_property IOSTANDARD LVDS_25 [get_ports [list GOUT_P]]
+set_property IOSTANDARD LVDS_25 [get_ports [list HOUT_P]]
+save_constraints
+reset_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.02 . Memory (MB): peak = 8427.320 ; gain = 0.000 ; free physical = 1041 ; free virtual = 24076
+[Tue Feb 23 19:25:43 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Feb 23 19:36:20 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Tue Feb 23 19:36:20 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Feb 23 19:42:51 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Tue Feb 23 19:42:51 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Feb 23 19:49:14 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Tue Feb 23 19:49:15 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:34 ; elapsed = 00:00:47 . Memory (MB): peak = 8431.508 ; gain = 0.195 ; free physical = 4721 ; free virtual = 24144
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Feb 23 19:53:47 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Tue Feb 23 19:53:47 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:32 ; elapsed = 00:00:30 . Memory (MB): peak = 8452.520 ; gain = 0.195 ; free physical = 4438 ; free virtual = 23874
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Tue Feb 23 19:58:09 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Tue Feb 23 19:58:09 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
+refresh_design
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-294268-apple/ILA_LTC2271/ILA_LTC2271.dcp' for cell 'ltc2271'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.dcp' for cell 'my_clock'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0.dcp' for cell 'CCD231/CCD231_i/AXI_GPIO_IN'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1.dcp' for cell 'CCD231/CCD231_i/AXI_GPIO_OUT'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.dcp' for cell 'CCD231/CCD231_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1.dcp' for cell 'CCD231/CCD231_i/rst_ps7_0_148M'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_xbar_0/CCD231_xbar_0.dcp' for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_0/CCD231_auto_pc_0.dcp' for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/s00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/CCD231_auto_pc_1.dcp' for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc'
+INFO: [Netlist 29-17] Analyzing 241 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-35] Removing redundant IBUF, my_clock/inst/clkin1_ibufg, from the path connected to top-level port: clk_50M 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'my_clock/clk_in' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-294268-apple/dcp84/my_clk_generator.edf:342]
+INFO: [Chipscope 16-324] Core: ltc2271 UUID: 1f100b0a-9300-572c-9638-9a5c93f7ec90 
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc] for cell 'CCD231/CCD231_i/processing_system7_0/inst'
+WARNING: [Vivado 12-2489] -input_jitter contains time 0.202470 which will be rounded to 0.202 to ensure it is an integer multiple of 1 picosecond [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc:21]
+INFO: [Common 17-41] Interrupt caught. Command should exit soon. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc:481]
+INFO: [Common 17-344] 'set_property' was cancelled [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc:481]
+INFO: [Common 17-344] 'set_property' was cancelled [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc:481]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc] for cell 'CCD231/CCD231_i/processing_system7_0/inst'
+CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'U0' within module 'CCD231_axi_gpio_0_1' for instance 'CCD231/CCD231_i/AXI_GPIO_OUT'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1_board.xdc will not be read for this cell.
+CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'U0' within module 'CCD231_axi_gpio_0_1' for instance 'CCD231/CCD231_i/AXI_GPIO_OUT'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1.xdc will not be read for this cell.
+CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'U0' within module 'CCD231_rst_ps7_0_148M_1' for instance 'CCD231/CCD231_i/rst_ps7_0_148M'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1_board.xdc will not be read for this cell.
+CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'U0' within module 'CCD231_rst_ps7_0_148M_1' for instance 'CCD231/CCD231_i/rst_ps7_0_148M'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1.xdc will not be read for this cell.
+CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'U0' within module 'CCD231_axi_gpio_0_0' for instance 'CCD231/CCD231_i/AXI_GPIO_IN'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0_board.xdc will not be read for this cell.
+CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'U0' within module 'CCD231_axi_gpio_0_0' for instance 'CCD231/CCD231_i/AXI_GPIO_IN'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0.xdc will not be read for this cell.
+CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'inst' within module 'my_clk_generator' for instance 'my_clock'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_board.xdc will not be read for this cell.
+CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'inst' within module 'my_clk_generator' for instance 'my_clock'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc will not be read for this cell.
+CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'inst' within module 'ILA_LTC2271' for instance 'ltc2271'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila_impl.xdc will not be read for this cell.
+CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'inst' within module 'ILA_LTC2271' for instance 'ltc2271'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila.xdc will not be read for this cell.
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc]
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/new/gpio.xdc]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/new/gpio.xdc]
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/new/leds.xdc]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/new/leds.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/CCD231_auto_pc_1.dcp'
+Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8452.520 ; gain = 0.000 ; free physical = 2549 ; free virtual = 22041
+INFO: [Common 17-344] 'refresh_design' was cancelled
+file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.sysdef /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+
+launch_sdk -workspace /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk -hwspec /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk -hwspec /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.C_PROBE6_WIDTH {16} CONFIG.C_PROBE2_WIDTH {1} CONFIG.C_NUM_OF_PROBES {7}] [get_ips ILA_LTC2271]
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ILA_LTC2271'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ILA_LTC2271'...
+generate_target: Time (s): cpu = 00:00:08 ; elapsed = 00:00:22 . Memory (MB): peak = 8452.520 ; gain = 0.000 ; free physical = 712 ; free virtual = 18899
+catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
+reset_run ILA_LTC2271_synth_1
+launch_runs -jobs 4 ILA_LTC2271_synth_1
+WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
+[Tue Feb 23 20:49:04 2021] Launched ILA_LTC2271_synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/runme.log
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Feb 23 20:59:01 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Tue Feb 23 20:59:01 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Tue Feb 23 21:00:07 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Tue Feb 23 21:00:07 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:16 ; elapsed = 00:00:08 . Memory (MB): peak = 8516.551 ; gain = 0.195 ; free physical = 1186 ; free virtual = 18896
+file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.sysdef /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+

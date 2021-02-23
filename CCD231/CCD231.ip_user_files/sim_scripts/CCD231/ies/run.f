@@ -77,6 +77,7 @@
   "../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
+  "../../../../CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/sim/CCD231_auto_pc_1.v" \
   "../../../../CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_0/sim/CCD231_auto_pc_0.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \

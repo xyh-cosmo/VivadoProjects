@@ -171,7 +171,7 @@ proc create_root_design { parentCell } {
    CONFIG.HAS_LOCK {1} \
    CONFIG.HAS_PROT {1} \
    CONFIG.HAS_QOS {1} \
-   CONFIG.HAS_REGION {0} \
+   CONFIG.HAS_REGION {1} \
    CONFIG.HAS_RRESP {1} \
    CONFIG.HAS_WSTRB {1} \
    CONFIG.ID_WIDTH {6} \
@@ -180,7 +180,7 @@ proc create_root_design { parentCell } {
    CONFIG.NUM_READ_THREADS {1} \
    CONFIG.NUM_WRITE_OUTSTANDING {8} \
    CONFIG.NUM_WRITE_THREADS {1} \
-   CONFIG.PROTOCOL {AXI3} \
+   CONFIG.PROTOCOL {AXI4} \
    CONFIG.READ_WRITE_MODE {READ_WRITE} \
    CONFIG.RUSER_BITS_PER_BYTE {0} \
    CONFIG.RUSER_WIDTH {0} \
@@ -193,10 +193,10 @@ proc create_root_design { parentCell } {
   set gpio_in [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:gpio_rtl:1.0 gpio_in ]
 
   # Create ports
-  set FCLK_CLK0_0 [ create_bd_port -dir O -type clk FCLK_CLK0_0 ]
+  set FCLK_CLK0 [ create_bd_port -dir O -type clk FCLK_CLK0 ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {148148163} \
- ] $FCLK_CLK0_0
+ ] $FCLK_CLK0
   set axi_hp_clk [ create_bd_port -dir I -type clk axi_hp_clk ]
   set_property -dict [ list \
    CONFIG.FREQ_HZ {150000000} \
@@ -625,7 +625,7 @@ proc create_root_design { parentCell } {
 
   # Create port connections
   connect_bd_net -net axi_clk_1 [get_bd_ports axi_hp_clk] [get_bd_pins AXI_GPIO_IN/s_axi_aclk] [get_bd_pins AXI_GPIO_OUT/s_axi_aclk] [get_bd_pins AXI_INTERCONNECT/ACLK] [get_bd_pins AXI_INTERCONNECT/M00_ACLK] [get_bd_pins AXI_INTERCONNECT/M01_ACLK] [get_bd_pins AXI_INTERCONNECT/S00_ACLK] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins rst_ps7_0_148M/slowest_sync_clk]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_ports FCLK_CLK0_0] [get_bd_pins processing_system7_0/FCLK_CLK0]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_ports FCLK_CLK0] [get_bd_pins processing_system7_0/FCLK_CLK0]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_148M/ext_reset_in]
   connect_bd_net -net rst_ps7_0_148M_interconnect_aresetn [get_bd_pins AXI_INTERCONNECT/ARESETN] [get_bd_pins axi_interconnect_0/ARESETN] [get_bd_pins rst_ps7_0_148M/interconnect_aresetn]
   connect_bd_net -net rst_ps7_0_148M_peripheral_aresetn [get_bd_ports axim_rst_n] [get_bd_pins AXI_GPIO_IN/s_axi_aresetn] [get_bd_pins AXI_GPIO_OUT/s_axi_aresetn] [get_bd_pins AXI_INTERCONNECT/M00_ARESETN] [get_bd_pins AXI_INTERCONNECT/M01_ARESETN] [get_bd_pins AXI_INTERCONNECT/S00_ARESETN] [get_bd_pins axi_interconnect_0/M00_ARESETN] [get_bd_pins axi_interconnect_0/S00_ARESETN] [get_bd_pins rst_ps7_0_148M/peripheral_aresetn]

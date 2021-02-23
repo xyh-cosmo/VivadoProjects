@@ -56,38 +56,41 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// _clk_20M____20.000______0.000______50.0______161.500_____92.596
-// _clk_50M____50.000______0.000______50.0______134.101_____92.596
+// _clk_10M____10.000______0.000______50.0______296.755____161.614
+// _clk_20M____20.000______0.000______50.0______258.893____161.614
+// clk_150M___150.000______0.000______50.0______159.601____161.614
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
 //----------------------------------------------------------------------------
-// __primary________148.148163____________0.010
+// __primary______________50____________0.010
 
 `timescale 1ps/1ps
 
-(* CORE_GENERATION_INFO = "my_clk_generator,clk_wiz_v5_4_3_0,{component_name=my_clk_generator,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=2,clkin1_period=6.750,clkin2_period=10.000,use_power_down=false,use_reset=false,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
+(* CORE_GENERATION_INFO = "my_clk_generator,clk_wiz_v5_4_3_0,{component_name=my_clk_generator,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=3,clkin1_period=20.000,clkin2_period=10.0,use_power_down=false,use_reset=false,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
 
 module my_clk_generator 
  (
   // Clock out ports
+  output        clk_10M,
   output        clk_20M,
-  output        clk_50M,
+  output        clk_150M,
   // Status and control signals
   output        locked,
  // Clock in ports
-  input         clk_in1
+  input         clk_in
  );
 
   my_clk_generator_clk_wiz inst
   (
   // Clock out ports  
+  .clk_10M(clk_10M),
   .clk_20M(clk_20M),
-  .clk_50M(clk_50M),
+  .clk_150M(clk_150M),
   // Status and control signals               
   .locked(locked),
  // Clock in ports
-  .clk_in1(clk_in1)
+  .clk_in(clk_in)
   );
 
 endmodule

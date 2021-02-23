@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Wed Feb  3 13:44:27 2021
+// Date        : Tue Feb 23 14:49:55 2021
 // Host        : apple running 64-bit Ubuntu 20.04.2 LTS
 // Command     : write_verilog -force -mode funcsim
-//               /home/xyh/NFS_Alinx/VivadoProjects/CCD231-debug-2021-01-26/CCD231-debug-2021-01-26.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1_sim_netlist.v
+//               /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1_sim_netlist.v
 // Design      : CCD231_rst_ps7_0_148M_1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -25,7 +25,7 @@ module CCD231_rst_ps7_0_148M_1
     peripheral_reset,
     interconnect_aresetn,
     peripheral_aresetn);
-  (* x_interface_info = "xilinx.com:signal:clock:1.0 clock CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 148148163, PHASE 0.000, CLK_DOMAIN CCD231_processing_system7_0_1_FCLK_CLK0" *) input slowest_sync_clk;
+  (* x_interface_info = "xilinx.com:signal:clock:1.0 clock CLK" *) (* x_interface_parameter = "XIL_INTERFACENAME clock, ASSOCIATED_RESET mb_reset:bus_struct_reset:interconnect_aresetn:peripheral_aresetn:peripheral_reset, FREQ_HZ 150000000, PHASE 0.000, CLK_DOMAIN CCD231_axi_clk" *) input slowest_sync_clk;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 ext_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME ext_reset, BOARD.ASSOCIATED_PARAM RESET_BOARD_INTERFACE, POLARITY ACTIVE_LOW" *) input ext_reset_in;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 aux_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME aux_reset, POLARITY ACTIVE_LOW" *) input aux_reset_in;
   (* x_interface_info = "xilinx.com:signal:reset:1.0 dbg_reset RST" *) (* x_interface_parameter = "XIL_INTERFACENAME dbg_reset, POLARITY ACTIVE_HIGH" *) input mb_debug_sys_rst;

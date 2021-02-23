@@ -1,7 +1,7 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Thu Feb 18 18:14:49 2021
+// Date        : Tue Feb 23 18:38:59 2021
 // Host        : apple running 64-bit Ubuntu 20.04.2 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_sim_netlist.v
@@ -14,44 +14,52 @@
 
 (* NotValidForBitStream *)
 module my_clk_generator
-   (clk_20M,
-    clk_50M,
+   (clk_10M,
+    clk_20M,
+    clk_150M,
     locked,
-    clk_in1);
+    clk_in);
+  output clk_10M;
   output clk_20M;
-  output clk_50M;
+  output clk_150M;
   output locked;
-  input clk_in1;
+  input clk_in;
 
+  wire clk_10M;
+  wire clk_150M;
   wire clk_20M;
-  wire clk_50M;
-  (* IBUF_LOW_PWR *) wire clk_in1;
+  (* IBUF_LOW_PWR *) wire clk_in;
   wire locked;
 
   my_clk_generator_my_clk_generator_clk_wiz inst
-       (.clk_20M(clk_20M),
-        .clk_50M(clk_50M),
-        .clk_in1(clk_in1),
+       (.clk_10M(clk_10M),
+        .clk_150M(clk_150M),
+        .clk_20M(clk_20M),
+        .clk_in(clk_in),
         .locked(locked));
 endmodule
 
 (* ORIG_REF_NAME = "my_clk_generator_clk_wiz" *) 
 module my_clk_generator_my_clk_generator_clk_wiz
-   (clk_20M,
-    clk_50M,
+   (clk_10M,
+    clk_20M,
+    clk_150M,
     locked,
-    clk_in1);
+    clk_in);
+  output clk_10M;
   output clk_20M;
-  output clk_50M;
+  output clk_150M;
   output locked;
-  input clk_in1;
+  input clk_in;
 
+  wire clk_10M;
+  wire clk_10M_my_clk_generator;
+  wire clk_150M;
+  wire clk_150M_my_clk_generator;
   wire clk_20M;
   wire clk_20M_my_clk_generator;
-  wire clk_50M;
-  wire clk_50M_my_clk_generator;
-  wire clk_in1;
-  wire clk_in1_my_clk_generator;
+  wire clk_in;
+  wire clk_in_my_clk_generator;
   wire clkfbout_buf_my_clk_generator;
   wire clkfbout_my_clk_generator;
   wire locked;
@@ -60,7 +68,6 @@ module my_clk_generator_my_clk_generator_clk_wiz
   wire NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED;
-  wire NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED;
@@ -82,33 +89,37 @@ module my_clk_generator_my_clk_generator_clk_wiz
   IBUF #(
     .IOSTANDARD("DEFAULT")) 
     clkin1_ibufg
-       (.I(clk_in1),
-        .O(clk_in1_my_clk_generator));
+       (.I(clk_in),
+        .O(clk_in_my_clk_generator));
   (* BOX_TYPE = "PRIMITIVE" *) 
   BUFG clkout1_buf
+       (.I(clk_10M_my_clk_generator),
+        .O(clk_10M));
+  (* BOX_TYPE = "PRIMITIVE" *) 
+  BUFG clkout2_buf
        (.I(clk_20M_my_clk_generator),
         .O(clk_20M));
   (* BOX_TYPE = "PRIMITIVE" *) 
-  BUFG clkout2_buf
-       (.I(clk_50M_my_clk_generator),
-        .O(clk_50M));
+  BUFG clkout3_buf
+       (.I(clk_150M_my_clk_generator),
+        .O(clk_150M));
   (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
-    .CLKFBOUT_MULT_F(6.750000),
+    .CLKFBOUT_MULT_F(18.000000),
     .CLKFBOUT_PHASE(0.000000),
     .CLKFBOUT_USE_FINE_PS("FALSE"),
-    .CLKIN1_PERIOD(6.750000),
+    .CLKIN1_PERIOD(20.000000),
     .CLKIN2_PERIOD(0.000000),
-    .CLKOUT0_DIVIDE_F(50.000000),
+    .CLKOUT0_DIVIDE_F(90.000000),
     .CLKOUT0_DUTY_CYCLE(0.500000),
     .CLKOUT0_PHASE(0.000000),
     .CLKOUT0_USE_FINE_PS("FALSE"),
-    .CLKOUT1_DIVIDE(20),
+    .CLKOUT1_DIVIDE(45),
     .CLKOUT1_DUTY_CYCLE(0.500000),
     .CLKOUT1_PHASE(0.000000),
     .CLKOUT1_USE_FINE_PS("FALSE"),
-    .CLKOUT2_DIVIDE(1),
+    .CLKOUT2_DIVIDE(6),
     .CLKOUT2_DUTY_CYCLE(0.500000),
     .CLKOUT2_PHASE(0.000000),
     .CLKOUT2_USE_FINE_PS("FALSE"),
@@ -147,15 +158,15 @@ module my_clk_generator_my_clk_generator_clk_wiz
         .CLKFBOUT(clkfbout_my_clk_generator),
         .CLKFBOUTB(NLW_mmcm_adv_inst_CLKFBOUTB_UNCONNECTED),
         .CLKFBSTOPPED(NLW_mmcm_adv_inst_CLKFBSTOPPED_UNCONNECTED),
-        .CLKIN1(clk_in1_my_clk_generator),
+        .CLKIN1(clk_in_my_clk_generator),
         .CLKIN2(1'b0),
         .CLKINSEL(1'b1),
         .CLKINSTOPPED(NLW_mmcm_adv_inst_CLKINSTOPPED_UNCONNECTED),
-        .CLKOUT0(clk_20M_my_clk_generator),
+        .CLKOUT0(clk_10M_my_clk_generator),
         .CLKOUT0B(NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED),
-        .CLKOUT1(clk_50M_my_clk_generator),
+        .CLKOUT1(clk_20M_my_clk_generator),
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
-        .CLKOUT2(NLW_mmcm_adv_inst_CLKOUT2_UNCONNECTED),
+        .CLKOUT2(clk_150M_my_clk_generator),
         .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
         .CLKOUT3(NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED),
         .CLKOUT3B(NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED),

@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Tue Feb 23 19:15:58 2021
+# Process ID: 303349
+# Current directory: /home/xyh/NFS_Alinx/VivadoProjects/adc_test_4ch
+# Command line: vivado adc_test_4ch.xpr
+# Log file: /home/xyh/NFS_Alinx/VivadoProjects/adc_test_4ch/vivado.log
+# Journal file: /home/xyh/NFS_Alinx/VivadoProjects/adc_test_4ch/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project adc_test_4ch.xpr
+update_compile_order -fileset sources_1

@@ -56,13 +56,14 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// _clk_20M____20.000______0.000______50.0______161.500_____92.596
-// _clk_50M____50.000______0.000______50.0______134.101_____92.596
+// _clk_10M____10.000______0.000______50.0______296.755____161.614
+// _clk_20M____20.000______0.000______50.0______258.893____161.614
+// clk_150M___150.000______0.000______50.0______159.601____161.614
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
 //----------------------------------------------------------------------------
-// __primary________148.148163____________0.010
+// __primary______________50____________0.010
 
 `timescale 1ps/1ps
 
@@ -70,19 +71,20 @@ module my_clk_generator_clk_wiz
 
  (// Clock in ports
   // Clock out ports
+  output        clk_10M,
   output        clk_20M,
-  output        clk_50M,
+  output        clk_150M,
   // Status and control signals
   output        locked,
-  input         clk_in1
+  input         clk_in
  );
   // Input buffering
   //------------------------------------
-wire clk_in1_my_clk_generator;
+wire clk_in_my_clk_generator;
 wire clk_in2_my_clk_generator;
   IBUF clkin1_ibufg
-   (.O (clk_in1_my_clk_generator),
-    .I (clk_in1));
+   (.O (clk_in_my_clk_generator),
+    .I (clk_in));
 
 
 
@@ -94,9 +96,9 @@ wire clk_in2_my_clk_generator;
   //    * Unused inputs are tied off
   //    * Unused outputs are labeled unused
 
+  wire        clk_10M_my_clk_generator;
   wire        clk_20M_my_clk_generator;
-  wire        clk_50M_my_clk_generator;
-  wire        clk_25M_my_clk_generator;
+  wire        clk_150M_my_clk_generator;
   wire        clk_10M_my_clk_generator;
   wire        clk_5M_my_clk_generator;
   wire        clk_out6_my_clk_generator;
@@ -111,7 +113,6 @@ wire clk_in2_my_clk_generator;
   wire        clkfboutb_unused;
     wire clkout0b_unused;
    wire clkout1b_unused;
-   wire clkout2_unused;
    wire clkout2b_unused;
    wire clkout3_unused;
    wire clkout3b_unused;
@@ -127,28 +128,32 @@ wire clk_in2_my_clk_generator;
     .COMPENSATION         ("ZHOLD"),
     .STARTUP_WAIT         ("FALSE"),
     .DIVCLK_DIVIDE        (1),
-    .CLKFBOUT_MULT_F      (6.750),
+    .CLKFBOUT_MULT_F      (18.000),
     .CLKFBOUT_PHASE       (0.000),
     .CLKFBOUT_USE_FINE_PS ("FALSE"),
-    .CLKOUT0_DIVIDE_F     (50.000),
+    .CLKOUT0_DIVIDE_F     (90.000),
     .CLKOUT0_PHASE        (0.000),
     .CLKOUT0_DUTY_CYCLE   (0.500),
     .CLKOUT0_USE_FINE_PS  ("FALSE"),
-    .CLKOUT1_DIVIDE       (20),
+    .CLKOUT1_DIVIDE       (45),
     .CLKOUT1_PHASE        (0.000),
     .CLKOUT1_DUTY_CYCLE   (0.500),
     .CLKOUT1_USE_FINE_PS  ("FALSE"),
-    .CLKIN1_PERIOD        (6.750))
+    .CLKOUT2_DIVIDE       (6),
+    .CLKOUT2_PHASE        (0.000),
+    .CLKOUT2_DUTY_CYCLE   (0.500),
+    .CLKOUT2_USE_FINE_PS  ("FALSE"),
+    .CLKIN1_PERIOD        (20.000))
   mmcm_adv_inst
     // Output clocks
    (
     .CLKFBOUT            (clkfbout_my_clk_generator),
     .CLKFBOUTB           (clkfboutb_unused),
-    .CLKOUT0             (clk_20M_my_clk_generator),
+    .CLKOUT0             (clk_10M_my_clk_generator),
     .CLKOUT0B            (clkout0b_unused),
-    .CLKOUT1             (clk_50M_my_clk_generator),
+    .CLKOUT1             (clk_20M_my_clk_generator),
     .CLKOUT1B            (clkout1b_unused),
-    .CLKOUT2             (clkout2_unused),
+    .CLKOUT2             (clk_150M_my_clk_generator),
     .CLKOUT2B            (clkout2b_unused),
     .CLKOUT3             (clkout3_unused),
     .CLKOUT3B            (clkout3b_unused),
@@ -157,7 +162,7 @@ wire clk_in2_my_clk_generator;
     .CLKOUT6             (clkout6_unused),
      // Input clock control
     .CLKFBIN             (clkfbout_buf_my_clk_generator),
-    .CLKIN1              (clk_in1_my_clk_generator),
+    .CLKIN1              (clk_in_my_clk_generator),
     .CLKIN2              (1'b0),
      // Tied to always select the primary input clock
     .CLKINSEL            (1'b1),
@@ -197,13 +202,17 @@ wire clk_in2_my_clk_generator;
 
 
   BUFG clkout1_buf
-   (.O   (clk_20M),
-    .I   (clk_20M_my_clk_generator));
+   (.O   (clk_10M),
+    .I   (clk_10M_my_clk_generator));
 
 
   BUFG clkout2_buf
-   (.O   (clk_50M),
-    .I   (clk_50M_my_clk_generator));
+   (.O   (clk_20M),
+    .I   (clk_20M_my_clk_generator));
+
+  BUFG clkout3_buf
+   (.O   (clk_150M),
+    .I   (clk_150M_my_clk_generator));
 
 
 

@@ -60,6 +60,7 @@ proc step_failed { step } {
   close $ch
 }
 
+set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -77,7 +78,8 @@ set rc [catch {
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
   add_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd
-  read_ip -quiet /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_XYH/ILA_XYH.xci
+  read_ip -quiet /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci
+  read_ip -quiet /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci
   set_param project.isImplRun false
   read_xdc /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc
   read_xdc /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/new/gpio.xdc

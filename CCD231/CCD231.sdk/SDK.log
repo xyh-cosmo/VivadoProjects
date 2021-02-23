@@ -106,3 +106,34 @@
 13:11:48 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
 13:11:49 WARN  : Linker script will not be updated automatically. Users need to update it manually.
 21:20:40 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+20:06:37 INFO  : Launching XSCT server: xsct -n -interactive /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/temp_xsdb_launch_script.tcl
+20:06:38 INFO  : XSCT server has started successfully.
+20:06:38 INFO  : Successfully done setting XSCT server connection channel  
+20:06:38 INFO  : Successfully done setting SDK workspace  
+20:06:42 INFO  : Registering command handlers for SDK TCF services
+20:06:42 INFO  : Processing command line option -hwspec /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf.
+20:06:42 INFO  : Checking for hwspec changes in the project TOP_hw_platform_0.
+20:06:42 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1614081774000,  Project:1613711417000
+20:06:42 INFO  : The hardware specification for project 'TOP_hw_platform_0' is different from /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf.
+20:06:43 INFO  : Copied contents of /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf into /TOP_hw_platform_0/system.hdf.
+20:06:46 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+20:06:47 INFO  : 
+20:06:47 INFO  : Updating hardware inferred compiler options for fsbl.
+20:06:47 INFO  : Clearing existing target manager status.
+20:06:47 WARN  : Given IPC port value is invalid. Using default port 2350
+20:06:47 WARN  : Given XMD timeout value is invalid. Using default value of 50000
+20:06:50 WARN  : Given XMD transaction timeout value is invalid. Using default value of 60000 milli seconds
+20:06:50 INFO  : Closing and re-opening the MSS file of ther project fsbl_bsp
+20:06:51 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+20:06:52 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+21:05:25 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1614085486000,  Project:1614081774000
+21:05:25 INFO  : Project TOP_hw_platform_0's source hardware specification located at /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+21:05:27 INFO  : Copied contents of /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf into /TOP_hw_platform_0/system.hdf.
+21:05:29 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+21:05:30 INFO  : 
+21:05:31 INFO  : Updating hardware inferred compiler options for fsbl.
+21:05:31 INFO  : Clearing existing target manager status.
+21:05:31 INFO  : Closing and re-opening the MSS file of ther project fsbl_bsp
+21:05:31 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+21:05:32 WARN  : Linker script will not be updated automatically. Users need to update it manually.
