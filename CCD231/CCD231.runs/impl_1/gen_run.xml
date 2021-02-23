@@ -1,68 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7z035ffg676-2" LaunchTime="1613711157">
-  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="BG-DRC" Name="TOP.drc"/>
-  <File Type="BG-BGN" Name="TOP.bgn"/>
-  <File Type="BITSTR-SYSDEF" Name="TOP.sysdef"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
-  <File Type="BITSTR-LTX" Name="TOP.ltx"/>
-  <File Type="BITSTR-MMI" Name="TOP.mmi"/>
-  <File Type="BITSTR-BMM" Name="TOP_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="TOP.nky"/>
-  <File Type="BITSTR-RBT" Name="TOP.rbt"/>
-  <File Type="BITSTR-MSK" Name="TOP.msk"/>
-  <File Type="BG-BIN" Name="TOP.bin"/>
+  <File Type="PA-TCL" Name="TOP.tcl"/>
+  <File Type="PLACE-DCP" Name="TOP_placed.dcp"/>
+  <File Type="REPORTS-TCL" Name="TOP_reports.tcl"/>
+  <File Type="PWROPT-DCP" Name="TOP_pwropt.dcp"/>
+  <File Type="OPT-DCP" Name="TOP_opt.dcp"/>
+  <File Type="OPT-DRC" Name="TOP_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="TOP.hwdef"/>
+  <File Type="RDI-RDI" Name="TOP.vdi"/>
+  <File Type="PLACE-IO" Name="TOP_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="TOP_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="TOP_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="TOP_control_sets_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="TOP_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="TOP_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="TOP_physopt.dcp"/>
   <File Type="BG-BIT" Name="TOP.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="TOP_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="TOP_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="TOP_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="TOP_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="TOP_postroute_physopt.dcp"/>
-  <File Type="ROUTE-CLK" Name="TOP_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="TOP_incremental_reuse_routed.rpt"/>
-  <File Type="ROUTE-TIMING-RPX" Name="TOP_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-TIMING-PB" Name="TOP_timing_summary_routed.pb"/>
-  <File Type="ROUTE-TIMINGSUMMARY" Name="TOP_timing_summary_routed.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="TOP_route_status.pb"/>
+  <File Type="BG-BIN" Name="TOP.bin"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="TOP_timing_summary_routed.rpt"/>
+  <File Type="BITSTR-MSK" Name="TOP.msk"/>
+  <File Type="ROUTE-TIMING-PB" Name="TOP_timing_summary_routed.pb"/>
+  <File Type="BITSTR-RBT" Name="TOP.rbt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="TOP_timing_summary_routed.rpx"/>
+  <File Type="BITSTR-NKY" Name="TOP.nky"/>
+  <File Type="BITSTR-BMM" Name="TOP_bd.bmm"/>
+  <File Type="ROUTE-CLK" Name="TOP_clock_utilization_routed.rpt"/>
+  <File Type="BG-DRC" Name="TOP.drc"/>
+  <File Type="ROUTE-ERROR-DCP" Name="TOP_routed_error.dcp"/>
+  <File Type="BITSTR-MMI" Name="TOP.mmi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="TOP_postroute_physopt_bb.dcp"/>
+  <File Type="BG-BGN" Name="TOP.bgn"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="TOP_routed_bb.dcp"/>
+  <File Type="BITSTR-SYSDEF" Name="TOP.sysdef"/>
+  <File Type="BITSTR-LTX" Name="TOP.ltx"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="TOP_postroute_physopt.dcp"/>
   <File Type="ROUTE-STATUS" Name="TOP_route_status.rpt"/>
   <File Type="ROUTE-PWR-RPX" Name="TOP_power_routed.rpx"/>
   <File Type="ROUTE-PWR-SUM" Name="TOP_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="TOP_power_routed.rpt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="TOP_methodology_drc_routed.pb"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="TOP_methodology_drc_routed.rpx"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="TOP_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-PWR" Name="TOP_power_routed.rpt"/>
   <File Type="ROUTE-DRC-RPX" Name="TOP_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="TOP_methodology_drc_routed.pb"/>
   <File Type="ROUTE-DRC-PB" Name="TOP_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="TOP_methodology_drc_routed.rpt"/>
   <File Type="ROUTE-DRC" Name="TOP_drc_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="TOP_routed_bb.dcp"/>
   <File Type="ROUTE-DCP" Name="TOP_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="TOP_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="TOP_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="TOP_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="TOP_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="TOP_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="TOP_postplace_pwropt.dcp"/>
-  <File Type="PLACE-TIMING" Name="TOP_timing_summary_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="TOP_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="TOP_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-CTRL" Name="TOP_control_sets_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="TOP_utilization_placed.pb"/>
-  <File Type="PLACE-UTIL" Name="TOP_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="TOP_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-IO" Name="TOP_io_placed.rpt"/>
-  <File Type="RDI-RDI" Name="TOP.vdi"/>
-  <File Type="PWROPT-TIMING" Name="TOP_timing_summary_pwropted.rpt"/>
-  <File Type="PWROPT-DRC" Name="TOP_drc_pwropted.rpt"/>
-  <File Type="OPT-TIMING" Name="TOP_timing_summary_opted.rpt"/>
-  <File Type="OPT-HWDEF" Name="TOP.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="TOP_methodology_drc_opted.rpt"/>
-  <File Type="OPT-DRC" Name="TOP_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="TOP_opt.dcp"/>
-  <File Type="INIT-TIMING" Name="TOP_timing_summary_init.rpt"/>
-  <File Type="PWROPT-DCP" Name="TOP_pwropt.dcp"/>
-  <File Type="REPORTS-TCL" Name="TOP_reports.tcl"/>
-  <File Type="PLACE-DCP" Name="TOP_placed.dcp"/>
-  <File Type="PA-TCL" Name="TOP.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/bd/CCD231/CCD231.bd">
@@ -167,8 +151,8 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="CCD231_rst_ps7_0_148M_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="CCD231_axi_gpio_0_1"/>
   <BlockFileSet Type="BlockSrcs" Name="ILA_XYH"/>
   <BlockFileSet Type="BlockSrcs" Name="CCD231_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="CCD231_axi_gpio_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="CCD231_rst_ps7_0_148M_1"/>
 </GenRun>

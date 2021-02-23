@@ -20,7 +20,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='/home/xyh/NFS_Alinx/VivadoProjects/CCD231-debug-2021-01-26/CCD231-debug-2021-01-26.runs/CCD231_xbar_0_synth_1'
+HD_PWD='/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/CCD231_xbar_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

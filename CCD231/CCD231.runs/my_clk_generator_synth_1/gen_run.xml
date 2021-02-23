@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="my_clk_generator_synth_1" LaunchPart="xc7z035ffg676-2" LaunchTime="1613643236">
-  <File Type="VDS-TIMING-PB" Name="my_clk_generator_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="my_clk_generator_timing_summary_synth.rpt"/>
+  <File Type="PA-TCL" Name="my_clk_generator.tcl"/>
+  <File Type="REPORTS-TCL" Name="my_clk_generator_reports.tcl"/>
+  <File Type="RDS-RDS" Name="my_clk_generator.vds"/>
   <File Type="RDS-DCP" Name="my_clk_generator.dcp"/>
   <File Type="RDS-UTIL-PB" Name="my_clk_generator_utilization_synth.pb"/>
   <File Type="RDS-UTIL" Name="my_clk_generator_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="my_clk_generator_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="my_clk_generator.vds"/>
-  <File Type="REPORTS-TCL" Name="my_clk_generator_reports.tcl"/>
-  <File Type="PA-TCL" Name="my_clk_generator.tcl"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/my_clk_generator">
     <File Path="$PSRCDIR/sources_1/ip/my_clk_generator/my_clk_generator.xci">
       <FileInfo>
