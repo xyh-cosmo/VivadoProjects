@@ -225,7 +225,8 @@ module TOP(
     wire         M_AXI_RREADY;
 
 
-// ==========================================================================
+// =========================================================
+//  ========================================================
 //    input clk_sys;
     input clk_50M;
 
@@ -245,8 +246,10 @@ module TOP(
        .clk_in(clk_50M)
        );
 
-    reg[7:0] cnt_1M=8'b0, cnt_5M=8'b0;
-    reg clk_1M_r = 1'b0, clk_5M_r = 1'b0;
+    reg[7:0] cnt_1M=8'b0, cnt_5M=8'b0, cnt_100K = 8'b0;
+    reg clk_1M_r = 1'b0;
+    reg clk_5M_r = 1'b0;
+    reg clk_100K_r = 1'b0;
     
     always@( posedge clk_10M ) begin
         if( cnt_1M >= 5 ) begin
@@ -265,10 +268,22 @@ module TOP(
         else
             cnt_5M <= cnt_5M + 8'b1;
     end
+    
+    always@( posedge clk_10M ) begin
+        if( cnt_100K >= 50 ) begin
+            cnt_100K <= 8'b0;
+            clk_100K_r <= ~clk_100K_r;
+        end
+        else
+            cnt_100K <= cnt_100K + 8'b1;
+    end
 
-    assign ENC = clk_1M_r;
+//    assign ENC = clk_1M_r;
 //    assign ENC = clk_5M_r;
 //    assign ENC = clk_10M;
+    assign ENC = clk_100K_r;
+//  ========================================================
+//  ========================================================
 
     //  ==============
     //  PS与PL交互的信号
@@ -306,45 +321,45 @@ module TOP(
     assign data_H[15:0] = wr_burst_data[15:0];
 
 //  将LTC2271输出的差分信号转换成单端信号
-    IBUFDS #(
-        .DIFF_TERM("TRUE"),     // Differential Termination
-        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
-        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
-    ) IBUFDS_EF_FR (
-        .O(EF_FR),           // Buffer output
-        .I(EF_FR_P),         // Diff_p buffer input (connect directly to top-level port)
-        .IB(EF_FR_N)         // Diff_n buffer input (connect directly to top-level port)
-    );
+//    IBUFDS #(
+//        .DIFF_TERM("TRUE"),     // Differential Termination
+//        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+//        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+//    ) IBUFDS_EF_FR (
+//        .O(EF_FR),           // Buffer output
+//        .I(EF_FR_P),         // Diff_p buffer input (connect directly to top-level port)
+//        .IB(EF_FR_N)         // Diff_n buffer input (connect directly to top-level port)
+//    );
 
-    IBUFDS #(
-        .DIFF_TERM("TRUE"),     // Differential Termination
-        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
-        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
-    ) IBUFDS_GH_FR (
-        .O(GH_FR),           // Buffer output
-        .I(GH_FR_P),         // Diff_p buffer input (connect directly to top-level port)
-        .IB(GH_FR_N)         // Diff_n buffer input (connect directly to top-level port)
-    );
+//    IBUFDS #(
+//        .DIFF_TERM("TRUE"),     // Differential Termination
+//        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+//        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+//    ) IBUFDS_GH_FR (
+//        .O(GH_FR),           // Buffer output
+//        .I(GH_FR_P),         // Diff_p buffer input (connect directly to top-level port)
+//        .IB(GH_FR_N)         // Diff_n buffer input (connect directly to top-level port)
+//    );
 
-    IBUFDS #(
-        .DIFF_TERM("TRUE"),     // Differential Termination
-        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
-        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
-    ) IBUFDS_EF_DCO (
-        .O(EF_DCO),           // Buffer output
-        .I(EF_DCO_P),         // Diff_p buffer input (connect directly to top-level port)
-        .IB(EF_DCO_N)         // Diff_n buffer input (connect directly to top-level port)
-    );
+//    IBUFDS #(
+//        .DIFF_TERM("TRUE"),     // Differential Termination
+//        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+//        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+//    ) IBUFDS_EF_DCO (
+//        .O(EF_DCO),           // Buffer output
+//        .I(EF_DCO_P),         // Diff_p buffer input (connect directly to top-level port)
+//        .IB(EF_DCO_N)         // Diff_n buffer input (connect directly to top-level port)
+//    );
 
-    IBUFDS #(
-        .DIFF_TERM("TRUE"),     // Differential Termination
-        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
-        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
-    ) IBUFDS_GH_DCO (
-        .O(GH_DCO),           // Buffer output
-        .I(GH_DCO_P),         // Diff_p buffer input (connect directly to top-level port)
-        .IB(GH_DCO_N)         // Diff_n buffer input (connect directly to top-level port)
-    );
+//    IBUFDS #(
+//        .DIFF_TERM("TRUE"),     // Differential Termination
+//        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+//        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+//    ) IBUFDS_GH_DCO (
+//        .O(GH_DCO),           // Buffer output
+//        .I(GH_DCO_P),         // Diff_p buffer input (connect directly to top-level port)
+//        .IB(GH_DCO_N)         // Diff_n buffer input (connect directly to top-level port)
+//    );
 
     IBUFDS #(
         .DIFF_TERM("TRUE"),     // Differential Termination
@@ -387,6 +402,8 @@ module TOP(
     );
 
     wire PL_KEY;
+    wire error; // NOT USED
+    wire data_status;
     mem_test
     #(
         .MEM_DATA_BITS(64),
@@ -395,8 +412,9 @@ module TOP(
     )
     mem_test_m0
     (
-        .rst(~rst_n),                             
-
+        .rst(PL_KEY),                             
+        .mem_clk(clk_150M),
+        
         .rd_burst_req(rd_burst_req),               
         .wr_burst_req(wr_burst_req),               
         .rd_burst_len(rd_burst_len),               
@@ -410,16 +428,26 @@ module TOP(
         .rd_burst_finish(rd_burst_finish),   
         .wr_burst_finish(wr_burst_finish),
     
-        .pl_key(PL_KEY),
+//        .pl_key(PL_KEY),
 
-        .EF_FR(EF_FR),
-        .GH_FR(GH_FR),
-        .EF_DCO(EF_DCO),
-        .GH_DCO(GH_DCO),
+        .EF_FR_p(EF_FR_P),
+        .EF_FR_n(EF_FR_N),
+        
+        .GH_FR_p(GH_FR_P),
+        .GH_FR_n(GH_FR_N),
+        
+        .EF_DCO_p(EF_DCO_P),
+        .EF_DCO_n(EF_DCO_N),
+        
+        .GH_DCO_p(GH_DCO_P),
+        .GH_DCO_n(GH_DCO_N),
+        
         .EOUT(EOUT),
         .FOUT(FOUT),
         .GOUT(GOUT),
         .HOUT(HOUT),
+        
+        .status(data_status),
 
         .error(error)
     ); 
@@ -530,7 +558,7 @@ module TOP(
         .gpio2_tri_o(gpio2_spi_data),
         .gpio_tri_o( {CLKP, 
                     //   ENC_fake, 
-                      PL_KEY,   // 用该寄存器触发ADC采样
+                      PL_KEY,   // 用做mem_test模块的rst信号
                       TRIG_fake, 
                       gpio_A0, 
                       gpio_A1, 
@@ -612,64 +640,69 @@ module TOP(
 
 
 //  分频时钟
-//    parameter cycles_max = 20;
-   parameter cycles_max = 0;  // set to zero so that the divided clocks runs forever!
-//  这里的分频时钟信号用于测试
-	CLOCK_DIV
-		#(
-			.DIV_FACTOR(50),
-			.CNT_START(0),
-			.CYCLES_MAX(cycles_max)
-		)
-		clk_div_0
-		(
-			.clk_sys(clk_50M),
-			.en(en_ctr),
-			.clk_div(RST_SIG_CTR),
-			.status(ctr_status)
-		);
+////    parameter cycles_max = 20;
+//   parameter cycles_max = 0;  // set to zero so that the divided clocks runs forever!
+////  这里的分频时钟信号用于测试
+//	CLOCK_DIV
+//		#(
+//			.DIV_FACTOR(50),
+//			.CNT_START(0),
+//			.CYCLES_MAX(cycles_max)
+//		)
+//		clk_div_0
+//		(
+//			.clk_sys(clk_50M),
+//			.en(en_ctr),
+//			.clk_div(RST_SIG_CTR),
+//			.status(ctr_status)
+//		);
 		
-	CLOCK_DIV
-       #(
-           .DIV_FACTOR(50),
-           .CNT_START(0),
-           .CYCLES_MAX(cycles_max)
-       )
-       clk_div_1
-       (
-           .clk_sys(clk_50M),
-           .en(en_ctr),
-           .clk_div(RPHI1_CTR),
-           .status()
-       );
+//	CLOCK_DIV
+//       #(
+//           .DIV_FACTOR(50),
+//           .CNT_START(0),
+//           .CYCLES_MAX(cycles_max)
+//       )
+//       clk_div_1
+//       (
+//           .clk_sys(clk_50M),
+//           .en(en_ctr),
+//           .clk_div(RPHI1_CTR),
+//           .status()
+//       );
 
-   CLOCK_DIV
-		#(
-			.DIV_FACTOR(50),
-			.CNT_START(0),
-			.CYCLES_MAX(cycles_max)
-		)
-		clk_div_2
-		(
-			.clk_sys(clk_50M),
-			.en(en_ctr),
-			.clk_div(RPHI2_CTR),
-			.status()
-		);
+//   CLOCK_DIV
+//		#(
+//			.DIV_FACTOR(50),
+//			.CNT_START(0),
+//			.CYCLES_MAX(cycles_max)
+//		)
+//		clk_div_2
+//		(
+//			.clk_sys(clk_50M),
+//			.en(en_ctr),
+//			.clk_div(RPHI2_CTR),
+//			.status()
+//		);
 
-   CLOCK_DIV
-		#(
-			.DIV_FACTOR(50),
-			.CNT_START(0),
-			.CYCLES_MAX(cycles_max)
-		)
-		clk_div_3
-		(
-			.clk_sys(clk_50M),
-			.en(en_ctr),
-			.clk_div(RPHI3_CTR),
-			.status()
-		);
+//   CLOCK_DIV
+//		#(
+//			.DIV_FACTOR(50),
+//			.CNT_START(0),
+//			.CYCLES_MAX(cycles_max)
+//		)
+//		clk_div_3
+//		(
+//			.clk_sys(clk_50M),
+//			.en(en_ctr),
+//			.clk_div(RPHI3_CTR),
+//			.status()
+//		);
+		
+        assign RST_SIG_CTR = 1'b0;
+        assign RPHI1_CTR = 1'b0;
+        assign RPHI2_CTR = 1'b0;
+        assign RPHI3_CTR = 1'b0;
 // =============================
 	
 	SPI4ADC spi4adc(
@@ -707,14 +740,28 @@ module TOP(
     //     );
 
     ILA_LTC2271 ltc2271(
-        .clk(clk_50M),
-        .probe0(EF_FR),
-        .probe1(EF_DCO),
-        .probe2(PL_KEY),
-        .probe3(data_E),
-        .probe4(data_F),
-        .probe5(data_G),
-        .probe6(data_H)
+        .clk(clk_150M),
+        .probe0(EF_FR_P),
+        .probe1(EF_FR_N),
+        .probe2(EF_DCO_P),
+        .probe3(EF_DCO_N),
+        .probe4(PL_KEY),
+        
+        .probe5(data_E),
+        .probe6(data_F),
+        .probe7(data_G),
+        .probe8(data_H),
+        
+//        .probe5(EOUT),
+//        .probe6(FOUT),
+//        .probe7(GOUT),
+//        .probe8(HOUT),
+        
+        .probe9(sclk),
+        .probe10(mosi),
+        .probe11(A0),
+        .probe12(A1),
+        .probe13(data_status)
     );
 
 endmodule

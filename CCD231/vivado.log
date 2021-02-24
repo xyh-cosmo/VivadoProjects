@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Tue Feb 23 17:23:26 2021
-# Process ID: 294268
+# Start of session at: Wed Feb 24 13:28:37 2021
+# Process ID: 3077
 # Current directory: /home/xyh/NFS_Alinx/VivadoProjects/CCD231
 # Command line: vivado CCD231.xpr
 # Log file: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/vivado.log
@@ -11,198 +11,112 @@
 #-----------------------------------------------------------
 start_gui
 open_project CCD231.xpr
+INFO: [Project 1-313] Project file moved from '/home/xyh/alinx_nfs/VivadoProjects/CCD231' since last save.
 Scanning sources...
 Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/xyh/Xilinx/Vivado/2017.4/data/ip'.
-open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:06 . Memory (MB): peak = 6173.324 ; gain = 181.883 ; free physical = 2531 ; free virtual = 26154
+open_project: Time (s): cpu = 00:00:19 ; elapsed = 00:00:09 . Memory (MB): peak = 6187.625 ; gain = 203.805 ; free physical = 27066 ; free virtual = 29374
 update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
-open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
-Adding cell -- xilinx.com:ip:processing_system7:5.5 - processing_system7_0
-Adding cell -- xilinx.com:ip:axi_gpio:2.0 - AXI_GPIO_OUT
-Adding cell -- xilinx.com:ip:proc_sys_reset:5.0 - rst_ps7_0_148M
-Adding cell -- xilinx.com:ip:axi_gpio:2.0 - AXI_GPIO_IN
-Adding cell -- xilinx.com:ip:axi_crossbar:2.1 - xbar
-Adding cell -- xilinx.com:ip:axi_protocol_converter:2.1 - auto_pc
-Successfully read diagram <CCD231> from BD file </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd>
-open_project /home/xyh/NFS_Alinx/VivadoProjects/adc_test_4ch/adc_test_4ch.xpr
-INFO: [Project 1-313] Project file moved from '/home/xyh/NFS_Alinx/adc_test_4ch' since last save.
-Scanning sources...
-Finished scanning sources
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1704] No user IP repositories specified
-INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/xyh/Xilinx/Vivado/2017.4/data/ip'.
+add_files -norecurse /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/recv_ltc2271.v
 update_compile_order -fileset sources_1
-current_project CCD231
-set_property name FCLK_CLK0 [get_bd_ports FCLK_CLK0_0]
-save_bd_design
-Wrote  : </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd> 
-Wrote  : </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ui/bd_3ffded2c.ui> 
-generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-Wrote  : </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd> 
-VHDL Output written to : /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v
-VHDL Output written to : /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/sim/CCD231.v
-VHDL Output written to : /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hdl/CCD231_wrapper.v
-INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_GPIO_OUT .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_148M .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_GPIO_IN .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_INTERCONNECT/xbar .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_0/CCD231_auto_pc_0_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_INTERCONNECT/s00_couplers/auto_pc .
-Exporting to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hw_handoff/CCD231.hwh
-Generated Block Design Tcl file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hw_handoff/CCD231_bd.tcl
-Generated Hardware Definition File /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.hwdef
-catch { config_ip_cache -export [get_ips -all CCD231_auto_pc_0] }
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP CCD231_auto_pc_0, cache-ID = 6685e3310941cc8b; cache size = 30.561 MB.
-export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
-current_project adc_test_4ch
-current_project CCD231
-current_project adc_test_4ch
-close_project
-ERROR: [Common 17-69] Command failed: Port 'clk_50M' already exists
-CRITICAL WARNING: [IP_Flow 19-1747] Failed to deliver file '/home/xyh/Xilinx/Vivado/2017.4/data/ip/xilinx/clk_wiz_v5_4/elaborate/ports.xit': ERROR: [Common 17-69] Command failed: Port 'clk_50M' already exists
-
-ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
-ERROR: [IP_Flow 19-3541] IP Elaboration error: Failed to generate IP 'my_clk_generator'. Failed to generate 'Elaborate Ports' outputs: 
-ERROR: [Common 17-69] Command failed: Port 'clk_50M' already exists
-CRITICAL WARNING: [IP_Flow 19-1747] Failed to deliver file '/home/xyh/Xilinx/Vivado/2017.4/data/ip/xilinx/clk_wiz_v5_4/elaborate/ports.xit': ERROR: [Common 17-69] Command failed: Port 'clk_50M' already exists
-
-ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
-ERROR: [IP_Flow 19-3541] IP Elaboration error: Failed to generate IP 'my_clk_generator'. Failed to generate 'Elaborate Ports' outputs: 
-ERROR: [Common 17-69] Command failed: Port 'clk_50M' already exists
-CRITICAL WARNING: [IP_Flow 19-1747] Failed to deliver file '/home/xyh/Xilinx/Vivado/2017.4/data/ip/xilinx/clk_wiz_v5_4/elaborate/ports.xit': ERROR: [Common 17-69] Command failed: Port 'clk_50M' already exists
-
-ERROR: [IP_Flow 19-167] Failed to deliver one or more file(s).
-ERROR: [IP_Flow 19-3541] IP Elaboration error: Failed to generate IP 'my_clk_generator'. Failed to generate 'Elaborate Ports' outputs: 
-set_property -dict [list CONFIG.PRIM_IN_FREQ {50} CONFIG.CLKOUT3_USED {true} CONFIG.PRIMARY_PORT {clk_in} CONFIG.CLK_OUT1_PORT {clk_10M} CONFIG.CLK_OUT2_PORT {clk_50M} CONFIG.CLK_OUT3_PORT {clk_125M} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {10} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {50} CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {125} CONFIG.CLKIN1_JITTER_PS {200.0} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {20.000} CONFIG.MMCM_CLKIN1_PERIOD {20.000} CONFIG.MMCM_CLKIN2_PERIOD {10.0} CONFIG.MMCM_CLKOUT0_DIVIDE_F {100.000} CONFIG.MMCM_CLKOUT1_DIVIDE {20} CONFIG.MMCM_CLKOUT2_DIVIDE {8} CONFIG.NUM_OUT_CLKS {3} CONFIG.CLKOUT1_JITTER {285.743} CONFIG.CLKOUT1_PHASE_ERROR {164.985} CONFIG.CLKOUT2_JITTER {192.113} CONFIG.CLKOUT2_PHASE_ERROR {164.985} CONFIG.CLKOUT3_JITTER {154.207} CONFIG.CLKOUT3_PHASE_ERROR {164.985}] [get_ips my_clk_generator]
-generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci]
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'my_clk_generator'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'my_clk_generator'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'my_clk_generator'...
-INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'my_clk_generator'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'my_clk_generator'...
-catch { config_ip_cache -export [get_ips -all my_clk_generator] }
-export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci] -no_script -sync -force -quiet
-reset_run my_clk_generator_synth_1
-launch_runs -jobs 4 my_clk_generator_synth_1
-[Tue Feb 23 18:34:45 2021] Launched my_clk_generator_synth_1...
-Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/runme.log
-export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
-set_property -dict [list CONFIG.CLK_OUT2_PORT {clk_20M} CONFIG.CLK_OUT3_PORT {clk_150M} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {20} CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {150} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {18.000} CONFIG.MMCM_CLKOUT0_DIVIDE_F {90.000} CONFIG.MMCM_CLKOUT1_DIVIDE {45} CONFIG.MMCM_CLKOUT2_DIVIDE {6} CONFIG.CLKOUT1_JITTER {296.755} CONFIG.CLKOUT1_PHASE_ERROR {161.614} CONFIG.CLKOUT2_JITTER {258.893} CONFIG.CLKOUT2_PHASE_ERROR {161.614} CONFIG.CLKOUT3_JITTER {159.601} CONFIG.CLKOUT3_PHASE_ERROR {161.614}] [get_ips my_clk_generator]
-generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci]
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'my_clk_generator'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'my_clk_generator'...
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'my_clk_generator'...
-INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'my_clk_generator'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'my_clk_generator'...
-catch { config_ip_cache -export [get_ips -all my_clk_generator] }
-export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci] -no_script -sync -force -quiet
-reset_run my_clk_generator_synth_1
-launch_runs -jobs 4 my_clk_generator_synth_1
-[Tue Feb 23 18:38:05 2021] Launched my_clk_generator_synth_1...
-Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/runme.log
-export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
-WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
-WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
-WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
-create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name ILA_LTC2271
-INFO: [filemgmt 56-101] Creating core container '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271.xcix' for IP 'ILA_LTC2271'
-set_property -dict [list CONFIG.C_PROBE5_WIDTH {16} CONFIG.C_PROBE4_WIDTH {16} CONFIG.C_PROBE3_WIDTH {16} CONFIG.C_PROBE2_WIDTH {16} CONFIG.C_DATA_DEPTH {16384} CONFIG.C_NUM_OF_PROBES {6} CONFIG.Component_Name {ILA_LTC2271}] [get_ips ILA_LTC2271]
-WARNING: [Vivado 12-3523] Attempt to change 'Component_Name' from 'ILA_LTC2271' to 'ILA_LTC2271' is not allowed and is ignored.
-generate_target {instantiation_template} [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ILA_LTC2271'...
-generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ILA_LTC2271'...
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271_ooc.xdc'
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ILA_LTC2271'...
-INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ILA_LTC2271'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ILA_LTC2271'...
-catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
-export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
-launch_runs -jobs 4 ILA_LTC2271_synth_1
-[Tue Feb 23 18:47:31 2021] Launched ILA_LTC2271_synth_1...
-Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/runme.log
-export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+export_ip_user_files -of_objects  [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/recv_ltc2271.v] -no_script -reset -force -quiet
+remove_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/recv_ltc2271.v
+update_compile_order -fileset sources_1
 reset_run synth_1
-launch_runs synth_1 -jobs 4
-[Tue Feb 23 18:54:58 2021] Launched synth_1...
-Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
-launch_runs: Time (s): cpu = 00:00:34 ; elapsed = 00:00:33 . Memory (MB): peak = 7372.766 ; gain = 0.195 ; free physical = 1306 ; free virtual = 24617
-open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
-WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
-WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
-open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
-make_wrapper -files [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -top
-generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-INFO: [BD 41-1637] Generated targets are already up-to-date for bd-design 'CCD231' - hence not re-generating.
-export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
-set_property -dict [list CONFIG.PROTOCOL {AXI4}] [get_bd_intf_ports S00_AXI]
-set_property -dict [list CONFIG.HAS_REGION {1}] [get_bd_intf_ports S00_AXI]
-save_bd_design
-Wrote  : </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd> 
-Wrote  : </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ui/bd_3ffded2c.ui> 
-open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
-generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-Wrote  : </home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd> 
-VHDL Output written to : /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v
-VHDL Output written to : /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/sim/CCD231.v
-VHDL Output written to : /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hdl/CCD231_wrapper.v
-INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_GPIO_OUT .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_148M .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_GPIO_IN .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_INTERCONNECT/xbar .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/CCD231_auto_pc_1_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_interconnect_0/s00_couplers/auto_pc .
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_0/CCD231_auto_pc_0_ooc.xdc'
-INFO: [BD 41-1029] Generation completed for the IP Integrator block AXI_INTERCONNECT/s00_couplers/auto_pc .
-Exporting to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hw_handoff/CCD231.hwh
-Generated Block Design Tcl file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hw_handoff/CCD231_bd.tcl
-Generated Hardware Definition File /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.hwdef
-generate_target: Time (s): cpu = 00:00:17 ; elapsed = 00:00:15 . Memory (MB): peak = 7527.199 ; gain = 30.805 ; free physical = 2420 ; free virtual = 25436
-catch { config_ip_cache -export [get_ips -all CCD231_processing_system7_0_1] }
-catch { config_ip_cache -export [get_ips -all CCD231_auto_pc_1] }
-catch { config_ip_cache -export [get_ips -all CCD231_auto_pc_0] }
-INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP CCD231_auto_pc_0, cache-ID = 6685e3310941cc8b; cache size = 38.447 MB.
-export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-launch_runs -jobs 4 {CCD231_processing_system7_0_1_synth_1 CCD231_auto_pc_1_synth_1}
-[Tue Feb 23 19:05:41 2021] Launched CCD231_processing_system7_0_1_synth_1, CCD231_auto_pc_1_synth_1...
-Run output will be captured here:
-CCD231_processing_system7_0_1_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/CCD231_processing_system7_0_1_synth_1/runme.log
-CCD231_auto_pc_1_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/CCD231_auto_pc_1_synth_1/runme.log
-export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-[Tue Feb 23 19:06:34 2021] Launched CCD231_processing_system7_0_1_synth_1, CCD231_auto_pc_1_synth_1...
-Run output will be captured here:
-CCD231_processing_system7_0_1_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/CCD231_processing_system7_0_1_synth_1/runme.log
-CCD231_auto_pc_1_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/CCD231_auto_pc_1_synth_1/runme.log
-[Tue Feb 23 19:06:34 2021] Launched synth_1...
-Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+reset_run ILA_LTC2271_synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Tue Feb 23 19:09:35 2021] Launched impl_1...
+[Wed Feb 24 14:18:40 2021] Launched ILA_LTC2271_synth_1, synth_1...
+Run output will be captured here:
+ILA_LTC2271_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/runme.log
+synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 14:18:40 2021] Launched impl_1...
 Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
-reset_run impl_1
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Tue Feb 23 19:10:55 2021] Launched synth_1...
+[Wed Feb 24 14:19:48 2021] Launched synth_1...
 Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
-[Tue Feb 23 19:10:55 2021] Launched impl_1...
+[Wed Feb 24 14:19:48 2021] Launched impl_1...
 Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 7551.117 ; gain = 0.195 ; free physical = 2355 ; free virtual = 25377
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Feb 24 14:22:47 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 14:22:47 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Feb 24 14:46:34 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 14:46:34 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Feb 24 14:50:11 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 14:50:11 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Feb 24 14:54:56 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 14:54:56 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 250 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7z035ffg676-2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'my_clock/clk_in' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/.Xil/Vivado-9406-apple/dcp10/my_clk_generator.edf:342]
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-3077-apple/dcp48/TOP_board.xdc]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-3077-apple/dcp48/TOP_board.xdc]
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-3077-apple/dcp48/TOP_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc:57]
+get_clocks: Time (s): cpu = 00:00:12 ; elapsed = 00:00:18 . Memory (MB): peak = 7997.383 ; gain = 567.578 ; free physical = 24313 ; free virtual = 27615
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-3077-apple/dcp48/TOP_early.xdc]
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-3077-apple/dcp48/TOP.xdc]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-3077-apple/dcp48/TOP.xdc]
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-3077-apple/dcp48/TOP_late.xdc]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-3077-apple/dcp48/TOP_late.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00.34 ; elapsed = 00:00:00.34 . Memory (MB): peak = 8009.625 ; gain = 4.242 ; free physical = 24298 ; free virtual = 27600
+Restored from archive | CPU: 0.350000 secs | Memory: 7.297028 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.34 ; elapsed = 00:00:00.34 . Memory (MB): peak = 8009.625 ; gain = 4.242 ; free physical = 24298 ; free virtual = 27600
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 82 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 72 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 9 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 1 instances
+
+open_run: Time (s): cpu = 00:00:37 ; elapsed = 00:00:45 . Memory (MB): peak = 8239.418 ; gain = 1102.371 ; free physical = 24184 ; free virtual = 27475
+set_property IOSTANDARD LVCMOS18 [get_ports [list EF_DCO_N]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list EF_DCO_P]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list EF_FR_N]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list EF_FR_P]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list GH_DCO_N]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list GH_DCO_P]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list GH_FR_N]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list GH_FR_P]]
+save_constraints -force
+set_property OFFCHIP_TERM FP_VTT_50 [get_ports [list IV_5K_CTR]]
+save_constraints -force
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Feb 24 15:02:33 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 15:02:33 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+close_design
 open_run synth_1 -name synth_1
 Design is defaulting to impl run constrset: constrs_1
 Design is defaulting to synth run part: xc7z035ffg676-2
-INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-294268-apple/ILA_LTC2271/ILA_LTC2271.dcp' for cell 'ltc2271'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-3077-apple/ILA_LTC2271/ILA_LTC2271.dcp' for cell 'ltc2271'
 INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.dcp' for cell 'my_clock'
 INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0.dcp' for cell 'CCD231/CCD231_i/AXI_GPIO_IN'
 INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1.dcp' for cell 'CCD231/CCD231_i/AXI_GPIO_OUT'
@@ -211,14 +125,13 @@ INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProje
 INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_xbar_0/CCD231_xbar_0.dcp' for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/xbar'
 INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_0/CCD231_auto_pc_0.dcp' for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/s00_couplers/auto_pc'
 INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/CCD231_auto_pc_1.dcp' for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc'
-INFO: [Netlist 29-17] Analyzing 241 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 248 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2017.4
-INFO: [Device 21-403] Loading part xc7z035ffg676-2
 INFO: [Project 1-570] Preparing netlist for logic optimization
 WARNING: [Opt 31-35] Removing redundant IBUF, my_clock/inst/clkin1_ibufg, from the path connected to top-level port: clk_50M 
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'my_clock/clk_in' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-294268-apple/dcp33/my_clk_generator.edf:342]
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'my_clock/clk_in' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-3077-apple/dcp65/my_clk_generator.edf:342]
 INFO: [Chipscope 16-324] Core: ltc2271 UUID: 1f100b0a-9300-572c-9638-9a5c93f7ec90 
 Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc] for cell 'CCD231/CCD231_i/processing_system7_0/inst'
 WARNING: [Vivado 12-2489] -input_jitter contains time 0.202470 which will be rounded to 0.202 to ensure it is an integer multiple of 1 picosecond [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc:21]
@@ -240,7 +153,194 @@ Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs
 Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc] for cell 'my_clock/inst'
 INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc:57]
 INFO: [Timing 38-2] Deriving generated clocks [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc:57]
-get_clocks: Time (s): cpu = 00:00:12 ; elapsed = 00:00:19 . Memory (MB): peak = 8330.551 ; gain = 576.578 ; free physical = 1744 ; free virtual = 24787
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc] for cell 'my_clock/inst'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila_impl.xdc] for cell 'ltc2271/inst'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila_impl.xdc] for cell 'ltc2271/inst'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila.xdc] for cell 'ltc2271/inst'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila.xdc] for cell 'ltc2271/inst'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc]
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/new/gpio.xdc]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/new/gpio.xdc]
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/new/leds.xdc]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/new/leds.xdc]
+INFO: [Project 1-538] Using original IP XDC constraints instead of the XDC constraints in dcp '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/CCD231_auto_pc_1.dcp'
+Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_READ.USE_SPLIT_R.read_addr_inst/USE_R_CHANNEL.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_BURSTS.cmd_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+Finished Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 76 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 72 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 3 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 1 instances
+
+open_run: Time (s): cpu = 00:00:11 ; elapsed = 00:00:06 . Memory (MB): peak = 8412.770 ; gain = 157.086 ; free physical = 23775 ; free virtual = 27171
+set_property IOSTANDARD LVDS_25 [get_ports [list GOUT_P]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list A0 A1 CLKP]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list ADG772_CTR]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list clk_50M]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list clk_50M]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list ADG772_CTR]]
+set_property IOSTANDARD DIFF_SSTL18_I [get_ports [list EOUT_P]]
+set_property IOSTANDARD DIFF_SSTL18_I [get_ports [list FOUT_P]]
+set_property IOSTANDARD DIFF_SSTL18_I [get_ports [list GOUT_P]]
+set_property IOSTANDARD DIFF_SSTL18_I [get_ports [list HOUT_P]]
+set_property DRIVE 12 [get_ports [list IV_5K_CTR]]
+set_property IOSTANDARD LVDS_25 [get_ports [list GOUT_P]]
+set_property IOSTANDARD LVDS_25 [get_ports [list HOUT_P]]
+set_property IOSTANDARD LVDS_25 [get_ports [list FOUT_P]]
+set_property IOSTANDARD LVDS_25 [get_ports [list EOUT_P]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list ADG772_CTR]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list clk_50M]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list ADG772_CTR]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list EF_FR_N]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list DUMPOUT]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list EF_DCO_N]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list EF_DCO_P]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list EF_FR_P]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list ENC]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list GH_DCO_N]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list GH_DCO_P]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list GH_FR_N]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list GH_FR_P]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list IV_5K_CTR]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list mosi]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list PD]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list RPHI1_CTR]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list RPHI2_CTR]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list RPHI3_CTR]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list RST_SIG_CTR]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list sclk]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list SDO]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list TRIG]]
+save_constraints
+set_property IOSTANDARD LVCMOS25 [get_ports [list ADG772_CTR]]
+save_constraints
+close_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Feb 24 15:15:58 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 15:15:58 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.sysdef /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+
+launch_sdk -workspace /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk -hwspec /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk -hwspec /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+file mkdir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk
+file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.sysdef /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+
+launch_sdk -workspace /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk -hwspec /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+INFO: [Vivado 12-393] Launching SDK...
+INFO: [Vivado 12-417] Running xsdk -workspace /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk -hwspec /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.C_PROBE8_WIDTH {16} CONFIG.C_PROBE7_WIDTH {16} CONFIG.C_PROBE4_WIDTH {1} CONFIG.C_PROBE3_WIDTH {1} CONFIG.C_NUM_OF_PROBES {9}] [get_ips ILA_LTC2271]
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ILA_LTC2271'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ILA_LTC2271'...
+catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
+reset_run ILA_LTC2271_synth_1
+launch_runs -jobs 4 ILA_LTC2271_synth_1
+[Wed Feb 24 15:53:17 2021] Launched ILA_LTC2271_synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/runme.log
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Feb 24 16:04:16 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 16:04:16 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Feb 24 16:14:08 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 16:14:08 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Feb 24 16:18:10 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 16:18:10 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.sysdef /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.C_PROBE8_WIDTH {1} CONFIG.C_PROBE7_WIDTH {1} CONFIG.C_PROBE6_WIDTH {1} CONFIG.C_PROBE5_WIDTH {1}] [get_ips ILA_LTC2271]
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ILA_LTC2271'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ILA_LTC2271'...
+catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
+reset_run ILA_LTC2271_synth_1
+launch_runs -jobs 4 ILA_LTC2271_synth_1
+[Wed Feb 24 17:10:41 2021] Launched ILA_LTC2271_synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/runme.log
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Feb 24 17:11:38 2021] Launched ILA_LTC2271_synth_1, synth_1...
+Run output will be captured here:
+ILA_LTC2271_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/runme.log
+synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 17:11:38 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z035ffg676-2
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-3077-apple/ILA_LTC2271/ILA_LTC2271.dcp' for cell 'ltc2271'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.dcp' for cell 'my_clock'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0.dcp' for cell 'CCD231/CCD231_i/AXI_GPIO_IN'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1.dcp' for cell 'CCD231/CCD231_i/AXI_GPIO_OUT'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.dcp' for cell 'CCD231/CCD231_i/processing_system7_0'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1.dcp' for cell 'CCD231/CCD231_i/rst_ps7_0_148M'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_xbar_0/CCD231_xbar_0.dcp' for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/xbar'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_0/CCD231_auto_pc_0.dcp' for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/s00_couplers/auto_pc'
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/CCD231_auto_pc_1.dcp' for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc'
+INFO: [Netlist 29-17] Analyzing 225 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Opt 31-35] Removing redundant IBUF, my_clock/inst/clkin1_ibufg, from the path connected to top-level port: clk_50M 
+Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'my_clock/clk_in' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-3077-apple/dcp115/my_clk_generator.edf:342]
+INFO: [Chipscope 16-324] Core: ltc2271 UUID: 1f100b0a-9300-572c-9638-9a5c93f7ec90 
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc] for cell 'CCD231/CCD231_i/processing_system7_0/inst'
+WARNING: [Vivado 12-2489] -input_jitter contains time 0.202470 which will be rounded to 0.202 to ensure it is an integer multiple of 1 picosecond [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc:21]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc] for cell 'CCD231/CCD231_i/processing_system7_0/inst'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1_board.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1_board.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1_board.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1_board.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0_board.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0_board.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_board.xdc] for cell 'my_clock/inst'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_board.xdc] for cell 'my_clock/inst'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc] for cell 'my_clock/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc:57]
 Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc] for cell 'my_clock/inst'
 Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila_impl.xdc] for cell 'ltc2271/inst'
 Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila_impl.xdc] for cell 'ltc2271/inst'
@@ -266,66 +366,726 @@ INFO: [Project 1-111] Unisim Transformation Summary:
   RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 3 instances
   RAM32X1D => RAM32X1D (RAMD32, RAMD32): 1 instances
 
-open_run: Time (s): cpu = 00:00:31 ; elapsed = 00:00:28 . Memory (MB): peak = 8427.320 ; gain = 876.203 ; free physical = 1668 ; free virtual = 24695
-set_property IOSTANDARD LVCMOS18 [get_ports [list EOUT_P]]
-set_property IOSTANDARD LVDS_25 [get_ports [list EF_DCO_P]]
-set_property IOSTANDARD LVDS_25 [get_ports [list EF_FR_P]]
-set_property IOSTANDARD LVDS_25 [get_ports [list EOUT_P]]
-set_property IOSTANDARD LVDS_25 [get_ports [list FOUT_P]]
-set_property IOSTANDARD LVDS_25 [get_ports [list GH_DCO_P]]
-set_property IOSTANDARD LVDS_25 [get_ports [list GH_FR_P]]
-set_property IOSTANDARD LVDS_25 [get_ports [list GOUT_P]]
-set_property IOSTANDARD LVDS_25 [get_ports [list HOUT_P]]
-save_constraints
+open_run: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 8634.164 ; gain = 120.059 ; free physical = 18074 ; free virtual = 22686
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:02:11
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249854792
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+current_hw_device [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+WARNING: [Labtools 27-3222] Mismatch between the design programmed into the device xc7z035 (JTAG device index = 1) and the probes file(s) /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx.
+ The hw_probe  in the probes file has port index 7. This port does not exist in the ILA core at location (uuid_1F100B0A9300572C96389A5C93F7EC90).
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:12 ; elapsed = 00:00:11 . Memory (MB): peak = 9040.223 ; gain = 8.004 ; free physical = 17508 ; free virtual = 22143
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+WARNING: Simulation object EF_FR was not found in the design.
+WARNING: Simulation object EF_DCO was not found in the design.
+WARNING: Simulation object data_E was not found in the design.
+WARNING: Simulation object data_F was not found in the design.
+WARNING: Simulation object data_G was not found in the design.
+WARNING: Simulation object data_H was not found in the design.
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {EF_DCO_N_IBUF_BUFG} {EF_DCO_P_IBUF} {EF_FR_N_IBUF} {EF_FR_P_IBUF_BUFG} {EOUT} {FOUT} {GOUT} {HOUT} {PL_KEY} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 17:57:16
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 17:57:25
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 17:58:33
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 17:58:37
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property CONTROL.DATA_DEPTH 4096 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 17:58:48
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 17:58:50
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property CONTROL.DATA_DEPTH 1024 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 17:58:57
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 17:59:00
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 17:59:16
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 17:59:23
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 17:59:38
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 17:59:40
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210249854792
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.C_NUM_OF_PROBES {13}] [get_ips ILA_LTC2271]
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ILA_LTC2271'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ILA_LTC2271'...
+catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
+reset_run ILA_LTC2271_synth_1
+launch_runs -jobs 4 ILA_LTC2271_synth_1
+[Wed Feb 24 18:03:34 2021] Launched ILA_LTC2271_synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/runme.log
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Wed Feb 24 18:04:38 2021] Launched ILA_LTC2271_synth_1, synth_1...
+Run output will be captured here:
+ILA_LTC2271_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/runme.log
+synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 18:04:38 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249854792
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+INFO: [Labtools 27-1435] Device xc7z035 (JTAG device index = 1) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 9120.262 ; gain = 0.000 ; free physical = 15927 ; free virtual = 21395
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {sclk_OBUF} {mosi_OBUF} {A0_OBUF} {A1_OBUF} }
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bB [get_hw_probes sclk_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:11:44
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:11:56
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property CONTROL.DATA_DEPTH 2048 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:12:44
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:12:48
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property CONTROL.DATA_DEPTH 4096 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:12:58
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:13:00
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property CONTROL.DATA_DEPTH 8192 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:13:23
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:13:25
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes sclk_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {EF_DCO_N_IBUF_BUFG} {EF_DCO_P_IBUF} {EF_FR_N_IBUF} {EF_FR_P_IBUF_BUFG} {EOUT} {FOUT} {GOUT} {HOUT} {PL_KEY} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:15:40
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:15:40
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:15:59
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:15:59
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq1'bB [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:16:11
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:16:13
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:16:50
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:16:53
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:18:17
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:18:20
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:18:28
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:18:30
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+save_wave_config {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+close_hw
+close_design
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:02:11
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249854792
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+current_hw_device [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+WARNING: [Labtools 27-3222] Mismatch between the design programmed into the device xc7z035 (JTAG device index = 1) and the probes file(s) /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx.
+ The hw_probe  in the probes file has port index 11. This port does not exist in the ILA core at location (uuid_1F100B0A9300572C96389A5C93F7EC90).
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 9193.316 ; gain = 0.000 ; free physical = 16028 ; free virtual = 21499
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:26:03
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:26:06
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:28:01
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:28:05
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {sclk_OBUF} }
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {mosi_OBUF} }
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {A0_OBUF} }
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {A1_OBUF} }
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bB [get_hw_probes sclk_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:29:53
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:29:56
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property CONTROL.DATA_DEPTH 16384 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:30:09
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:30:14
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes sclk_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {EF_DCO_N_IBUF_BUFG} {EF_DCO_P_IBUF} {EF_FR_N_IBUF} {EF_FR_P_IBUF_BUFG} {EOUT} {FOUT} {GOUT} {HOUT} {PL_KEY} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:35:37
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:35:37
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq1'bB [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:35:46
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:35:50
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Feb 24 18:38:35 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 18:38:35 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
 reset_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-Writing placer database...
-Writing XDEF routing.
-Writing XDEF routing logical nets.
-Writing XDEF routing special nets.
-Write XDEF Complete: Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.02 . Memory (MB): peak = 8427.320 ; gain = 0.000 ; free physical = 1041 ; free virtual = 24076
-[Tue Feb 23 19:25:43 2021] Launched impl_1...
-Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.C_NUM_OF_PROBES {14}] [get_ips ILA_LTC2271]
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ILA_LTC2271'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ILA_LTC2271'...
+catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
+reset_run ILA_LTC2271_synth_1
+launch_runs -jobs 4 ILA_LTC2271_synth_1
+[Wed Feb 24 18:43:01 2021] Launched ILA_LTC2271_synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/runme.log
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Tue Feb 23 19:36:20 2021] Launched synth_1...
-Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
-[Tue Feb 23 19:36:20 2021] Launched impl_1...
+[Wed Feb 24 18:43:38 2021] Launched ILA_LTC2271_synth_1, synth_1...
+Run output will be captured here:
+ILA_LTC2271_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/runme.log
+synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 18:43:38 2021] Launched impl_1...
 Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 9193.316 ; gain = 0.000 ; free physical = 20272 ; free virtual = 25747
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+save_wave_config {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+close_hw
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249854792
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+current_hw_device [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {data_status} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:51:14
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:51:36
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bR [get_hw_probes data_status -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:52:22
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:52:24
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 18:53:45
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 18:53:50
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+save_wave_config {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+close_hw
+WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
+set_property -dict [list CONFIG.C_PROBE8_WIDTH {16} CONFIG.C_PROBE7_WIDTH {16} CONFIG.C_PROBE6_WIDTH {16} CONFIG.C_PROBE5_WIDTH {16}] [get_ips ILA_LTC2271]
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ILA_LTC2271'...
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271_ooc.xdc'
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ILA_LTC2271'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ILA_LTC2271'...
+catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
+reset_run ILA_LTC2271_synth_1
+launch_runs -jobs 4 ILA_LTC2271_synth_1
+[Wed Feb 24 18:55:31 2021] Launched ILA_LTC2271_synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/runme.log
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Tue Feb 23 19:42:51 2021] Launched synth_1...
-Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
-[Tue Feb 23 19:42:51 2021] Launched impl_1...
+[Wed Feb 24 18:55:57 2021] Launched ILA_LTC2271_synth_1, synth_1...
+Run output will be captured here:
+ILA_LTC2271_synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/runme.log
+synth_1: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 18:55:57 2021] Launched impl_1...
 Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:02:11
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249854792
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+current_hw_device [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+WARNING: [Labtools 27-1972] Mismatch between the design programmed into the device xc7z035 (JTAG device index = 1) and the probes file(s) /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx.
+ The core at location uuid_1F100B0A9300572C96389A5C93F7EC90 has different widths for ILA input port 5. Port width in the device core is 1, but port width in the probes file is 16.
+Resolution: 
+1. Reprogram device with the correct programming file and associated probes file(s) OR
+2. Goto device properties and associate the correct probes file(s) with the programming file already programmed in the device.
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 9193.316 ; gain = 0.000 ; free physical = 20205 ; free virtual = 25692
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+WARNING: Simulation object EOUT was not found in the design.
+WARNING: Simulation object FOUT was not found in the design.
+WARNING: Simulation object GOUT was not found in the design.
+WARNING: Simulation object HOUT was not found in the design.
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {data_F} {data_G} {data_H} }
+add_wave -into {hw_ila_data_1.wcfg} -radix unsigned { {data_E} }
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {data_F} {data_G} {data_H} {data_status} {EF_DCO_N_IBUF} {EF_DCO_P_IBUF} {EF_FR_N_IBUF} {EF_FR_P_IBUF_BUFG} {PL_KEY} }
+add_wave -into {hw_ila_data_1.wcfg} -radix unsigned { {data_E} }
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property CONTROL.TRIGGER_POSITION 16200 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 19:05:43
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 19:05:46
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes data_status -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property CONTROL.TRIGGER_POSITION 128 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 19:06:30
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 19:06:30
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 19:06:40
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 19:06:40
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq1'bB [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 19:06:45
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 19:06:48
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210249854792
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249854792
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+WARNING: [Labtools 27-3222] Mismatch between the design programmed into the device xc7z035 (JTAG device index = 1) and the probes file(s) /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx.
+ The hw_probe  in the probes file has port index 11. This port does not exist in the ILA core at location (uuid_1F100B0A9300572C96389A5C93F7EC90).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210249854792
+close_hw
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Tue Feb 23 19:49:14 2021] Launched synth_1...
+[Wed Feb 24 20:22:45 2021] Launched synth_1...
 Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
-[Tue Feb 23 19:49:15 2021] Launched impl_1...
+[Wed Feb 24 20:22:45 2021] Launched impl_1...
 Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:34 ; elapsed = 00:00:47 . Memory (MB): peak = 8431.508 ; gain = 0.195 ; free physical = 4721 ; free virtual = 24144
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2017.4
+  **** Build date : Dec 15 2017-21:02:11
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249854792
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+current_hw_device [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+WARNING: [Labtools 27-3222] Mismatch between the design programmed into the device xc7z035 (JTAG device index = 1) and the probes file(s) /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx.
+ The hw_probe  in the probes file has port index 11. This port does not exist in the ILA core at location (uuid_1F100B0A9300572C96389A5C93F7EC90).
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 9241.340 ; gain = 0.000 ; free physical = 20055 ; free virtual = 25701
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 20:32:57
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 20:33:03
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 20:33:57
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 20:34:00
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210249854792
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Tue Feb 23 19:53:47 2021] Launched synth_1...
+[Wed Feb 24 20:35:40 2021] Launched synth_1...
 Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
-[Tue Feb 23 19:53:47 2021] Launched impl_1...
+[Wed Feb 24 20:35:40 2021] Launched impl_1...
 Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:32 ; elapsed = 00:00:30 . Memory (MB): peak = 8452.520 ; gain = 0.195 ; free physical = 4438 ; free virtual = 23874
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249854792
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+INFO: [Labtools 27-1435] Device xc7z035 (JTAG device index = 1) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 9270.355 ; gain = 0.000 ; free physical = 20069 ; free virtual = 25717
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+WARNING: Simulation object EF_DCO_N_IBUF was not found in the design.
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 20:44:14
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 20:44:16
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 20:47:11
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 20:47:15
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 20:47:50
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 20:47:52
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 20:48:30
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 20:48:35
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 20:54:28
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 20:54:32
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210249854792
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
-WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
-[Tue Feb 23 19:58:09 2021] Launched synth_1...
+[Wed Feb 24 20:58:31 2021] Launched synth_1...
 Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
-[Tue Feb 23 19:58:09 2021] Launched impl_1...
+[Wed Feb 24 20:58:31 2021] Launched impl_1...
 Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
-create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-refresh_design
-INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-294268-apple/ILA_LTC2271/ILA_LTC2271.dcp' for cell 'ltc2271'
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249854792
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+INFO: [Labtools 27-1435] Device xc7z035 (JTAG device index = 1) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 9286.363 ; gain = 0.000 ; free physical = 20041 ; free virtual = 25691
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 9309.375 ; gain = 0.000 ; free physical = 20038 ; free virtual = 25690
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:06:59
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:07:00
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210249854792
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Feb 24 21:17:49 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 21:17:49 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+reset_run impl_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Feb 24 21:20:02 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 21:20:02 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249854792
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+INFO: [Labtools 27-1435] Device xc7z035 (JTAG device index = 1) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 9312.375 ; gain = 0.000 ; free physical = 20010 ; free virtual = 25673
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:27:50
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:27:52
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property CONTROL.DATA_DEPTH 4096 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:28:32
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:28:34
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:29:08
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:29:11
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property CONTROL.DATA_DEPTH 2048 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:29:31
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:29:33
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property CONTROL.TRIGGER_POSITION 5 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:29:48
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:29:50
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {EF_DCO_N_IBUF_BUFG} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:31:20
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:31:24
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:32:05
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:32:08
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:32:22
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:32:28
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:32:42
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:32:46
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:35:14
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:35:17
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:36:21
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:36:24
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:36:55
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:36:57
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:37:17
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:37:20
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq1'bR [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:37:38
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:37:40
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 21:39:12
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 21:39:22
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210249854792
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+[Wed Feb 24 21:56:55 2021] Launched synth_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
+[Wed Feb 24 21:56:55 2021] Launched impl_1...
+Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7z035ffg676-2
+INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-3077-apple/ILA_LTC2271/ILA_LTC2271.dcp' for cell 'ltc2271'
 INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.dcp' for cell 'my_clock'
 INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0.dcp' for cell 'CCD231/CCD231_i/AXI_GPIO_IN'
 INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1.dcp' for cell 'CCD231/CCD231_i/AXI_GPIO_OUT'
@@ -334,30 +1094,39 @@ INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProje
 INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_xbar_0/CCD231_xbar_0.dcp' for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/xbar'
 INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_0/CCD231_auto_pc_0.dcp' for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/s00_couplers/auto_pc'
 INFO: [Project 1-454] Reading design checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/CCD231_auto_pc_1.dcp' for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc'
-INFO: [Netlist 29-17] Analyzing 241 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 306 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2017.4
 INFO: [Project 1-570] Preparing netlist for logic optimization
 WARNING: [Opt 31-35] Removing redundant IBUF, my_clock/inst/clkin1_ibufg, from the path connected to top-level port: clk_50M 
 Resolution: The tool has removed redundant IBUF. To resolve this warning, check for redundant IBUF in the input design.
-WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'my_clock/clk_in' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-294268-apple/dcp84/my_clk_generator.edf:342]
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'my_clock/clk_in' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/.Xil/Vivado-3077-apple/dcp205/my_clk_generator.edf:342]
 INFO: [Chipscope 16-324] Core: ltc2271 UUID: 1f100b0a-9300-572c-9638-9a5c93f7ec90 
 Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc] for cell 'CCD231/CCD231_i/processing_system7_0/inst'
 WARNING: [Vivado 12-2489] -input_jitter contains time 0.202470 which will be rounded to 0.202 to ensure it is an integer multiple of 1 picosecond [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc:21]
-INFO: [Common 17-41] Interrupt caught. Command should exit soon. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc:481]
-INFO: [Common 17-344] 'set_property' was cancelled [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc:481]
-INFO: [Common 17-344] 'set_property' was cancelled [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc:481]
 Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xdc] for cell 'CCD231/CCD231_i/processing_system7_0/inst'
-CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'U0' within module 'CCD231_axi_gpio_0_1' for instance 'CCD231/CCD231_i/AXI_GPIO_OUT'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1_board.xdc will not be read for this cell.
-CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'U0' within module 'CCD231_axi_gpio_0_1' for instance 'CCD231/CCD231_i/AXI_GPIO_OUT'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1.xdc will not be read for this cell.
-CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'U0' within module 'CCD231_rst_ps7_0_148M_1' for instance 'CCD231/CCD231_i/rst_ps7_0_148M'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1_board.xdc will not be read for this cell.
-CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'U0' within module 'CCD231_rst_ps7_0_148M_1' for instance 'CCD231/CCD231_i/rst_ps7_0_148M'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1.xdc will not be read for this cell.
-CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'U0' within module 'CCD231_axi_gpio_0_0' for instance 'CCD231/CCD231_i/AXI_GPIO_IN'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0_board.xdc will not be read for this cell.
-CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'U0' within module 'CCD231_axi_gpio_0_0' for instance 'CCD231/CCD231_i/AXI_GPIO_IN'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0.xdc will not be read for this cell.
-CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'inst' within module 'my_clk_generator' for instance 'my_clock'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_board.xdc will not be read for this cell.
-CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'inst' within module 'my_clk_generator' for instance 'my_clock'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc will not be read for this cell.
-CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'inst' within module 'ILA_LTC2271' for instance 'ltc2271'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila_impl.xdc will not be read for this cell.
-CRITICAL WARNING: [Designutils 20-1275] Could not find cell 'inst' within module 'ILA_LTC2271' for instance 'ltc2271'. The XDC file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila.xdc will not be read for this cell.
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1_board.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1_board.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1_board.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1_board.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0_board.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0_board.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN/U0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_0/CCD231_axi_gpio_0_0.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN/U0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_board.xdc] for cell 'my_clock/inst'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_board.xdc] for cell 'my_clock/inst'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc] for cell 'my_clock/inst'
+INFO: [Timing 38-35] Done setting XDC timing constraints. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc:57]
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xdc] for cell 'my_clock/inst'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila_impl.xdc] for cell 'ltc2271/inst'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila_impl.xdc] for cell 'ltc2271/inst'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila.xdc] for cell 'ltc2271/inst'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ila_v6_2/constraints/ila.xdc] for cell 'ltc2271/inst'
 Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc]
 Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc]
 Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/new/gpio.xdc]
@@ -372,45 +1141,102 @@ Finished Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/t
 Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
 Finished Sourcing Tcl File [/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_cdc/tcl/xpm_cdc_async_rst.tcl] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc/inst/gen_axi4_axi3.axi3_conv_inst/USE_WRITE.write_addr_inst/USE_B_CHANNEL.cmd_b_queue/inst/fifo_gen_inst/inst_fifo_gen/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst'
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-refresh_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:06 . Memory (MB): peak = 8452.520 ; gain = 0.000 ; free physical = 2549 ; free virtual = 22041
-INFO: [Common 17-344] 'refresh_design' was cancelled
-file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.sysdef /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 108 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 104 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 3 instances
+  RAM32X1D => RAM32X1D (RAMD32, RAMD32): 1 instances
 
-launch_sdk -workspace /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk -hwspec /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
-INFO: [Vivado 12-393] Launching SDK...
-INFO: [Vivado 12-417] Running xsdk -workspace /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk -hwspec /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
-INFO: [Vivado 12-3157] SDK launch initiated. Please check console for any further messages.
-open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
-WARNING: [IP_Flow 19-4067] Ignoring invalid widget type specified checkbox.Providing a default widget
-set_property -dict [list CONFIG.C_PROBE6_WIDTH {16} CONFIG.C_PROBE2_WIDTH {1} CONFIG.C_NUM_OF_PROBES {7}] [get_ips ILA_LTC2271]
-generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
-INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'ILA_LTC2271'...
-INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'ILA_LTC2271'...
-WARNING: [IP_Flow 19-4994] Overwriting existing constraint file '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271_ooc.xdc'
-INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'ILA_LTC2271'...
-INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'ILA_LTC2271'...
-INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'ILA_LTC2271'...
-generate_target: Time (s): cpu = 00:00:08 ; elapsed = 00:00:22 . Memory (MB): peak = 8452.520 ; gain = 0.000 ; free physical = 712 ; free virtual = 18899
-catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
-export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
-reset_run ILA_LTC2271_synth_1
-launch_runs -jobs 4 ILA_LTC2271_synth_1
-WARNING: [filemgmt 56-315] Source scanning failed during design analysis. To get more details run synthesis or simulation and check the log.
-[Tue Feb 23 20:49:04 2021] Launched ILA_LTC2271_synth_1...
-Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/runme.log
-export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+open_run: Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 9495.445 ; gain = 108.035 ; free physical = 17178 ; free virtual = 23102
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249854792
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+INFO: [Labtools 27-1435] Device xc7z035 (JTAG device index = 1) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property OFFCHIP_TERM NONE [get_ports [list EOUT_P]]
+close_design
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 9495.445 ; gain = 0.000 ; free physical = 18271 ; free virtual = 24285
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 22:04:58
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 22:05:01
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 22:06:02
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 22:06:04
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+add_wave -into {hw_ila_data_1.wcfg} -radix unsigned { {data_E} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 22:07:16
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 22:07:23
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 22:08:02
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 22:08:02
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+set_property TRIGGER_COMPARE_VALUE eq1'bB [get_hw_probes sclk_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 22:08:07
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1965] The ILA core 'hw_ila_1' trigger was stopped by user at 2021-Feb-24 22:08:18
+WARNING: [Labtools 27-157] hw_ila [hw_ila_1] stopped. No data to upload.
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes sclk_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bB [get_hw_probes data_status -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 22:08:29
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 22:08:32
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+add_wave -into {hw_ila_data_1.wcfg} -radix unsigned { {data_E} }
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210249854792
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Tue Feb 23 20:59:01 2021] Launched synth_1...
+[Wed Feb 24 22:16:02 2021] Launched synth_1...
 Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
-[Tue Feb 23 20:59:01 2021] Launched impl_1...
+[Wed Feb 24 22:16:02 2021] Launched impl_1...
 Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Tue Feb 23 21:00:07 2021] Launched synth_1...
-Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/runme.log
-[Tue Feb 23 21:00:07 2021] Launched impl_1...
-Run output will be captured here: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:16 ; elapsed = 00:00:08 . Memory (MB): peak = 8516.551 ; gain = 0.195 ; free physical = 1186 ; free virtual = 18896
-file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.sysdef /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
-
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249854792
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+INFO: [Labtools 27-1435] Device xc7z035 (JTAG device index = 1) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+program_hw_devices: Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 9495.445 ; gain = 0.000 ; free physical = 18138 ; free virtual = 24334
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+INFO: [Labtools 27-2302] Device xc7z035 (JTAG device index = 1) is programmed with a design that has 1 ILA core(s).
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 22:23:27
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 22:23:31
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+INFO: [Labtools 27-1964] The ILA core 'hw_ila_1' trigger was armed at 2021-Feb-24 22:23:47
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+INFO: [Labtools 27-1966] The ILA core 'hw_ila_1' triggered at 2021-Feb-24 22:23:50
+INFO: [Labtools 27-3304] ILA Waveform data saved to file /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/backup/hw_ila_data_1.ila. Use Tcl command 'import_hw_ila_data' or Vivado File->Import->Import ILA Data menu item to import the previously saved data.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210249854792

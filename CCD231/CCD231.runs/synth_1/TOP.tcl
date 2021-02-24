@@ -16,7 +16,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_msg_config -id {Common 17-41} -limit 10000000
+set_param xicom.use_bs_reader 1
+set_param tcl.collectionResultDisplayLimit 0
 create_project -in_memory -part xc7z035ffg676-2
 
 set_param project.singleFileAddWarning.threshold 0
@@ -33,7 +34,6 @@ set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hdl/CCD231_wrapper.v
   /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/aq_axi_master.v
-  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/SPI_AD5628/clock_div.v
   /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v
   /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/AD_Config_v2/spi4adc.v
   /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/SPI_AD5628/spi_base.v

@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Tue Feb 23 17:23:26 2021
-# Process ID: 294268
+# Start of session at: Wed Feb 24 13:28:37 2021
+# Process ID: 3077
 # Current directory: /home/xyh/NFS_Alinx/VivadoProjects/CCD231
 # Command line: vivado CCD231.xpr
 # Log file: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/vivado.log
@@ -13,111 +13,100 @@ start_gui
 open_project CCD231.xpr
 update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
-open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
-open_project /home/xyh/NFS_Alinx/VivadoProjects/adc_test_4ch/adc_test_4ch.xpr
+add_files -norecurse /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/recv_ltc2271.v
 update_compile_order -fileset sources_1
-current_project CCD231
-set_property name FCLK_CLK0 [get_bd_ports FCLK_CLK0_0]
-save_bd_design
-generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-catch { config_ip_cache -export [get_ips -all CCD231_auto_pc_0] }
-export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
-current_project adc_test_4ch
-current_project CCD231
-current_project adc_test_4ch
-close_project
-set_property -dict [list CONFIG.PRIM_IN_FREQ {50} CONFIG.CLKOUT3_USED {true} CONFIG.PRIMARY_PORT {clk_in} CONFIG.CLK_OUT1_PORT {clk_10M} CONFIG.CLK_OUT2_PORT {clk_50M} CONFIG.CLK_OUT3_PORT {clk_125M} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {10} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {50} CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {125} CONFIG.CLKIN1_JITTER_PS {200.0} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {20.000} CONFIG.MMCM_CLKIN1_PERIOD {20.000} CONFIG.MMCM_CLKIN2_PERIOD {10.0} CONFIG.MMCM_CLKOUT0_DIVIDE_F {100.000} CONFIG.MMCM_CLKOUT1_DIVIDE {20} CONFIG.MMCM_CLKOUT2_DIVIDE {8} CONFIG.NUM_OUT_CLKS {3} CONFIG.CLKOUT1_JITTER {285.743} CONFIG.CLKOUT1_PHASE_ERROR {164.985} CONFIG.CLKOUT2_JITTER {192.113} CONFIG.CLKOUT2_PHASE_ERROR {164.985} CONFIG.CLKOUT3_JITTER {154.207} CONFIG.CLKOUT3_PHASE_ERROR {164.985}] [get_ips my_clk_generator]
-generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci]
-catch { config_ip_cache -export [get_ips -all my_clk_generator] }
-export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci] -no_script -sync -force -quiet
-reset_run my_clk_generator_synth_1
-launch_runs -jobs 4 my_clk_generator_synth_1
-export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
-set_property -dict [list CONFIG.CLK_OUT2_PORT {clk_20M} CONFIG.CLK_OUT3_PORT {clk_150M} CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {20} CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {150} CONFIG.MMCM_DIVCLK_DIVIDE {1} CONFIG.MMCM_CLKFBOUT_MULT_F {18.000} CONFIG.MMCM_CLKOUT0_DIVIDE_F {90.000} CONFIG.MMCM_CLKOUT1_DIVIDE {45} CONFIG.MMCM_CLKOUT2_DIVIDE {6} CONFIG.CLKOUT1_JITTER {296.755} CONFIG.CLKOUT1_PHASE_ERROR {161.614} CONFIG.CLKOUT2_JITTER {258.893} CONFIG.CLKOUT2_PHASE_ERROR {161.614} CONFIG.CLKOUT3_JITTER {159.601} CONFIG.CLKOUT3_PHASE_ERROR {161.614}] [get_ips my_clk_generator]
-generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci]
-catch { config_ip_cache -export [get_ips -all my_clk_generator] }
-export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci] -no_script -sync -force -quiet
-reset_run my_clk_generator_synth_1
-launch_runs -jobs 4 my_clk_generator_synth_1
-export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
-create_ip -name ila -vendor xilinx.com -library ip -version 6.2 -module_name ILA_LTC2271
-set_property -dict [list CONFIG.C_PROBE5_WIDTH {16} CONFIG.C_PROBE4_WIDTH {16} CONFIG.C_PROBE3_WIDTH {16} CONFIG.C_PROBE2_WIDTH {16} CONFIG.C_DATA_DEPTH {16384} CONFIG.C_NUM_OF_PROBES {6} CONFIG.Component_Name {ILA_LTC2271}] [get_ips ILA_LTC2271]
-generate_target {instantiation_template} [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
-generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
-catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
-export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
-launch_runs -jobs 4 ILA_LTC2271_synth_1
-export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+export_ip_user_files -of_objects  [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/recv_ltc2271.v] -no_script -reset -force -quiet
+remove_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/recv_ltc2271.v
+update_compile_order -fileset sources_1
 reset_run synth_1
-launch_runs synth_1 -jobs 4
-wait_on_run synth_1
-open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
-open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
-make_wrapper -files [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -top
-generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
-set_property -dict [list CONFIG.PROTOCOL {AXI4}] [get_bd_intf_ports S00_AXI]
-set_property -dict [list CONFIG.HAS_REGION {1}] [get_bd_intf_ports S00_AXI]
-save_bd_design
-open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
-generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-catch { config_ip_cache -export [get_ips -all CCD231_processing_system7_0_1] }
-catch { config_ip_cache -export [get_ips -all CCD231_auto_pc_1] }
-catch { config_ip_cache -export [get_ips -all CCD231_auto_pc_0] }
-export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -no_script -sync -force -quiet
-create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-launch_runs -jobs 4 {CCD231_processing_system7_0_1_synth_1 CCD231_auto_pc_1_synth_1}
-export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
-reset_run synth_1
-launch_runs synth_1 -jobs 4
-wait_on_run synth_1
+reset_run ILA_LTC2271_synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
 wait_on_run impl_1
-reset_run impl_1
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
 wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_run impl_1
+set_property IOSTANDARD LVCMOS18 [get_ports [list EF_DCO_N]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list EF_DCO_P]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list EF_FR_N]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list EF_FR_P]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list GH_DCO_N]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list GH_DCO_P]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list GH_FR_N]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list GH_FR_P]]
+save_constraints -force
+set_property OFFCHIP_TERM FP_VTT_50 [get_ports [list IV_5K_CTR]]
+save_constraints -force
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+close_design
 open_run synth_1 -name synth_1
-set_property IOSTANDARD LVCMOS18 [get_ports [list EOUT_P]]
-set_property IOSTANDARD LVDS_25 [get_ports [list EF_DCO_P]]
-set_property IOSTANDARD LVDS_25 [get_ports [list EF_FR_P]]
-set_property IOSTANDARD LVDS_25 [get_ports [list EOUT_P]]
-set_property IOSTANDARD LVDS_25 [get_ports [list FOUT_P]]
-set_property IOSTANDARD LVDS_25 [get_ports [list GH_DCO_P]]
-set_property IOSTANDARD LVDS_25 [get_ports [list GH_FR_P]]
+set_property IOSTANDARD LVDS_25 [get_ports [list GOUT_P]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list A0 A1 CLKP]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list ADG772_CTR]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list clk_50M]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list clk_50M]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list ADG772_CTR]]
+set_property IOSTANDARD DIFF_SSTL18_I [get_ports [list EOUT_P]]
+set_property IOSTANDARD DIFF_SSTL18_I [get_ports [list FOUT_P]]
+set_property IOSTANDARD DIFF_SSTL18_I [get_ports [list GOUT_P]]
+set_property IOSTANDARD DIFF_SSTL18_I [get_ports [list HOUT_P]]
+set_property DRIVE 12 [get_ports [list IV_5K_CTR]]
 set_property IOSTANDARD LVDS_25 [get_ports [list GOUT_P]]
 set_property IOSTANDARD LVDS_25 [get_ports [list HOUT_P]]
+set_property IOSTANDARD LVDS_25 [get_ports [list FOUT_P]]
+set_property IOSTANDARD LVDS_25 [get_ports [list EOUT_P]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list ADG772_CTR]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list clk_50M]]
+set_property IOSTANDARD LVCMOS18 [get_ports [list ADG772_CTR]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list EF_FR_N]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list DUMPOUT]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list EF_DCO_N]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list EF_DCO_P]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list EF_FR_P]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list ENC]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list GH_DCO_N]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list GH_DCO_P]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list GH_FR_N]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list GH_FR_P]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list IV_5K_CTR]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list mosi]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list PD]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list RPHI1_CTR]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list RPHI2_CTR]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list RPHI3_CTR]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list RST_SIG_CTR]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list sclk]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list SDO]]
+set_property IOSTANDARD LVCMOS25 [get_ports [list TRIG]]
 save_constraints
-reset_run impl_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
+set_property IOSTANDARD LVCMOS25 [get_ports [list ADG772_CTR]]
+save_constraints
+close_design
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
 wait_on_run impl_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-wait_on_run impl_1
-create_ip_run [get_files -of_objects [get_fileset sources_1] /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd]
-refresh_design
 file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.sysdef /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
 
 launch_sdk -workspace /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk -hwspec /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
-open_bd_design {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/CCD231.bd}
-set_property -dict [list CONFIG.C_PROBE6_WIDTH {16} CONFIG.C_PROBE2_WIDTH {1} CONFIG.C_NUM_OF_PROBES {7}] [get_ips ILA_LTC2271]
+file mkdir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk
+file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.sysdef /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+
+launch_sdk -workspace /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk -hwspec /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
+set_property -dict [list CONFIG.C_PROBE8_WIDTH {16} CONFIG.C_PROBE7_WIDTH {16} CONFIG.C_PROBE4_WIDTH {1} CONFIG.C_PROBE3_WIDTH {1} CONFIG.C_NUM_OF_PROBES {9}] [get_ips ILA_LTC2271]
 generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
 catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
 export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
@@ -130,5 +119,423 @@ wait_on_run impl_1
 reset_run synth_1
 launch_runs impl_1 -to_step write_bitstream -jobs 4
 wait_on_run impl_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
 file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.sysdef /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf
 
+set_property -dict [list CONFIG.C_PROBE8_WIDTH {1} CONFIG.C_PROBE7_WIDTH {1} CONFIG.C_PROBE6_WIDTH {1} CONFIG.C_PROBE5_WIDTH {1}] [get_ips ILA_LTC2271]
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
+catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
+reset_run ILA_LTC2271_synth_1
+launch_runs -jobs 4 ILA_LTC2271_synth_1
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_run synth_1 -name synth_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+current_hw_device [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {EF_DCO_N_IBUF_BUFG} {EF_DCO_P_IBUF} {EF_FR_N_IBUF} {EF_FR_P_IBUF_BUFG} {EOUT} {FOUT} {GOUT} {HOUT} {PL_KEY} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property CONTROL.DATA_DEPTH 4096 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property CONTROL.DATA_DEPTH 1024 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property -dict [list CONFIG.C_NUM_OF_PROBES {13}] [get_ips ILA_LTC2271]
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
+catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
+reset_run ILA_LTC2271_synth_1
+launch_runs -jobs 4 ILA_LTC2271_synth_1
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {sclk_OBUF} {mosi_OBUF} {A0_OBUF} {A1_OBUF} }
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bB [get_hw_probes sclk_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property CONTROL.DATA_DEPTH 2048 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property CONTROL.DATA_DEPTH 4096 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property CONTROL.DATA_DEPTH 8192 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes sclk_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {EF_DCO_N_IBUF_BUFG} {EF_DCO_P_IBUF} {EF_FR_N_IBUF} {EF_FR_P_IBUF_BUFG} {EOUT} {FOUT} {GOUT} {HOUT} {PL_KEY} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bB [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+save_wave_config {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+close_hw
+close_design
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+current_hw_device [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {sclk_OBUF} }
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {mosi_OBUF} }
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {A0_OBUF} }
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {A1_OBUF} }
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bB [get_hw_probes sclk_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property CONTROL.DATA_DEPTH 16384 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes sclk_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {EF_DCO_N_IBUF_BUFG} {EF_DCO_P_IBUF} {EF_FR_N_IBUF} {EF_FR_P_IBUF_BUFG} {EOUT} {FOUT} {GOUT} {HOUT} {PL_KEY} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bB [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run impl_1
+set_property -dict [list CONFIG.C_NUM_OF_PROBES {14}] [get_ips ILA_LTC2271]
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
+catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
+reset_run ILA_LTC2271_synth_1
+launch_runs -jobs 4 ILA_LTC2271_synth_1
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+save_wave_config {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+close_hw
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+current_hw_device [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {data_status} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bR [get_hw_probes data_status -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+save_wave_config {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wcfg}
+close_hw
+set_property -dict [list CONFIG.C_PROBE8_WIDTH {16} CONFIG.C_PROBE7_WIDTH {16} CONFIG.C_PROBE6_WIDTH {16} CONFIG.C_PROBE5_WIDTH {16}] [get_ips ILA_LTC2271]
+generate_target all [get_files  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci]
+catch { config_ip_cache -export [get_ips -all ILA_LTC2271] }
+export_ip_user_files -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -no_script -sync -force -quiet
+reset_run ILA_LTC2271_synth_1
+launch_runs -jobs 4 ILA_LTC2271_synth_1
+export_simulation -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/ILA_LTC2271/ILA_LTC2271.xci] -directory /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/sim_scripts -ip_user_files_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files -ipstatic_source_dir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ipstatic -lib_map_path [list {modelsim=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/modelsim} {questa=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/questa} {ies=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/ies} {vcs=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/vcs} {riviera=/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.cache/compile_simlib/riviera}] -use_ip_compiled_libs -force -quiet
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+current_hw_device [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {data_F} {data_G} {data_H} }
+add_wave -into {hw_ila_data_1.wcfg} -radix unsigned { {data_E} }
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {data_F} {data_G} {data_H} {data_status} {EF_DCO_N_IBUF} {EF_DCO_P_IBUF} {EF_FR_N_IBUF} {EF_FR_P_IBUF_BUFG} {PL_KEY} }
+add_wave -into {hw_ila_data_1.wcfg} -radix unsigned { {data_E} }
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property CONTROL.TRIGGER_POSITION 16200 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes data_status -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property CONTROL.TRIGGER_POSITION 128 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bB [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+close_hw
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+current_hw_device [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+reset_run impl_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property CONTROL.DATA_DEPTH 4096 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property CONTROL.DATA_DEPTH 2048 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property CONTROL.TRIGGER_POSITION 5 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+add_wave -into {hw_ila_data_1.wcfg} -radix hex { {EF_DCO_N_IBUF_BUFG} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bR [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_run synth_1 -name synth_1
+set_property OFFCHIP_TERM NONE [get_ports [list EOUT_P]]
+close_design
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+add_wave -into {hw_ila_data_1.wcfg} -radix unsigned { {data_E} }
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes PL_KEY -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bB [get_hw_probes sclk_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila -timeout 0 [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+set_property TRIGGER_COMPARE_VALUE eq1'bX [get_hw_probes sclk_OBUF -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+set_property TRIGGER_COMPARE_VALUE eq1'bB [get_hw_probes data_status -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+add_wave -into {hw_ila_data_1.wcfg} -radix unsigned { {data_E} }
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property FULL_PROBES.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.ltx} [get_hw_devices xc7z035_1]
+set_property PROGRAM.FILE {/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.bit} [get_hw_devices xc7z035_1]
+program_hw_devices [get_hw_devices xc7z035_1]
+refresh_hw_device [lindex [get_hw_devices xc7z035_1] 0]
+display_hw_ila_data [ get_hw_ila_data hw_ila_data_1 -of_objects [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]
+run_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+wait_on_hw_ila [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]
+display_hw_ila_data [upload_hw_ila_data [get_hw_ilas -of_objects [get_hw_devices xc7z035_1] -filter {CELL_NAME=~"ltc2271"}]]

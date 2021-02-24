@@ -1,7 +1,7 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Tue Feb 23 20:52:00 2021
+-- Date        : Wed Feb 24 18:58:20 2021
 -- Host        : apple running 64-bit Ubuntu 20.04.2 LTS
 -- Command     : write_vhdl -force -mode synth_stub
 --               /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/ILA_LTC2271_stub.vhdl
@@ -18,10 +18,17 @@ entity ILA_LTC2271 is
     probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
-    probe3 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    probe4 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    probe3 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe4 : in STD_LOGIC_VECTOR ( 0 to 0 );
     probe5 : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    probe6 : in STD_LOGIC_VECTOR ( 15 downto 0 )
+    probe6 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    probe7 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    probe8 : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    probe9 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe10 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe11 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe12 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe13 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
 
 end ILA_LTC2271;
@@ -30,7 +37,7 @@ architecture stub of ILA_LTC2271 is
 attribute syn_black_box : boolean;
 attribute black_box_pad_pin : string;
 attribute syn_black_box of stub : architecture is true;
-attribute black_box_pad_pin of stub : architecture is "clk,probe0[0:0],probe1[0:0],probe2[0:0],probe3[15:0],probe4[15:0],probe5[15:0],probe6[15:0]";
+attribute black_box_pad_pin of stub : architecture is "clk,probe0[0:0],probe1[0:0],probe2[0:0],probe3[0:0],probe4[0:0],probe5[15:0],probe6[15:0],probe7[15:0],probe8[15:0],probe9[0:0],probe10[0:0],probe11[0:0],probe12[0:0],probe13[0:0]";
 attribute X_CORE_INFO : string;
 attribute X_CORE_INFO of stub : architecture is "ila,Vivado 2017.4";
 begin
