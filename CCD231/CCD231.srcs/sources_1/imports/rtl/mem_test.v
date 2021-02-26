@@ -100,13 +100,16 @@ module mem_test
 		end
 //		else if( EF_DCO_p | EF_DCO_n ) begin
         else if( EF_DCO | ~EF_DCO ) begin
+//        else begin
 			if( reg_flag == 1'b0 ) begin	// handle the first 16 bits
-				px10 <= (px10 << 1) + {15'b0, EOUT};
-				px11 <= (px11 << 1) + {15'b0, FOUT};
+//				px10 <= (px10 << 1) + {15'b0, EOUT};
+//				px11 <= (px11 << 1) + {15'b0, FOUT};
+				px10 <= {px10[14:0], EOUT};
+                px11 <= {px11[14:0], FOUT};
 			end
 			else begin			// handle the rest 16 bits
-				px20 <= (px20 << 1) + {15'b0, EOUT};
-				px21 <= (px21 << 1) + {15'b0, FOUT};
+				px20 <= {px20[14:0], EOUT};
+				px21 <= {px21[14:0], FOUT};
 			end
 		end
 	end
@@ -121,12 +124,12 @@ module mem_test
 //		else if( EF_DCO_p | EF_DCO_n ) begin
         else if( GH_DCO | ~GH_DCO ) begin
 			if( reg_flag == 1'b0 ) begin	// handle the first 16 bits
-				px12 <= (px12 << 1) + {15'b0, GOUT};
-				px13 <= (px13 << 1) + {15'b0, HOUT};
+				px12 <= {px12[14:0], GOUT};
+				px13 <= {px13[14:0], HOUT};
 			end
 			else begin			// handle the rest 16 bits
-				px22 <= (px22 << 1) + {15'b0, GOUT};
-				px23 <= (px23 << 1) + {15'b0, HOUT};
+				px22 <= {px22[14:0], GOUT};
+				px23 <= {px23[14:0], HOUT};
 			end
 		end
 	end
@@ -136,8 +139,8 @@ module mem_test
     reg[63:0] wr_burst_data_reg_tmp;
 //	always@( posedge EF_FR_p or posedge rst ) begin
 //	always@( negedge EF_FR_p or posedge rst ) begin
-//    always@( negedge EF_FR or posedge rst ) begin
-    always@( negedge ENC or posedge rst ) begin
+    always@( negedge EF_FR or posedge rst ) begin
+//    always@( negedge ENC or posedge rst ) begin
 	   if( rst ) begin
            reg_flag                 <= 1'b0;
 	       wr_burst_data_reg_tmp    <= 64'b0;
