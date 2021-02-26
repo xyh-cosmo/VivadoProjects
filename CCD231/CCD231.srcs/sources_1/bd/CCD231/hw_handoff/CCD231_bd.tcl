@@ -195,7 +195,7 @@ proc create_root_design { parentCell } {
   # Create ports
   set FCLK_CLK0 [ create_bd_port -dir O -type clk FCLK_CLK0 ]
   set_property -dict [ list \
-   CONFIG.FREQ_HZ {148148163} \
+   CONFIG.FREQ_HZ {148148000} \
  ] $FCLK_CLK0
   set axi_hp_clk [ create_bd_port -dir I -type clk axi_hp_clk ]
   set_property -dict [ list \
@@ -217,7 +217,7 @@ proc create_root_design { parentCell } {
    CONFIG.C_ALL_OUTPUTS {1} \
    CONFIG.C_ALL_OUTPUTS_2 {1} \
    CONFIG.C_GPIO2_WIDTH {32} \
-   CONFIG.C_GPIO_WIDTH {8} \
+   CONFIG.C_GPIO_WIDTH {11} \
    CONFIG.C_IS_DUAL {1} \
  ] $AXI_GPIO_OUT
 

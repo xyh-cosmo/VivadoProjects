@@ -9,3 +9,4 @@
 #set_property PACKAGE_PIN AD25 [get_ports {gpio_tri_o[1]}]
 #set_property PACKAGE_PIN AD26 [get_ports {gpio_tri_o[0]}]
 
+

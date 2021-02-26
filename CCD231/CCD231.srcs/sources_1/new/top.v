@@ -40,6 +40,7 @@ module TOP(
     //	SPI outputs
         sclk,
         mosi,
+        SDO,
         A0,
         A1,
     
@@ -50,10 +51,10 @@ module TOP(
         
         TRIG,
         CLKP,
-        SDO,
+        
         ENC,            // 板子上的晶振拆掉了，因此利用FPGA生成的时钟来驱动LTC2271工作
-        PD,
-        IV_5K_CTR,
+        PD,             // 控制运放ADA4932的开、关, active low
+        IV_5K_CTR,      //02-26:用1M时钟驱动，模拟接收数据的过程
         ADG772_CTR,
         DUMPOUT,
       
@@ -85,6 +86,7 @@ module TOP(
 	output mosi;
 	output A0;
 	output A1;
+	input SDO;
 
     output RST_SIG_CTR;
     output RPHI1_CTR;
@@ -93,7 +95,6 @@ module TOP(
     
     output TRIG;
     output CLKP;
-    output SDO;
     output ENC;
     output PD;
     output IV_5K_CTR;
@@ -246,13 +247,13 @@ module TOP(
        .clk_in(clk_50M)
        );
 
-    reg[7:0] cnt_1M=8'b0, cnt_5M=8'b0, cnt_100K = 8'b0;
+    reg[7:0] cnt_1M=8'b0, cnt_5M=8'b0;
     reg clk_1M_r = 1'b0;
     reg clk_5M_r = 1'b0;
-    reg clk_100K_r = 1'b0;
     
+    //  生成1M时钟
     always@( posedge clk_10M ) begin
-        if( cnt_1M >= 5 ) begin
+        if( cnt_1M >= 4 ) begin
             cnt_1M <= 8'b0;
             clk_1M_r <= ~clk_1M_r;
         end
@@ -260,8 +261,9 @@ module TOP(
             cnt_1M <= cnt_1M + 8'b1;
     end
 
-    always@( posedge clk_20M ) begin
-        if( cnt_5M >= 2 ) begin
+    //  生成5M时钟
+    always@( posedge clk_50M ) begin
+        if( cnt_5M >= 4 ) begin
             cnt_5M <= 8'b0;
             clk_5M_r <= ~clk_5M_r;
         end
@@ -269,19 +271,12 @@ module TOP(
             cnt_5M <= cnt_5M + 8'b1;
     end
     
-    always@( posedge clk_10M ) begin
-        if( cnt_100K >= 50 ) begin
-            cnt_100K <= 8'b0;
-            clk_100K_r <= ~clk_100K_r;
-        end
-        else
-            cnt_100K <= cnt_100K + 8'b1;
-    end
-
 //    assign ENC = clk_1M_r;
-//    assign ENC = clk_5M_r;
+    assign ENC = clk_5M_r;  // OK
 //    assign ENC = clk_10M;
-    assign ENC = clk_100K_r;
+//    assign ENC = clk_20M;   //  LTC2271输出的时钟不对。。。
+    wire IV_5K_CTR_fake;
+    assign IV_5K_CTR = clk_1M_r; // 临时取消从PS端控制IV_5K_CTR,测试LTC2271的数据采集
 //  ========================================================
 //  ========================================================
 
@@ -319,47 +314,52 @@ module TOP(
     assign data_F[15:0] = wr_burst_data[47:32];
     assign data_G[15:0] = wr_burst_data[31:16];
     assign data_H[15:0] = wr_burst_data[15:0];
+    
+//    assign data_E[15:0] = {wr_burst_data[7:0]，wr_burst_data[15:8]};
+//    assign data_F[15:0] = {wr_burst_data[7:0]，wr_burst_data[15:8]};
+//    assign data_G[15:0] = {wr_burst_data[15:0]，wr_burst_data[15:0]};
+//    assign data_H[15:0] = {wr_burst_data[15:0]，wr_burst_data[15:0]};
 
 //  将LTC2271输出的差分信号转换成单端信号
-//    IBUFDS #(
-//        .DIFF_TERM("TRUE"),     // Differential Termination
-//        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
-//        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
-//    ) IBUFDS_EF_FR (
-//        .O(EF_FR),           // Buffer output
-//        .I(EF_FR_P),         // Diff_p buffer input (connect directly to top-level port)
-//        .IB(EF_FR_N)         // Diff_n buffer input (connect directly to top-level port)
-//    );
+    IBUFDS #(
+        .DIFF_TERM("TRUE"),     // Differential Termination
+        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+    ) IBUFDS_EF_FR (
+        .O(EF_FR),           // Buffer output
+        .I(EF_FR_P),         // Diff_p buffer input (connect directly to top-level port)
+        .IB(EF_FR_N)         // Diff_n buffer input (connect directly to top-level port)
+    );
 
-//    IBUFDS #(
-//        .DIFF_TERM("TRUE"),     // Differential Termination
-//        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
-//        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
-//    ) IBUFDS_GH_FR (
-//        .O(GH_FR),           // Buffer output
-//        .I(GH_FR_P),         // Diff_p buffer input (connect directly to top-level port)
-//        .IB(GH_FR_N)         // Diff_n buffer input (connect directly to top-level port)
-//    );
+    IBUFDS #(
+        .DIFF_TERM("TRUE"),     // Differential Termination
+        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+    ) IBUFDS_GH_FR (
+        .O(GH_FR),           // Buffer output
+        .I(GH_FR_P),         // Diff_p buffer input (connect directly to top-level port)
+        .IB(GH_FR_N)         // Diff_n buffer input (connect directly to top-level port)
+    );
 
-//    IBUFDS #(
-//        .DIFF_TERM("TRUE"),     // Differential Termination
-//        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
-//        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
-//    ) IBUFDS_EF_DCO (
-//        .O(EF_DCO),           // Buffer output
-//        .I(EF_DCO_P),         // Diff_p buffer input (connect directly to top-level port)
-//        .IB(EF_DCO_N)         // Diff_n buffer input (connect directly to top-level port)
-//    );
+    IBUFDS #(
+        .DIFF_TERM("TRUE"),     // Differential Termination
+        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+    ) IBUFDS_EF_DCO (
+        .O(EF_DCO),           // Buffer output
+        .I(EF_DCO_P),         // Diff_p buffer input (connect directly to top-level port)
+        .IB(EF_DCO_N)         // Diff_n buffer input (connect directly to top-level port)
+    );
 
-//    IBUFDS #(
-//        .DIFF_TERM("TRUE"),     // Differential Termination
-//        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
-//        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
-//    ) IBUFDS_GH_DCO (
-//        .O(GH_DCO),           // Buffer output
-//        .I(GH_DCO_P),         // Diff_p buffer input (connect directly to top-level port)
-//        .IB(GH_DCO_N)         // Diff_n buffer input (connect directly to top-level port)
-//    );
+    IBUFDS #(
+        .DIFF_TERM("TRUE"),     // Differential Termination
+        .IBUF_LOW_PWR("TRUE"),  // Low power="TRUE", Highest performance="FALSE" 
+        .IOSTANDARD("LVDS_25")  // Specify the input I/O standard
+    ) IBUFDS_GH_DCO (
+        .O(GH_DCO),           // Buffer output
+        .I(GH_DCO_P),         // Diff_p buffer input (connect directly to top-level port)
+        .IB(GH_DCO_N)         // Diff_n buffer input (connect directly to top-level port)
+    );
 
     IBUFDS #(
         .DIFF_TERM("TRUE"),     // Differential Termination
@@ -430,17 +430,23 @@ module TOP(
     
 //        .pl_key(PL_KEY),
 
-        .EF_FR_p(EF_FR_P),
-        .EF_FR_n(EF_FR_N),
+//        .EF_FR_p(EF_FR_P),
+//        .EF_FR_n(EF_FR_N),
         
-        .GH_FR_p(GH_FR_P),
-        .GH_FR_n(GH_FR_N),
+//        .GH_FR_p(GH_FR_P),
+//        .GH_FR_n(GH_FR_N),
         
-        .EF_DCO_p(EF_DCO_P),
-        .EF_DCO_n(EF_DCO_N),
+//        .EF_DCO_p(EF_DCO_P),
+//        .EF_DCO_n(EF_DCO_N),
         
-        .GH_DCO_p(GH_DCO_P),
-        .GH_DCO_n(GH_DCO_N),
+//        .GH_DCO_p(GH_DCO_P),
+//        .GH_DCO_n(GH_DCO_N),
+        
+        .ENC(ENC),
+        .EF_FR(EF_FR),
+        .GH_FR(GH_FR),
+        .EF_DCO(EF_DCO),
+        .GH_DCO(GH_DCO),
         
         .EOUT(EOUT),
         .FOUT(FOUT),
@@ -528,7 +534,6 @@ module TOP(
         .DEBUG()                                         
     );
 
-
     CCD231_wrapper CCD231
        (.DDR_addr(DDR_addr),
         .DDR_ba(DDR_ba),
@@ -556,7 +561,10 @@ module TOP(
         //  GPIO：在PS上修改寄存器，实现对PL端模块的控制
         .gpio_in_tri_i(pl_status),
         .gpio2_tri_o(gpio2_spi_data),
-        .gpio_tri_o( {CLKP, 
+        .gpio_tri_o({ IV_5K_CTR_fake,
+                      ADG772_CTR,
+                      PD,   // 控制LTC2271之前的运放ADA4932，active low
+                      CLKP, 
                     //   ENC_fake, 
                       PL_KEY,   // 用做mem_test模块的rst信号
                       TRIG_fake, 
@@ -706,7 +714,8 @@ module TOP(
 // =============================
 	
 	SPI4ADC spi4adc(
-		.clk(clk_50M),
+//		.clk(clk_50M),
+        .clk(clk_10M),  //  降低时钟频，通过SDO读出LTC2271的SPI配置内容
 //		.clk(clk_sys),
 		.rst(gpio_RST),
 		.spi_data(gpio2_spi_data),
@@ -741,11 +750,12 @@ module TOP(
 
     ILA_LTC2271 ltc2271(
         .clk(clk_150M),
-        .probe0(EF_FR_P),
-        .probe1(EF_FR_N),
-        .probe2(EF_DCO_P),
-        .probe3(EF_DCO_N),
-        .probe4(PL_KEY),
+        .probe0(PL_KEY),
+
+        .probe1(EF_FR),
+        .probe2(EF_DCO),
+        .probe3(GH_FR),
+        .probe4(GH_DCO),
         
         .probe5(data_E),
         .probe6(data_F),
@@ -759,9 +769,10 @@ module TOP(
         
         .probe9(sclk),
         .probe10(mosi),
-        .probe11(A0),
-        .probe12(A1),
-        .probe13(data_status)
+        .probe11(SDO),
+        .probe12(A0),
+        .probe13(A1),
+        .probe14(data_status)
     );
 
 endmodule

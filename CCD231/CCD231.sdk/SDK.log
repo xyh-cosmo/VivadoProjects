@@ -18,3 +18,26 @@
 16:23:37 INFO  : Closing and re-opening the MSS file of ther project fsbl_bsp
 16:23:38 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
 16:23:43 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+14:03:09 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1614232803000,  Project:1614154971000
+14:03:09 INFO  : Project TOP_hw_platform_0's source hardware specification located at /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+14:03:16 INFO  : Copied contents of /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf into /TOP_hw_platform_0/system.hdf.
+14:03:19 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+14:03:20 INFO  : 
+14:03:20 INFO  : Updating hardware inferred compiler options for fsbl.
+14:03:20 INFO  : Clearing existing target manager status.
+14:03:20 INFO  : Closing and re-opening the MSS file of ther project fsbl_bsp
+14:03:21 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+14:03:22 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+17:27:08 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1614237744000,  Project:1614232803000
+17:27:08 INFO  : Project TOP_hw_platform_0's source hardware specification located at /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+17:27:09 INFO  : Copied contents of /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf into /TOP_hw_platform_0/system.hdf.
+17:27:12 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+17:27:13 INFO  : 
+17:27:14 INFO  : Updating hardware inferred compiler options for fsbl.
+17:27:14 INFO  : Clearing existing target manager status.
+17:27:14 INFO  : Closing and re-opening the MSS file of ther project fsbl_bsp
+17:27:14 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+17:27:22 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+19:51:33 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 

@@ -10,9 +10,7 @@ set_property IOSTANDARD LVCMOS18 [get_ports clk_50M]
 #set_property PACKAGE_PIN AE22 [get_ports mosi]
 set_property PACKAGE_PIN AB21 [get_ports mosi]
 set_property PACKAGE_PIN AB22 [get_ports sclk]
-
-#暂时把cs接到一个空闲的FMC引脚
-#set_property PACKAGE_PIN AC26 [get_ports cs]
+set_property PACKAGE_PIN AE22 [get_ports SDO]
 set_property PACKAGE_PIN AD19 [get_ports A0]
 set_property PACKAGE_PIN AD18 [get_ports A1]
 
@@ -34,7 +32,6 @@ set_property PACKAGE_PIN AA25 [get_ports RPHI3_CTR]
 # AD9106 trigger
 set_property PACKAGE_PIN AC21 [get_ports TRIG]
 set_property PACKAGE_PIN AF22 [get_ports CLKP]
-set_property PACKAGE_PIN AE22 [get_ports SDO]
 
 set_property PACKAGE_PIN AC22 [get_ports ENC]
 set_property PACKAGE_PIN AF24 [get_ports PD]
@@ -63,7 +60,7 @@ set_property PACKAGE_PIN W13 [get_ports GH_DCO_P]
 
 set_property IOSTANDARD LVCMOS25 [get_ports mosi]
 set_property IOSTANDARD LVCMOS25 [get_ports sclk]
-#set_property IOSTANDARD LVCMOS18 [get_ports cs]
+set_property IOSTANDARD LVCMOS25 [get_ports SDO]
 set_property IOSTANDARD LVCMOS25 [get_ports A0]
 set_property IOSTANDARD LVCMOS25 [get_ports A1]
 
@@ -75,7 +72,7 @@ set_property IOSTANDARD LVCMOS25 [get_ports RPHI3_CTR]
 #  AD9106
 set_property IOSTANDARD LVCMOS25 [get_ports TRIG]
 set_property IOSTANDARD LVCMOS25 [get_ports CLKP]
-set_property IOSTANDARD LVCMOS25 [get_ports SDO]
+
 
 set_property IOSTANDARD LVCMOS25 [get_ports ENC]
 set_property IOSTANDARD LVCMOS25 [get_ports PD]
@@ -92,42 +89,25 @@ set_property IOSTANDARD LVDS_25 [get_ports GOUT_N]
 set_property IOSTANDARD LVDS_25 [get_ports HOUT_P]
 set_property IOSTANDARD LVDS_25 [get_ports HOUT_N]
 
-set_property IOSTANDARD LVCMOS25 [get_ports EF_FR_P]
-set_property IOSTANDARD LVCMOS25 [get_ports EF_FR_N]
-set_property IOSTANDARD LVCMOS25 [get_ports GH_FR_P]
-set_property IOSTANDARD LVCMOS25 [get_ports GH_FR_N]
-set_property IOSTANDARD LVCMOS25 [get_ports EF_DCO_P]
-set_property IOSTANDARD LVCMOS25 [get_ports EF_DCO_N]
-set_property IOSTANDARD LVCMOS25 [get_ports GH_DCO_P]
-set_property IOSTANDARD LVCMOS25 [get_ports GH_DCO_N]
+set_property IOSTANDARD LVDS_25 [get_ports EF_FR_P]
+set_property IOSTANDARD LVDS_25 [get_ports EF_FR_N]
+set_property IOSTANDARD LVDS_25 [get_ports GH_FR_P]
+set_property IOSTANDARD LVDS_25 [get_ports GH_FR_N]
+set_property IOSTANDARD LVDS_25 [get_ports EF_DCO_P]
+set_property IOSTANDARD LVDS_25 [get_ports EF_DCO_N]
+set_property IOSTANDARD LVDS_25 [get_ports GH_DCO_P]
+set_property IOSTANDARD LVDS_25 [get_ports GH_DCO_N]
 
 
 #create_clock -period 5.000 -name sys_clk -waveform {0.000 10.000} [get_ports sys_clk]
 
+#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets EF_FR_P_IBUF]
+#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets EF_DCO_N_IBUF]
 
-#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets EF_DCO]
-#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets IBUFDS_EF_DCO_n_0_BUFG_inst_n_0]
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets IBUFDS_EF_DCO_n_0_BUFG_inst_n_0]
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets IBUFDS_EF_FR_n_0_BUFG_inst_n_0]
 
-set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets EF_FR_P_IBUF]
-set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets EF_DCO_N_IBUF]
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets IBUFDS_GH_DCO_n_0_BUFG_inst_n_0]
+set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets IBUFDS_GH_FR_n_0_BUFG_inst_n_0]
 
-#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets EF_FR_P]
-#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets EF_FR_N]
-#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets GH_FR_P]
-#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets GH_FR_N]
 
-#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets EF_DCO_P]
-#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets EF_DCO_N]
-#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets GH_DCO_P]
-#set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets GH_DCO_N]
-
-#set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
-#set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
-#set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
-#connect_debug_port dbg_hub/clk [get_nets clk_50M_IBUF_BUFG]
-
-set_property DRIVE 12 [get_ports IV_5K_CTR]
-set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
-set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
-set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
-connect_debug_port dbg_hub/clk [get_nets clk_50M_IBUF]

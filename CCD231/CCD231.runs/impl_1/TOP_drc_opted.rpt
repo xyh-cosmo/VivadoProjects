@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date         : Wed Feb 24 22:18:54 2021
+| Date         : Fri Feb 26 20:50:00 2021
 | Host         : apple running 64-bit Ubuntu 20.04.2 LTS
 | Command      : report_drc -file TOP_drc_opted.rpt -pb TOP_drc_opted.pb -rpx TOP_drc_opted.rpx
 | Design       : TOP
@@ -39,8 +39,8 @@ Poor placement for routing between an IO pin and BUFG.
 Resolution: Poor placement of an IO pin and a BUFG has resulted in the router using a non-dedicated path between the two.  There are several things that could trigger this DRC, each of which can cause unpredictable clock insertion delays that result in poor timing.  This DRC could be caused by any of the following: (a) a clock port was placed on a pin that is not a CCIO-pin (b)the BUFG has not been placed in the same half of the device or SLR as the CCIO-pin (c) a single ended clock has been placed on the N-Side of a differential pair CCIO-pin.
  This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint is set to FALSE allowing your design to continue. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
 
-	EF_DCO_N_IBUF_inst (IBUF.O) is locked to AF13
-	EF_DCO_N_IBUF_BUFG_inst (BUFG.I) cannot be placed
+	IBUFDS_EF_DCO (IBUFDS.O) is locked to AE13
+	IBUFDS_EF_DCO_n_0_BUFG_inst (BUFG.I) cannot be placed
 
 Related violations: <none>
 
@@ -50,8 +50,8 @@ Poor placement for routing between an IO pin and BUFG.
 Resolution: Poor placement of an IO pin and a BUFG has resulted in the router using a non-dedicated path between the two.  There are several things that could trigger this DRC, each of which can cause unpredictable clock insertion delays that result in poor timing.  This DRC could be caused by any of the following: (a) a clock port was placed on a pin that is not a CCIO-pin (b)the BUFG has not been placed in the same half of the device or SLR as the CCIO-pin (c) a single ended clock has been placed on the N-Side of a differential pair CCIO-pin.
  This is normally an ERROR but the CLOCK_DEDICATED_ROUTE constraint is set to FALSE allowing your design to continue. The use of this override is highly discouraged as it may lead to very poor timing results. It is recommended that this error condition be corrected in the design.
 
-	EF_FR_P_IBUF_inst (IBUF.O) is locked to AB12
-	EF_FR_P_IBUF_BUFG_inst (BUFG.I) cannot be placed
+	IBUFDS_GH_DCO (IBUFDS.O) is locked to W13
+	IBUFDS_GH_DCO_n_0_BUFG_inst (BUFG.I) cannot be placed
 
 Related violations: <none>
 
