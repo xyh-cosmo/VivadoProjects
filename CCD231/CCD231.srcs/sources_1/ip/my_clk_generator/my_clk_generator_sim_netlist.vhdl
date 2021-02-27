@@ -1,7 +1,7 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Tue Feb 23 18:38:59 2021
+-- Date        : Sat Feb 27 21:26:20 2021
 -- Host        : apple running 64-bit Ubuntu 20.04.2 LTS
 -- Command     : write_vhdl -force -mode funcsim
 --               /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_sim_netlist.vhdl
@@ -19,6 +19,7 @@ entity my_clk_generator_my_clk_generator_clk_wiz is
     clk_10M : out STD_LOGIC;
     clk_20M : out STD_LOGIC;
     clk_150M : out STD_LOGIC;
+    clk_450M : out STD_LOGIC;
     locked : out STD_LOGIC;
     clk_in : in STD_LOGIC
   );
@@ -30,6 +31,7 @@ architecture STRUCTURE of my_clk_generator_my_clk_generator_clk_wiz is
   signal clk_10M_my_clk_generator : STD_LOGIC;
   signal clk_150M_my_clk_generator : STD_LOGIC;
   signal clk_20M_my_clk_generator : STD_LOGIC;
+  signal clk_450M_my_clk_generator : STD_LOGIC;
   signal clk_in_my_clk_generator : STD_LOGIC;
   signal clkfbout_buf_my_clk_generator : STD_LOGIC;
   signal clkfbout_my_clk_generator : STD_LOGIC;
@@ -39,7 +41,6 @@ architecture STRUCTURE of my_clk_generator_my_clk_generator_clk_wiz is
   signal NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED : STD_LOGIC;
-  signal NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED : STD_LOGIC;
   signal NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED : STD_LOGIC;
@@ -59,6 +60,7 @@ architecture STRUCTURE of my_clk_generator_my_clk_generator_clk_wiz is
   attribute BOX_TYPE of clkout1_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of clkout2_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of clkout3_buf : label is "PRIMITIVE";
+  attribute BOX_TYPE of clkout4_buf : label is "PRIMITIVE";
   attribute BOX_TYPE of mmcm_adv_inst : label is "PRIMITIVE";
 begin
 clkf_buf: unisim.vcomponents.BUFG
@@ -89,6 +91,11 @@ clkout3_buf: unisim.vcomponents.BUFG
       I => clk_150M_my_clk_generator,
       O => clk_150M
     );
+clkout4_buf: unisim.vcomponents.BUFG
+     port map (
+      I => clk_450M_my_clk_generator,
+      O => clk_450M
+    );
 mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
     generic map(
       BANDWIDTH => "OPTIMIZED",
@@ -109,7 +116,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKOUT2_DUTY_CYCLE => 0.500000,
       CLKOUT2_PHASE => 0.000000,
       CLKOUT2_USE_FINE_PS => false,
-      CLKOUT3_DIVIDE => 1,
+      CLKOUT3_DIVIDE => 2,
       CLKOUT3_DUTY_CYCLE => 0.500000,
       CLKOUT3_PHASE => 0.000000,
       CLKOUT3_USE_FINE_PS => false,
@@ -155,7 +162,7 @@ mmcm_adv_inst: unisim.vcomponents.MMCME2_ADV
       CLKOUT1B => NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED,
       CLKOUT2 => clk_150M_my_clk_generator,
       CLKOUT2B => NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED,
-      CLKOUT3 => NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED,
+      CLKOUT3 => clk_450M_my_clk_generator,
       CLKOUT3B => NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED,
       CLKOUT4 => NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED,
       CLKOUT5 => NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED,
@@ -185,6 +192,7 @@ entity my_clk_generator is
     clk_10M : out STD_LOGIC;
     clk_20M : out STD_LOGIC;
     clk_150M : out STD_LOGIC;
+    clk_450M : out STD_LOGIC;
     locked : out STD_LOGIC;
     clk_in : in STD_LOGIC
   );
@@ -199,6 +207,7 @@ inst: entity work.my_clk_generator_my_clk_generator_clk_wiz
       clk_10M => clk_10M,
       clk_150M => clk_150M,
       clk_20M => clk_20M,
+      clk_450M => clk_450M,
       clk_in => clk_in,
       locked => locked
     );

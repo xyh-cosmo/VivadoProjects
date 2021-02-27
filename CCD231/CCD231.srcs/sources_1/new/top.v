@@ -225,6 +225,18 @@ module TOP(
     wire         M_AXI_RVALID;
     wire         M_AXI_RREADY;
 
+    //  ==============
+    //  PS与PL交互的信号
+    //  ==============
+    //  GPIO
+    //  SPI的控制需要一些额外信号，因此增加以下几个信号
+    wire gpio_A0, gpio_A1, gpio_CPOL, gpio_CPHA, gpio_RST;
+    wire ENC_fake,TRIG_fake; // 之前接到PS端的控制信号   
+    wire ENC_CTR;   // 控制LTC2271时钟是否持续工作
+    //  GPIO2
+    wire [31:0] gpio2_spi_data;
+    //  GPIO_IN
+    wire pl_status;
 
 // =========================================================
 //  ========================================================
@@ -234,13 +246,15 @@ module TOP(
 //  生成50MHz的时钟（也包括其他频率的时钟） 
     wire clk_locked;
     wire clk_1M, clk_5M;
-    wire clk_10M, clk_20M, clk_150M;
+    wire clk_10M, clk_20M, clk_150M, clk_450M; //, clk_900M;
 
     my_clk_generator  my_clock (
        // Clock out ports 
        .clk_10M(clk_10M),
        .clk_20M(clk_20M),
        .clk_150M(clk_150M),
+       .clk_450M(clk_450M),
+//       .clk_900M(clk_900M),
        // Status and control signals               
        .locked(clk_locked),
        // Clock in ports
@@ -272,25 +286,13 @@ module TOP(
     end
     
 //    assign ENC = clk_1M_r;
-    assign ENC = clk_5M_r;  // OK
-//    assign ENC = clk_10M;
+    assign ENC = clk_5M_r & ENC_CTR;  // OK
+    //assign ENC = clk_10M;
 //    assign ENC = clk_20M;   //  LTC2271输出的时钟不对。。。
     wire IV_5K_CTR_fake;
     assign IV_5K_CTR = clk_1M_r; // 临时取消从PS端控制IV_5K_CTR,测试LTC2271的数据采集
 //  ========================================================
 //  ========================================================
-
-    //  ==============
-    //  PS与PL交互的信号
-    //  ==============
-    //  GPIO
-    //  SPI的控制需要一些额外信号，因此增加以下几个信号
-    wire gpio_A0, gpio_A1, gpio_CPOL, gpio_CPHA, gpio_RST;
-    wire ENC_fake,TRIG_fake; // 之前接到PS端的控制信号   
-    //  GPIO2
-    wire [31:0] gpio2_spi_data;
-    //  GPIO_IN
-    wire pl_status;
 
     wire wr_burst_data_req;
     wire wr_burst_finish;
@@ -561,12 +563,12 @@ module TOP(
         //  GPIO：在PS上修改寄存器，实现对PL端模块的控制
         .gpio_in_tri_i(pl_status),
         .gpio2_tri_o(gpio2_spi_data),
-        .gpio_tri_o({ IV_5K_CTR_fake,
+        .gpio_tri_o({ ENC_CTR,
+                      IV_5K_CTR_fake,
                       ADG772_CTR,
                       PD,   // 控制LTC2271之前的运放ADA4932，active low
                       CLKP, 
-                    //   ENC_fake, 
-                      PL_KEY,   // 用做mem_test模块的rst信号
+                      PL_KEY,   // 用做mem_test模块的rst信号,
                       TRIG_fake, 
                       gpio_A0, 
                       gpio_A1, 
@@ -749,7 +751,8 @@ module TOP(
     //     );
 
     ILA_LTC2271 ltc2271(
-        .clk(clk_150M),
+        .clk(clk_450M),
+//        .clk(clk_900M),
         .probe0(PL_KEY),
 
         .probe1(EF_FR),
@@ -761,18 +764,18 @@ module TOP(
         .probe6(data_F),
         .probe7(data_G),
         .probe8(data_H),
-        
-//        .probe5(EOUT),
-//        .probe6(FOUT),
-//        .probe7(GOUT),
-//        .probe8(HOUT),
-        
+             
         .probe9(sclk),
         .probe10(mosi),
         .probe11(SDO),
         .probe12(A0),
         .probe13(A1),
-        .probe14(data_status)
+        .probe14(data_status),
+        
+        .probe15(EOUT),
+        .probe16(FOUT),
+        .probe17(GOUT),
+        .probe18(HOUT)
     );
 
 endmodule

@@ -41,3 +41,23 @@
 17:27:14 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
 17:27:22 WARN  : Linker script will not be updated automatically. Users need to update it manually.
 19:51:33 ERROR : Unexpected error while parsing XMD response ￿: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 
+22:02:25 INFO  : Launching XSCT server: xsct -n -interactive /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/temp_xsdb_launch_script.tcl
+22:02:26 INFO  : XSCT server has started successfully.
+22:02:26 INFO  : Successfully done setting XSCT server connection channel  
+22:02:26 INFO  : Successfully done setting SDK workspace  
+22:02:29 INFO  : Registering command handlers for SDK TCF services
+22:02:29 INFO  : Processing command line option -hwspec /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf.
+22:02:29 INFO  : Checking for hwspec changes in the project TOP_hw_platform_0.
+22:02:29 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1614433995000,  Project:1614237744000
+22:02:29 INFO  : The hardware specification for project 'TOP_hw_platform_0' is different from /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf.
+22:02:30 INFO  : Copied contents of /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf into /TOP_hw_platform_0/system.hdf.
+22:02:33 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+22:02:34 INFO  : 
+22:02:35 INFO  : Updating hardware inferred compiler options for fsbl.
+22:02:35 INFO  : Clearing existing target manager status.
+22:02:35 WARN  : Given IPC port value is invalid. Using default port 2350
+22:02:35 WARN  : Given XMD timeout value is invalid. Using default value of 50000
+22:02:38 WARN  : Given XMD transaction timeout value is invalid. Using default value of 60000 milli seconds
+22:02:38 INFO  : Closing and re-opening the MSS file of ther project fsbl_bsp
+22:02:39 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+22:02:40 WARN  : Linker script will not be updated automatically. Users need to update it manually.

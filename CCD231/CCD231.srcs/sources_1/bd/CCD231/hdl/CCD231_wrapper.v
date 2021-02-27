@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-//Date        : Thu Feb 25 13:53:45 2021
+//Date        : Sat Feb 27 21:44:53 2021
 //Host        : apple running 64-bit Ubuntu 20.04.2 LTS
 //Command     : generate_target CCD231_wrapper.bd
 //Design      : CCD231_wrapper
@@ -141,7 +141,7 @@ module CCD231_wrapper
   output [0:0]axim_rst_n;
   output [31:0]gpio2_tri_o;
   input [0:0]gpio_in_tri_i;
-  output [10:0]gpio_tri_o;
+  output [11:0]gpio_tri_o;
 
   wire [14:0]DDR_addr;
   wire [2:0]DDR_ba;
@@ -208,7 +208,7 @@ module CCD231_wrapper
   wire [0:0]axim_rst_n;
   wire [31:0]gpio2_tri_o;
   wire [0:0]gpio_in_tri_i;
-  wire [10:0]gpio_tri_o;
+  wire [11:0]gpio_tri_o;
 
   CCD231 CCD231_i
        (.DDR_addr(DDR_addr),

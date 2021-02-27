@@ -17,19 +17,19 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z035'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z035'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 282988 
+INFO: Helper process launched with PID 410751 
 WARNING: [Synth 8-2507] parameter declaration becomes local in mem_test with formal parameter declaration list [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:55]
 WARNING: [Synth 8-2507] parameter declaration becomes local in mem_test with formal parameter declaration list [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:56]
 WARNING: [Synth 8-2507] parameter declaration becomes local in mem_test with formal parameter declaration list [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:57]
 WARNING: [Synth 8-2507] parameter declaration becomes local in mem_test with formal parameter declaration list [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:58]
 WARNING: [Synth 8-2507] parameter declaration becomes local in mem_test with formal parameter declaration list [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:61]
-WARNING: [Synth 8-2507] parameter declaration becomes local in mem_test with formal parameter declaration list [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:71]
+WARNING: [Synth 8-2507] parameter declaration becomes local in mem_test with formal parameter declaration list [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:72]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1300.707 ; gain = 92.273 ; free physical = 18772 ; free virtual = 26306
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1297.031 ; gain = 92.273 ; free physical = 14489 ; free virtual = 22532
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'TOP' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:11]
-INFO: [Synth 8-638] synthesizing module 'my_clk_generator' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/my_clk_generator_stub.v:5]
-INFO: [Synth 8-256] done synthesizing module 'my_clk_generator' (1#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/my_clk_generator_stub.v:5]
+INFO: [Synth 8-638] synthesizing module 'my_clk_generator' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/my_clk_generator_stub.v:5]
+INFO: [Synth 8-256] done synthesizing module 'my_clk_generator' (1#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/my_clk_generator_stub.v:5]
 INFO: [Synth 8-638] synthesizing module 'IBUFDS' [/home/xyh/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:19483]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter DIFF_TERM bound to: TRUE - type: string 
@@ -47,13 +47,22 @@ INFO: [Synth 8-638] synthesizing module 'mem_test' [/home/xyh/NFS_Alinx/VivadoPr
 	Parameter MEM_READ bound to: 3'b001 
 	Parameter MEM_WRITE bound to: 3'b010 
 	Parameter INIT_ADDR bound to: 33554432 - type: integer 
-	Parameter PL_CNT_MAX bound to: 1048576 - type: integer 
-WARNING: [Synth 8-6014] Unused sequential element wr_cnt_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:194]
-WARNING: [Synth 8-6014] Unused sequential element rd_cnt_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:212]
-WARNING: [Synth 8-6014] Unused sequential element write_read_len_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:238]
-INFO: [Synth 8-256] done synthesizing module 'mem_test' (3#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:1]
-WARNING: [Synth 8-689] width (32) of port connection 'rd_burst_addr' does not match port width (28) of module 'mem_test' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:422]
-WARNING: [Synth 8-689] width (32) of port connection 'wr_burst_addr' does not match port width (28) of module 'mem_test' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:423]
+	Parameter PL_CNT_MAX bound to: 1024 - type: integer 
+INFO: [Synth 8-638] synthesizing module 'IDDR' [/home/xyh/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:21382]
+	Parameter DDR_CLK_EDGE bound to: OPPOSITE_EDGE - type: string 
+	Parameter INIT_Q1 bound to: 1'b0 
+	Parameter INIT_Q2 bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+INFO: [Synth 8-256] done synthesizing module 'IDDR' (3#1) [/home/xyh/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:21382]
+WARNING: [Synth 8-6014] Unused sequential element wr_cnt_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:287]
+WARNING: [Synth 8-6014] Unused sequential element rd_cnt_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:305]
+WARNING: [Synth 8-6014] Unused sequential element write_read_len_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:331]
+WARNING: [Synth 8-5788] Register wr_burst_data_reg_tmp_reg in module mem_test is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:247]
+INFO: [Synth 8-256] done synthesizing module 'mem_test' (4#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:1]
+WARNING: [Synth 8-689] width (32) of port connection 'rd_burst_addr' does not match port width (28) of module 'mem_test' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:424]
+WARNING: [Synth 8-689] width (32) of port connection 'wr_burst_addr' does not match port width (28) of module 'mem_test' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:425]
 INFO: [Synth 8-638] synthesizing module 'aq_axi_master' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/aq_axi_master.v:39]
 	Parameter S_WR_IDLE bound to: 3'b000 
 	Parameter S_WA_WAIT bound to: 3'b001 
@@ -77,48 +86,48 @@ WARNING: [Synth 8-6014] Unused sequential element wr_chkdata_reg was removed.  [
 WARNING: [Synth 8-6014] Unused sequential element rd_chkdata_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/aq_axi_master.v:184]
 WARNING: [Synth 8-6014] Unused sequential element resp_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/aq_axi_master.v:185]
 WARNING: [Synth 8-5788] Register reg_r_last_reg in module aq_axi_master is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/aq_axi_master.v:370]
-INFO: [Synth 8-256] done synthesizing module 'aq_axi_master' (4#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/aq_axi_master.v:39]
-WARNING: [Synth 8-689] width (13) of port connection 'WR_LEN' does not match port width (32) of module 'aq_axi_master' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:517]
-WARNING: [Synth 8-689] width (13) of port connection 'RD_LEN' does not match port width (32) of module 'aq_axi_master' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:527]
+INFO: [Synth 8-256] done synthesizing module 'aq_axi_master' (5#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/aq_axi_master.v:39]
+WARNING: [Synth 8-689] width (13) of port connection 'WR_LEN' does not match port width (32) of module 'aq_axi_master' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:519]
+WARNING: [Synth 8-689] width (13) of port connection 'RD_LEN' does not match port width (32) of module 'aq_axi_master' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:529]
 INFO: [Synth 8-638] synthesizing module 'CCD231_wrapper' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hdl/CCD231_wrapper.v:12]
 INFO: [Synth 8-638] synthesizing module 'CCD231' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:13]
-INFO: [Synth 8-638] synthesizing module 'CCD231_axi_gpio_0_0' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/CCD231_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'CCD231_axi_gpio_0_0' (5#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/CCD231_axi_gpio_0_0_stub.v:6]
-INFO: [Synth 8-638] synthesizing module 'CCD231_axi_gpio_0_1' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/CCD231_axi_gpio_0_1_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'CCD231_axi_gpio_0_1' (6#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/CCD231_axi_gpio_0_1_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'CCD231_axi_gpio_0_0' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/CCD231_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'CCD231_axi_gpio_0_0' (6#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/CCD231_axi_gpio_0_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'CCD231_axi_gpio_0_1' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/CCD231_axi_gpio_0_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'CCD231_axi_gpio_0_1' (7#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/CCD231_axi_gpio_0_1_stub.v:6]
 INFO: [Synth 8-638] synthesizing module 'CCD231_axi_interconnect_0_1' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:1108]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1VKZHNX' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:1665]
-INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1VKZHNX' (7#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:1665]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1VKZHNX' (8#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:1665]
 INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_Q2PVI4' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:1797]
-INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_Q2PVI4' (8#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:1797]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_Q2PVI4' (9#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:1797]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_1IEWIBG' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:1929]
-INFO: [Synth 8-638] synthesizing module 'CCD231_auto_pc_0' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/CCD231_auto_pc_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'CCD231_auto_pc_0' (9#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/CCD231_auto_pc_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1IEWIBG' (10#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:1929]
-INFO: [Synth 8-638] synthesizing module 'CCD231_xbar_0' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/CCD231_xbar_0_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'CCD231_xbar_0' (11#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/CCD231_xbar_0_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'CCD231_auto_pc_0' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/CCD231_auto_pc_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'CCD231_auto_pc_0' (10#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/CCD231_auto_pc_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_1IEWIBG' (11#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:1929]
+INFO: [Synth 8-638] synthesizing module 'CCD231_xbar_0' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/CCD231_xbar_0_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'CCD231_xbar_0' (12#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/CCD231_xbar_0_stub.v:6]
 WARNING: [Synth 8-350] instance 'xbar' of module 'CCD231_xbar_0' requires 40 connections, but only 38 given [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:1624]
-INFO: [Synth 8-256] done synthesizing module 'CCD231_axi_interconnect_0_1' (12#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:1108]
+INFO: [Synth 8-256] done synthesizing module 'CCD231_axi_interconnect_0_1' (13#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:1108]
 INFO: [Synth 8-638] synthesizing module 'CCD231_axi_interconnect_0_0' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:693]
 INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_WJRO1' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:2234]
-INFO: [Synth 8-638] synthesizing module 'CCD231_auto_pc_1' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/CCD231_auto_pc_1_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'CCD231_auto_pc_1' (13#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/CCD231_auto_pc_1_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_WJRO1' (14#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:2234]
-INFO: [Synth 8-256] done synthesizing module 'CCD231_axi_interconnect_0_0' (15#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:693]
-INFO: [Synth 8-638] synthesizing module 'CCD231_processing_system7_0_1' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/CCD231_processing_system7_0_1_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'CCD231_processing_system7_0_1' (16#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/CCD231_processing_system7_0_1_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'CCD231_auto_pc_1' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/CCD231_auto_pc_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'CCD231_auto_pc_1' (14#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/CCD231_auto_pc_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_WJRO1' (15#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:2234]
+INFO: [Synth 8-256] done synthesizing module 'CCD231_axi_interconnect_0_0' (16#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:693]
+INFO: [Synth 8-638] synthesizing module 'CCD231_processing_system7_0_1' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/CCD231_processing_system7_0_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'CCD231_processing_system7_0_1' (17#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/CCD231_processing_system7_0_1_stub.v:6]
 WARNING: [Synth 8-350] instance 'processing_system7_0' of module 'CCD231_processing_system7_0_1' requires 107 connections, but only 103 given [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:579]
-INFO: [Synth 8-638] synthesizing module 'CCD231_rst_ps7_0_148M_1' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/CCD231_rst_ps7_0_148M_1_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'CCD231_rst_ps7_0_148M_1' (17#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/CCD231_rst_ps7_0_148M_1_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'CCD231_rst_ps7_0_148M_1' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/CCD231_rst_ps7_0_148M_1_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'CCD231_rst_ps7_0_148M_1' (18#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/CCD231_rst_ps7_0_148M_1_stub.v:6]
 WARNING: [Synth 8-350] instance 'rst_ps7_0_148M' of module 'CCD231_rst_ps7_0_148M_1' requires 10 connections, but only 7 given [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:683]
-INFO: [Synth 8-256] done synthesizing module 'CCD231' (18#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:13]
-INFO: [Synth 8-256] done synthesizing module 'CCD231_wrapper' (19#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hdl/CCD231_wrapper.v:12]
-WARNING: [Synth 8-689] width (1) of port connection 'S00_AXI_arid' does not match port width (6) of module 'CCD231_wrapper' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:581]
-WARNING: [Synth 8-689] width (2) of port connection 'S00_AXI_arlock' does not match port width (1) of module 'CCD231_wrapper' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:583]
-WARNING: [Synth 8-689] width (1) of port connection 'S00_AXI_rid' does not match port width (6) of module 'CCD231_wrapper' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:591]
-WARNING: [Synth 8-689] width (1) of port connection 'S00_AXI_awid' does not match port width (6) of module 'CCD231_wrapper' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:600]
-WARNING: [Synth 8-689] width (1) of port connection 'S00_AXI_bid' does not match port width (6) of module 'CCD231_wrapper' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:609]
-WARNING: [Synth 8-350] instance 'CCD231' of module 'CCD231_wrapper' requires 66 connections, but only 65 given [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:537]
+INFO: [Synth 8-256] done synthesizing module 'CCD231' (19#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/synth/CCD231.v:13]
+INFO: [Synth 8-256] done synthesizing module 'CCD231_wrapper' (20#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/hdl/CCD231_wrapper.v:12]
+WARNING: [Synth 8-689] width (1) of port connection 'S00_AXI_arid' does not match port width (6) of module 'CCD231_wrapper' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:583]
+WARNING: [Synth 8-689] width (2) of port connection 'S00_AXI_arlock' does not match port width (1) of module 'CCD231_wrapper' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:585]
+WARNING: [Synth 8-689] width (1) of port connection 'S00_AXI_rid' does not match port width (6) of module 'CCD231_wrapper' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:593]
+WARNING: [Synth 8-689] width (1) of port connection 'S00_AXI_awid' does not match port width (6) of module 'CCD231_wrapper' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:602]
+WARNING: [Synth 8-689] width (1) of port connection 'S00_AXI_bid' does not match port width (6) of module 'CCD231_wrapper' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:611]
+WARNING: [Synth 8-350] instance 'CCD231' of module 'CCD231_wrapper' requires 66 connections, but only 65 given [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:539]
 INFO: [Synth 8-638] synthesizing module 'SPI4ADC' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/AD_Config_v2/spi4adc.v:3]
 	Parameter clk_div bound to: 5 - type: integer 
 	Parameter SPI_IDLE bound to: 4'b0000 
@@ -135,21 +144,24 @@ WARNING: [Synth 8-5788] Register delay_cnt_reg in module SPI_BASE is has both Se
 WARNING: [Synth 8-5788] Register sclk_rdy_reg in module SPI_BASE is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/SPI_AD5628/spi_base.v:99]
 WARNING: [Synth 8-5788] Register sclk_r_reg in module SPI_BASE is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/SPI_AD5628/spi_base.v:48]
 WARNING: [Synth 8-5788] Register clk_cnt_reg in module SPI_BASE is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/SPI_AD5628/spi_base.v:129]
-INFO: [Synth 8-256] done synthesizing module 'SPI_BASE' (20#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/SPI_AD5628/spi_base.v:14]
-INFO: [Synth 8-256] done synthesizing module 'SPI4ADC' (21#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/AD_Config_v2/spi4adc.v:3]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:751]
-INFO: [Synth 8-638] synthesizing module 'ILA_LTC2271' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/ILA_LTC2271_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'ILA_LTC2271' (22#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/realtime/ILA_LTC2271_stub.v:6]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ltc2271'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:751]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'mem_test_m0'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:413]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IBUFDS_EF_FR'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:328]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IBUFDS_EF_DCO'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:348]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IBUFDS_GH_FR'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:338]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IBUFDS_GH_DCO'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:358]
-INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'spi4adc'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:716]
+INFO: [Synth 8-256] done synthesizing module 'SPI_BASE' (21#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/SPI_AD5628/spi_base.v:14]
+INFO: [Synth 8-256] done synthesizing module 'SPI4ADC' (22#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/AD_Config_v2/spi4adc.v:3]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:753]
+INFO: [Synth 8-638] synthesizing module 'ILA_LTC2271' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/ILA_LTC2271_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'ILA_LTC2271' (23#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/realtime/ILA_LTC2271_stub.v:6]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'ltc2271'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:753]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'mem_test_m0'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:415]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IBUFDS_EF_FR'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:330]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IBUFDS_EF_DCO'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:350]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IBUFDS_GH_FR'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:340]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IBUFDS_GH_DCO'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:360]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'spi4adc'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:718]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IBUFDS_EOUT'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:370]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IBUFDS_FOUT'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:380]
+INFO: [Synth 8-6071] Mark debug on the nets applies keep_hierarchy on instance 'IBUFDS_GOUT'. This will prevent further optimization [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:390]
 WARNING: [Synth 8-3848] Net M_AXI_BUSER in module/entity TOP does not have driver. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:201]
 WARNING: [Synth 8-3848] Net M_AXI_RUSER in module/entity TOP does not have driver. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:224]
-INFO: [Synth 8-256] done synthesizing module 'TOP' (23#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:11]
+INFO: [Synth 8-256] done synthesizing module 'TOP' (24#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:11]
 WARNING: [Synth 8-3917] design TOP has port RST_SIG_CTR driven by constant 0
 WARNING: [Synth 8-3917] design TOP has port RPHI1_CTR driven by constant 0
 WARNING: [Synth 8-3917] design TOP has port RPHI2_CTR driven by constant 0
@@ -243,10 +255,9 @@ WARNING: [Synth 8-3331] design mem_test has unconnected port rd_burst_data[1]
 WARNING: [Synth 8-3331] design mem_test has unconnected port rd_burst_data[0]
 WARNING: [Synth 8-3331] design mem_test has unconnected port rd_burst_finish
 WARNING: [Synth 8-3331] design mem_test has unconnected port ENC
-WARNING: [Synth 8-3331] design mem_test has unconnected port GH_FR
 WARNING: [Synth 8-3331] design TOP has unconnected port DUMPOUT
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1337.957 ; gain = 129.523 ; free physical = 18782 ; free virtual = 26316
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1332.281 ; gain = 127.523 ; free physical = 14500 ; free virtual = 22543
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -256,38 +267,38 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1337.957 ; gain = 129.523 ; free physical = 18785 ; free virtual = 26319
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1332.281 ; gain = 127.523 ; free physical = 14503 ; free virtual = 22547
 ---------------------------------------------------------------------------------
-INFO: [Netlist 29-17] Analyzing 8 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 12 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Device 21-403] Loading part xc7z035ffg676-2
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc] for cell 'CCD231/CCD231_i/processing_system7_0'
-Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc] for cell 'CCD231/CCD231_i/processing_system7_0'
-Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp10/CCD231_axi_gpio_0_1_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT'
-Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp10/CCD231_axi_gpio_0_1_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT'
-Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp11/CCD231_rst_ps7_0_148M_1_in_context.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M'
-Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp11/CCD231_rst_ps7_0_148M_1_in_context.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M'
-Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp12/CCD231_axi_gpio_0_0_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN'
-Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp12/CCD231_axi_gpio_0_0_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN'
-Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp13/CCD231_xbar_0_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/xbar'
-Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp13/CCD231_xbar_0_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/xbar'
-Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp14/CCD231_auto_pc_1_in_context.xdc] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc'
-Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp14/CCD231_auto_pc_1_in_context.xdc] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc'
-Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp15/CCD231_auto_pc_0_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/s00_couplers/auto_pc'
-Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp15/CCD231_auto_pc_0_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/s00_couplers/auto_pc'
-Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp16/my_clk_generator_in_context.xdc] for cell 'my_clock'
-Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp16/my_clk_generator_in_context.xdc] for cell 'my_clock'
-Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp17/ILA_LTC2271_in_context.xdc] for cell 'ltc2271'
-Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp17/ILA_LTC2271_in_context.xdc] for cell 'ltc2271'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc] for cell 'CCD231/CCD231_i/processing_system7_0'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc] for cell 'CCD231/CCD231_i/processing_system7_0'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp10/CCD231_axi_gpio_0_1_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp10/CCD231_axi_gpio_0_1_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_OUT'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp11/CCD231_rst_ps7_0_148M_1_in_context.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp11/CCD231_rst_ps7_0_148M_1_in_context.xdc] for cell 'CCD231/CCD231_i/rst_ps7_0_148M'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp12/CCD231_axi_gpio_0_0_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp12/CCD231_axi_gpio_0_0_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_GPIO_IN'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp13/CCD231_xbar_0_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/xbar'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp13/CCD231_xbar_0_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/xbar'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp14/CCD231_auto_pc_1_in_context.xdc] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp14/CCD231_auto_pc_1_in_context.xdc] for cell 'CCD231/CCD231_i/axi_interconnect_0/s00_couplers/auto_pc'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp15/CCD231_auto_pc_0_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/s00_couplers/auto_pc'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp15/CCD231_auto_pc_0_in_context.xdc] for cell 'CCD231/CCD231_i/AXI_INTERCONNECT/s00_couplers/auto_pc'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp16/my_clk_generator_in_context.xdc] for cell 'my_clock'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp16/my_clk_generator_in_context.xdc] for cell 'my_clock'
+Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp17/ILA_LTC2271_in_context.xdc] for cell 'ltc2271'
+Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp17/ILA_LTC2271_in_context.xdc] for cell 'ltc2271'
 Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc]
-WARNING: [Vivado 12-507] No nets matched 'IBUFDS_EF_DCO_n_0_BUFG_inst_n_0'. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc:107]
-WARNING: [Vivado 12-507] No nets matched 'IBUFDS_EF_FR_n_0_BUFG_inst_n_0'. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc:108]
-WARNING: [Vivado 12-507] No nets matched 'IBUFDS_GH_DCO_n_0_BUFG_inst_n_0'. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc:110]
-WARNING: [Vivado 12-507] No nets matched 'IBUFDS_GH_FR_n_0_BUFG_inst_n_0'. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc:111]
+WARNING: [Vivado 12-507] No nets matched 'IBUFDS_EF_DCO_n_0_BUFG_inst_n_0'. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc:116]
+WARNING: [Vivado 12-507] No nets matched 'IBUFDS_EF_FR_n_0_BUFG_inst_n_0'. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc:117]
+WARNING: [Vivado 12-507] No nets matched 'IBUFDS_GH_DCO_n_0_BUFG_inst_n_0'. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc:119]
+WARNING: [Vivado 12-507] No nets matched 'IBUFDS_GH_FR_n_0_BUFG_inst_n_0'. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc:120]
 Finished Parsing XDC File [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc]
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/TOP_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/constrs_1/imports/new/top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/TOP_propImpl.xdc].
@@ -303,285 +314,285 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1785.387 ; gain = 0.000 ; free physical = 18448 ; free virtual = 25983
-WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'ltc2271' at clock pin 'clk' is different from the actual clock period '6.667', this can lead to different synthesis results.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1780.711 ; gain = 0.000 ; free physical = 14165 ; free virtual = 22210
+WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'ltc2271' at clock pin 'clk' is different from the actual clock period '2.222', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'CCD231/CCD231_i/AXI_GPIO_IN' at clock pin 's_axi_aclk' is different from the actual clock period '6.667', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '10.000' specified during out-of-context synthesis of instance 'CCD231/CCD231_i/AXI_GPIO_OUT' at clock pin 's_axi_aclk' is different from the actual clock period '6.667', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18541 ; free virtual = 26075
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:34 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14257 ; free virtual = 22301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z035ffg676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18541 ; free virtual = 26075
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:34 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14257 ; free virtual = 22301
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 2).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 3).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[10]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 4).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[10]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 5).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[11]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 6).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[11]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 7).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[12]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 8).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[12]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 9).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[13]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 10).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[13]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 11).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[14]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 12).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[14]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 13).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 14).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 15).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 16).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 17).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 18).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 19).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[4]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 20).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[4]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 21).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[5]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 22).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[5]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 23).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[6]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 24).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[6]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 25).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[7]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 26).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[7]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 27).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[8]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 28).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[8]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 29).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[9]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 30).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[9]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 31).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_ba[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 32).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ba[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 33).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_ba[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 34).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ba[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 35).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_ba[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 36).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ba[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 37).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_cas_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 38).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_cas_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 39).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_cke. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 40).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_cke. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 41).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_cs_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 42).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_cs_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 43).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_ck_p. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 44).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ck_p. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 45).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_ck_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 46).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ck_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 47).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 48).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 49).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 50).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 51).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 52).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 53).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 54).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 55).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 56).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 57).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 58).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 59).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 60).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 61).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 62).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 63).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 64).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 65).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 66).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 67).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 68).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 69).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 70).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 71).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 72).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 73).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[10]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 74).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[10]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 75).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[11]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 76).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[11]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 77).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[12]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 78).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[12]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 79).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[13]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 80).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[13]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 81).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[14]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 82).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[14]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 83).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[15]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 84).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[15]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 85).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[16]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 86).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[16]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 87).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[17]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 88).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[17]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 89).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[18]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 90).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[18]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 91).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[19]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 92).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[19]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 93).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 94).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 95).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[20]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 96).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[20]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 97).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[21]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 98).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[21]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 99).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[22]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 100).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[22]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 101).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[23]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 102).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[23]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 103).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[24]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 104).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[24]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 105).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[25]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 106).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[25]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 107).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[26]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 108).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[26]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 109).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[27]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 110).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[27]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 111).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[28]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 112).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[28]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 113).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[29]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 114).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[29]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 115).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 116).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 117).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[30]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 118).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[30]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 119).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[31]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 120).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[31]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 121).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 122).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 123).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[4]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 124).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[4]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 125).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[5]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 126).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[5]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 127).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[6]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 128).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[6]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 129).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[7]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 130).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[7]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 131).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[8]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 132).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[8]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 133).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[9]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 134).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[9]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 135).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_reset_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 136).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_reset_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 137).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_odt. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 138).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_odt. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 139).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_ras_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 140).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ras_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 141).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrn. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 142).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrn. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 143).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrp. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 144).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrp. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 145).
-Applied set_property IO_BUFFER_TYPE = NONE for DDR_we_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 146).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_we_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 147).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 148).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 149).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[10]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 150).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[10]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 151).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[11]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 152).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[11]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 153).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[12]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 154).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[12]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 155).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[13]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 156).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[13]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 157).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[14]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 158).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[14]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 159).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[15]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 160).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[15]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 161).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[16]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 162).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[16]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 163).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[17]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 164).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[17]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 165).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[18]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 166).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[18]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 167).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[19]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 168).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[19]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 169).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 170).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 171).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[20]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 172).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[20]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 173).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[21]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 174).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[21]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 175).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[22]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 176).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[22]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 177).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[23]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 178).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[23]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 179).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[24]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 180).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[24]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 181).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[25]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 182).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[25]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 183).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[26]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 184).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[26]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 185).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[27]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 186).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[27]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 187).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[28]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 188).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[28]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 189).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[29]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 190).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[29]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 191).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 192).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 193).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[30]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 194).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[30]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 195).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[31]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 196).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[31]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 197).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[32]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 198).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[32]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 199).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[33]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 200).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[33]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 201).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[34]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 202).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[34]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 203).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[35]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 204).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[35]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 205).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[36]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 206).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[36]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 207).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[37]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 208).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[37]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 209).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[38]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 210).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[38]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 211).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[39]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 212).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[39]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 213).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 214).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 215).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[40]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 216).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[40]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 217).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[41]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 218).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[41]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 219).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[42]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 220).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[42]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 221).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[43]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 222).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[43]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 223).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[44]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 224).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[44]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 225).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[45]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 226).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[45]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 227).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[46]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 228).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[46]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 229).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[47]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 230).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[47]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 231).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[48]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 232).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[48]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 233).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[49]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 234).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[49]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 235).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[4]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 236).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[4]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 237).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[50]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 238).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[50]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 239).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[51]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 240).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[51]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 241).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[52]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 242).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[52]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 243).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[53]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 244).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[53]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 245).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[5]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 246).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[5]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 247).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[6]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 248).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[6]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 249).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[7]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 250).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[7]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 251).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[8]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 252).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[8]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 253).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[9]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 254).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[9]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 255).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_clk. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 256).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_clk. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 257).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_porb. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 258).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_porb. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 259).
-Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_srstb. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 260).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_srstb. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 261).
-Applied set_property IO_BUFFER_TYPE = NONE for clk_50M. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp16/my_clk_generator_in_context.xdc, line 5).
-Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_50M. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-282978-apple/dcp16/my_clk_generator_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 2).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 3).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[10]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 4).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[10]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 5).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[11]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[11]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 7).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[12]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 8).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[12]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 9).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[13]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 10).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[13]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 11).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[14]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 12).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[14]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 13).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 14).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 15).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 16).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 17).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 18).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 19).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[4]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 20).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[4]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 21).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[5]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 22).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[5]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 23).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[6]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 24).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[6]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 25).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[7]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 26).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[7]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 27).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[8]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 28).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[8]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 29).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_addr[9]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 30).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_addr[9]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 31).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ba[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 32).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ba[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 33).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ba[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 34).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ba[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 35).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ba[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 36).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ba[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 37).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_cas_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 38).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_cas_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 39).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_cke. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 40).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_cke. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 41).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_cs_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 42).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_cs_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 43).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ck_p. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 44).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ck_p. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 45).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ck_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 46).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ck_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 47).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 48).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 49).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 50).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 51).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 52).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 53).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dm[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 54).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dm[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 55).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 56).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 57).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 58).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 59).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 60).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 61).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_p[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 62).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_p[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 63).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 64).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 65).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 66).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 67).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 68).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 69).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dqs_n[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 70).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dqs_n[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 71).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 72).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 73).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[10]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 74).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[10]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 75).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[11]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 76).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[11]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 77).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[12]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 78).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[12]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 79).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[13]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 80).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[13]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 81).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[14]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 82).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[14]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 83).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[15]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 84).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[15]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 85).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[16]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 86).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[16]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 87).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[17]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 88).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[17]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 89).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[18]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 90).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[18]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 91).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[19]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 92).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[19]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 93).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 94).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 95).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[20]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 96).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[20]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 97).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[21]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 98).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[21]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 99).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[22]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 100).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[22]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 101).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[23]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 102).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[23]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 103).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[24]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 104).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[24]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 105).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[25]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 106).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[25]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 107).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[26]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 108).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[26]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 109).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[27]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 110).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[27]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 111).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[28]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 112).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[28]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 113).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[29]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 114).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[29]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 115).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 116).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 117).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[30]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 118).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[30]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 119).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[31]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 120).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[31]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 121).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 122).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 123).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[4]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 124).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[4]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 125).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[5]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 126).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[5]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 127).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[6]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 128).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[6]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 129).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[7]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 130).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[7]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 131).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[8]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 132).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[8]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 133).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_dq[9]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 134).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_dq[9]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 135).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_reset_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 136).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_reset_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 137).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_odt. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 138).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_odt. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 139).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_ras_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 140).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_ras_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 141).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrn. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 142).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrn. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 143).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrp. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 144).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ddr_vrp. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 145).
+Applied set_property IO_BUFFER_TYPE = NONE for DDR_we_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 146).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for DDR_we_n. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 147).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 148).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[0]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 149).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[10]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 150).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[10]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 151).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[11]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 152).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[11]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 153).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[12]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 154).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[12]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 155).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[13]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 156).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[13]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 157).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[14]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 158).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[14]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 159).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[15]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 160).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[15]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 161).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[16]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 162).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[16]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 163).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[17]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 164).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[17]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 165).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[18]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 166).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[18]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 167).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[19]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 168).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[19]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 169).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 170).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[1]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 171).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[20]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 172).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[20]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 173).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[21]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 174).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[21]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 175).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[22]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 176).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[22]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 177).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[23]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 178).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[23]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 179).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[24]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 180).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[24]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 181).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[25]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 182).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[25]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 183).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[26]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 184).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[26]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 185).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[27]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 186).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[27]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 187).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[28]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 188).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[28]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 189).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[29]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 190).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[29]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 191).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 192).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[2]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 193).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[30]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 194).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[30]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 195).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[31]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 196).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[31]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 197).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[32]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 198).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[32]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 199).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[33]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 200).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[33]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 201).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[34]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 202).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[34]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 203).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[35]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 204).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[35]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 205).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[36]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 206).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[36]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 207).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[37]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 208).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[37]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 209).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[38]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 210).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[38]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 211).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[39]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 212).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[39]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 213).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 214).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[3]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 215).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[40]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 216).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[40]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 217).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[41]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 218).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[41]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 219).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[42]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 220).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[42]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 221).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[43]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 222).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[43]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 223).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[44]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 224).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[44]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 225).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[45]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 226).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[45]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 227).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[46]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 228).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[46]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 229).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[47]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 230).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[47]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 231).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[48]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 232).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[48]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 233).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[49]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 234).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[49]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 235).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[4]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 236).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[4]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 237).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[50]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 238).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[50]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 239).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[51]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 240).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[51]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 241).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[52]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 242).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[52]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 243).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[53]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 244).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[53]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 245).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[5]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 246).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[5]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 247).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[6]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 248).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[6]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 249).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[7]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 250).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[7]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 251).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[8]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 252).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[8]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 253).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[9]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 254).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[9]. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 255).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_clk. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 256).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_clk. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 257).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_porb. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 258).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_porb. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 259).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_srstb. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 260).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_srstb. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp9/CCD231_processing_system7_0_1_in_context.xdc, line 261).
+Applied set_property IO_BUFFER_TYPE = NONE for clk_50M. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp16/my_clk_generator_in_context.xdc, line 6).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_50M. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/.Xil/Vivado-410736-apple/dcp16/my_clk_generator_in_context.xdc, line 7).
 Applied set_property DONT_TOUCH = true for CCD231/CCD231_i. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for CCD231/CCD231_i/AXI_GPIO_IN. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for CCD231/CCD231_i/AXI_GPIO_OUT. (constraint file  auto generated constraint, line ).
@@ -595,11 +606,21 @@ Applied set_property DONT_TOUCH = true for CCD231/CCD231_i/rst_ps7_0_148M. (cons
 Applied set_property DONT_TOUCH = true for ltc2271. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for my_clock. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:34 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18543 ; free virtual = 26077
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14258 ; free virtual = 22301
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-3936] Found unconnected internal register 'px21_reg' and it is trimmed from '16' to '14' bits. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:208]
+WARNING: [Synth 8-3936] Found unconnected internal register 'px11_reg' and it is trimmed from '16' to '14' bits. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:204]
+WARNING: [Synth 8-3936] Found unconnected internal register 'px20_reg' and it is trimmed from '16' to '14' bits. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:207]
+WARNING: [Synth 8-3936] Found unconnected internal register 'px10_reg' and it is trimmed from '16' to '14' bits. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:203]
+WARNING: [Synth 8-3936] Found unconnected internal register 'px23_reg' and it is trimmed from '16' to '14' bits. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:219]
+WARNING: [Synth 8-3936] Found unconnected internal register 'px13_reg' and it is trimmed from '16' to '14' bits. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:215]
+WARNING: [Synth 8-3936] Found unconnected internal register 'px22_reg' and it is trimmed from '16' to '14' bits. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:218]
+WARNING: [Synth 8-3936] Found unconnected internal register 'px12_reg' and it is trimmed from '16' to '14' bits. [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:214]
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
-WARNING: [Synth 8-6014] Unused sequential element rd_burst_addr_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:147]
-WARNING: [Synth 8-6014] Unused sequential element wr_burst_addr_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:148]
+WARNING: [Synth 8-6014] Unused sequential element rd_burst_addr_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:238]
+WARNING: [Synth 8-6014] Unused sequential element wr_burst_addr_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:239]
+WARNING: [Synth 8-6014] Unused sequential element pl_cnt_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:240]
+WARNING: [Synth 8-6014] Unused sequential element wr_burst_addr_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:239]
 INFO: [Synth 8-802] inferred FSM for state register 'wr_state_reg' in module 'aq_axi_master'
 INFO: [Synth 8-802] inferred FSM for state register 'rd_state_reg' in module 'aq_axi_master'
 INFO: [Synth 8-5546] ROM "M_AXI_WLAST" won't be mapped to RAM because it is too sparse
@@ -619,8 +640,8 @@ WARNING: [Synth 8-6014] Unused sequential element d_cnt_reg was removed.  [/home
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'SPI4ADC'
 INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "TRIG_r" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element cnt_1M_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:256]
-WARNING: [Synth 8-6014] Unused sequential element cnt_5M_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:266]
+WARNING: [Synth 8-6014] Unused sequential element cnt_1M_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:270]
+WARNING: [Synth 8-6014] Unused sequential element cnt_5M_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:280]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -654,7 +675,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'rd_state_reg' using encodi
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'SPI4ADC'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18534 ; free virtual = 26068
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:35 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14249 ; free virtual = 22293
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -668,18 +689,18 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   2 Input     32 Bit       Adders := 6     
-	   2 Input     21 Bit       Adders := 3     
+	   2 Input     21 Bit       Adders := 2     
 	   2 Input      8 Bit       Adders := 10    
 	   2 Input      5 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
 +---Registers : 
 	               64 Bit    Registers := 1     
-	               32 Bit    Registers := 5     
-	               28 Bit    Registers := 2     
+	               32 Bit    Registers := 6     
+	               28 Bit    Registers := 1     
+	               14 Bit    Registers := 8     
 	               10 Bit    Registers := 2     
 	                8 Bit    Registers := 10    
 	                3 Bit    Registers := 3     
-	                1 Bit    Registers := 20    
+	                1 Bit    Registers := 22    
 +---Muxes : 
 	   2 Input     64 Bit        Muxes := 1     
 	   2 Input     32 Bit        Muxes := 3     
@@ -687,8 +708,6 @@ Detailed RTL Component Info :
 	   7 Input     32 Bit        Muxes := 4     
 	   4 Input     32 Bit        Muxes := 1     
 	   6 Input     32 Bit        Muxes := 4     
-	   2 Input     21 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 48    
 	   2 Input      8 Bit        Muxes := 11    
 	   7 Input      8 Bit        Muxes := 1     
 	   6 Input      8 Bit        Muxes := 1     
@@ -725,19 +744,16 @@ Detailed RTL Component Info :
 	   2 Input      1 Bit        Muxes := 1     
 Module mem_test 
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     21 Bit       Adders := 1     
-	   2 Input      1 Bit       Adders := 1     
 +---Registers : 
 	               64 Bit    Registers := 1     
-	               28 Bit    Registers := 2     
+	               32 Bit    Registers := 1     
+	               28 Bit    Registers := 1     
+	               14 Bit    Registers := 8     
 	               10 Bit    Registers := 2     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
+	                1 Bit    Registers := 5     
 +---Muxes : 
 	   2 Input     64 Bit        Muxes := 1     
-	   2 Input     21 Bit        Muxes := 1     
-	   2 Input     16 Bit        Muxes := 48    
 	   2 Input      2 Bit        Muxes := 1     
 	   3 Input      2 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 6     
@@ -808,9 +824,8 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element rd_burst_addr_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:147]
-WARNING: [Synth 8-6014] Unused sequential element wr_burst_addr_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:148]
-WARNING: [Synth 8-6014] Unused sequential element wr_burst_addr_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:148]
+WARNING: [Synth 8-6014] Unused sequential element pl_cnt_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:240]
+WARNING: [Synth 8-6014] Unused sequential element rd_burst_addr_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:238]
 INFO: [Synth 8-5546] ROM "spi/delay_cnt" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "spi/sclk_rdy" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "spi/sclk_r" won't be mapped to RAM because it is too sparse
@@ -820,8 +835,8 @@ WARNING: [Synth 8-6014] Unused sequential element spi/d_cnt_reg was removed.  [/
 INFO: [Synth 8-5546] ROM "u_aq_axi_master/reg_w_len" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "u_aq_axi_master/M_AXI_WLAST" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "TRIG_r" won't be mapped to RAM because it is too sparse
-WARNING: [Synth 8-6014] Unused sequential element cnt_5M_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:266]
-WARNING: [Synth 8-6014] Unused sequential element cnt_1M_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:256]
+WARNING: [Synth 8-6014] Unused sequential element cnt_5M_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:280]
+WARNING: [Synth 8-6014] Unused sequential element cnt_1M_reg was removed.  [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/new/top.v:270]
 WARNING: [Synth 8-3917] design TOP has port RST_SIG_CTR driven by constant 0
 WARNING: [Synth 8-3917] design TOP has port RPHI1_CTR driven by constant 0
 WARNING: [Synth 8-3917] design TOP has port RPHI2_CTR driven by constant 0
@@ -835,6 +850,7 @@ WARNING: [Synth 8-3331] design CCD231_axi_interconnect_0_1 has unconnected port 
 WARNING: [Synth 8-3331] design CCD231_axi_interconnect_0_1 has unconnected port M01_ACLK
 WARNING: [Synth 8-3331] design CCD231_axi_interconnect_0_1 has unconnected port M01_ARESETN
 WARNING: [Synth 8-3331] design mem_test has unconnected port rd_burst_data_valid
+WARNING: [Synth 8-3331] design mem_test has unconnected port rd_burst_data[63]
 INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 WARNING: [Synth 8-3332] Sequential element (u_aq_axi_master/reg_wr_len_reg[2]) is unused and will be removed from module TOP.
 WARNING: [Synth 8-3332] Sequential element (u_aq_axi_master/reg_wr_len_reg[1]) is unused and will be removed from module TOP.
@@ -848,17 +864,6 @@ WARNING: [Synth 8-3332] Sequential element (u_aq_axi_master/reg_rd_len_reg[0]) i
 WARNING: [Synth 8-3332] Sequential element (u_aq_axi_master/reg_rd_adrs_reg[2]) is unused and will be removed from module TOP.
 WARNING: [Synth 8-3332] Sequential element (u_aq_axi_master/reg_rd_adrs_reg[1]) is unused and will be removed from module TOP.
 WARNING: [Synth 8-3332] Sequential element (u_aq_axi_master/reg_rd_adrs_reg[0]) is unused and will be removed from module TOP.
-INFO: [Synth 8-3886] merging instance 'mem_test_m0/pl_cnt_reg[29]' (FDC_1) to 'mem_test_m0/pl_cnt_reg[21]'
-INFO: [Synth 8-3886] merging instance 'mem_test_m0/pl_cnt_reg[31]' (FDC_1) to 'mem_test_m0/pl_cnt_reg[21]'
-INFO: [Synth 8-3886] merging instance 'mem_test_m0/pl_cnt_reg[30]' (FDC_1) to 'mem_test_m0/pl_cnt_reg[21]'
-INFO: [Synth 8-3886] merging instance 'mem_test_m0/pl_cnt_reg[28]' (FDC_1) to 'mem_test_m0/pl_cnt_reg[21]'
-INFO: [Synth 8-3886] merging instance 'mem_test_m0/pl_cnt_reg[26]' (FDC_1) to 'mem_test_m0/pl_cnt_reg[21]'
-INFO: [Synth 8-3886] merging instance 'mem_test_m0/pl_cnt_reg[27]' (FDC_1) to 'mem_test_m0/pl_cnt_reg[21]'
-INFO: [Synth 8-3886] merging instance 'mem_test_m0/pl_cnt_reg[21]' (FDC_1) to 'mem_test_m0/pl_cnt_reg[22]'
-INFO: [Synth 8-3886] merging instance 'mem_test_m0/pl_cnt_reg[22]' (FDC_1) to 'mem_test_m0/pl_cnt_reg[23]'
-INFO: [Synth 8-3886] merging instance 'mem_test_m0/pl_cnt_reg[23]' (FDC_1) to 'mem_test_m0/pl_cnt_reg[24]'
-INFO: [Synth 8-3886] merging instance 'mem_test_m0/pl_cnt_reg[24]' (FDC_1) to 'mem_test_m0/pl_cnt_reg[25]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (mem_test_m0/\pl_cnt_reg[25] )
 INFO: [Synth 8-3886] merging instance 'mem_test_m0/state_reg[2]' (FDCE) to 'mem_test_m0/state_reg[0]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (mem_test_m0/\state_reg[0] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (mem_test_m0/\wr_burst_len_reg[0] )
@@ -882,7 +887,6 @@ INFO: [Synth 8-3333] propagating constant 0 across sequential element (mem_test_
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (mem_test_m0/\rd_burst_len_reg[8] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (mem_test_m0/\rd_burst_len_reg[9] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (mem_test_m0/rd_burst_req_reg)
-WARNING: [Synth 8-3332] Sequential element (pl_cnt_reg[25]) is unused and will be removed from module mem_test.
 WARNING: [Synth 8-3332] Sequential element (rd_burst_req_reg) is unused and will be removed from module mem_test.
 WARNING: [Synth 8-3332] Sequential element (state_reg[0]) is unused and will be removed from module mem_test.
 WARNING: [Synth 8-3332] Sequential element (rd_burst_len_reg[9]) is unused and will be removed from module mem_test.
@@ -897,8 +901,30 @@ WARNING: [Synth 8-3332] Sequential element (rd_burst_len_reg[1]) is unused and w
 WARNING: [Synth 8-3332] Sequential element (rd_burst_len_reg[0]) is unused and will be removed from module mem_test.
 WARNING: [Synth 8-3332] Sequential element (wr_burst_len_reg[9]) is unused and will be removed from module mem_test.
 WARNING: [Synth 8-3332] Sequential element (wr_burst_len_reg[0]) is unused and will be removed from module mem_test.
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[20]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[21]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[22]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[23]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[24]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[25]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[26]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[27]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[28]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[29]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[30]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[31]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[31]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[19]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[11]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[19]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[12]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[19]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[13]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[19]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[14]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[19]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[15]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[19]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[16]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[19]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[17]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[19]'
+INFO: [Synth 8-3886] merging instance 'mem_test_m0/i_2/pl_cnt_reg[18]' (FDC) to 'mem_test_m0/i_2/pl_cnt_reg[19]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (mem_test_m0/i_2/\pl_cnt_reg[19] )
+WARNING: [Synth 8-3332] Sequential element (pl_cnt_reg[19]) is unused and will be removed from module mem_test.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:36 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18522 ; free virtual = 26056
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:36 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14238 ; free virtual = 22281
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -913,15 +939,16 @@ INFO: [Synth 8-5578] Moved timing constraint from pin 'CCD231/CCD231_i/processin
 INFO: [Synth 8-5578] Moved timing constraint from pin 'my_clock/clk_10M' to pin 'my_clock/bbstub_clk_10M/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'my_clock/clk_150M' to pin 'my_clock/bbstub_clk_150M/O'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'my_clock/clk_20M' to pin 'my_clock/bbstub_clk_20M/O'
-INFO: [Synth 8-5819] Moved 4 constraints on hierarchical pins to their respective driving/loading pins
+INFO: [Synth 8-5578] Moved timing constraint from pin 'my_clock/clk_450M' to pin 'my_clock/bbstub_clk_450M/O'
+INFO: [Synth 8-5819] Moved 5 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:43 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18396 ; free virtual = 25931
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14112 ; free virtual = 22155
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18392 ; free virtual = 25926
+Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14108 ; free virtual = 22152
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -940,12 +967,12 @@ WARNING: [Synth 8-3332] Sequential element (cnt_1M_reg[7]) is unused and will be
 WARNING: [Synth 8-3332] Sequential element (cnt_1M_reg[5]) is unused and will be removed from module TOP.
 WARNING: [Synth 8-3332] Sequential element (cnt_1M_reg[4]) is unused and will be removed from module TOP.
 WARNING: [Synth 8-3332] Sequential element (cnt_1M_reg[3]) is unused and will be removed from module TOP.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cnt_1M_reg[6] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cnt_5M_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\cnt_1M_reg[6] )
 WARNING: [Synth 8-3332] Sequential element (cnt_5M_reg[6]) is unused and will be removed from module TOP.
 WARNING: [Synth 8-3332] Sequential element (cnt_1M_reg[6]) is unused and will be removed from module TOP.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18389 ; free virtual = 25924
+Finished Technology Mapping : Time (s): cpu = 00:00:32 ; elapsed = 00:00:44 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14104 ; free virtual = 22148
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -968,11 +995,12 @@ Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:145]
-WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:119]
-WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:96]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:203]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:214]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:226]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/imports/rtl/mem_test.v:230]
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18390 ; free virtual = 25924
+Finished IO Insertion : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14104 ; free virtual = 22148
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -985,7 +1013,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18390 ; free virtual = 25924
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14104 ; free virtual = 22148
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -997,25 +1025,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18390 ; free virtual = 25924
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14104 ; free virtual = 22148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18390 ; free virtual = 25924
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14104 ; free virtual = 22148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18390 ; free virtual = 25924
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14104 ; free virtual = 22148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18390 ; free virtual = 25924
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14104 ; free virtual = 22148
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1049,34 +1077,35 @@ Report Cell Usage:
 |7     |CCD231_xbar_0                 |     1|
 |8     |ILA_LTC2271                   |     1|
 |9     |my_clk_generator              |     1|
-|10    |BUFG                          |     3|
-|11    |CARRY4                        |    45|
-|12    |LUT1                          |    54|
-|13    |LUT2                          |    82|
-|14    |LUT3                          |   239|
-|15    |LUT4                          |    45|
-|16    |LUT5                          |   423|
-|17    |LUT6                          |    75|
-|18    |MUXF7                         |     1|
-|19    |FDCE                          |   537|
-|20    |FDPE                          |   138|
-|21    |FDRE                          |    19|
-|22    |LDC                           |   134|
-|23    |IBUF                          |     1|
-|24    |IBUFDS                        |     8|
-|25    |OBUF                          |    14|
+|10    |BUFG                          |     4|
+|11    |CARRY4                        |    43|
+|12    |IDDR                          |     4|
+|13    |LUT1                          |    52|
+|14    |LUT2                          |    73|
+|15    |LUT3                          |   159|
+|16    |LUT4                          |    45|
+|17    |LUT5                          |   119|
+|18    |LUT6                          |    75|
+|19    |MUXF7                         |     1|
+|20    |FDCE                          |   330|
+|21    |FDPE                          |    10|
+|22    |FDRE                          |   197|
+|23    |LDC                           |     6|
+|24    |IBUF                          |     1|
+|25    |IBUFDS                        |     8|
+|26    |OBUF                          |    14|
 +------+------------------------------+------+
 
 Report Instance Areas: 
 +------+-------------------------+----------------------------+------+
 |      |Instance                 |Module                      |Cells |
 +------+-------------------------+----------------------------+------+
-|1     |top                      |                            |  2981|
-|2     |  mem_test_m0            |mem_test                    |  1093|
+|1     |top                      |                            |  2306|
+|2     |  mem_test_m0            |mem_test                    |   414|
 |3     |  spi4adc                |SPI4ADC                     |   160|
 |4     |    spi                  |SPI_BASE                    |   131|
-|5     |  CCD231                 |CCD231_wrapper              |  1160|
-|6     |    CCD231_i             |CCD231                      |  1159|
+|5     |  CCD231                 |CCD231_wrapper              |  1162|
+|6     |    CCD231_i             |CCD231                      |  1160|
 |7     |      AXI_INTERCONNECT   |CCD231_axi_interconnect_0_1 |   440|
 |8     |        s00_couplers     |s00_couplers_imp_1IEWIBG    |   177|
 |9     |      axi_interconnect_0 |CCD231_axi_interconnect_0_0 |   290|
@@ -1084,26 +1113,28 @@ Report Instance Areas:
 |11    |  u_aq_axi_master        |aq_axi_master               |   501|
 +------+-------------------------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18390 ; free virtual = 25924
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14104 ; free virtual = 22148
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 132 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1785.387 ; gain = 129.523 ; free physical = 18449 ; free virtual = 25983
-Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1785.387 ; gain = 576.953 ; free physical = 18455 ; free virtual = 25989
+Synthesis finished with 0 errors, 0 critical warnings and 141 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 1780.711 ; gain = 127.523 ; free physical = 14163 ; free virtual = 22207
+Synthesis Optimization Complete : Time (s): cpu = 00:00:32 ; elapsed = 00:00:45 . Memory (MB): peak = 1780.711 ; gain = 575.953 ; free physical = 14171 ; free virtual = 22214
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 189 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 63 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 134 instances were transformed.
-  LDC => LDCE: 134 instances
+  A total of 6 instances were transformed.
+  LDC => LDCE: 6 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-144 Infos, 206 Warnings, 0 Critical Warnings and 0 Errors encountered.
+160 Infos, 217 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:47 . Memory (MB): peak = 1785.387 ; gain = 598.336 ; free physical = 18431 ; free virtual = 25965
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:47 . Memory (MB): peak = 1780.711 ; gain = 597.336 ; free physical = 14147 ; free virtual = 22191
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/synth_1/TOP.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.18 . Memory (MB): peak = 1809.398 ; gain = 0.000 ; free physical = 18429 ; free virtual = 25963
-INFO: [Common 17-206] Exiting Vivado at Fri Feb 26 22:28:06 2021...
+report_utilization: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.18 . Memory (MB): peak = 1804.723 ; gain = 0.000 ; free physical = 14146 ; free virtual = 22190
+INFO: [Common 17-206] Exiting Vivado at Sat Feb 27 23:21:12 2021...

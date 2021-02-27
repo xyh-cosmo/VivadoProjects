@@ -1,7 +1,7 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Tue Feb 23 18:38:59 2021
+// Date        : Sat Feb 27 21:26:20 2021
 // Host        : apple running 64-bit Ubuntu 20.04.2 LTS
 // Command     : write_verilog -force -mode funcsim
 //               /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_sim_netlist.v
@@ -17,17 +17,20 @@ module my_clk_generator
    (clk_10M,
     clk_20M,
     clk_150M,
+    clk_450M,
     locked,
     clk_in);
   output clk_10M;
   output clk_20M;
   output clk_150M;
+  output clk_450M;
   output locked;
   input clk_in;
 
   wire clk_10M;
   wire clk_150M;
   wire clk_20M;
+  wire clk_450M;
   (* IBUF_LOW_PWR *) wire clk_in;
   wire locked;
 
@@ -35,6 +38,7 @@ module my_clk_generator
        (.clk_10M(clk_10M),
         .clk_150M(clk_150M),
         .clk_20M(clk_20M),
+        .clk_450M(clk_450M),
         .clk_in(clk_in),
         .locked(locked));
 endmodule
@@ -44,11 +48,13 @@ module my_clk_generator_my_clk_generator_clk_wiz
    (clk_10M,
     clk_20M,
     clk_150M,
+    clk_450M,
     locked,
     clk_in);
   output clk_10M;
   output clk_20M;
   output clk_150M;
+  output clk_450M;
   output locked;
   input clk_in;
 
@@ -58,6 +64,8 @@ module my_clk_generator_my_clk_generator_clk_wiz
   wire clk_150M_my_clk_generator;
   wire clk_20M;
   wire clk_20M_my_clk_generator;
+  wire clk_450M;
+  wire clk_450M_my_clk_generator;
   wire clk_in;
   wire clk_in_my_clk_generator;
   wire clkfbout_buf_my_clk_generator;
@@ -69,7 +77,6 @@ module my_clk_generator_my_clk_generator_clk_wiz
   wire NLW_mmcm_adv_inst_CLKOUT0B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED;
-  wire NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED;
   wire NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED;
@@ -104,6 +111,10 @@ module my_clk_generator_my_clk_generator_clk_wiz
        (.I(clk_150M_my_clk_generator),
         .O(clk_150M));
   (* BOX_TYPE = "PRIMITIVE" *) 
+  BUFG clkout4_buf
+       (.I(clk_450M_my_clk_generator),
+        .O(clk_450M));
+  (* BOX_TYPE = "PRIMITIVE" *) 
   MMCME2_ADV #(
     .BANDWIDTH("OPTIMIZED"),
     .CLKFBOUT_MULT_F(18.000000),
@@ -123,7 +134,7 @@ module my_clk_generator_my_clk_generator_clk_wiz
     .CLKOUT2_DUTY_CYCLE(0.500000),
     .CLKOUT2_PHASE(0.000000),
     .CLKOUT2_USE_FINE_PS("FALSE"),
-    .CLKOUT3_DIVIDE(1),
+    .CLKOUT3_DIVIDE(2),
     .CLKOUT3_DUTY_CYCLE(0.500000),
     .CLKOUT3_PHASE(0.000000),
     .CLKOUT3_USE_FINE_PS("FALSE"),
@@ -168,7 +179,7 @@ module my_clk_generator_my_clk_generator_clk_wiz
         .CLKOUT1B(NLW_mmcm_adv_inst_CLKOUT1B_UNCONNECTED),
         .CLKOUT2(clk_150M_my_clk_generator),
         .CLKOUT2B(NLW_mmcm_adv_inst_CLKOUT2B_UNCONNECTED),
-        .CLKOUT3(NLW_mmcm_adv_inst_CLKOUT3_UNCONNECTED),
+        .CLKOUT3(clk_450M_my_clk_generator),
         .CLKOUT3B(NLW_mmcm_adv_inst_CLKOUT3B_UNCONNECTED),
         .CLKOUT4(NLW_mmcm_adv_inst_CLKOUT4_UNCONNECTED),
         .CLKOUT5(NLW_mmcm_adv_inst_CLKOUT5_UNCONNECTED),

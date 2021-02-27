@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Tue Feb 23 19:08:14 2021
+// Date        : Sat Feb 27 21:46:37 2021
 // Host        : apple running 64-bit Ubuntu 20.04.2 LTS
-// Command     : write_verilog -force -mode funcsim -rename_top CCD231_auto_pc_1 -prefix
-//               CCD231_auto_pc_1_ CCD231_auto_pc_1_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim
+//               /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/CCD231_auto_pc_1_sim_netlist.v
 // Design      : CCD231_auto_pc_1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -382,6 +382,7 @@ module CCD231_auto_pc_1
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
+(* ORIG_REF_NAME = "axi_data_fifo_v2_1_14_axic_fifo" *) 
 module CCD231_auto_pc_1_axi_data_fifo_v2_1_14_axic_fifo
    (dout,
     full,
@@ -903,6 +904,7 @@ module CCD231_auto_pc_1_axi_data_fifo_v2_1_14_axic_fifo__parameterized1
         .wr_en(\queue_id_reg[5] ));
 endmodule
 
+(* ORIG_REF_NAME = "axi_data_fifo_v2_1_14_fifo_gen" *) 
 module CCD231_auto_pc_1_axi_data_fifo_v2_1_14_fifo_gen
    (dout,
     full,
@@ -3648,6 +3650,7 @@ module CCD231_auto_pc_1_axi_data_fifo_v2_1_14_fifo_gen__parameterized1
         .O(\pushed_commands_reg[0] ));
 endmodule
 
+(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_15_a_axi3_conv" *) 
 module CCD231_auto_pc_1_axi_protocol_converter_v2_1_15_a_axi3_conv
    (dout,
     empty,
@@ -8800,6 +8803,7 @@ module CCD231_auto_pc_1_axi_protocol_converter_v2_1_15_a_axi3_conv__parameterize
         .R(SR));
 endmodule
 
+(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_15_axi3_conv" *) 
 module CCD231_auto_pc_1_axi_protocol_converter_v2_1_15_axi3_conv
    (s_axi_wready,
     m_axi_arvalid,
@@ -9120,10 +9124,10 @@ endmodule
 (* C_AXI_RUSER_WIDTH = "1" *) (* C_AXI_SUPPORTS_READ = "1" *) (* C_AXI_SUPPORTS_USER_SIGNALS = "0" *) 
 (* C_AXI_SUPPORTS_WRITE = "1" *) (* C_AXI_WUSER_WIDTH = "1" *) (* C_FAMILY = "zynq" *) 
 (* C_IGNORE_ID = "0" *) (* C_M_AXI_PROTOCOL = "1" *) (* C_S_AXI_PROTOCOL = "0" *) 
-(* C_TRANSLATION_MODE = "2" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* P_AXI3 = "1" *) 
-(* P_AXI4 = "0" *) (* P_AXILITE = "2" *) (* P_AXILITE_SIZE = "3'b011" *) 
-(* P_CONVERSION = "2" *) (* P_DECERR = "2'b11" *) (* P_INCR = "2'b01" *) 
-(* P_PROTECTION = "1" *) (* P_SLVERR = "2'b10" *) 
+(* C_TRANSLATION_MODE = "2" *) (* DowngradeIPIdentifiedWarnings = "yes" *) (* ORIG_REF_NAME = "axi_protocol_converter_v2_1_15_axi_protocol_converter" *) 
+(* P_AXI3 = "1" *) (* P_AXI4 = "0" *) (* P_AXILITE = "2" *) 
+(* P_AXILITE_SIZE = "3'b011" *) (* P_CONVERSION = "2" *) (* P_DECERR = "2'b11" *) 
+(* P_INCR = "2'b01" *) (* P_PROTECTION = "1" *) (* P_SLVERR = "2'b10" *) 
 module CCD231_auto_pc_1_axi_protocol_converter_v2_1_15_axi_protocol_converter
    (aclk,
     aresetn,
@@ -9475,6 +9479,7 @@ module CCD231_auto_pc_1_axi_protocol_converter_v2_1_15_axi_protocol_converter
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
+(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_15_b_downsizer" *) 
 module CCD231_auto_pc_1_axi_protocol_converter_v2_1_15_b_downsizer
    (E,
     \USE_B_CHANNEL.cmd_b_depth_reg[0] ,
@@ -9695,6 +9700,7 @@ module CCD231_auto_pc_1_axi_protocol_converter_v2_1_15_b_downsizer
         .O(s_axi_bvalid_INST_0_i_1_n_0));
 endmodule
 
+(* ORIG_REF_NAME = "axi_protocol_converter_v2_1_15_w_axi3_conv" *) 
 module CCD231_auto_pc_1_axi_protocol_converter_v2_1_15_w_axi3_conv
    (\length_counter_1_reg[1]_0 ,
     first_mi_word,
@@ -9972,8 +9978,8 @@ module CCD231_auto_pc_1_axi_protocol_converter_v2_1_15_w_axi3_conv
 endmodule
 
 (* DEF_VAL = "1'b0" *) (* DEST_SYNC_FF = "2" *) (* INIT_SYNC_FF = "0" *) 
-(* INV_DEF_VAL = "1'b1" *) (* RST_ACTIVE_HIGH = "1" *) (* VERSION = "0" *) 
-(* XPM_MODULE = "TRUE" *) (* xpm_cdc = "ASYNC_RST" *) 
+(* INV_DEF_VAL = "1'b1" *) (* ORIG_REF_NAME = "xpm_cdc_async_rst" *) (* RST_ACTIVE_HIGH = "1" *) 
+(* VERSION = "0" *) (* XPM_MODULE = "TRUE" *) (* xpm_cdc = "ASYNC_RST" *) 
 module CCD231_auto_pc_1_xpm_cdc_async_rst
    (src_arst,
     dest_clk,
@@ -10085,6 +10091,7 @@ module CCD231_auto_pc_1_xpm_cdc_async_rst__4
         .Q(arststages_ff[1]));
 endmodule
 
+(* ORIG_REF_NAME = "dmem" *) 
 module CCD231_auto_pc_1_dmem
    (dout_i,
     clk,
@@ -10393,6 +10400,7 @@ module CCD231_auto_pc_1_dmem__parameterized1
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "fifo_generator_ramfifo" *) 
 module CCD231_auto_pc_1_fifo_generator_ramfifo
    (empty,
     full,
@@ -10667,6 +10675,7 @@ module CCD231_auto_pc_1_fifo_generator_ramfifo__parameterized1
         .rst(rst));
 endmodule
 
+(* ORIG_REF_NAME = "fifo_generator_top" *) 
 module CCD231_auto_pc_1_fifo_generator_top
    (empty,
     full,
@@ -10850,7 +10859,7 @@ endmodule
 (* C_WR_DEPTH_WRCH = "16" *) (* C_WR_FREQ = "1" *) (* C_WR_PNTR_WIDTH = "5" *) 
 (* C_WR_PNTR_WIDTH_AXIS = "10" *) (* C_WR_PNTR_WIDTH_RACH = "4" *) (* C_WR_PNTR_WIDTH_RDCH = "10" *) 
 (* C_WR_PNTR_WIDTH_WACH = "4" *) (* C_WR_PNTR_WIDTH_WDCH = "10" *) (* C_WR_PNTR_WIDTH_WRCH = "4" *) 
-(* C_WR_RESPONSE_LATENCY = "1" *) 
+(* C_WR_RESPONSE_LATENCY = "1" *) (* ORIG_REF_NAME = "fifo_generator_v13_2_1" *) 
 module CCD231_auto_pc_1_fifo_generator_v13_2_1
    (backup,
     backup_marker,
@@ -14254,6 +14263,7 @@ module CCD231_auto_pc_1_fifo_generator_v13_2_1__parameterized1
         .wr_en(wr_en));
 endmodule
 
+(* ORIG_REF_NAME = "fifo_generator_v13_2_1_synth" *) 
 module CCD231_auto_pc_1_fifo_generator_v13_2_1_synth
    (empty,
     full,
@@ -14370,6 +14380,7 @@ module CCD231_auto_pc_1_fifo_generator_v13_2_1_synth__parameterized1
         .wr_en(wr_en));
 endmodule
 
+(* ORIG_REF_NAME = "memory" *) 
 module CCD231_auto_pc_1_memory
    (dout,
     E,
@@ -14632,6 +14643,7 @@ module CCD231_auto_pc_1_memory__parameterized1
         .R(1'b0));
 endmodule
 
+(* ORIG_REF_NAME = "rd_bin_cntr" *) 
 module CCD231_auto_pc_1_rd_bin_cntr
    (Q,
     ram_empty_fb_i_reg,
@@ -15259,6 +15271,7 @@ module CCD231_auto_pc_1_rd_bin_cntr_6
         .O(ram_empty_fb_i_i_6_n_0));
 endmodule
 
+(* ORIG_REF_NAME = "rd_fwft" *) 
 module CCD231_auto_pc_1_rd_fwft
    (out,
     empty,
@@ -15852,6 +15865,7 @@ module CCD231_auto_pc_1_rd_fwft_4
         .O(ram_full_fb_i_reg));
 endmodule
 
+(* ORIG_REF_NAME = "rd_logic" *) 
 module CCD231_auto_pc_1_rd_logic
    (out,
     empty,
@@ -16104,6 +16118,7 @@ module CCD231_auto_pc_1_rd_logic_7
         .wr_en(wr_en));
 endmodule
 
+(* ORIG_REF_NAME = "rd_status_flags_ss" *) 
 module CCD231_auto_pc_1_rd_status_flags_ss
    (out,
     ram_full_fb_i_reg,
@@ -16229,6 +16244,7 @@ module CCD231_auto_pc_1_rd_status_flags_ss_5
         .Q(ram_empty_i));
 endmodule
 
+(* ORIG_REF_NAME = "reset_blk_ramfifo" *) 
 module CCD231_auto_pc_1_reset_blk_ramfifo
    (AS,
     E,
@@ -16432,6 +16448,7 @@ module CCD231_auto_pc_1_reset_blk_ramfifo__xdcDup__2
         .src_arst(rst));
 endmodule
 
+(* ORIG_REF_NAME = "wr_bin_cntr" *) 
 module CCD231_auto_pc_1_wr_bin_cntr
    (ram_full_comb,
     ram_empty_fb_i_reg,
@@ -17042,6 +17059,7 @@ module CCD231_auto_pc_1_wr_bin_cntr_3
         .O(ram_full_fb_i_i_5_n_0));
 endmodule
 
+(* ORIG_REF_NAME = "wr_logic" *) 
 module CCD231_auto_pc_1_wr_logic
    (FULL_FB,
     full,
@@ -17238,6 +17256,7 @@ module CCD231_auto_pc_1_wr_logic_8
         .wr_en(wr_en));
 endmodule
 
+(* ORIG_REF_NAME = "wr_status_flags_ss" *) 
 module CCD231_auto_pc_1_wr_status_flags_ss
    (FULL_FB,
     full,

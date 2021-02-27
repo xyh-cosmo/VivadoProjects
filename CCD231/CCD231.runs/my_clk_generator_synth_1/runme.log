@@ -14,15 +14,12 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z035'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z035'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 299951 
-WARNING: [Synth 8-976] clk_10M_my_clk_generator has already been declared [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_clk_wiz.v:102]
-WARNING: [Synth 8-2654] second declaration of clk_10M_my_clk_generator ignored [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_clk_wiz.v:102]
-INFO: [Synth 8-994] clk_10M_my_clk_generator is declared here [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_clk_wiz.v:99]
+INFO: Helper process launched with PID 385172 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1253.945 ; gain = 95.281 ; free physical = 557 ; free virtual = 24155
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1243.672 ; gain = 85.000 ; free physical = 15589 ; free virtual = 23606
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'my_clk_generator' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.v:72]
-INFO: [Synth 8-638] synthesizing module 'my_clk_generator_clk_wiz' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_clk_wiz.v:70]
+INFO: [Synth 8-638] synthesizing module 'my_clk_generator' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.v:73]
+INFO: [Synth 8-638] synthesizing module 'my_clk_generator_clk_wiz' [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_clk_wiz.v:71]
 INFO: [Synth 8-638] synthesizing module 'IBUF' [/home/xyh/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:19468]
 	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
 	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
@@ -49,7 +46,7 @@ INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [/home/xyh/Xilinx/Vivado/20
 	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: float 
 	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT2_USE_FINE_PS bound to: FALSE - type: string 
-	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DIVIDE bound to: 2 - type: integer 
 	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: float 
 	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: float 
 	Parameter CLKOUT3_USE_FINE_PS bound to: FALSE - type: string 
@@ -82,10 +79,10 @@ INFO: [Synth 8-638] synthesizing module 'MMCME2_ADV' [/home/xyh/Xilinx/Vivado/20
 INFO: [Synth 8-256] done synthesizing module 'MMCME2_ADV' (2#1) [/home/xyh/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:25757]
 INFO: [Synth 8-638] synthesizing module 'BUFG' [/home/xyh/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:607]
 INFO: [Synth 8-256] done synthesizing module 'BUFG' (3#1) [/home/xyh/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:607]
-INFO: [Synth 8-256] done synthesizing module 'my_clk_generator_clk_wiz' (4#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_clk_wiz.v:70]
-INFO: [Synth 8-256] done synthesizing module 'my_clk_generator' (5#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.v:72]
+INFO: [Synth 8-256] done synthesizing module 'my_clk_generator_clk_wiz' (4#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_clk_wiz.v:71]
+INFO: [Synth 8-256] done synthesizing module 'my_clk_generator' (5#1) [/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.v:73]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1281.195 ; gain = 122.531 ; free physical = 573 ; free virtual = 24172
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1286.203 ; gain = 127.531 ; free physical = 15603 ; free virtual = 23621
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -95,7 +92,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1281.195 ; gain = 122.531 ; free physical = 571 ; free virtual = 24169
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1286.203 ; gain = 127.531 ; free physical = 15603 ; free virtual = 23621
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -120,26 +117,26 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 1636.805 ; gain = 0.000 ; free physical = 255 ; free virtual = 23859
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1635.930 ; gain = 0.000 ; free physical = 15269 ; free virtual = 23286
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1636.805 ; gain = 478.141 ; free physical = 335 ; free virtual = 23940
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1635.930 ; gain = 477.258 ; free physical = 15355 ; free virtual = 23373
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z035ffg676-2
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1636.805 ; gain = 478.141 ; free physical = 335 ; free virtual = 23940
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1635.930 ; gain = 477.258 ; free physical = 15355 ; free virtual = 23373
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property DONT_TOUCH = true for inst. (constraint file  /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1636.805 ; gain = 478.141 ; free physical = 337 ; free virtual = 23941
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1635.930 ; gain = 477.258 ; free physical = 15357 ; free virtual = 23374
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1636.805 ; gain = 478.141 ; free physical = 337 ; free virtual = 23941
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1635.930 ; gain = 477.258 ; free physical = 15357 ; free virtual = 23374
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -174,7 +171,7 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:35 . Memory (MB): peak = 1636.805 ; gain = 478.141 ; free physical = 337 ; free virtual = 23941
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 1635.930 ; gain = 477.258 ; free physical = 15356 ; free virtual = 23374
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -186,13 +183,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:42 . Memory (MB): peak = 1636.805 ; gain = 478.141 ; free physical = 244 ; free virtual = 23816
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:40 . Memory (MB): peak = 1635.930 ; gain = 477.258 ; free physical = 15230 ; free virtual = 23247
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:42 . Memory (MB): peak = 1636.805 ; gain = 478.141 ; free physical = 244 ; free virtual = 23816
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:40 . Memory (MB): peak = 1635.930 ; gain = 477.258 ; free physical = 15230 ; free virtual = 23247
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -204,7 +201,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:42 . Memory (MB): peak = 1644.805 ; gain = 486.141 ; free physical = 243 ; free virtual = 23815
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:40 . Memory (MB): peak = 1643.930 ; gain = 485.258 ; free physical = 15228 ; free virtual = 23246
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -228,7 +225,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1644.805 ; gain = 486.141 ; free physical = 246 ; free virtual = 23816
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1643.930 ; gain = 485.258 ; free physical = 15229 ; free virtual = 23246
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -241,7 +238,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1644.805 ; gain = 486.141 ; free physical = 246 ; free virtual = 23816
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1643.930 ; gain = 485.258 ; free physical = 15229 ; free virtual = 23246
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -253,25 +250,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1644.805 ; gain = 486.141 ; free physical = 246 ; free virtual = 23816
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1643.930 ; gain = 485.258 ; free physical = 15229 ; free virtual = 23246
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1644.805 ; gain = 486.141 ; free physical = 246 ; free virtual = 23816
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1643.930 ; gain = 485.258 ; free physical = 15229 ; free virtual = 23246
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1644.805 ; gain = 486.141 ; free physical = 246 ; free virtual = 23816
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1643.930 ; gain = 485.258 ; free physical = 15229 ; free virtual = 23246
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1644.805 ; gain = 486.141 ; free physical = 246 ; free virtual = 23816
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1643.930 ; gain = 485.258 ; free physical = 15229 ; free virtual = 23246
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -287,7 +284,7 @@ Report Cell Usage:
 +------+-----------+------+
 |      |Cell       |Count |
 +------+-----------+------+
-|1     |BUFG       |     4|
+|1     |BUFG       |     5|
 |2     |MMCME2_ADV |     1|
 |3     |IBUF       |     1|
 +------+-----------+------+
@@ -296,15 +293,15 @@ Report Instance Areas:
 +------+---------+-------------------------+------+
 |      |Instance |Module                   |Cells |
 +------+---------+-------------------------+------+
-|1     |top      |                         |     6|
-|2     |  inst   |my_clk_generator_clk_wiz |     6|
+|1     |top      |                         |     7|
+|2     |  inst   |my_clk_generator_clk_wiz |     7|
 +------+---------+-------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:43 . Memory (MB): peak = 1644.805 ; gain = 486.141 ; free physical = 246 ; free virtual = 23816
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:41 . Memory (MB): peak = 1643.930 ; gain = 485.258 ; free physical = 15229 ; free virtual = 23246
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:22 . Memory (MB): peak = 1644.805 ; gain = 130.531 ; free physical = 303 ; free virtual = 23873
-Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:43 . Memory (MB): peak = 1644.812 ; gain = 486.141 ; free physical = 303 ; free virtual = 23873
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1643.930 ; gain = 135.531 ; free physical = 15286 ; free virtual = 23303
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:41 . Memory (MB): peak = 1643.938 ; gain = 485.258 ; free physical = 15286 ; free virtual = 23303
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -314,12 +311,14 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-26 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+25 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:43 . Memory (MB): peak = 1656.805 ; gain = 519.516 ; free physical = 276 ; free virtual = 23848
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:42 . Memory (MB): peak = 1655.930 ; gain = 518.633 ; free physical = 15260 ; free virtual = 23278
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
 INFO: [Common 17-1381] The checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci
 INFO: [Common 17-1381] The checkpoint '/home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file my_clk_generator_utilization_synth.rpt -pb my_clk_generator_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1660.805 ; gain = 0.000 ; free physical = 274 ; free virtual = 23847
-INFO: [Common 17-206] Exiting Vivado at Tue Feb 23 18:38:59 2021...
+report_utilization: Time (s): cpu = 00:00:00.14 ; elapsed = 00:00:00.16 . Memory (MB): peak = 1659.930 ; gain = 0.000 ; free physical = 15261 ; free virtual = 23279
+INFO: [Common 17-206] Exiting Vivado at Sat Feb 27 21:26:20 2021...

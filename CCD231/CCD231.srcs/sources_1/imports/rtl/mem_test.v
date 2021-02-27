@@ -68,7 +68,8 @@ module mem_test
 	//assign error = (state == MEM_READ) && rd_burst_data_valid && (rd_burst_data != {(MEM_DATA_BITS/8){rd_cnt}});
 
 	reg [31:0] pl_cnt;			// 记录连续“写、读、地址递增”的次数
-	parameter PL_CNT_MAX = 1024*1024;
+//	parameter PL_CNT_MAX = 1024*1024;
+	parameter PL_CNT_MAX = 32'b10000000000;
 
     reg status_r = 1'b0;
     assign status = status_r;
@@ -83,78 +84,170 @@ module mem_test
 
 	// ===============================================================
 	//	这里只处理数据的写：将ADC采集的数据拼接起来，组成4×16=64位长度的数据
-    reg reg_flag = 1'b0;
+    reg reg_flag_EF = 1'b0;
+    reg reg_flag_GH = 1'b0;
+    
 	reg [15:0] px10, px20;	//	channel E
 	reg [15:0] px11, px21;	//	channel F
 	reg [15:0] px12, px22;	//	channel G
 	reg [15:0] px13, px23;	//	channel H
 	
-//  用data clock对数据采样
-//	always@(posedge EF_DCO_p or posedge EF_DCO_n or posedge rst) begin
-	always@(posedge EF_DCO or negedge EF_DCO or posedge rst) begin
-		if( rst ) begin
-			px10 <= 16'b0;
-			px11 <= 16'b0;
-			px20 <= 16'b0;
-			px21 <= 16'b0;
-		end
-//		else if( EF_DCO_p | EF_DCO_n ) begin
-        else if( EF_DCO | ~EF_DCO ) begin
-//        else begin
-			if( reg_flag == 1'b0 ) begin	// handle the first 16 bits
-//				px10 <= (px10 << 1) + {15'b0, EOUT};
-//				px11 <= (px11 << 1) + {15'b0, FOUT};
-				px10 <= {px10[14:0], EOUT};
-                px11 <= {px11[14:0], FOUT};
-			end
-			else begin			// handle the rest 16 bits
-				px20 <= {px20[14:0], EOUT};
-				px21 <= {px21[14:0], FOUT};
-			end
-		end
-	end
+////  用data clock对数据采样
+//	always@(posedge EF_DCO or negedge EF_DCO or posedge rst) begin
+//		if( rst ) begin
+//			px10 <= 16'b0;
+//			px11 <= 16'b0;
+//			px20 <= 16'b0;
+//			px21 <= 16'b0;
+//		end
+//        else if( EF_DCO | ~EF_DCO ) begin
+//			if( reg_flag == 1'b0 ) begin	// handle the first 16 bits
+//				px10 <= {px10[14:0], EOUT};
+//                px11 <= {px11[14:0], FOUT};
+//			end
+//			else begin			// handle the rest 16 bits
+//				px20 <= {px20[14:0], EOUT};
+//				px21 <= {px21[14:0], FOUT};
+//			end
+//		end
+//	end
 
-	always@(posedge GH_DCO or negedge GH_DCO or posedge rst) begin
-		if( rst ) begin
-			px12 <= 16'b0;
-			px13 <= 16'b0;
-			px22 <= 16'b0;
-			px23 <= 16'b0;
-		end
-//		else if( EF_DCO_p | EF_DCO_n ) begin
-        else if( GH_DCO | ~GH_DCO ) begin
-			if( reg_flag == 1'b0 ) begin	// handle the first 16 bits
-				px12 <= {px12[14:0], GOUT};
-				px13 <= {px13[14:0], HOUT};
-			end
-			else begin			// handle the rest 16 bits
-				px22 <= {px22[14:0], GOUT};
-				px23 <= {px23[14:0], HOUT};
-			end
-		end
+//	always@(posedge GH_DCO or negedge GH_DCO or posedge rst) begin
+//		if( rst ) begin
+//			px12 <= 16'b0;
+//			px13 <= 16'b0;
+//			px22 <= 16'b0;
+//			px23 <= 16'b0;
+//		end
+//        else if( GH_DCO | ~GH_DCO ) begin
+//			if( reg_flag == 1'b0 ) begin	// handle the first 16 bits
+//				px12 <= {px12[14:0], GOUT};
+//				px13 <= {px13[14:0], HOUT};
+//			end
+//			else begin			// handle the rest 16 bits
+//				px22 <= {px22[14:0], GOUT};
+//				px23 <= {px23[14:0], HOUT};
+//			end
+//		end
+//	end
+
+
+//  用data clock对数据采样
+    wire E_q1, E_q2;
+    wire F_q1, F_q2;
+    wire G_q1, G_q2;
+    wire H_q1, H_q2;
+    
+    IDDR #(
+        .DDR_CLK_EDGE("OPPOSITE_EDGE"), // "OPPOSITE_EDGE", "SAME_EDGE" or "SAME_EDGE_PIPELINED"
+        .INIT_Q1(1'b0), // Initial value of Q1: 1'b0 or 1'b1
+        .INIT_Q2(1'b0), // Initial value of Q2: 1'b0 or 1'b1
+        .SRTYPE("SYNC") // Set/Reset type: "SYNC" or "ASYNC" 
+        ) ch_E (
+            .Q1(E_q1), // 1-bit output for positive edge of clock 
+            .Q2(E_q2), // 1-bit output for negative edge of clock
+            .C(EF_DCO),   // 1-bit clock input
+            .CE(1'b1), // 1-bit clock enable input
+            .D(EOUT),   // 1-bit DDR data input
+            .R(1'b0),   // 1-bit reset
+            .S(1'b0)    // 1-bit set
+        );
+
+    IDDR #(
+        .DDR_CLK_EDGE("OPPOSITE_EDGE"), // "OPPOSITE_EDGE", "SAME_EDGE" or "SAME_EDGE_PIPELINED"
+        .INIT_Q1(1'b0), // Initial value of Q1: 1'b0 or 1'b1
+        .INIT_Q2(1'b0), // Initial value of Q2: 1'b0 or 1'b1
+        .SRTYPE("SYNC") // Set/Reset type: "SYNC" or "ASYNC" 
+        ) ch_F (
+            .Q1(F_q1), // 1-bit output for positive edge of clock 
+            .Q2(F_q2), // 1-bit output for negative edge of clock
+            .C(EF_DCO),   // 1-bit clock input
+            .CE(1'b1), // 1-bit clock enable input
+            .D(FOUT),   // 1-bit DDR data input
+            .R(1'b0),   // 1-bit reset
+            .S(1'b0)    // 1-bit set
+        );
+        
+    IDDR #(
+        .DDR_CLK_EDGE("OPPOSITE_EDGE"), // "OPPOSITE_EDGE", "SAME_EDGE" or "SAME_EDGE_PIPELINED"
+        .INIT_Q1(1'b0), // Initial value of Q1: 1'b0 or 1'b1
+        .INIT_Q2(1'b0), // Initial value of Q2: 1'b0 or 1'b1
+        .SRTYPE("SYNC") // Set/Reset type: "SYNC" or "ASYNC" 
+        ) ch_G (
+            .Q1(G_q1), // 1-bit output for positive edge of clock 
+            .Q2(G_q2), // 1-bit output for negative edge of clock
+            .C(GH_DCO),   // 1-bit clock input
+            .CE(1'b1), // 1-bit clock enable input
+            .D(GOUT),   // 1-bit DDR data input
+            .R(1'b0),   // 1-bit reset
+            .S(1'b0)    // 1-bit set
+        );    
+
+    IDDR #(
+        .DDR_CLK_EDGE("OPPOSITE_EDGE"), // "OPPOSITE_EDGE", "SAME_EDGE" or "SAME_EDGE_PIPELINED"
+        .INIT_Q1(1'b0), // Initial value of Q1: 1'b0 or 1'b1
+        .INIT_Q2(1'b0), // Initial value of Q2: 1'b0 or 1'b1
+        .SRTYPE("SYNC") // Set/Reset type: "SYNC" or "ASYNC" 
+        ) ch_H (
+            .Q1(H_q1), // 1-bit output for positive edge of clock 
+            .Q2(H_q2), // 1-bit output for negative edge of clock
+            .C(GH_DCO),   // 1-bit clock input
+            .CE(1'b1), // 1-bit clock enable input
+            .D(HOUT),   // 1-bit DDR data input
+            .R(1'b0),   // 1-bit reset
+            .S(1'b0)    // 1-bit set
+        );
+    
+	always@( posedge EF_DCO ) begin
+        if( ~reg_flag_EF ) begin	// handle the first 16 bits
+            px10 <= {px10[13:0], E_q1, E_q2};
+            px11 <= {px11[13:0], F_q1, F_q2};
+        end
+        else begin			// handle the rest 16 bits
+            px20 <= {px20[13:0], E_q1, E_q2};
+            px21 <= {px21[13:0], F_q1, F_q2};
+        end
+    end
+
+	always@( posedge GH_DCO ) begin
+        if( ~reg_flag_GH ) begin	// handle the first 16 bits
+            px12 <= {px12[13:0], G_q1, G_q2};
+            px13 <= {px13[13:0], H_q1, H_q2};
+        end
+        else begin			// handle the rest 16 bits
+            px22 <= {px22[13:0], G_q1, G_q2};
+            px23 <= {px23[13:0], H_q1, H_q2};
+        end
 	end
 
 	
-//  用Frame clock保证数据正确性，不会发生串位
+//  用Frame clock的上升沿来改变应该往哪个“16位”寄存器中“写”入数据
+    always@( posedge EF_FR ) begin
+        reg_flag_EF <= ~reg_flag_EF;
+    end
+    
+    always@( posedge GH_FR ) begin
+        reg_flag_GH <= ~reg_flag_GH;
+    end
+
+//  用某个芯片的frame clock下降沿触发往DDR写数据，能够比较有效避免不同芯片间的延时带来的不同步问题
     reg[63:0] wr_burst_data_reg_tmp;
-//	always@( posedge EF_FR_p or posedge rst ) begin
-//	always@( negedge EF_FR_p or posedge rst ) begin
     always@( negedge EF_FR or posedge rst ) begin
-//    always@( negedge ENC or posedge rst ) begin
 	   if( rst ) begin
-           reg_flag                 <= 1'b0;
-	       wr_burst_data_reg_tmp    <= 64'b0;
+//	       wr_burst_data_reg_tmp    <= 64'b0;
            rd_burst_addr            <= INIT_ADDR;
            wr_burst_addr            <= INIT_ADDR;
-           pl_cnt                   <= 32'd0;
+           pl_cnt                   <= 32'b0;
            status_r                 <= 1'b0;
            ddr_state                <= 1'b0;
 	   end
 	   else begin
-           if( !reg_flag == 1'b0 )
-               wr_burst_data_reg_tmp <= {px10,px11,px12,px13};
+           if( reg_flag_EF ) // 这里用reg_flag_EF或reg_flag_GH都可以
+//               wr_burst_data_reg_tmp <= {px10,px11,px12,px13};
+               wr_burst_data_reg_tmp <= {px10[13:0],px20[1:0], px11[13:0],px21[1:0], px12[13:0],px22[1:0], px13[13:0],px23[1:0]};
            else
-               wr_burst_data_reg_tmp <= {px20,px21,px22,px23};
+//               wr_burst_data_reg_tmp <= {px20,px21,px22,px23};
+               wr_burst_data_reg_tmp <= {px20[13:0],px10[1:0], px21[13:0],px11[1:0], px22[13:0],px12[1:0], px23[13:0],px13[1:0]};
 
 // 测试往DDR写数据是否正常：已经检查了，OK！
 // 同时确定了字节序
@@ -166,22 +259,22 @@ module mem_test
        // 测试数据组合在内存中排列的位置
 //           wr_burst_data_reg_tmp <= {16'haaaa,16'hbbbb,16'hcccc,16'hdddd};
            
-           reg_flag <= reg_flag + 1'b1;
+//           reg_flag <= reg_flag + 1'b1;
            
-           if( pl_cnt < PL_CNT_MAX ) begin
-                if( status_r == 1'b0 )
-                    ddr_state   <= ~ddr_state;                  // 生成触发写DDR的信号
-                
-                wr_burst_addr   <= wr_burst_addr + BURST_LEN;	// 地址一直递增
-                rd_burst_addr   <= rd_burst_addr + BURST_LEN;   // 地址一直递增
-                pl_cnt          <= pl_cnt + 32'd1;			    // 每完成一次"写、读、地址递增"，计数器就+1
-           end
-           else begin
+           if( pl_cnt >= PL_CNT_MAX ) begin
                 rd_burst_addr <= INIT_ADDR;
                 wr_burst_addr <= INIT_ADDR;
-                pl_cnt        <= 32'd0;
+                pl_cnt        <= 32'b0;
                 status_r      <= 1'b1;
            end
+           else begin
+               if( status_r == 1'b0 )
+                   ddr_state   <= ~ddr_state;                  // 生成触发写DDR的信号
+               
+               wr_burst_addr   <= wr_burst_addr + BURST_LEN;    // 地址一直递增
+               rd_burst_addr   <= rd_burst_addr + BURST_LEN;   // 地址一直递增
+               pl_cnt          <= pl_cnt + 32'b1;                // 每完成一次"写、读、地址递增"，计数器就+1
+          end
        end
 	end
 

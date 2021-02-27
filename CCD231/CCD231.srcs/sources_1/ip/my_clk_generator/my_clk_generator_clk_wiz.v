@@ -59,6 +59,7 @@
 // _clk_10M____10.000______0.000______50.0______296.755____161.614
 // _clk_20M____20.000______0.000______50.0______258.893____161.614
 // clk_150M___150.000______0.000______50.0______159.601____161.614
+// clk_450M___450.000______0.000______50.0______132.120____161.614
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -74,6 +75,7 @@ module my_clk_generator_clk_wiz
   output        clk_10M,
   output        clk_20M,
   output        clk_150M,
+  output        clk_450M,
   // Status and control signals
   output        locked,
   input         clk_in
@@ -99,8 +101,8 @@ wire clk_in2_my_clk_generator;
   wire        clk_10M_my_clk_generator;
   wire        clk_20M_my_clk_generator;
   wire        clk_150M_my_clk_generator;
-  wire        clk_10M_my_clk_generator;
-  wire        clk_5M_my_clk_generator;
+  wire        clk_450M_my_clk_generator;
+  wire        clk_900M_my_clk_generator;
   wire        clk_out6_my_clk_generator;
   wire        clk_out7_my_clk_generator;
 
@@ -114,7 +116,6 @@ wire clk_in2_my_clk_generator;
     wire clkout0b_unused;
    wire clkout1b_unused;
    wire clkout2b_unused;
-   wire clkout3_unused;
    wire clkout3b_unused;
    wire clkout4_unused;
   wire        clkout5_unused;
@@ -143,6 +144,10 @@ wire clk_in2_my_clk_generator;
     .CLKOUT2_PHASE        (0.000),
     .CLKOUT2_DUTY_CYCLE   (0.500),
     .CLKOUT2_USE_FINE_PS  ("FALSE"),
+    .CLKOUT3_DIVIDE       (2),
+    .CLKOUT3_PHASE        (0.000),
+    .CLKOUT3_DUTY_CYCLE   (0.500),
+    .CLKOUT3_USE_FINE_PS  ("FALSE"),
     .CLKIN1_PERIOD        (20.000))
   mmcm_adv_inst
     // Output clocks
@@ -155,7 +160,7 @@ wire clk_in2_my_clk_generator;
     .CLKOUT1B            (clkout1b_unused),
     .CLKOUT2             (clk_150M_my_clk_generator),
     .CLKOUT2B            (clkout2b_unused),
-    .CLKOUT3             (clkout3_unused),
+    .CLKOUT3             (clk_450M_my_clk_generator),
     .CLKOUT3B            (clkout3b_unused),
     .CLKOUT4             (clkout4_unused),
     .CLKOUT5             (clkout5_unused),
@@ -213,6 +218,10 @@ wire clk_in2_my_clk_generator;
   BUFG clkout3_buf
    (.O   (clk_150M),
     .I   (clk_150M_my_clk_generator));
+
+  BUFG clkout4_buf
+   (.O   (clk_450M),
+    .I   (clk_450M_my_clk_generator));
 
 
 
