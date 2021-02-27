@@ -111,3 +111,9 @@ set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets IBUFDS_GH_DCO_n_0_BUFG_inst_n
 set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets IBUFDS_GH_FR_n_0_BUFG_inst_n_0]
 
 
+
+set_property SLEW FAST [get_ports ENC]
+set_property C_CLK_INPUT_FREQ_HZ 300000000 [get_debug_cores dbg_hub]
+set_property C_ENABLE_CLK_DIVIDER false [get_debug_cores dbg_hub]
+set_property C_USER_SCAN_CHAIN 1 [get_debug_cores dbg_hub]
+connect_debug_port dbg_hub/clk [get_nets clk_150M]
