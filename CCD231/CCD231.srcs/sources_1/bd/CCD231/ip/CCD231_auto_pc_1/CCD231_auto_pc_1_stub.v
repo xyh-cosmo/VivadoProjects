@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Sat Feb 27 21:46:37 2021
+// Date        : Sat Feb 27 21:46:36 2021
 // Host        : apple running 64-bit Ubuntu 20.04.2 LTS
-// Command     : write_verilog -force -mode synth_stub
-//               /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/CCD231_auto_pc_1_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top CCD231_auto_pc_1 -prefix
+//               CCD231_auto_pc_1_ CCD231_auto_pc_1_stub.v
 // Design      : CCD231_auto_pc_1
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z035ffg676-2

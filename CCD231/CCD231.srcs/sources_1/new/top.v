@@ -261,11 +261,9 @@ module TOP(
        .clk_in(clk_50M)
        );
 
-    reg[7:0] cnt_1M=8'b0, cnt_5M=8'b0;
-    reg clk_1M_r = 1'b0;
-    reg clk_5M_r = 1'b0;
-    
     //  生成1M时钟
+    reg[7:0] cnt_1M = 8'b0;
+    reg clk_1M_r = 1'b0;
     always@( posedge clk_10M ) begin
         if( cnt_1M >= 4 ) begin
             cnt_1M <= 8'b0;
@@ -276,6 +274,8 @@ module TOP(
     end
 
     //  生成5M时钟
+    reg[7:0] cnt_5M=8'b0;
+    reg clk_5M_r = 1'b0;
     always@( posedge clk_50M ) begin
         if( cnt_5M >= 4 ) begin
             cnt_5M <= 8'b0;
@@ -289,8 +289,12 @@ module TOP(
     assign ENC = clk_5M_r & ENC_CTR;  // OK
     //assign ENC = clk_10M;
 //    assign ENC = clk_20M;   //  LTC2271输出的时钟不对。。。
-    wire IV_5K_CTR_fake;
-    assign IV_5K_CTR = clk_1M_r; // 临时取消从PS端控制IV_5K_CTR,测试LTC2271的数据采集
+
+    wire IV_5K_CTR_en, IV_5K_CTR_or;
+//    assign IV_5K_CTR = clk_1M_r & IV_5K_CTR_en; // 临时取消从PS端控制IV_5K_CTR,测试LTC2271的数据采集
+//    assign IV_5K_CTR = (clk_1M_r || IV_5K_CTR_or) && IV_5K_CTR_en ; //  IV_5K_CTR_or=1 --> 开关一直打开
+    assign IV_5K_CTR = 1'b0;
+
 //  ========================================================
 //  ========================================================
 
@@ -317,11 +321,6 @@ module TOP(
     assign data_G[15:0] = wr_burst_data[31:16];
     assign data_H[15:0] = wr_burst_data[15:0];
     
-//    assign data_E[15:0] = {wr_burst_data[7:0]，wr_burst_data[15:8]};
-//    assign data_F[15:0] = {wr_burst_data[7:0]，wr_burst_data[15:8]};
-//    assign data_G[15:0] = {wr_burst_data[15:0]，wr_burst_data[15:0]};
-//    assign data_H[15:0] = {wr_burst_data[15:0]，wr_burst_data[15:0]};
-
 //  将LTC2271输出的差分信号转换成单端信号
     IBUFDS #(
         .DIFF_TERM("TRUE"),     // Differential Termination
@@ -406,6 +405,8 @@ module TOP(
     wire PL_KEY;
     wire error; // NOT USED
     wire data_status;
+    wire EF_FR_dly, GH_FR_dly;
+    
     mem_test
     #(
         .MEM_DATA_BITS(64),
@@ -430,20 +431,6 @@ module TOP(
         .rd_burst_finish(rd_burst_finish),   
         .wr_burst_finish(wr_burst_finish),
     
-//        .pl_key(PL_KEY),
-
-//        .EF_FR_p(EF_FR_P),
-//        .EF_FR_n(EF_FR_N),
-        
-//        .GH_FR_p(GH_FR_P),
-//        .GH_FR_n(GH_FR_N),
-        
-//        .EF_DCO_p(EF_DCO_P),
-//        .EF_DCO_n(EF_DCO_N),
-        
-//        .GH_DCO_p(GH_DCO_P),
-//        .GH_DCO_n(GH_DCO_N),
-        
         .ENC(ENC),
         .EF_FR(EF_FR),
         .GH_FR(GH_FR),
@@ -454,6 +441,10 @@ module TOP(
         .FOUT(FOUT),
         .GOUT(GOUT),
         .HOUT(HOUT),
+        
+        //  以下两个信号在调试结束之后可以去掉
+        .EF_FR_dly_debug(EF_FR_dly),
+        .GH_FR_dly_debug(GH_FR_dly),
         
         .status(data_status),
 
@@ -536,6 +527,9 @@ module TOP(
         .DEBUG()                                         
     );
 
+    wire gpio_reg_not_used1;
+    wire gpio_reg_not_used2;
+    wire gpio_reg_not_used3;
     CCD231_wrapper CCD231
        (.DDR_addr(DDR_addr),
         .DDR_ba(DDR_ba),
@@ -563,8 +557,12 @@ module TOP(
         //  GPIO：在PS上修改寄存器，实现对PL端模块的控制
         .gpio_in_tri_i(pl_status),
         .gpio2_tri_o(gpio2_spi_data),
-        .gpio_tri_o({ ENC_CTR,
-                      IV_5K_CTR_fake,
+        .gpio_tri_o({ gpio_reg_not_used1,
+                      gpio_reg_not_used2,
+                      gpio_reg_not_used3,
+                      ENC_CTR,
+                      IV_5K_CTR_or,
+                      IV_5K_CTR_en,
                       ADG772_CTR,
                       PD,   // 控制LTC2271之前的运放ADA4932，active low
                       CLKP, 
@@ -716,8 +714,8 @@ module TOP(
 // =============================
 	
 	SPI4ADC spi4adc(
-//		.clk(clk_50M),
-        .clk(clk_10M),  //  降低时钟频，通过SDO读出LTC2271的SPI配置内容
+		.clk(clk_50M),
+//        .clk(clk_10M),  //  降低时钟频，通过SDO读出LTC2271的SPI配置内容
 //		.clk(clk_sys),
 		.rst(gpio_RST),
 		.spi_data(gpio2_spi_data),
@@ -775,7 +773,9 @@ module TOP(
         .probe15(EOUT),
         .probe16(FOUT),
         .probe17(GOUT),
-        .probe18(HOUT)
+        .probe18(HOUT),
+        .probe19(EF_FR_dly),
+        .probe20(GH_FR_dly)
     );
 
 endmodule

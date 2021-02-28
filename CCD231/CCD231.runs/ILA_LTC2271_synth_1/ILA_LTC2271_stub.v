@@ -1,7 +1,7 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Sat Feb 27 16:28:05 2021
+// Date        : Sun Feb 28 14:45:15 2021
 // Host        : apple running 64-bit Ubuntu 20.04.2 LTS
 // Command     : write_verilog -force -mode synth_stub
 //               /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/ILA_LTC2271_stub.v
@@ -16,8 +16,8 @@
 (* X_CORE_INFO = "ila,Vivado 2017.4" *)
 module ILA_LTC2271(clk, probe0, probe1, probe2, probe3, probe4, probe5, 
   probe6, probe7, probe8, probe9, probe10, probe11, probe12, probe13, probe14, probe15, probe16, probe17, 
-  probe18)
-/* synthesis syn_black_box black_box_pad_pin="clk,probe0[0:0],probe1[0:0],probe2[0:0],probe3[0:0],probe4[0:0],probe5[15:0],probe6[15:0],probe7[15:0],probe8[15:0],probe9[0:0],probe10[0:0],probe11[0:0],probe12[0:0],probe13[0:0],probe14[0:0],probe15[0:0],probe16[0:0],probe17[0:0],probe18[0:0]" */;
+  probe18, probe19, probe20)
+/* synthesis syn_black_box black_box_pad_pin="clk,probe0[0:0],probe1[0:0],probe2[0:0],probe3[0:0],probe4[0:0],probe5[15:0],probe6[15:0],probe7[15:0],probe8[15:0],probe9[0:0],probe10[0:0],probe11[0:0],probe12[0:0],probe13[0:0],probe14[0:0],probe15[0:0],probe16[0:0],probe17[0:0],probe18[0:0],probe19[0:0],probe20[0:0]" */;
   input clk;
   input [0:0]probe0;
   input [0:0]probe1;
@@ -38,4 +38,6 @@ module ILA_LTC2271(clk, probe0, probe1, probe2, probe3, probe4, probe5,
   input [0:0]probe16;
   input [0:0]probe17;
   input [0:0]probe18;
+  input [0:0]probe19;
+  input [0:0]probe20;
 endmodule

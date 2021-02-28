@@ -1,7 +1,7 @@
 //Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-//Date        : Sat Feb 27 21:44:53 2021
+//Date        : Sun Feb 28 16:32:34 2021
 //Host        : apple running 64-bit Ubuntu 20.04.2 LTS
 //Command     : generate_target CCD231.bd
 //Design      : CCD231
@@ -142,9 +142,9 @@ module CCD231
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.AXIM_RST_N RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.AXIM_RST_N, POLARITY ACTIVE_LOW" *) output [0:0]axim_rst_n;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio2 TRI_O" *) output [31:0]gpio2_tri_o;
   (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio_in TRI_I" *) input [0:0]gpio_in_tri_i;
-  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio TRI_O" *) output [11:0]gpio_tri_o;
+  (* X_INTERFACE_INFO = "xilinx.com:interface:gpio:1.0 gpio TRI_O" *) output [15:0]gpio_tri_o;
 
-  wire [11:0]AXI_GPIO_GPIO_TRI_O;
+  wire [15:0]AXI_GPIO_GPIO_TRI_O;
   wire [0:0]AXI_GPIO_IN_GPIO_TRI_I;
   wire [31:0]AXI_GPIO_OUT_GPIO2_TRI_O;
   wire [31:0]AXI_INTERCONNECT_M00_AXI_ARADDR;
@@ -367,7 +367,7 @@ module CCD231
   assign axi_clk_1 = axi_hp_clk;
   assign axim_rst_n[0] = rst_ps7_0_148M_peripheral_aresetn;
   assign gpio2_tri_o[31:0] = AXI_GPIO_OUT_GPIO2_TRI_O;
-  assign gpio_tri_o[11:0] = AXI_GPIO_GPIO_TRI_O;
+  assign gpio_tri_o[15:0] = AXI_GPIO_GPIO_TRI_O;
   CCD231_axi_gpio_0_0 AXI_GPIO_IN
        (.gpio_io_i(AXI_GPIO_IN_GPIO_TRI_I),
         .s_axi_aclk(axi_clk_1),

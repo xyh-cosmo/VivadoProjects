@@ -44,6 +44,9 @@ module mem_test
 		input GOUT,				//	G output bit
 		inout HOUT,				//	H output bit
 		
+		output EF_FR_dly_debug,
+        output GH_FR_dly_debug,
+		
 		output status,            // 1表示指定次数的采样已经完成，0表示未完成
 		output error
 	);
@@ -68,8 +71,8 @@ module mem_test
 	//assign error = (state == MEM_READ) && rd_burst_data_valid && (rd_burst_data != {(MEM_DATA_BITS/8){rd_cnt}});
 
 	reg [31:0] pl_cnt;			// 记录连续“写、读、地址递增”的次数
-//	parameter PL_CNT_MAX = 1024*1024;
-	parameter PL_CNT_MAX = 32'b10000000000;
+	parameter PL_CNT_MAX = 1024*1024;
+//	parameter PL_CNT_MAX = 32'b10000000000;
 
     reg status_r = 1'b0;
     assign status = status_r;
@@ -197,41 +200,83 @@ module mem_test
             .R(1'b0),   // 1-bit reset
             .S(1'b0)    // 1-bit set
         );
+
+//  ==========================================
+//  ==========================================
+//  生成一个周期与FR相同（占空比不同）的时钟,延迟一个DCO周期
+    wire EF_FR_dly;
+    wire GH_FR_dly;
     
+    reg[1:0] cnt_EF = 2'b0;
+    reg[1:0] cnt_GH = 2'b0;
+    
+    always@( negedge EF_DCO ) begin
+        if( EF_FR ) begin
+            cnt_EF <= cnt_EF + 2'b1;
+        end
+        else
+            cnt_EF <= 2'b0;
+    end
+
+    always@( negedge GH_DCO ) begin
+        if( GH_FR ) begin
+            cnt_GH <= cnt_GH + 2'b1;
+        end
+        else
+            cnt_GH <= 2'b0;
+    end
+    
+    assign EF_FR_dly = {cnt_EF >= 2'b01};
+    assign GH_FR_dly = {cnt_GH >= 2'b01};
+    
+    assign EF_FR_dly_debug = EF_FR_dly;
+    assign GH_FR_dly_debug = GH_FR_dly;
+
+//  ==========================================
+//  用新生成的Frame clock的上升沿来改变应该往哪个“16位”寄存器中“写”入数据
+    always@( posedge EF_FR_dly ) begin
+        reg_flag_EF <= ~reg_flag_EF;
+    end
+    
+    always@( posedge GH_FR_dly ) begin
+        reg_flag_GH <= ~reg_flag_GH;
+    end
+//  ==========================================
+
 	always@( posedge EF_DCO ) begin
         if( ~reg_flag_EF ) begin	// handle the first 16 bits
-            px10 <= {px10[13:0], E_q1, E_q2};
-            px11 <= {px11[13:0], F_q1, F_q2};
+            px10[15:0] <= {px10[13:0], E_q1, E_q2};
+            px11[15:0] <= {px11[13:0], F_q1, F_q2};
         end
         else begin			// handle the rest 16 bits
-            px20 <= {px20[13:0], E_q1, E_q2};
-            px21 <= {px21[13:0], F_q1, F_q2};
+            px20[15:0] <= {px20[13:0], E_q1, E_q2};
+            px21[15:0] <= {px21[13:0], F_q1, F_q2};
         end
     end
 
 	always@( posedge GH_DCO ) begin
         if( ~reg_flag_GH ) begin	// handle the first 16 bits
-            px12 <= {px12[13:0], G_q1, G_q2};
-            px13 <= {px13[13:0], H_q1, H_q2};
+            px12[15:0] <= {px12[13:0], G_q1, G_q2};
+            px13[15:0] <= {px13[13:0], H_q1, H_q2};
         end
         else begin			// handle the rest 16 bits
-            px22 <= {px22[13:0], G_q1, G_q2};
-            px23 <= {px23[13:0], H_q1, H_q2};
+            px22[15:0] <= {px22[13:0], G_q1, G_q2};
+            px23[15:0] <= {px23[13:0], H_q1, H_q2};
         end
 	end
 
 	
-//  用Frame clock的上升沿来改变应该往哪个“16位”寄存器中“写”入数据
-    always@( posedge EF_FR ) begin
-        reg_flag_EF <= ~reg_flag_EF;
-    end
-    
-    always@( posedge GH_FR ) begin
-        reg_flag_GH <= ~reg_flag_GH;
-    end
-
 //  用某个芯片的frame clock下降沿触发往DDR写数据，能够比较有效避免不同芯片间的延时带来的不同步问题
-    reg[63:0] wr_burst_data_reg_tmp;
+//    reg[63:0] wr_burst_data_reg_tmp;
+    wire[63:0] wr_burst_data_reg_tmp1;
+    wire[63:0] wr_burst_data_reg_tmp2;
+
+//    assign wr_burst_data_reg_tmp1[63:0] = {px10[13:0],px20[15:14], px11[13:0],px21[15:14], px12[13:0],px22[15:14], px13[13:0],px23[15:14]};
+//    assign wr_burst_data_reg_tmp2[63:0] = {px20[13:0],px10[15:14], px21[13:0],px11[15:14], px22[13:0],px12[15:14], px23[13:0],px13[15:14]};
+
+    assign wr_burst_data_reg_tmp1[63:0] = {px10,px11,px12,px13};
+    assign wr_burst_data_reg_tmp2[63:0] = {px20,px21,px22,px23};
+
     always@( negedge EF_FR or posedge rst ) begin
 	   if( rst ) begin
 //	       wr_burst_data_reg_tmp    <= 64'b0;
@@ -242,12 +287,12 @@ module mem_test
            ddr_state                <= 1'b0;
 	   end
 	   else begin
-           if( reg_flag_EF ) // 这里用reg_flag_EF或reg_flag_GH都可以
-//               wr_burst_data_reg_tmp <= {px10,px11,px12,px13};
-               wr_burst_data_reg_tmp <= {px10[13:0],px20[1:0], px11[13:0],px21[1:0], px12[13:0],px22[1:0], px13[13:0],px23[1:0]};
-           else
-//               wr_burst_data_reg_tmp <= {px20,px21,px22,px23};
-               wr_burst_data_reg_tmp <= {px20[13:0],px10[1:0], px21[13:0],px11[1:0], px22[13:0],px12[1:0], px23[13:0],px13[1:0]};
+//           if( reg_flag_EF ) // 这里用reg_flag_EF或reg_flag_GH都可以
+////               wr_burst_data_reg_tmp <= {px10,px11,px12,px13};
+//               wr_burst_data_reg_tmp <= {px10[13:0],px20[1:0], px11[13:0],px21[1:0], px12[13:0],px22[1:0], px13[13:0],px23[1:0]};
+//           else
+////               wr_burst_data_reg_tmp <= {px20,px21,px22,px23};
+//               wr_burst_data_reg_tmp <= {px20[13:0],px10[1:0], px21[13:0],px11[1:0], px22[13:0],px12[1:0], px23[13:0],px13[1:0]};
 
 // 测试往DDR写数据是否正常：已经检查了，OK！
 // 同时确定了字节序
@@ -279,7 +324,7 @@ module mem_test
 	end
 
 	// =======================================================
-	// 往DDR中写数据
+	// 准备好“往DDR中写数据”
 	always@(posedge mem_clk or posedge rst) begin
 		if(rst)
 		begin
@@ -290,7 +335,12 @@ module mem_test
 		begin
 			if(wr_burst_data_req)
 			begin
-				wr_burst_data_reg <= wr_burst_data_reg_tmp;
+//				wr_burst_data_reg <= wr_burst_data_reg_tmp;
+                if( reg_flag_EF )
+                    wr_burst_data_reg <= wr_burst_data_reg_tmp1;
+                else
+                    wr_burst_data_reg <= wr_burst_data_reg_tmp2;
+                    
 				wr_cnt <= wr_cnt + 8'd1;
 			end
 		end

@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sat Feb 27 23:21:12 2021
-# Process ID: 410838
+# Start of session at: Sun Feb 28 18:44:46 2021
+# Process ID: 503544
 # Current directory: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1
 # Command line: vivado -log TOP.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source TOP.tcl -notrace
 # Log file: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/impl_1/TOP.vdi

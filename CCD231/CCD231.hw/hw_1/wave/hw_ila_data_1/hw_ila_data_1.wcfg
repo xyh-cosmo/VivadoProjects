@@ -10,16 +10,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="512001fs"></ZoomEndTime>
+      <ZoomEndTime time="386657fs"></ZoomEndTime>
       <Cursor1Time time="421000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="173"></NameColumnWidth>
-      <ValueColumnWidth column_width="147"></ValueColumnWidth>
+      <ValueColumnWidth column_width="115"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="14" />
-   <wave_markers>
-   </wave_markers>
+   <WVObjectSize size="16" />
    <wvobject type="logic" fp_name="PL_KEY">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">PL_KEY</obj_property>
@@ -27,17 +25,17 @@
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="data_status">
-      <obj_property name="DisplayName">FullPathName</obj_property>
-      <obj_property name="ElementShortName">data_status</obj_property>
-      <obj_property name="ObjectShortName">data_status</obj_property>
-      <obj_property name="LABELRADIX">true</obj_property>
-      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="EF_FR">
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">EF_FR</obj_property>
       <obj_property name="ObjectShortName">EF_FR</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="EF_FR_dly">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">EF_FR_dly</obj_property>
+      <obj_property name="ObjectShortName">EF_FR_dly</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -68,6 +66,13 @@
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">GH_FR</obj_property>
       <obj_property name="ObjectShortName">GH_FR</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="GH_FR_dly">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">GH_FR_dly</obj_property>
+      <obj_property name="ObjectShortName">GH_FR_dly</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
@@ -122,7 +127,14 @@
       <obj_property name="DisplayName">FullPathName</obj_property>
       <obj_property name="ElementShortName">data_H[15:0]</obj_property>
       <obj_property name="ObjectShortName">data_H[15:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="data_status">
+      <obj_property name="DisplayName">FullPathName</obj_property>
+      <obj_property name="ElementShortName">data_status</obj_property>
+      <obj_property name="ObjectShortName">data_status</obj_property>
       <obj_property name="LABELRADIX">true</obj_property>
       <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
    </wvobject>
