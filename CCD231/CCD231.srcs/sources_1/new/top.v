@@ -165,10 +165,11 @@ module TOP(
     wire FIXED_IO_ps_clk;
     wire FIXED_IO_ps_porb;
     wire FIXED_IO_ps_srstb;
-    wire [31:0] gpio2_tri_o;
-    wire [4:0] gpio_tri_o;
     
-//    wire fclk_clk0;
+    // 多余的声明。。。
+//    wire [31:0] gpio2_tri_o;
+//    wire [15:0] gpio_tri_o;
+    
 
 //  与DDR写数据模块交互
     wire rst_n;	
@@ -236,7 +237,12 @@ module TOP(
     //  GPIO2
     wire [31:0] gpio2_spi_data;
     //  GPIO_IN
-    wire pl_status;
+    wire pl_status, ddr_status;
+    
+    wire PL_KEY;
+    wire EF_FR_dly, GH_FR_dly;
+    wire ddr_error; //  测试从DDR中读出的数据是否与写入的数据一致
+    wire ddr_state, ddr_state0;
 
 // =========================================================
 //  ========================================================
@@ -246,13 +252,15 @@ module TOP(
 //  生成50MHz的时钟（也包括其他频率的时钟） 
     wire clk_locked;
     wire clk_1M, clk_5M;
-    wire clk_20M, clk_150M, clk_450M; // clk_300M;
+    wire clk_10M, clk_20M, clk_150M, clk_450M; //, clk_300M;
 
     my_clk_generator  my_clock (
        // Clock out ports 
        .clk_20M(clk_20M),
        .clk_150M(clk_150M),
        .clk_450M(clk_450M),
+       .clk_10M(clk_10M),
+       //.clk_300M(clk_300M),
        // Status and control signals               
        .locked(clk_locked),
        // Clock in ports
@@ -273,7 +281,7 @@ module TOP(
             cnt_1M <= cnt_1M + 8'b1;
     end
     
-    assign IV_5K_CTR = clk_1M_r & IV_5K_CTR_en;
+    assign IV_5K_CTR = ( clk_1M_r | IV_5K_CTR_or ) & IV_5K_CTR_en;
     
     assign RST_SIG_CTR = clk_1M_r & IV_5K_CTR_en;
     assign RPHI1_CTR = clk_1M_r & IV_5K_CTR_en;
@@ -299,7 +307,8 @@ module TOP(
             cnt_5M <= cnt_5M + 8'b1;
     end
     
-    assign ENC = clk_5M_r & ENC_CTR;  // OK
+//    assign ENC = clk_5M_r & ENC_CTR;  // OK
+    assign ENC = clk_10M & ENC_CTR;
 
 //  ========================================================
 //  ========================================================
@@ -317,10 +326,12 @@ module TOP(
     wire[63 : 0] rd_burst_data;
     wire[63 : 0] wr_burst_data;
 
+//  LTC2271输出的frame clock， data clock， data
     wire EF_FR, GH_FR;
     wire EF_DCO, GH_DCO;
     wire EOUT, FOUT, GOUT, HOUT;
-    
+
+//  依据两个芯片的frame clock重新生成的一个frame clock，用来触发往DDR写数据的状态
     wire FR_CLK;
 
 //  写入DDR
@@ -331,11 +342,11 @@ module TOP(
     assign data_H[15:0] = wr_burst_data[15:0];
 
 //  从DDR读出
-    wire[15:0] data_E_r, data_F_r, data_G_r, data_H_r;
-    assign data_E_r[15:0] = rd_burst_data[63:48];
-    assign data_F_r[15:0] = rd_burst_data[47:32];
-    assign data_G_r[15:0] = rd_burst_data[31:16];
-    assign data_H_r[15:0] = rd_burst_data[15:0];
+//    wire[15:0] data_E_r, data_F_r, data_G_r, data_H_r;
+//    assign data_E_r[15:0] = rd_burst_data[63:48];
+//    assign data_F_r[15:0] = rd_burst_data[47:32];
+//    assign data_G_r[15:0] = rd_burst_data[31:16];
+//    assign data_H_r[15:0] = rd_burst_data[15:0];
     
 //  将LTC2271输出的差分信号转换成单端信号
     IBUFDS #(
@@ -417,13 +428,7 @@ module TOP(
         .I(HOUT_P),         // Diff_p buffer input (connect directly to top-level port)
         .IB(HOUT_N)         // Diff_n buffer input (connect directly to top-level port)
     );
-
-    wire PL_KEY;
-    wire data_status;
-    wire EF_FR_dly, GH_FR_dly;
-    wire ddr_error; //  测试从DDR中读出的数据是否与写入的数据一致
-    wire ddr_state, ddr_state0;
-    
+   
     mem_test
     #(
         .MEM_DATA_BITS(64),
@@ -464,7 +469,7 @@ module TOP(
 //        .EF_FR_dly_debug(EF_FR_dly),
 //        .GH_FR_dly_debug(GH_FR_dly),
         
-        .status(data_status),
+        .status(ddr_status),
         .FR_CLK(FR_CLK),
 //        .ddr_error(ddr_error),
         .ddr_state_debug(ddr_state),
@@ -579,7 +584,7 @@ module TOP(
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
         
         //  GPIO：在PS上修改寄存器，实现对PL端模块的控制
-        .gpio_in_tri_i(pl_status),
+        .gpio_in_tri_i({pl_status, ddr_status}),
         .gpio2_tri_o(gpio2_spi_data),
         .gpio_tri_o({ gpio_reg_not_used1,
                       gpio_reg_not_used2,

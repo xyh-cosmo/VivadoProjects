@@ -47,9 +47,6 @@ vlog -work xil_defaultlib -64 -incr -sv -L smartconnect_v1_0 -L axi_protocol_che
 vcom -work xpm -64 -93 \
 "/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_VCOMP.vhd" \
 
-vlog -work xil_defaultlib -64 -incr "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/ec67/hdl" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/02c8/hdl/verilog" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/1313/hdl" "+incdir+/home/xyh/Xilinx/Vivado/2017.4/data/xilinx_vip/include" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/ec67/hdl" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/02c8/hdl/verilog" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/1313/hdl" "+incdir+/home/xyh/Xilinx/Vivado/2017.4/data/xilinx_vip/include" \
-"../../../../CCD231.srcs/sources_1/bd/CCD231/sim/CCD231.v" \
-
 vlog -work axi_infrastructure_v1_1_0 -64 -incr "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/ec67/hdl" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/02c8/hdl/verilog" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/1313/hdl" "+incdir+/home/xyh/Xilinx/Vivado/2017.4/data/xilinx_vip/include" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/ec67/hdl" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/02c8/hdl/verilog" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/1313/hdl" "+incdir+/home/xyh/Xilinx/Vivado/2017.4/data/xilinx_vip/include" \
 "../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
 
@@ -120,6 +117,7 @@ vlog -work axi_protocol_converter_v2_1_15 -64 -incr "+incdir+../../../../CCD231.
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/ec67/hdl" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/02c8/hdl/verilog" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/1313/hdl" "+incdir+/home/xyh/Xilinx/Vivado/2017.4/data/xilinx_vip/include" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/ec67/hdl" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/02c8/hdl/verilog" "+incdir+../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/1313/hdl" "+incdir+/home/xyh/Xilinx/Vivado/2017.4/data/xilinx_vip/include" \
 "../../../../CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/sim/CCD231_auto_pc_1.v" \
 "../../../../CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_0/sim/CCD231_auto_pc_0.v" \
+"../../../../CCD231.srcs/sources_1/bd/CCD231/sim/CCD231.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

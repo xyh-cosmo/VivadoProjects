@@ -37,4 +37,7 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==CCD231_auto_pc_
 # IP: bd/CCD231/ip/CCD231_auto_pc_0/CCD231_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==CCD231_auto_pc_0 || ORIG_REF_NAME==CCD231_auto_pc_0} -quiet] -quiet
 
+# IP: ip/my_clk_generator/my_clk_generator.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==my_clk_generator || ORIG_REF_NAME==my_clk_generator} -quiet] -quiet
+
 # XDC: bd/CCD231/CCD231_ooc.xdc

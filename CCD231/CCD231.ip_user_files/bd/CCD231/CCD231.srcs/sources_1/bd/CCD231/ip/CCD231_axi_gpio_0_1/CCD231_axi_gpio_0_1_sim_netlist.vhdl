@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
--- Date        : Sun Feb 28 16:33:32 2021
+-- Date        : Sun Feb 28 16:33:31 2021
 -- Host        : apple running 64-bit Ubuntu 20.04.2 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top CCD231_axi_gpio_0_1 -prefix
+--               CCD231_axi_gpio_0_1_ CCD231_axi_gpio_0_1_sim_netlist.vhdl
 -- Design      : CCD231_axi_gpio_0_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -68,8 +68,6 @@ entity CCD231_axi_gpio_0_1_GPIO_Core is
     bus2ip_rnw_i_reg_1 : in STD_LOGIC_VECTOR ( 0 to 0 );
     bus2ip_rnw_i_reg_2 : in STD_LOGIC_VECTOR ( 0 to 0 )
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of CCD231_axi_gpio_0_1_GPIO_Core : entity is "GPIO_Core";
 end CCD231_axi_gpio_0_1_GPIO_Core;
 
 architecture STRUCTURE of CCD231_axi_gpio_0_1_GPIO_Core is
@@ -1634,8 +1632,6 @@ entity CCD231_axi_gpio_0_1_address_decoder is
     \Dual.ALLOUT1_ND_G2.READ_REG2_GEN[1].reg3_reg\ : in STD_LOGIC;
     \Dual.ALLOUT1_ND_G2.READ_REG2_GEN[0].reg3_reg\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of CCD231_axi_gpio_0_1_address_decoder : entity is "address_decoder";
 end CCD231_axi_gpio_0_1_address_decoder;
 
 architecture STRUCTURE of CCD231_axi_gpio_0_1_address_decoder is
@@ -2748,8 +2744,6 @@ entity CCD231_axi_gpio_0_1_slave_attachment is
     \Dual.ALLOUT1_ND_G2.READ_REG2_GEN[1].reg3_reg\ : in STD_LOGIC;
     \Dual.ALLOUT1_ND_G2.READ_REG2_GEN[0].reg3_reg\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of CCD231_axi_gpio_0_1_slave_attachment : entity is "slave_attachment";
 end CCD231_axi_gpio_0_1_slave_attachment;
 
 architecture STRUCTURE of CCD231_axi_gpio_0_1_slave_attachment is
@@ -3642,8 +3636,6 @@ entity CCD231_axi_gpio_0_1_axi_lite_ipif is
     \Dual.ALLOUT1_ND_G2.READ_REG2_GEN[1].reg3_reg\ : in STD_LOGIC;
     \Dual.ALLOUT1_ND_G2.READ_REG2_GEN[0].reg3_reg\ : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of CCD231_axi_gpio_0_1_axi_lite_ipif : entity is "axi_lite_ipif";
 end CCD231_axi_gpio_0_1_axi_lite_ipif;
 
 architecture STRUCTURE of CCD231_axi_gpio_0_1_axi_lite_ipif is
@@ -3778,8 +3770,6 @@ entity CCD231_axi_gpio_0_1_axi_gpio is
   attribute C_TRI_DEFAULT of CCD231_axi_gpio_0_1_axi_gpio : entity is -1;
   attribute C_TRI_DEFAULT_2 : integer;
   attribute C_TRI_DEFAULT_2 of CCD231_axi_gpio_0_1_axi_gpio : entity is -1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of CCD231_axi_gpio_0_1_axi_gpio : entity is "axi_gpio";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of CCD231_axi_gpio_0_1_axi_gpio : entity is "yes";
   attribute ip_group : string;

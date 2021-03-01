@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Sun Feb 28 16:33:32 2021
+// Date        : Sun Feb 28 16:33:31 2021
 // Host        : apple running 64-bit Ubuntu 20.04.2 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top CCD231_axi_gpio_0_1 -prefix
+//               CCD231_axi_gpio_0_1_ CCD231_axi_gpio_0_1_sim_netlist.v
 // Design      : CCD231_axi_gpio_0_1
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -129,7 +129,6 @@ module CCD231_axi_gpio_0_1
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "GPIO_Core" *) 
 module CCD231_axi_gpio_0_1_GPIO_Core
    (reg1,
     gpio_io_o,
@@ -1378,7 +1377,6 @@ module CCD231_axi_gpio_0_1_GPIO_Core
         .O(ip2bus_wrack_i_D1_reg));
 endmodule
 
-(* ORIG_REF_NAME = "address_decoder" *) 
 module CCD231_axi_gpio_0_1_address_decoder
    (\MEM_DECODE_GEN[0].cs_out_i_reg[0]_0 ,
     s_axi_wready,
@@ -2332,7 +2330,7 @@ endmodule
 (* C_FAMILY = "zynq" *) (* C_GPIO2_WIDTH = "32" *) (* C_GPIO_WIDTH = "16" *) 
 (* C_INTERRUPT_PRESENT = "0" *) (* C_IS_DUAL = "1" *) (* C_S_AXI_ADDR_WIDTH = "9" *) 
 (* C_S_AXI_DATA_WIDTH = "32" *) (* C_TRI_DEFAULT = "-1" *) (* C_TRI_DEFAULT_2 = "-1" *) 
-(* ORIG_REF_NAME = "axi_gpio" *) (* downgradeipidentifiedwarnings = "yes" *) (* ip_group = "LOGICORE" *) 
+(* downgradeipidentifiedwarnings = "yes" *) (* ip_group = "LOGICORE" *) 
 module CCD231_axi_gpio_0_1_axi_gpio
    (s_axi_aclk,
     s_axi_aresetn,
@@ -2804,7 +2802,6 @@ module CCD231_axi_gpio_0_1_axi_gpio
         .R(bus2ip_reset));
 endmodule
 
-(* ORIG_REF_NAME = "axi_lite_ipif" *) 
 module CCD231_axi_gpio_0_1_axi_lite_ipif
    (bus2ip_reset,
     bus2ip_rnw,
@@ -3063,7 +3060,6 @@ module CCD231_axi_gpio_0_1_axi_lite_ipif
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "slave_attachment" *) 
 module CCD231_axi_gpio_0_1_slave_attachment
    (SR,
     \Dual.ALLOUT1_ND_G2.READ_REG2_GEN[0].reg3_reg[0] ,

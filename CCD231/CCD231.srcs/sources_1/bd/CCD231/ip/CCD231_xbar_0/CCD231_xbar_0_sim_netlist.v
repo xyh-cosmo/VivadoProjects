@@ -1,10 +1,10 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-// Date        : Mon Mar  1 18:05:42 2021
+// Date        : Mon Mar  1 18:05:41 2021
 // Host        : apple running 64-bit Ubuntu 20.04.2 LTS
-// Command     : write_verilog -force -mode funcsim
-//               /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_xbar_0/CCD231_xbar_0_sim_netlist.v
+// Command     : write_verilog -force -mode funcsim -rename_top CCD231_xbar_0 -prefix
+//               CCD231_xbar_0_ CCD231_xbar_0_sim_netlist.v
 // Design      : CCD231_xbar_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -305,7 +305,6 @@ module CCD231_xbar_0
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "axi_crossbar_v2_1_16_addr_arbiter_sasd" *) 
 module CCD231_xbar_0_axi_crossbar_v2_1_16_addr_arbiter_sasd
    (aa_grant_any,
     m_valid_i,
@@ -1388,13 +1387,13 @@ endmodule
 (* C_NUM_MASTER_SLOTS = "2" *) (* C_NUM_SLAVE_SLOTS = "1" *) (* C_R_REGISTER = "1" *) 
 (* C_S_AXI_ARB_PRIORITY = "0" *) (* C_S_AXI_BASE_ID = "0" *) (* C_S_AXI_READ_ACCEPTANCE = "1" *) 
 (* C_S_AXI_SINGLE_THREAD = "1" *) (* C_S_AXI_THREAD_ID_WIDTH = "0" *) (* C_S_AXI_WRITE_ACCEPTANCE = "1" *) 
-(* DowngradeIPIdentifiedWarnings = "yes" *) (* ORIG_REF_NAME = "axi_crossbar_v2_1_16_axi_crossbar" *) (* P_ADDR_DECODE = "1" *) 
-(* P_AXI3 = "1" *) (* P_AXI4 = "0" *) (* P_AXILITE = "2" *) 
-(* P_AXILITE_SIZE = "3'b010" *) (* P_FAMILY = "zynq" *) (* P_INCR = "2'b01" *) 
-(* P_LEN = "8" *) (* P_LOCK = "1" *) (* P_M_AXI_ERR_MODE = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) 
-(* P_M_AXI_SUPPORTS_READ = "2'b11" *) (* P_M_AXI_SUPPORTS_WRITE = "2'b11" *) (* P_ONES = "65'b11111111111111111111111111111111111111111111111111111111111111111" *) 
-(* P_RANGE_CHECK = "1" *) (* P_S_AXI_BASE_ID = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) (* P_S_AXI_HIGH_ID = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) 
-(* P_S_AXI_SUPPORTS_READ = "1'b1" *) (* P_S_AXI_SUPPORTS_WRITE = "1'b1" *) 
+(* DowngradeIPIdentifiedWarnings = "yes" *) (* P_ADDR_DECODE = "1" *) (* P_AXI3 = "1" *) 
+(* P_AXI4 = "0" *) (* P_AXILITE = "2" *) (* P_AXILITE_SIZE = "3'b010" *) 
+(* P_FAMILY = "zynq" *) (* P_INCR = "2'b01" *) (* P_LEN = "8" *) 
+(* P_LOCK = "1" *) (* P_M_AXI_ERR_MODE = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) (* P_M_AXI_SUPPORTS_READ = "2'b11" *) 
+(* P_M_AXI_SUPPORTS_WRITE = "2'b11" *) (* P_ONES = "65'b11111111111111111111111111111111111111111111111111111111111111111" *) (* P_RANGE_CHECK = "1" *) 
+(* P_S_AXI_BASE_ID = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) (* P_S_AXI_HIGH_ID = "64'b0000000000000000000000000000000000000000000000000000000000000000" *) (* P_S_AXI_SUPPORTS_READ = "1'b1" *) 
+(* P_S_AXI_SUPPORTS_WRITE = "1'b1" *) 
 module CCD231_xbar_0_axi_crossbar_v2_1_16_axi_crossbar
    (aclk,
     aresetn,
@@ -1792,7 +1791,6 @@ module CCD231_xbar_0_axi_crossbar_v2_1_16_axi_crossbar
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "axi_crossbar_v2_1_16_crossbar_sasd" *) 
 module CCD231_xbar_0_axi_crossbar_v2_1_16_crossbar_sasd
    (Q,
     \s_axi_rdata[31] ,
@@ -2107,7 +2105,6 @@ module CCD231_xbar_0_axi_crossbar_v2_1_16_crossbar_sasd
         .s_axi_wvalid(s_axi_wvalid));
 endmodule
 
-(* ORIG_REF_NAME = "axi_crossbar_v2_1_16_decerr_slave" *) 
 module CCD231_xbar_0_axi_crossbar_v2_1_16_decerr_slave
    (s_ready_i_reg,
     \m_ready_d_reg[1] ,
@@ -2306,7 +2303,6 @@ module CCD231_xbar_0_axi_crossbar_v2_1_16_decerr_slave
         .O(\gen_no_arbiter.m_valid_i_reg_0 ));
 endmodule
 
-(* ORIG_REF_NAME = "axi_crossbar_v2_1_16_splitter" *) 
 module CCD231_xbar_0_axi_crossbar_v2_1_16_splitter
    (\gen_axilite.s_axi_bvalid_i_reg ,
     m_ready_d,
@@ -2473,7 +2469,6 @@ module CCD231_xbar_0_axi_crossbar_v2_1_16_splitter__parameterized0
         .R(1'b0));
 endmodule
 
-(* ORIG_REF_NAME = "axi_register_slice_v2_1_15_axic_register_slice" *) 
 module CCD231_xbar_0_axi_register_slice_v2_1_15_axic_register_slice
    (sr_rvalid,
     aa_rready,

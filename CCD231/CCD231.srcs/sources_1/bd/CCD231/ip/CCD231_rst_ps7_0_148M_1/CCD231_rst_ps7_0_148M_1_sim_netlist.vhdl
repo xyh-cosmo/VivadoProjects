@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
 -- Date        : Mon Mar  1 18:05:22 2021
 -- Host        : apple running 64-bit Ubuntu 20.04.2 LTS
--- Command     : write_vhdl -force -mode funcsim
---               /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim -rename_top CCD231_rst_ps7_0_148M_1 -prefix
+--               CCD231_rst_ps7_0_148M_1_ CCD231_rst_ps7_0_148M_1_sim_netlist.vhdl
 -- Design      : CCD231_rst_ps7_0_148M_1
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -25,8 +25,6 @@ entity CCD231_rst_ps7_0_148M_1_cdc_sync is
     aux_reset_in : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of CCD231_rst_ps7_0_148M_1_cdc_sync : entity is "cdc_sync";
 end CCD231_rst_ps7_0_148M_1_cdc_sync;
 
 architecture STRUCTURE of CCD231_rst_ps7_0_148M_1_cdc_sync is
@@ -235,8 +233,6 @@ entity CCD231_rst_ps7_0_148M_1_upcnt_n is
     seq_cnt_en : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of CCD231_rst_ps7_0_148M_1_upcnt_n : entity is "upcnt_n";
 end CCD231_rst_ps7_0_148M_1_upcnt_n;
 
 architecture STRUCTURE of CCD231_rst_ps7_0_148M_1_upcnt_n is
@@ -401,8 +397,6 @@ entity CCD231_rst_ps7_0_148M_1_lpf is
     mb_debug_sys_rst : in STD_LOGIC;
     ext_reset_in : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of CCD231_rst_ps7_0_148M_1_lpf : entity is "lpf";
 end CCD231_rst_ps7_0_148M_1_lpf;
 
 architecture STRUCTURE of CCD231_rst_ps7_0_148M_1_lpf is
@@ -584,8 +578,6 @@ entity CCD231_rst_ps7_0_148M_1_sequence_psr is
     lpf_int : in STD_LOGIC;
     slowest_sync_clk : in STD_LOGIC
   );
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of CCD231_rst_ps7_0_148M_1_sequence_psr : entity is "sequence_psr";
 end CCD231_rst_ps7_0_148M_1_sequence_psr;
 
 architecture STRUCTURE of CCD231_rst_ps7_0_148M_1_sequence_psr is
@@ -924,8 +916,6 @@ entity CCD231_rst_ps7_0_148M_1_proc_sys_reset is
   attribute C_NUM_PERP_ARESETN of CCD231_rst_ps7_0_148M_1_proc_sys_reset : entity is 1;
   attribute C_NUM_PERP_RST : integer;
   attribute C_NUM_PERP_RST of CCD231_rst_ps7_0_148M_1_proc_sys_reset : entity is 1;
-  attribute ORIG_REF_NAME : string;
-  attribute ORIG_REF_NAME of CCD231_rst_ps7_0_148M_1_proc_sys_reset : entity is "proc_sys_reset";
 end CCD231_rst_ps7_0_148M_1_proc_sys_reset;
 
 architecture STRUCTURE of CCD231_rst_ps7_0_148M_1_proc_sys_reset is

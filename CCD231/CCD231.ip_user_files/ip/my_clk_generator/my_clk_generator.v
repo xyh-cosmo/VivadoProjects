@@ -59,6 +59,7 @@
 // _clk_20M____20.000______0.000______50.0______258.893____161.614
 // clk_150M___150.000______0.000______50.0______159.601____161.614
 // clk_450M___450.000______0.000______50.0______132.120____161.614
+// _clk_10M____10.000______0.000______50.0______296.755____161.614
 //
 //----------------------------------------------------------------------------
 // Input Clock   Freq (MHz)    Input Jitter (UI)
@@ -67,7 +68,7 @@
 
 `timescale 1ps/1ps
 
-(* CORE_GENERATION_INFO = "my_clk_generator,clk_wiz_v5_4_3_0,{component_name=my_clk_generator,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=3,clkin1_period=20.000,clkin2_period=10.0,use_power_down=false,use_reset=false,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
+(* CORE_GENERATION_INFO = "my_clk_generator,clk_wiz_v5_4_3_0,{component_name=my_clk_generator,use_phase_alignment=true,use_min_o_jitter=false,use_max_i_jitter=false,use_dyn_phase_shift=false,use_inclk_switchover=false,use_dyn_reconfig=false,enable_axi=0,feedback_source=FDBK_AUTO,PRIMITIVE=MMCM,num_out_clk=4,clkin1_period=20.000,clkin2_period=10.0,use_power_down=false,use_reset=false,use_locked=true,use_inclk_stopped=false,feedback_type=SINGLE,CLOCK_MGR_TYPE=NA,manual_override=false}" *)
 
 module my_clk_generator 
  (
@@ -75,6 +76,7 @@ module my_clk_generator
   output        clk_20M,
   output        clk_150M,
   output        clk_450M,
+  output        clk_10M,
   // Status and control signals
   output        locked,
  // Clock in ports
@@ -87,6 +89,7 @@ module my_clk_generator
   .clk_20M(clk_20M),
   .clk_150M(clk_150M),
   .clk_450M(clk_450M),
+  .clk_10M(clk_10M),
   // Status and control signals               
   .locked(locked),
  // Clock in ports

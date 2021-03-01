@@ -6,9 +6,6 @@
 -makelib ies_lib/xpm \
   "/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../../CCD231.srcs/sources_1/bd/CCD231/sim/CCD231.v" \
--endlib
 -makelib ies_lib/axi_infrastructure_v1_1_0 \
   "../../../../CCD231.srcs/sources_1/bd/CCD231/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v" \
 -endlib
@@ -79,6 +76,7 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../../CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_1/sim/CCD231_auto_pc_1.v" \
   "../../../../CCD231.srcs/sources_1/bd/CCD231/ip/CCD231_auto_pc_0/sim/CCD231_auto_pc_0.v" \
+  "../../../../CCD231.srcs/sources_1/bd/CCD231/sim/CCD231.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v
