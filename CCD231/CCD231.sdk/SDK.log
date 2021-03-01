@@ -72,3 +72,36 @@
 16:41:59 INFO  : Closing and re-opening the MSS file of ther project fsbl_bsp
 16:41:59 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
 16:42:00 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+13:36:00 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1614576381000,  Project:1614501702000
+13:36:00 INFO  : Project TOP_hw_platform_0's source hardware specification located at /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+13:36:13 INFO  : Copied contents of /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf into /TOP_hw_platform_0/system.hdf.
+13:36:15 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+13:36:16 INFO  : 
+13:36:17 INFO  : Updating hardware inferred compiler options for fsbl.
+13:36:17 INFO  : Clearing existing target manager status.
+13:36:17 INFO  : Closing and re-opening the MSS file of ther project fsbl_bsp
+13:36:18 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+13:36:25 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+14:29:58 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1614580179000,  Project:1614576381000
+14:29:58 INFO  : Project TOP_hw_platform_0's source hardware specification located at /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+14:29:59 INFO  : Copied contents of /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf into /TOP_hw_platform_0/system.hdf.
+14:30:02 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+14:30:02 INFO  : 
+14:30:03 INFO  : Updating hardware inferred compiler options for fsbl.
+14:30:03 INFO  : Clearing existing target manager status.
+14:30:03 INFO  : Closing and re-opening the MSS file of ther project fsbl_bsp
+14:30:04 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+14:30:05 WARN  : Linker script will not be updated automatically. Users need to update it manually.
+18:11:44 INFO  : SDK has detected change in the last modified timestamps for source hardware specification file Source:1614593463000,  Project:1614580179000
+18:11:44 INFO  : Project TOP_hw_platform_0's source hardware specification located at /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf is now different from the local copy.
+		 The local copy will be replaced with the source specification and your workspace will be updated.
+18:11:45 INFO  : Copied contents of /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.sdk/TOP.hdf into /TOP_hw_platform_0/system.hdf.
+18:11:48 INFO  : Synchronizing projects in the workspace with the hardware platform specification changes.
+18:11:49 INFO  : 
+18:11:50 INFO  : Updating hardware inferred compiler options for fsbl.
+18:11:50 INFO  : Clearing existing target manager status.
+18:11:50 INFO  : Closing and re-opening the MSS file of ther project fsbl_bsp
+18:11:50 INFO  : Workspace synchronized with the new hardware specification file. Cleaning dependent projects...
+18:11:51 WARN  : Linker script will not be updated automatically. Users need to update it manually.

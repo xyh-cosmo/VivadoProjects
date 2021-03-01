@@ -55,7 +55,6 @@
 //  Output     Output      Phase    Duty Cycle   Pk-to-Pk     Phase
 //   Clock     Freq (MHz)  (degrees)    (%)     Jitter (ps)  Error (ps)
 //----------------------------------------------------------------------------
-// _clk_10M____10.000______0.000______50.0______296.755____161.614
 // _clk_20M____20.000______0.000______50.0______258.893____161.614
 // clk_150M___150.000______0.000______50.0______159.601____161.614
 // clk_450M___450.000______0.000______50.0______132.120____161.614
@@ -74,7 +73,6 @@
   my_clk_generator instance_name
    (
     // Clock out ports
-    .clk_10M(clk_10M),     // output clk_10M
     .clk_20M(clk_20M),     // output clk_20M
     .clk_150M(clk_150M),     // output clk_150M
     .clk_450M(clk_450M),     // output clk_450M

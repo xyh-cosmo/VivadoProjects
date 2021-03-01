@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="ILA_LTC2271_synth_1" LaunchPart="xc7z035ffg676-2" LaunchTime="1614494541">
+<GenRun Id="ILA_LTC2271_synth_1" LaunchPart="xc7z035ffg676-2" LaunchTime="1614596605">
   <File Type="VDS-TIMING-PB" Name="ILA_LTC2271_timing_summary_synth.pb"/>
   <File Type="VDS-TIMINGSUMMARY" Name="ILA_LTC2271_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="ILA_LTC2271.dcp"/>

@@ -88,32 +88,25 @@ write_checkpoint -force -noxdef my_clk_generator.dcp
 create_report "my_clk_generator_synth_1_synth_report_utilization_0" "report_utilization -file my_clk_generator_utilization_synth.rpt -pb my_clk_generator_utilization_synth.pb"
 
 if { [catch {
-  file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator.dcp /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.dcp
-} _RESULT ] } { 
-  send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
-  error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
-}
-
-if { [catch {
-  write_verilog -force -mode synth_stub /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_stub.v
+  write_verilog -force -mode synth_stub /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_stub.vhdl
+  write_vhdl -force -mode synth_stub /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_sim_netlist.v
+  write_verilog -force -mode funcsim /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -122,47 +115,38 @@ if { [catch {
 } else {
 
 
-if { [catch {
-  file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator.dcp /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.dcp
-} _RESULT ] } { 
-  send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
-  error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
-}
-
-if { [catch {
-  file rename -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_stub.v /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_stub.v
-} _RESULT ] } { 
-  puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
-}
-
-if { [catch {
-  file rename -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_stub.vhdl /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_stub.vhdl
-} _RESULT ] } { 
-  puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
-}
-
-if { [catch {
-  file rename -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_sim_netlist.v /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_sim_netlist.v
-} _RESULT ] } { 
-  puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
-}
-
-if { [catch {
-  file rename -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_sim_netlist.vhdl /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_sim_netlist.vhdl
-} _RESULT ] } { 
-  puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
-}
-
 }; # end if cached_ip 
+
+add_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_stub.v -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci]
+
+add_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_stub.vhdl -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci]
+
+add_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_sim_netlist.v -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci]
+
+add_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_sim_netlist.vhdl -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci]
+
+add_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator.dcp -of_objects [get_files /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci]
 
 if {[file isdir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ip/my_clk_generator]} {
   catch { 
-    file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_stub.v /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ip/my_clk_generator
+    file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_sim_netlist.v /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ip/my_clk_generator
   }
 }
 
 if {[file isdir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ip/my_clk_generator]} {
   catch { 
-    file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_stub.vhdl /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ip/my_clk_generator
+    file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_sim_netlist.vhdl /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ip/my_clk_generator
+  }
+}
+
+if {[file isdir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ip/my_clk_generator]} {
+  catch { 
+    file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_stub.v /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ip/my_clk_generator
+  }
+}
+
+if {[file isdir /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ip/my_clk_generator]} {
+  catch { 
+    file copy -force /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/my_clk_generator_synth_1/my_clk_generator_stub.vhdl /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.ip_user_files/ip/my_clk_generator
   }
 }

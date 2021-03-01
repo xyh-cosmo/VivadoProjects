@@ -38,13 +38,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="72"/>
-    <Option Name="WTModelSimExportSim" Val="72"/>
-    <Option Name="WTQuestaExportSim" Val="72"/>
-    <Option Name="WTIesExportSim" Val="72"/>
-    <Option Name="WTVcsExportSim" Val="72"/>
-    <Option Name="WTRivieraExportSim" Val="72"/>
-    <Option Name="WTActivehdlExportSim" Val="72"/>
+    <Option Name="WTXSimExportSim" Val="85"/>
+    <Option Name="WTModelSimExportSim" Val="85"/>
+    <Option Name="WTQuestaExportSim" Val="85"/>
+    <Option Name="WTIesExportSim" Val="85"/>
+    <Option Name="WTVcsExportSim" Val="85"/>
+    <Option Name="WTRivieraExportSim" Val="85"/>
+    <Option Name="WTActivehdlExportSim" Val="85"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -63,14 +63,14 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="CCD231.bd" FileRelPathName="ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xci">
-          <Proxy FileSetName="CCD231_processing_system7_0_1"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="CCD231.bd" FileRelPathName="ip/CCD231_xbar_0/CCD231_xbar_0.xci">
           <Proxy FileSetName="CCD231_xbar_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="CCD231.bd" FileRelPathName="ip/CCD231_rst_ps7_0_148M_1/CCD231_rst_ps7_0_148M_1.xci">
           <Proxy FileSetName="CCD231_rst_ps7_0_148M_1"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="CCD231.bd" FileRelPathName="ip/CCD231_processing_system7_0_1/CCD231_processing_system7_0_1.xci">
+          <Proxy FileSetName="CCD231_processing_system7_0_1"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="CCD231.bd" FileRelPathName="ip/CCD231_axi_gpio_0_1/CCD231_axi_gpio_0_1.xci">
           <Proxy FileSetName="CCD231_axi_gpio_0_1"/>
@@ -198,6 +198,13 @@
       </Config>
     </FileSet>
     <FileSet Name="my_clk_generator" Type="BlockSrcs" RelSrcDir="$PSRCDIR/my_clk_generator">
+      <File Path="$PSRCDIR/sources_1/ip/my_clk_generator.xcix">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/ip/my_clk_generator/my_clk_generator.xci">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../new-spi-demo/new-spi-demo.srcs/sources_1/ip/my_clk_generator/my_clk_generator.xci"/>
@@ -227,31 +234,6 @@
     <FileSet Name="CCD231_xbar_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/CCD231_xbar_0">
       <Config>
         <Option Name="TopModule" Val="CCD231_xbar_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="ILA_XYH" Type="BlockSrcs" RelSrcDir="$PSRCDIR/ILA_XYH">
-      <File Path="$PSRCDIR/sources_1/ip/ILA_XYH.xcix">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../CCD231-debug-2021-01-26/CCD231-debug-2021-01-26.srcs/sources_1/ip/ILA_XYH.xcix"/>
-          <Attr Name="ImportTime" Val="1613209577"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/ip/ILA_XYH/ILA_XYH.xci">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../CCD231-debug-2021-01-26/CCD231-debug-2021-01-26.srcs/sources_1/ip/ILA_XYH/ILA_XYH.xci"/>
-          <Attr Name="ImportTime" Val="1612602908"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="ILA_XYH"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
@@ -349,15 +331,6 @@
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="ILA_XYH_synth_1" Type="Ft3:Synth" SrcSet="ILA_XYH" Part="xc7z035ffg676-2" ConstrsSet="ILA_XYH" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/ILA_XYH_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="CCD231_processing_system7_0_1_synth_1" Type="Ft3:Synth" SrcSet="CCD231_processing_system7_0_1" Part="xc7z035ffg676-2" ConstrsSet="CCD231_processing_system7_0_1" Description="Vivado Synthesis Defaults" WriteIncrSynthDcp="false" Dir="$PRUNDIR/CCD231_processing_system7_0_1_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
@@ -442,22 +415,6 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="CCD231_xbar_0_impl_1" Type="Ft2:EntireDesign" Part="xc7z035ffg676-2" ConstrsSet="CCD231_xbar_0" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="CCD231_xbar_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-      <ReportStrategy Name="Vivado Implementation Default Reports" Flow="Vivado Implementation 2017"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="ILA_XYH_impl_1" Type="Ft2:EntireDesign" Part="xc7z035ffg676-2" ConstrsSet="ILA_XYH" Description="Default settings for Implementation." WriteIncrSynthDcp="false" SynthRun="ILA_XYH_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
         <Step Id="init_design"/>

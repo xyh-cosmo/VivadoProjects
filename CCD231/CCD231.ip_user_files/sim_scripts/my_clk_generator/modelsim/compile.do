@@ -16,8 +16,8 @@ vcom -work xpm -64 -93 \
 "/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_VCOMP.vhd" \
 
 vlog -work xil_defaultlib -64 -incr "+incdir+../../../ipstatic" "+incdir+/home/xyh/Xilinx/Vivado/2017.4/data/xilinx_vip/include" "+incdir+../../../ipstatic" "+incdir+/home/xyh/Xilinx/Vivado/2017.4/data/xilinx_vip/include" \
-"../../../../CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_clk_wiz.v" \
-"../../../../CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.v" \
+"../../../ip/my_clk_generator/my_clk_generator_clk_wiz.v" \
+"../../../ip/my_clk_generator/my_clk_generator.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

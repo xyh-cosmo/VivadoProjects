@@ -231,7 +231,7 @@ module TOP(
     //  GPIO
     //  SPI的控制需要一些额外信号，因此增加以下几个信号
     wire gpio_A0, gpio_A1, gpio_CPOL, gpio_CPHA, gpio_RST;
-    wire ENC_fake,TRIG_fake; // 之前接到PS端的控制信号   
+    wire ENC_fake,TRIG_fake, ADG772_CTR_fake; // 之前接到PS端的控制信号   
     wire ENC_CTR;   // 控制LTC2271时钟是否持续工作
     //  GPIO2
     wire [31:0] gpio2_spi_data;
@@ -246,15 +246,13 @@ module TOP(
 //  生成50MHz的时钟（也包括其他频率的时钟） 
     wire clk_locked;
     wire clk_1M, clk_5M;
-    wire clk_10M, clk_20M, clk_150M, clk_450M; //, clk_900M;
+    wire clk_20M, clk_150M, clk_450M; // clk_300M;
 
     my_clk_generator  my_clock (
        // Clock out ports 
-       .clk_10M(clk_10M),
        .clk_20M(clk_20M),
        .clk_150M(clk_150M),
        .clk_450M(clk_450M),
-//       .clk_900M(clk_900M),
        // Status and control signals               
        .locked(clk_locked),
        // Clock in ports
@@ -264,18 +262,34 @@ module TOP(
     //  生成1M时钟
     reg[7:0] cnt_1M = 8'b0;
     reg clk_1M_r = 1'b0;
-    always@( posedge clk_10M ) begin
-        if( cnt_1M >= 4 ) begin
+    wire IV_5K_CTR_en, IV_5K_CTR_or;
+
+    always@( posedge clk_50M ) begin
+        if( cnt_1M >= 24 ) begin
             cnt_1M <= 8'b0;
             clk_1M_r <= ~clk_1M_r;
         end
         else
             cnt_1M <= cnt_1M + 8'b1;
     end
+    
+    assign IV_5K_CTR = clk_1M_r & IV_5K_CTR_en;
+    
+    assign RST_SIG_CTR = clk_1M_r & IV_5K_CTR_en;
+    assign RPHI1_CTR = clk_1M_r & IV_5K_CTR_en;
+    assign RPHI2_CTR = clk_1M_r & IV_5K_CTR_en;
+    assign RPHI3_CTR = clk_1M_r & IV_5K_CTR_en;
+    assign ADG772_CTR = clk_1M_r & IV_5K_CTR_en;
+
+//    assign RST_SIG_CTR = 1'b0;
+//    assign RPHI1_CTR = 1'b0;
+//    assign RPHI2_CTR = 1'b0;
+//    assign RPHI3_CTR = 1'b0;
 
     //  生成5M时钟
     reg[7:0] cnt_5M=8'b0;
     reg clk_5M_r = 1'b0;
+    
     always@( posedge clk_50M ) begin
         if( cnt_5M >= 4 ) begin
             cnt_5M <= 8'b0;
@@ -285,15 +299,7 @@ module TOP(
             cnt_5M <= cnt_5M + 8'b1;
     end
     
-//    assign ENC = clk_1M_r;
     assign ENC = clk_5M_r & ENC_CTR;  // OK
-    //assign ENC = clk_10M;
-//    assign ENC = clk_20M;   //  LTC2271输出的时钟不对。。。
-
-    wire IV_5K_CTR_en, IV_5K_CTR_or;
-//    assign IV_5K_CTR = clk_1M_r & IV_5K_CTR_en; // 临时取消从PS端控制IV_5K_CTR,测试LTC2271的数据采集
-//    assign IV_5K_CTR = (clk_1M_r || IV_5K_CTR_or) && IV_5K_CTR_en ; //  IV_5K_CTR_or=1 --> 开关一直打开
-    assign IV_5K_CTR = 1'b0;
 
 //  ========================================================
 //  ========================================================
@@ -314,12 +320,22 @@ module TOP(
     wire EF_FR, GH_FR;
     wire EF_DCO, GH_DCO;
     wire EOUT, FOUT, GOUT, HOUT;
+    
+    wire FR_CLK;
 
+//  写入DDR
     wire[15:0] data_E, data_F, data_G, data_H;
     assign data_E[15:0] = wr_burst_data[63:48];
     assign data_F[15:0] = wr_burst_data[47:32];
     assign data_G[15:0] = wr_burst_data[31:16];
     assign data_H[15:0] = wr_burst_data[15:0];
+
+//  从DDR读出
+    wire[15:0] data_E_r, data_F_r, data_G_r, data_H_r;
+    assign data_E_r[15:0] = rd_burst_data[63:48];
+    assign data_F_r[15:0] = rd_burst_data[47:32];
+    assign data_G_r[15:0] = rd_burst_data[31:16];
+    assign data_H_r[15:0] = rd_burst_data[15:0];
     
 //  将LTC2271输出的差分信号转换成单端信号
     IBUFDS #(
@@ -403,9 +419,10 @@ module TOP(
     );
 
     wire PL_KEY;
-    wire error; // NOT USED
     wire data_status;
     wire EF_FR_dly, GH_FR_dly;
+    wire ddr_error; //  测试从DDR中读出的数据是否与写入的数据一致
+    wire ddr_state, ddr_state0;
     
     mem_test
     #(
@@ -417,6 +434,7 @@ module TOP(
     (
         .rst(PL_KEY),                             
         .mem_clk(clk_150M),
+//        .mem_clk(clk_300M),
         
         .rd_burst_req(rd_burst_req),               
         .wr_burst_req(wr_burst_req),               
@@ -443,18 +461,21 @@ module TOP(
         .HOUT(HOUT),
         
         //  以下两个信号在调试结束之后可以去掉
-        .EF_FR_dly_debug(EF_FR_dly),
-        .GH_FR_dly_debug(GH_FR_dly),
+//        .EF_FR_dly_debug(EF_FR_dly),
+//        .GH_FR_dly_debug(GH_FR_dly),
         
         .status(data_status),
-
-        .error(error)
+        .FR_CLK(FR_CLK),
+//        .ddr_error(ddr_error),
+        .ddr_state_debug(ddr_state),
+        .ddr_state0_debug(ddr_state0)
     ); 
 
     aq_axi_master u_aq_axi_master
     (
         .ARESETN(rst_n),
         .ACLK(clk_150M),
+//        .ACLK(clk_300M),
         
         .M_AXI_AWID(M_AXI_AWID),
         .M_AXI_AWADDR(M_AXI_AWADDR),     
@@ -530,6 +551,9 @@ module TOP(
     wire gpio_reg_not_used1;
     wire gpio_reg_not_used2;
     wire gpio_reg_not_used3;
+    
+    
+    
     CCD231_wrapper CCD231
        (.DDR_addr(DDR_addr),
         .DDR_ba(DDR_ba),
@@ -563,7 +587,7 @@ module TOP(
                       ENC_CTR,
                       IV_5K_CTR_or,
                       IV_5K_CTR_en,
-                      ADG772_CTR,
+                      ADG772_CTR_fake,
                       PD,   // 控制LTC2271之前的运放ADA4932，active low
                       CLKP, 
                       PL_KEY,   // 用做mem_test模块的rst信号,
@@ -618,24 +642,13 @@ module TOP(
         
         .axim_rst_n(rst_n),
         .axi_hp_clk(clk_150M)
+//        .axi_hp_clk(clk_300M)
         );
 
 // ==========================================================================
-    // reg ENC_r = 1'b0;
     reg TRIG_r = 1'b0;
-    // reg[7:0] ENC_cnt = 8'b0;
     reg[7:0] TRIG_cnt = 8'b0;
-    // assign ENC = ENC_r;
     assign TRIG = TRIG_r;
-
-    // always@(posedge clk_50M) begin
-    //     if( ENC_cnt == 12 ) begin
-    //         ENC_r = ~ENC_r;
-    //         ENC_cnt <= 8'b0;
-    //     end
-    //     else
-    //         ENC_cnt <= ENC_cnt + 8'b1;
-    // end
 
     always@(posedge clk_50M) begin
         if( TRIG_cnt == 4 ) begin
@@ -647,75 +660,11 @@ module TOP(
     end
 
 
-//  分频时钟
-////    parameter cycles_max = 20;
-//   parameter cycles_max = 0;  // set to zero so that the divided clocks runs forever!
-////  这里的分频时钟信号用于测试
-//	CLOCK_DIV
-//		#(
-//			.DIV_FACTOR(50),
-//			.CNT_START(0),
-//			.CYCLES_MAX(cycles_max)
-//		)
-//		clk_div_0
-//		(
-//			.clk_sys(clk_50M),
-//			.en(en_ctr),
-//			.clk_div(RST_SIG_CTR),
-//			.status(ctr_status)
-//		);
-		
-//	CLOCK_DIV
-//       #(
-//           .DIV_FACTOR(50),
-//           .CNT_START(0),
-//           .CYCLES_MAX(cycles_max)
-//       )
-//       clk_div_1
-//       (
-//           .clk_sys(clk_50M),
-//           .en(en_ctr),
-//           .clk_div(RPHI1_CTR),
-//           .status()
-//       );
-
-//   CLOCK_DIV
-//		#(
-//			.DIV_FACTOR(50),
-//			.CNT_START(0),
-//			.CYCLES_MAX(cycles_max)
-//		)
-//		clk_div_2
-//		(
-//			.clk_sys(clk_50M),
-//			.en(en_ctr),
-//			.clk_div(RPHI2_CTR),
-//			.status()
-//		);
-
-//   CLOCK_DIV
-//		#(
-//			.DIV_FACTOR(50),
-//			.CNT_START(0),
-//			.CYCLES_MAX(cycles_max)
-//		)
-//		clk_div_3
-//		(
-//			.clk_sys(clk_50M),
-//			.en(en_ctr),
-//			.clk_div(RPHI3_CTR),
-//			.status()
-//		);
-		
-        assign RST_SIG_CTR = 1'b0;
-        assign RPHI1_CTR = 1'b0;
-        assign RPHI2_CTR = 1'b0;
-        assign RPHI3_CTR = 1'b0;
 // =============================
 	
 	SPI4ADC spi4adc(
-		.clk(clk_50M),
-//        .clk(clk_10M),  //  降低时钟频，通过SDO读出LTC2271的SPI配置内容
+//		.clk(clk_50M),
+        .clk(clk_20M),  //  降低时钟频，通过SDO读出LTC2271的SPI配置内容
 //		.clk(clk_sys),
 		.rst(gpio_RST),
 		.spi_data(gpio2_spi_data),
@@ -730,52 +679,29 @@ module TOP(
 		.status(pl_status)
 		);
 
-    // ILA_XYH (
-    //     .clk(clk_50M),
-    //     .probe0(gpio_RST),
-    //     .probe1(gpio2_spi_data),
-    //     .probe2(gpio_CPOL),
-    //     .probe3(gpio_CPHA),
-    //     .probe4(gpio_A0),
-    //     .probe5(gpio_A1),
-    //     .probe6(A0),
-    //     .probe7(A1),
-    //     .probe8(sclk),
-    //     .probe9(mosi),
-    //     .probe10(pl_status),
-    //     .probe11(TRIG),
-    //     .probe12(ENC),
-    //     .probe13(CLKP)
-    //     );
-
     ILA_LTC2271 ltc2271(
         .clk(clk_450M),
 //        .clk(clk_900M),
         .probe0(PL_KEY),
+      
+        .probe1(data_E),
+        .probe2(data_F),
+        .probe3(data_G),
+        .probe4(data_H),
+        
+        .probe5(FR_CLK),
+        .probe6(ddr_state),
+        .probe7(ddr_state0),
 
-        .probe1(EF_FR),
-        .probe2(EF_DCO),
-        .probe3(GH_FR),
-        .probe4(GH_DCO),
-        
-        .probe5(data_E),
-        .probe6(data_F),
-        .probe7(data_G),
-        .probe8(data_H),
-             
-        .probe9(sclk),
-        .probe10(mosi),
-        .probe11(SDO),
-        .probe12(A0),
-        .probe13(A1),
-        .probe14(data_status),
-        
-        .probe15(EOUT),
-        .probe16(FOUT),
-        .probe17(GOUT),
-        .probe18(HOUT),
-        .probe19(EF_FR_dly),
-        .probe20(GH_FR_dly)
+        .probe8(EF_FR),
+        .probe9(EF_DCO),
+        .probe10(GH_FR),
+        .probe11(GH_DCO),
+      
+        .probe12(EOUT),
+        .probe13(FOUT),
+        .probe14(GOUT),
+        .probe15(HOUT)
     );
 
 endmodule

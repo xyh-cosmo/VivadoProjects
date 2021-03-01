@@ -18,57 +18,47 @@ module mem_test
 		output[MEM_DATA_BITS - 1:0] wr_burst_data,    		/*写入的数据*/
 		input rd_burst_finish,                      		/*读完成*/
 		input wr_burst_finish,                      		/*写完成*/
-		
-//		input EF_FR_p,			//	E&F frame clock
-//		input EF_FR_n,			//	E&F frame clock
-		
-//		input GH_FR_p,			//	G&H frame clock
-//		input GH_FR_n,			//	G&H frame clock
-		
-//		input EF_DCO_p,			//	E&F data clock
-//		input EF_DCO_n,			//	E&F data clock
-		
-//		input GH_DCO_p,			//	G&H data clock
-//		input GH_DCO_n,			//	G&H data clock
 
+    //  ==== LTC2271 ====		
         input ENC,
-
 		input EF_FR,			//	E&F frame clock
 		input GH_FR,			//	G&H frame clock
-		
 		input EF_DCO,			//	E&F data clock
 		input GH_DCO,			//	G&H data clock
-
 		input EOUT,				//	E output bit
 		input FOUT,				//	F output bit
 		input GOUT,				//	G output bit
 		inout HOUT,				//	H output bit
 		
-		output EF_FR_dly_debug,
-        output GH_FR_dly_debug,
+//		output EF_FR_dly_debug,
+//        output GH_FR_dly_debug,
+    //  ==== LTC2271 ====
 		
 		output status,            // 1表示指定次数的采样已经完成，0表示未完成
-		output error
+		output FR_CLK,
+//		output ddr_error,
+		output ddr_state_debug,
+		output ddr_state0_debug
 	);
 	
-	assign error = 1'b0;
-
+	reg ddr_state = 1'b0, ddr_state0 = 1'b0;
+	assign ddr_state_debug = ddr_state;
+	assign ddr_state0_debug = ddr_state0;
+    
     reg[2:0] state;
-    reg ddr_state = 1'b0, ddr_state0 = 1'b0;
-	parameter BURST_LEN = 1;	//在当前的例子中，摁一下PL按键将连续采集发送4次
+	parameter BURST_LEN    = 1;
 	parameter IDLE         = 3'd0;
 	parameter MEM_READ     = 3'd1;
 	parameter MEM_WRITE    = 3'd2;
 
 //	在DDR中写数据时的初始地址：
-	parameter INIT_ADDR = 'h02000000;  // 这是个特殊的初始位置
+	parameter INIT_ADDR    = 'h02000000;  // 这是个特殊的初始位置
 
-	reg[7:0] wr_cnt;
+	reg[31:0] wr_cnt;
 	reg[MEM_DATA_BITS - 1:0] wr_burst_data_reg;
 	assign wr_burst_data = wr_burst_data_reg;
-	reg[7:0] rd_cnt;
+	reg[31:0] rd_cnt;
 	reg[31:0] write_read_len;
-	//assign error = (state == MEM_READ) && rd_burst_data_valid && (rd_burst_data != {(MEM_DATA_BITS/8){rd_cnt}});
 
 	reg [31:0] pl_cnt;			// 记录连续“写、读、地址递增”的次数
 	parameter PL_CNT_MAX = 1024*1024;
@@ -77,12 +67,15 @@ module mem_test
     reg status_r = 1'b0;
     assign status = status_r;
 
-//	always@(posedge fclk or posedge rst)
+//    assign ddr_error = (state == MEM_READ) && rd_burst_data_valid && (rd_burst_data !== wr_burst_data);
+
+//	always@(posedge mem_clk or posedge rst)
 //	begin
 //		if(rst)
-//			error <= 1'b0;
-//		else if(state == MEM_READ && rd_burst_data_valid && rd_burst_data != {(MEM_DATA_BITS/8){rd_cnt}})
-//			error <= 1'b1;
+//			ddr_error <= 1'b0;
+////		else if( state == MEM_READ && rd_burst_data_valid && rd_burst_data != wr_burst_data )
+//        else if( state == MEM_READ && rd_burst_data_valid && (rd_burst_data !== wr_burst_data) )
+//			ddr_error <= 1'b1;
 //	end
 
 	// ===============================================================
@@ -95,46 +88,6 @@ module mem_test
 	reg [15:0] px12, px22;	//	channel G
 	reg [15:0] px13, px23;	//	channel H
 	
-////  用data clock对数据采样
-//	always@(posedge EF_DCO or negedge EF_DCO or posedge rst) begin
-//		if( rst ) begin
-//			px10 <= 16'b0;
-//			px11 <= 16'b0;
-//			px20 <= 16'b0;
-//			px21 <= 16'b0;
-//		end
-//        else if( EF_DCO | ~EF_DCO ) begin
-//			if( reg_flag == 1'b0 ) begin	// handle the first 16 bits
-//				px10 <= {px10[14:0], EOUT};
-//                px11 <= {px11[14:0], FOUT};
-//			end
-//			else begin			// handle the rest 16 bits
-//				px20 <= {px20[14:0], EOUT};
-//				px21 <= {px21[14:0], FOUT};
-//			end
-//		end
-//	end
-
-//	always@(posedge GH_DCO or negedge GH_DCO or posedge rst) begin
-//		if( rst ) begin
-//			px12 <= 16'b0;
-//			px13 <= 16'b0;
-//			px22 <= 16'b0;
-//			px23 <= 16'b0;
-//		end
-//        else if( GH_DCO | ~GH_DCO ) begin
-//			if( reg_flag == 1'b0 ) begin	// handle the first 16 bits
-//				px12 <= {px12[14:0], GOUT};
-//				px13 <= {px13[14:0], HOUT};
-//			end
-//			else begin			// handle the rest 16 bits
-//				px22 <= {px22[14:0], GOUT};
-//				px23 <= {px23[14:0], HOUT};
-//			end
-//		end
-//	end
-
-
 //  用data clock对数据采样
     wire E_q1, E_q2;
     wire F_q1, F_q2;
@@ -229,8 +182,8 @@ module mem_test
     assign EF_FR_dly = {cnt_EF >= 2'b01};
     assign GH_FR_dly = {cnt_GH >= 2'b01};
     
-    assign EF_FR_dly_debug = EF_FR_dly;
-    assign GH_FR_dly_debug = GH_FR_dly;
+//    assign EF_FR_dly_debug = EF_FR_dly;
+//    assign GH_FR_dly_debug = GH_FR_dly;
 
 //  ==========================================
 //  用新生成的Frame clock的上升沿来改变应该往哪个“16位”寄存器中“写”入数据
@@ -268,57 +221,30 @@ module mem_test
 	
 //  用某个芯片的frame clock下降沿触发往DDR写数据，能够比较有效避免不同芯片间的延时带来的不同步问题
 //    reg[63:0] wr_burst_data_reg_tmp;
-    wire[63:0] wr_burst_data_reg_tmp1;
-    wire[63:0] wr_burst_data_reg_tmp2;
+    wire[63:0] wr_burst_data_reg1;
+    wire[63:0] wr_burst_data_reg2;
 
-//    assign wr_burst_data_reg_tmp1[63:0] = {px10[13:0],px20[15:14], px11[13:0],px21[15:14], px12[13:0],px22[15:14], px13[13:0],px23[15:14]};
-//    assign wr_burst_data_reg_tmp2[63:0] = {px20[13:0],px10[15:14], px21[13:0],px11[15:14], px22[13:0],px12[15:14], px23[13:0],px13[15:14]};
+    assign wr_burst_data_reg1[63:0] = {px10,px11,px12,px13};
+    assign wr_burst_data_reg2[63:0] = {px20,px21,px22,px23};
 
-    assign wr_burst_data_reg_tmp1[63:0] = {px10,px11,px12,px13};
-    assign wr_burst_data_reg_tmp2[63:0] = {px20,px21,px22,px23};
-
-    always@( negedge EF_FR or posedge rst ) begin
+//    wire FR_CLK;
+    assign FR_CLK = (EF_FR==0) && (GH_FR==0);   // 这个新的frame clock综合考虑了两个芯片
+    always@( posedge FR_CLK or posedge rst ) begin
 	   if( rst ) begin
-//	       wr_burst_data_reg_tmp    <= 64'b0;
-           rd_burst_addr            <= INIT_ADDR;
-           wr_burst_addr            <= INIT_ADDR;
-           pl_cnt                   <= 32'b0;
-           status_r                 <= 1'b0;
-           ddr_state                <= 1'b0;
+           pl_cnt           <= 32'b0;
+           status_r         <= 1'b0;
+           ddr_state        <= 1'b0;
 	   end
-	   else begin
-//           if( reg_flag_EF ) // 这里用reg_flag_EF或reg_flag_GH都可以
-////               wr_burst_data_reg_tmp <= {px10,px11,px12,px13};
-//               wr_burst_data_reg_tmp <= {px10[13:0],px20[1:0], px11[13:0],px21[1:0], px12[13:0],px22[1:0], px13[13:0],px23[1:0]};
-//           else
-////               wr_burst_data_reg_tmp <= {px20,px21,px22,px23};
-//               wr_burst_data_reg_tmp <= {px20[13:0],px10[1:0], px21[13:0],px11[1:0], px22[13:0],px12[1:0], px23[13:0],px13[1:0]};
-
-// 测试往DDR写数据是否正常：已经检查了，OK！
-// 同时确定了字节序
-//           if( !reg_flag == 1'b0 )
-//               wr_burst_data_reg_tmp <= {16'haaaa,16'hbbbb,16'hcccc,16'hdddd};
-//           else
-//               wr_burst_data_reg_tmp <= {16'hdddd,16'hcccc,16'hbbbb,16'haaaa};
-       
-       // 测试数据组合在内存中排列的位置
-//           wr_burst_data_reg_tmp <= {16'haaaa,16'hbbbb,16'hcccc,16'hdddd};
-           
-//           reg_flag <= reg_flag + 1'b1;
-           
+	   else begin          
            if( pl_cnt >= PL_CNT_MAX ) begin
-                rd_burst_addr <= INIT_ADDR;
-                wr_burst_addr <= INIT_ADDR;
-                pl_cnt        <= 32'b0;
-                status_r      <= 1'b1;
+                pl_cnt      <= 32'b0;
+                status_r    <= 1'b1;
            end
            else begin
-               if( status_r == 1'b0 )
-                   ddr_state   <= ~ddr_state;                  // 生成触发写DDR的信号
+               if( status_r == 1'b0 )   //这里还有需要改进的地方
+                   ddr_state   <= ~ddr_state;                   // 生成触发写DDR的信号
                
-               wr_burst_addr   <= wr_burst_addr + BURST_LEN;    // 地址一直递增
-               rd_burst_addr   <= rd_burst_addr + BURST_LEN;   // 地址一直递增
-               pl_cnt          <= pl_cnt + 32'b1;                // 每完成一次"写、读、地址递增"，计数器就+1
+               pl_cnt          <= pl_cnt + 32'b1;               // 每完成一次计数器就+1
           end
        end
 	end
@@ -329,21 +255,24 @@ module mem_test
 		if(rst)
 		begin
 			wr_burst_data_reg <= {MEM_DATA_BITS{1'b0}};
-			wr_cnt <= 8'd0;
+			wr_cnt <= 32'd0;
 		end
 		else if(state == MEM_WRITE)
 		begin
 			if(wr_burst_data_req)
 			begin
-//				wr_burst_data_reg <= wr_burst_data_reg_tmp;
                 if( reg_flag_EF )
-                    wr_burst_data_reg <= wr_burst_data_reg_tmp1;
+                    wr_burst_data_reg <= wr_burst_data_reg1;
                 else
-                    wr_burst_data_reg <= wr_burst_data_reg_tmp2;
+                    wr_burst_data_reg <= wr_burst_data_reg2;
                     
-				wr_cnt <= wr_cnt + 8'd1;
+				wr_cnt <= wr_cnt + 32'd1;
 			end
+			else if(wr_burst_finish)
+			    wr_cnt <= 32'd0;
 		end
+		else
+            wr_cnt <= 32'd0;
 	end
 
 	// =======================================================
@@ -352,19 +281,17 @@ module mem_test
 	begin
 		if(rst)
 		begin
-			rd_cnt <= 8'd0;
+			rd_cnt <= 32'd0;
 		end
 		else if(state == MEM_READ)
 		begin
-			if(rd_burst_data_valid )
-				begin
-					rd_cnt <= rd_cnt + 8'd1;
-				end
+			if(rd_burst_data_valid)
+                rd_cnt <= rd_cnt + 32'd1;
 			else if(rd_burst_finish)
-				rd_cnt <= 8'd0;
+				rd_cnt <= 32'd0;
 		end
 		else
-			rd_cnt <= 8'd0;
+			rd_cnt <= 32'd0;
 	end
 
 	// =======================================================
@@ -376,6 +303,8 @@ module mem_test
 			state            <= IDLE;
 			wr_burst_req     <= 1'b0;
 			rd_burst_req     <= 1'b0;
+			rd_burst_addr    <= INIT_ADDR;
+            wr_burst_addr    <= INIT_ADDR;
 			rd_burst_len     <= BURST_LEN;
 			wr_burst_len     <= BURST_LEN;
 			write_read_len   <= 32'd0;
@@ -389,6 +318,7 @@ module mem_test
 				    if( ddr_state != ddr_state0 ) begin
                         state <= MEM_WRITE;
                         wr_burst_req <= 1'b1;   // DDR的写请求
+//                        rd_burst_req <= 1'b0;   // DDR的读请求
                         wr_burst_len <= BURST_LEN;
                     end
                 end
@@ -397,10 +327,24 @@ module mem_test
 					if(wr_burst_finish)
 					begin
 						state <= IDLE;
-						wr_burst_req <= 1'b0;
-						ddr_state0 <= ~ddr_state0;
+//						state         <= MEM_READ;    // 写入DDR后再从DDR将刚刚写入的数据读出进行检查
+						wr_burst_req  <= 1'b0;
+//						rd_burst_req  <= 1'b1;
+						rd_burst_len  <= BURST_LEN;
+						wr_burst_addr <= wr_burst_addr + BURST_LEN;    // 在写完成之后，地址+BURST_LEN
+						ddr_state0    <= ~ddr_state0;
 					end
 				end
+//				MEM_READ:
+//				begin
+//				    if(rd_burst_finish)
+//				    begin
+//				        state         <= IDLE;
+//                        rd_burst_req  <= 1'b0;
+//				        rd_burst_addr <= rd_burst_addr + BURST_LEN;    // 在读完成之后，地址+BURST_LEN
+////				        ddr_state0    <= ~ddr_state0;
+//				    end
+//				end
 				default:
 					state <= IDLE;
 			endcase

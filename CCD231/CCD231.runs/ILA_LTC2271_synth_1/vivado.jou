@@ -2,8 +2,8 @@
 # Vivado v2017.4 (64-bit)
 # SW Build 2086221 on Fri Dec 15 20:54:30 MST 2017
 # IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
-# Start of session at: Sun Feb 28 14:42:22 2021
-# Process ID: 447683
+# Start of session at: Mon Mar  1 19:03:26 2021
+# Process ID: 596209
 # Current directory: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1
 # Command line: vivado -log ILA_LTC2271.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ILA_LTC2271.tcl
 # Log file: /home/xyh/NFS_Alinx/VivadoProjects/CCD231/CCD231.runs/ILA_LTC2271_synth_1/ILA_LTC2271.vds

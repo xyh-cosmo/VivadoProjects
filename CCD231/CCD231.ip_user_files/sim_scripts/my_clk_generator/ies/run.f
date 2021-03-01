@@ -7,8 +7,8 @@
   "/home/xyh/Xilinx/Vivado/2017.4/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../../CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator_clk_wiz.v" \
-  "../../../../CCD231.srcs/sources_1/ip/my_clk_generator/my_clk_generator.v" \
+  "../../../ip/my_clk_generator/my_clk_generator_clk_wiz.v" \
+  "../../../ip/my_clk_generator/my_clk_generator.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v
