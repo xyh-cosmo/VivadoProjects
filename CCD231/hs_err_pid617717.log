@@ -1,0 +1,14 @@
+#
+# An unexpected error has occurred (11)
+#
+Stack:
+/home/xyh/Xilinx/Vivado/2017.4/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0x923da9) [0x7f89cb3f1da9]
+/home/xyh/Xilinx/Vivado/2017.4/tps/lnx64/jre/lib/amd64/server/libjvm.so(JVM_handle_linux_signal+0xb6) [0x7f89cb3f83f6]
+/home/xyh/Xilinx/Vivado/2017.4/tps/lnx64/jre/lib/amd64/server/libjvm.so(+0x9209d3) [0x7f89cb3ee9d3]
+/lib/x86_64-linux-gnu/libc.so.6(+0x46210) [0x7f8a07a80210]
+/lib/x86_64-linux-gnu/libc.so.6(+0x1874e0) [0x7f8a07bc14e0]
+/home/xyh/Xilinx/Vivado/2017.4/lib/lnx64.o/Ubuntu/libstdc++.so.6(_ZNKSt7codecvtIwc11__mbstate_tE5do_inERS0_PKcS4_RS4_PwS6_RS6_+0x88) [0x7f8a07f16b98]
+/home/xyh/Xilinx/Vivado/2017.4/lib/lnx64.o/librdi_common.so(+0x448d61) [0x7f8a0883ed61]
+/home/xyh/Xilinx/Vivado/2017.4/lib/lnx64.o/librdi_common.so(HI18N::Convert::Out(char const*, char const*, std::__cxx11::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t> >&, std::codecvt<wchar_t, char, __mbstate_t> const&)+0x186) [0x7f8a0883f1e6]
+/home/xyh/Xilinx/Vivado/2017.4/lib/lnx64.o/librdi_labtools.so(Java_ui_data_labtools_lthwdatai_HWDevice_1getName+0x3b) [0x7f89d3f0581b]
+[0x7f89bee2dcf1]

@@ -49,7 +49,7 @@ module TOP(
         RPHI2_CTR,
         RPHI3_CTR,
         
-        TRIG,
+        TRIG,           // 控制AD9106
         CLKP,
         
         ENC,            // 板子上的晶振拆掉了，因此利用FPGA生成的时钟来驱动LTC2271工作
@@ -237,7 +237,7 @@ module TOP(
     //  GPIO2
     wire [31:0] gpio2_spi_data;
     //  GPIO_IN
-    wire pl_status, ddr_status;
+    wire spi_status, ddr_status;
     
     wire PL_KEY;
     wire EF_FR_dly, GH_FR_dly;
@@ -283,12 +283,13 @@ module TOP(
     
     assign IV_5K_CTR = ( clk_1M_r | IV_5K_CTR_or ) & IV_5K_CTR_en;
     
+//    assign ADG772_CTR = clk_1M_r & IV_5K_CTR_en;
     assign RST_SIG_CTR = clk_1M_r & IV_5K_CTR_en;
     assign RPHI1_CTR = clk_1M_r & IV_5K_CTR_en;
     assign RPHI2_CTR = clk_1M_r & IV_5K_CTR_en;
     assign RPHI3_CTR = clk_1M_r & IV_5K_CTR_en;
-    assign ADG772_CTR = clk_1M_r & IV_5K_CTR_en;
 
+    assign ADG772_CTR = 1'b0; 
 //    assign RST_SIG_CTR = 1'b0;
 //    assign RPHI1_CTR = 1'b0;
 //    assign RPHI2_CTR = 1'b0;
@@ -307,8 +308,8 @@ module TOP(
             cnt_5M <= cnt_5M + 8'b1;
     end
     
-//    assign ENC = clk_5M_r & ENC_CTR;  // OK
-    assign ENC = clk_10M & ENC_CTR;
+    assign ENC = clk_5M_r & ENC_CTR;  // OK
+//    assign ENC = clk_10M & ENC_CTR;   // 10M速度不行
 
 //  ========================================================
 //  ========================================================
@@ -341,13 +342,6 @@ module TOP(
     assign data_G[15:0] = wr_burst_data[31:16];
     assign data_H[15:0] = wr_burst_data[15:0];
 
-//  从DDR读出
-//    wire[15:0] data_E_r, data_F_r, data_G_r, data_H_r;
-//    assign data_E_r[15:0] = rd_burst_data[63:48];
-//    assign data_F_r[15:0] = rd_burst_data[47:32];
-//    assign data_G_r[15:0] = rd_burst_data[31:16];
-//    assign data_H_r[15:0] = rd_burst_data[15:0];
-    
 //  将LTC2271输出的差分信号转换成单端信号
     IBUFDS #(
         .DIFF_TERM("TRUE"),     // Differential Termination
@@ -465,10 +459,6 @@ module TOP(
         .GOUT(GOUT),
         .HOUT(HOUT),
         
-        //  以下两个信号在调试结束之后可以去掉
-//        .EF_FR_dly_debug(EF_FR_dly),
-//        .GH_FR_dly_debug(GH_FR_dly),
-        
         .status(ddr_status),
         .FR_CLK(FR_CLK),
 //        .ddr_error(ddr_error),
@@ -557,8 +547,6 @@ module TOP(
     wire gpio_reg_not_used2;
     wire gpio_reg_not_used3;
     
-    
-    
     CCD231_wrapper CCD231
        (.DDR_addr(DDR_addr),
         .DDR_ba(DDR_ba),
@@ -584,7 +572,7 @@ module TOP(
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
         
         //  GPIO：在PS上修改寄存器，实现对PL端模块的控制
-        .gpio_in_tri_i({pl_status, ddr_status}),
+        .gpio_in_tri_i({ddr_status, spi_status}),
         .gpio2_tri_o(gpio2_spi_data),
         .gpio_tri_o({ gpio_reg_not_used1,
                       gpio_reg_not_used2,
@@ -651,26 +639,9 @@ module TOP(
         );
 
 // ==========================================================================
-    reg TRIG_r = 1'b0;
-    reg[7:0] TRIG_cnt = 8'b0;
-    assign TRIG = TRIG_r;
-
-    always@(posedge clk_50M) begin
-        if( TRIG_cnt == 4 ) begin
-            TRIG_r = ~TRIG_r;
-            TRIG_cnt <= 8'b0;
-        end
-        else
-            TRIG_cnt <= TRIG_cnt + 8'b1;
-    end
-
-
-// =============================
-	
 	SPI4ADC spi4adc(
-//		.clk(clk_50M),
-        .clk(clk_20M),  //  降低时钟频，通过SDO读出LTC2271的SPI配置内容
-//		.clk(clk_sys),
+		.clk(clk_50M),
+//        .clk(clk_20M),  //  降低时钟频，通过SDO读出LTC2271的SPI配置内容
 		.rst(gpio_RST),
 		.spi_data(gpio2_spi_data),
 		.spi_cpol(gpio_CPOL),
@@ -681,7 +652,7 @@ module TOP(
 		.A1(A1),
 		.sclk(sclk),
 		.mosi(mosi),
-		.status(pl_status)
+		.status(spi_status)
 		);
 
     ILA_LTC2271 ltc2271(

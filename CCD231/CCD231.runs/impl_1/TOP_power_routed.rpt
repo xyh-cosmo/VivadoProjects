@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.4 (lin64) Build 2086221 Fri Dec 15 20:54:30 MST 2017
-| Date             : Mon Mar  1 21:54:20 2021
+| Date             : Tue Mar  2 11:54:45 2021
 | Host             : apple running 64-bit Ubuntu 20.04.2 LTS
 | Command          : report_power -file TOP_power_routed.rpt -pb TOP_power_summary_routed.pb -rpx TOP_power_routed.rpx
 | Design           : TOP
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 2.040        |
+| Total On-Chip Power (W)  | 2.041        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.815        |
+| Dynamic (W)              | 1.816        |
 | Device Static (W)        | 0.225        |
 | Effective TJA (C/W)      | 1.9          |
 | Max Ambient (C)          | 81.2         |
@@ -52,23 +52,23 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.068 |       10 |       --- |             --- |
-| Slice Logic              |     0.013 |     9125 |       --- |             --- |
-|   LUT as Logic           |     0.010 |     2781 |    171900 |            1.62 |
-|   Register               |     0.002 |     4559 |    343800 |            1.33 |
+| Clocks                   |     0.068 |        8 |       --- |             --- |
+| Slice Logic              |     0.014 |     9131 |       --- |             --- |
+|   LUT as Logic           |     0.011 |     2780 |    171900 |            1.62 |
+|   Register               |     0.002 |     4562 |    343800 |            1.33 |
 |   LUT as Shift Register  |    <0.001 |      257 |     70400 |            0.37 |
 |   CARRY4                 |    <0.001 |      149 |     54650 |            0.27 |
 |   BUFG                   |    <0.001 |        2 |        32 |            6.25 |
 |   LUT as Distributed RAM |    <0.001 |       38 |     70400 |            0.05 |
 |   F7/F8 Muxes            |    <0.001 |       62 |    218600 |            0.03 |
 |   Others                 |     0.000 |      641 |       --- |             --- |
-| Signals                  |     0.023 |     6602 |       --- |             --- |
+| Signals                  |     0.024 |     6606 |       --- |             --- |
 | Block RAM                |     0.027 |        9 |       500 |            1.80 |
 | MMCM                     |     0.102 |        1 |         8 |           12.50 |
 | I/O                      |     0.045 |       31 |       250 |           12.40 |
 | PS7                      |     1.537 |        1 |       --- |             --- |
 | Static Power             |     0.225 |          |           |                 |
-| Total                    |     2.040 |          |           |                 |
+| Total                    |     2.041 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.196 |       0.137 |      0.059 |
+| Vccint    |       1.000 |     0.198 |       0.138 |      0.059 |
 | Vccaux    |       1.800 |     0.104 |       0.064 |      0.040 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.011 |       0.010 |      0.001 |
@@ -141,13 +141,11 @@ Table of Contents
 +--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
 | Clock                                                                                      | Domain                                                               | Constraint (ns) |
 +--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
-| clk_10M_my_clk_generator                                                                   | my_clock/inst/clk_10M_my_clk_generator                               |           100.0 |
 | clk_150M_my_clk_generator                                                                  | my_clock/inst/clk_150M_my_clk_generator                              |             6.7 |
-| clk_20M_my_clk_generator                                                                   | my_clock/inst/clk_20M_my_clk_generator                               |            50.0 |
 | clk_450M_my_clk_generator                                                                  | my_clock/inst/clk_450M_my_clk_generator                              |             2.2 |
 | clkfbout_my_clk_generator                                                                  | my_clock/inst/clkfbout_my_clk_generator                              |            20.0 |
 | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/SERIES7_BSCAN.bscan_inst/TCK | dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_inst/tck_bs |            33.0 |
-| my_clock/inst/clk_in                                                                       | clk_50M_IBUF                                                         |            20.0 |
+| my_clock/inst/clk_in                                                                       | clk_50M_IBUF_BUFG                                                    |            20.0 |
 +--------------------------------------------------------------------------------------------+----------------------------------------------------------------------+-----------------+
 
 
@@ -160,8 +158,8 @@ Table of Contents
 +-------------------------------------------------------------------------------------+-----------+
 | Name                                                                                | Power (W) |
 +-------------------------------------------------------------------------------------+-----------+
-| TOP                                                                                 |     1.815 |
-|   CCD231                                                                            |     1.553 |
+| TOP                                                                                 |     1.816 |
+|   CCD231                                                                            |     1.552 |
 |     CCD231_i                                                                        |     1.552 |
 |       AXI_GPIO_IN                                                                   |    <0.001 |
 |         U0                                                                          |    <0.001 |
@@ -176,7 +174,7 @@ Table of Contents
 |             I_SLAVE_ATTACHMENT                                                      |    <0.001 |
 |               I_DECODER                                                             |    <0.001 |
 |           gpio_core_1                                                               |    <0.001 |
-|       AXI_INTERCONNECT                                                              |     0.009 |
+|       AXI_INTERCONNECT                                                              |     0.008 |
 |         s00_couplers                                                                |     0.007 |
 |           auto_pc                                                                   |     0.007 |
 |             inst                                                                    |     0.007 |
@@ -215,7 +213,7 @@ Table of Contents
 |           auto_pc                                                                   |     0.004 |
 |             inst                                                                    |     0.004 |
 |               gen_axi4_axi3.axi3_conv_inst                                          |     0.004 |
-|                 USE_READ.USE_SPLIT_R.read_addr_inst                                 |     0.002 |
+|                 USE_READ.USE_SPLIT_R.read_addr_inst                                 |     0.001 |
 |                   USE_R_CHANNEL.cmd_queue                                           |    <0.001 |
 |                     inst                                                            |    <0.001 |
 |                       fifo_gen_inst                                                 |    <0.001 |
@@ -364,9 +362,9 @@ Table of Contents
 |           U_SYNC                                                                    |    <0.001 |
 |         SWITCH_N_EXT_BSCAN.bscan_inst                                               |    <0.001 |
 |         SWITCH_N_EXT_BSCAN.bscan_switch                                             |    <0.001 |
-|   ltc2271                                                                           |     0.081 |
-|     inst                                                                            |     0.081 |
-|       ila_core_inst                                                                 |     0.081 |
+|   ltc2271                                                                           |     0.082 |
+|     inst                                                                            |     0.082 |
+|       ila_core_inst                                                                 |     0.082 |
 |         ila_trace_memory_inst                                                       |     0.027 |
 |           SUBCORE_RAM_BLK_MEM_1.trace_block_memory                                  |     0.027 |
 |             inst_blk_mem_gen                                                        |     0.027 |
@@ -443,7 +441,7 @@ Table of Contents
 |                       u_srlB                                                        |    <0.001 |
 |                       u_srlC                                                        |    <0.001 |
 |                       u_srlD                                                        |    <0.001 |
-|         u_ila_regs                                                                  |     0.030 |
+|         u_ila_regs                                                                  |     0.031 |
 |           MU_SRL[0].mu_srl_reg                                                      |    <0.001 |
 |           MU_SRL[10].mu_srl_reg                                                     |    <0.001 |
 |           MU_SRL[11].mu_srl_reg                                                     |    <0.001 |
@@ -505,7 +503,7 @@ Table of Contents
 |             I_EN_CTL_EQ1.U_CTL                                                      |    <0.001 |
 |           reg_stream_ffe                                                            |    <0.001 |
 |             I_EN_STAT_EQ1.U_STAT                                                    |    <0.001 |
-|         u_ila_reset_ctrl                                                            |     0.001 |
+|         u_ila_reset_ctrl                                                            |    <0.001 |
 |           arm_detection_inst                                                        |    <0.001 |
 |           asyncrounous_transfer.arm_in_transfer_inst                                |    <0.001 |
 |           asyncrounous_transfer.arm_out_transfer_inst                               |    <0.001 |
@@ -679,8 +677,8 @@ Table of Contents
 |   mem_test_m0                                                                       |     0.019 |
 |   my_clock                                                                          |     0.104 |
 |     inst                                                                            |     0.104 |
-|   spi4adc                                                                           |    <0.001 |
-|     spi                                                                             |    <0.001 |
+|   spi4adc                                                                           |     0.002 |
+|     spi                                                                             |     0.002 |
 |   u_aq_axi_master                                                                   |     0.003 |
 +-------------------------------------------------------------------------------------+-----------+
 
